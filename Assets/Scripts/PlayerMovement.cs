@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
 		Vector2 moveVal = value.Get<Vector2>();
 		direction = new Vector3(moveVal.x,0f,moveVal.y);
 	}
+
     void Update()
     {
 		if (direction.magnitude >= 0.1f)
