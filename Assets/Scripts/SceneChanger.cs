@@ -1,36 +1,56 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
-public class ScenChanger : MonoBehaviour
+namespace Scene
 {
-    // This will be a lightweight script to put on objects with the sole purpose of changing the scene
-
-    public Scene nextScene;
-
-    public void ChangeScene()
+    public class SceneChanger : MonoBehaviour
     {
-        // If the scene exists
-        if (nextScene == SceneManager.GetSceneByName(nextScene.name))
+        // This will be a lightweight script to put on objects with the sole purpose of changing the scene
+
+        #region Initializations
+        #if UNITY_EDITOR
+        public SceneAsset nextScene = null; // Used to streamline scene assignment for designers in Unity
+        #endif
+
+        [HideInInspector]
+        public string sceneString = null;
+
+        private void Start()
         {
-            SceneController.instance.StartCoroutine(SceneController.instance.LoadNextScene(nextScene));
-
-            Debug.Log("Changing Scene to: " + nextScene.name);
-
-            // Pause game
-        }
-
-        else
-        {
-            if (nextScene == null)
+            if (sceneString == null)
             {
-                Debug.LogError(gameObject.name + ": SceneChanger - No scene specified");
+                Debug.LogWarning(gameObject.name + ": SceneChanger - No scene given");
             }
+        }
+        #endregion Initializations
+
+        #region PublicFunctions
+        public void ChangeScene()
+        {
+            // If the Scene exists in build settings
+            if (SceneManager.GetSceneByName(sceneString).buildIndex < SceneManager.sceneCountInBuildSettings)
+            {
+                SceneController.instance.StartCoroutine(SceneController.instance.LoadNextScene(sceneString));
+
+                Debug.Log("Changing Scene to: " + sceneString);
+
+                // Pause game here
+            }
+
+            // Integrity check
             else
             {
-                Debug.LogError(gameObject.name + ": SceneChanger - Scene does not exist");
+                if (sceneString == null)
+                {
+                    Debug.LogWarning(gameObject.name + ": SceneChanger - No scene given");
+                }
+                else
+                {
+                    Debug.LogWarning(gameObject.name + ": SceneChanger - Scene (" + sceneString + ") is not loaded in build settings");
+                }
             }
         }
+        #endregion PublicFunctions
     }
 }
