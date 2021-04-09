@@ -20,7 +20,7 @@ namespace Scene
         {
             if (sceneString == null)
             {
-                Debug.LogWarning(gameObject.name + ": SceneChanger - No scene given");
+                Debug.LogWarning(gameObject.name + ": SceneChanger - No scene given", gameObject);
             }
         }
         #endregion Initializations
@@ -33,7 +33,7 @@ namespace Scene
             {
                 SceneController.instance.StartCoroutine(SceneController.instance.LoadNextScene(sceneString));
 
-                Debug.Log("Changing Scene to: " + sceneString);
+                Debug.Log("Changing Scene to: " + sceneString, gameObject);
 
                 // Pause game here
             }
@@ -43,11 +43,11 @@ namespace Scene
             {
                 if (sceneString == null)
                 {
-                    Debug.LogWarning(gameObject.name + ": SceneChanger - No scene given");
+                    Debug.LogWarning(gameObject.name + ": SceneChanger - No scene given", gameObject);
                 }
                 else
                 {
-                    Debug.LogWarning(gameObject.name + ": SceneChanger - Scene (" + sceneString + ") is not loaded in build settings");
+                    Debug.LogWarning(gameObject.name + ": SceneChanger - Scene (" + sceneString + ") is not loaded in build settings", gameObject);
                 }
             }
         }
