@@ -4,10 +4,9 @@ using UnityEditor;
 
 namespace Scene
 {
+    // This will be a lightweight script to put on objects with the sole purpose of changing the scene
     public class SceneChanger : MonoBehaviour
     {
-        // This will be a lightweight script to put on objects with the sole purpose of changing the scene
-
         #region Initializations
         #if UNITY_EDITOR
         public SceneAsset nextScene = null; // Used to streamline scene assignment for designers in Unity

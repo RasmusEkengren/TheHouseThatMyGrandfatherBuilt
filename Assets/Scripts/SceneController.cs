@@ -1,14 +1,25 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Animations;
+using UnityEngine.Events;
 
 namespace Scene
 {
+    // This class will be the core hub for managing scenes
     public class SceneController : MonoBehaviour
     {
-        // This class will be the core hub for managing scenes
         #region Initializations
         public static SceneController instance;
+
+        public Animator animator;
+        public string fadeOutClip = null;
+        public string fadeInClip = null;
+
+        public int sceneChangeDelay = 2;
+
+        // Something to use?
+        public static UnityAction<SceneController> onChange = delegate { };
 
         private void Start()
         {
@@ -23,8 +34,10 @@ namespace Scene
             operation.allowSceneActivation = false;
 
             // While operation is loading
-
+            animator.Play(fadeInClip);
             // Play transition VFX 
+
+            yield return new WaitForSeconds(sceneChangeDelay);
 
             // Wait until done
             while (!operation.isDone)
@@ -34,6 +47,8 @@ namespace Scene
                     operation.allowSceneActivation = true;
 
                     // Play transition VFX
+
+                    animator.Play(fadeOutClip);
 
                     // Unpause Game (Or do it at the start of every scene)
                 }
