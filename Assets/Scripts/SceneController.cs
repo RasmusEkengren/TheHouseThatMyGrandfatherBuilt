@@ -15,15 +15,29 @@ namespace Scene
         public Animator animator;
         public string fadeOutClip = null;
         public string fadeInClip = null;
+        public GameObject transitionObject;
 
         public int sceneChangeDelay = 2;
 
         // Something to use?
         public static UnityAction<SceneController> onChange = delegate { };
 
+        private void Awake()
+        {
+            if (instance == null)
+            {
+                instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+
         private void Start()
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         #endregion Initializations
 
@@ -34,6 +48,8 @@ namespace Scene
             operation.allowSceneActivation = false;
 
             // While operation is loading
+            transitionObject.SetActive(true);
+            Debug.Log("Playing fade in");
             animator.Play(fadeInClip);
             // Play transition VFX 
 
@@ -47,7 +63,7 @@ namespace Scene
                     operation.allowSceneActivation = true;
 
                     // Play transition VFX
-
+                    Debug.Log("Playing fade out");
                     animator.Play(fadeOutClip);
 
                     // Unpause Game (Or do it at the start of every scene)
