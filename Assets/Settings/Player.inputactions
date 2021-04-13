@@ -27,7 +27,7 @@
                     "id": "413584c1-1bc8-43d3-97d6-26d0cc953a46",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press"
                 }
             ],
             "bindings": [
@@ -279,7 +279,7 @@
                     "id": "18c16ac2-a27d-4a40-bb38-91e306dcfaaf",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press"
                 },
                 {
                     "name": "Point",
@@ -295,7 +295,7 @@
                     "id": "54fc0216-898f-46a7-8478-718e94a78112",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press"
                 },
                 {
                     "name": "ScrollWheel",
@@ -309,17 +309,17 @@
                     "name": "MiddleClick",
                     "type": "PassThrough",
                     "id": "cae4b17b-2895-4743-843a-1b94a17e66a5",
-                    "expectedControlType": "",
+                    "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press"
                 },
                 {
                     "name": "RightClick",
                     "type": "PassThrough",
                     "id": "abdf507c-c5d0-43ff-b36c-9d82803bb5ee",
-                    "expectedControlType": "",
+                    "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press"
                 },
                 {
                     "name": "TrackedDevicePosition",
@@ -620,7 +620,7 @@
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Gamepad",
                     "action": "Submit",
                     "isComposite": false,
                     "isPartOfComposite": false
