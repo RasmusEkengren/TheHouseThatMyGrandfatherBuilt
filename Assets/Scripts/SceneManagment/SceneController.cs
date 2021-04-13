@@ -17,6 +17,8 @@ namespace Scene
         public string fadeInClip = null;
         public GameObject transitionObject;
 
+        // [FMODUnity.EventRef] public string transitionSound;
+
         public int sceneChangeDelay = 2;
 
         // Something to use?
@@ -36,7 +38,6 @@ namespace Scene
 
         private void Start()
         {
-            instance = this;
             DontDestroyOnLoad(gameObject);
         }
         #endregion Initializations
@@ -49,36 +50,46 @@ namespace Scene
 
             // While operation is loading
             transitionObject.SetActive(true);
-            Debug.Log("Playing fade in");
-            animator.Play(fadeInClip);
-            // Play transition VFX 
+            PlayVFX(0);
 
             yield return new WaitForSeconds(sceneChangeDelay);
 
             // Wait until done
             while (!operation.isDone)
             {
-                if (operation.progress >= 0.8f)
+                if (operation.progress >= 0.9f)
                 {
                     operation.allowSceneActivation = true;
 
-                    // Play transition VFX
-                    Debug.Log("Playing fade out");
-                    animator.Play(fadeOutClip);
+                    PlayVFX(1);
 
                     // Unpause Game (Or do it at the start of every scene)
-                }
-
+                }    
                 yield return null;
             }
         }
         #endregion PublicFunctions
 
         #region PrivateFunctions
-        private void PlayVFX()
+        private void PlayVFX(int fadeIndex)
         {
-
             // Should we have VFX references here on this script or on a separate one?
+            if (fadeIndex <= 0)
+            {
+                Debug.Log("Playing fade in");
+                animator.Play(fadeInClip);
+            }
+
+            if (fadeIndex >= 1)
+            {
+                Debug.Log("Playing fade out");
+                animator.Play(fadeOutClip);
+            }
+        }
+
+        private void PlaySFX()
+        {
+           // FMODUnity.RuntimeManager.PlayOneShot(transitionSound);
         }
         #endregion PrivateFunctions
     }
