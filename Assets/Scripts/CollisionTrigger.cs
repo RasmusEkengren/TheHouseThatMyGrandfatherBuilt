@@ -5,11 +5,11 @@ using UnityEngine.Events;
 
 public class CollisionTrigger : MonoBehaviour
 {
-    public UnityEvent trigger = null;
+    public UnityEvent eventsToTrigger = null;
 
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Collision trigger", gameObject);
-        trigger.Invoke();
+        eventsToTrigger.Invoke();
     }
 }
