@@ -29,6 +29,9 @@ public class GameController : MonoBehaviour
         return paused;
     }
 
+    /// <summary>
+    /// Call with a bool state to pause the game
+    /// </summary>
     public void PauseGame(bool pause)
     {
         if (pause)

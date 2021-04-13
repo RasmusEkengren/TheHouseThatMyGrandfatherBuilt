@@ -24,6 +24,9 @@ namespace Scene
         }
         #endregion Initializations
 
+        /// <summary>
+        /// Call to change the scene to the specified scene
+        /// </summary>
         #region PublicFunctions
         public void ChangeScene()
         {

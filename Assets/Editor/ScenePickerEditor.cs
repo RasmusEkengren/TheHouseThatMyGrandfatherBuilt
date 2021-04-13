@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 [CustomEditor(typeof(Scene.SceneChanger))]
 public class ScenePickerEditor : Editor
 {
-    SceneAsset scene = null;
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
@@ -15,9 +14,12 @@ public class ScenePickerEditor : Editor
 
         EditorGUI.BeginChangeCheck();
         // When input has been changed, update the string in SceneChanger with the scene name
-        scene = sceneChanger.nextScene;
-        sceneChanger.sceneString = sceneChanger.nextScene.name;
-        if (sceneChanger.nextScene == null)
+
+        if (sceneChanger.nextScene && sceneChanger.nextScene.name.Length > 0)
+        {
+            sceneChanger.sceneString = sceneChanger.nextScene.name;
+        }
+        else
         {
             sceneChanger.sceneString = null;
         }
