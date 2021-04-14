@@ -49,6 +49,7 @@ namespace Scene
             //GameController.instance.PauseGame(true);
             AsyncOperation operation = SceneManager.LoadSceneAsync(nextScene);
             PlaySFX();
+            GameController.instance.PauseGame(true);
             operation.allowSceneActivation = false;
 
             // While operation is loading
@@ -66,7 +67,7 @@ namespace Scene
                     operation.allowSceneActivation = true;
 
                     // Unpause Game (Or do it at the start of every scene)
-                }    
+                }
                 yield return null;
             }
         }
@@ -91,7 +92,7 @@ namespace Scene
 
         private void PlaySFX()
         {
-          FMODUnity.RuntimeManager.PlayOneShot(transitionSound);
+            FMODUnity.RuntimeManager.PlayOneShot(transitionSound);
         }
         #endregion PrivateFunctions
     }
