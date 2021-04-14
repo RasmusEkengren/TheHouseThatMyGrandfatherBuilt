@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     private static bool paused = false;
-    public GameController instance;
+    public static GameController instance;
 
     private void Awake()
     {
