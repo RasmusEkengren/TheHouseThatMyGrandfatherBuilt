@@ -22,6 +22,7 @@ public class GameController : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1;
+        PauseGame(false);
     }
 
     public static bool GamePaused()

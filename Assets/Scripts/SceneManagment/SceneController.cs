@@ -62,7 +62,6 @@ namespace Scene
             {
                 if (operation.progress >= 0.9f)
                 {
-                    GameController.instance.PauseGame(false);
                     PlayVFX(1);
                     operation.allowSceneActivation = true;
 
