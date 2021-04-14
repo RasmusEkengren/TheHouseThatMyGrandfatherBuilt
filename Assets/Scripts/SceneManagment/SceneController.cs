@@ -18,7 +18,7 @@ namespace Scene
         public string fadeInClip = null;
         public GameObject transitionObject;
 
-        // [FMODUnity.EventRef] public string transitionSound = null;
+        [FMODUnity.EventRef] public string transitionSound = null;
 
         public int sceneChangeDelay = 2;
 
@@ -46,14 +46,15 @@ namespace Scene
         #region PublicFunctions
         public IEnumerator LoadNextScene(string nextScene)
         {
-            GameController.instance.PauseGame(true);
+            //GameController.instance.PauseGame(true);
             AsyncOperation operation = SceneManager.LoadSceneAsync(nextScene);
+            PlaySFX();
+            GameController.instance.PauseGame(true);
             operation.allowSceneActivation = false;
 
             // While operation is loading
             transitionObject.SetActive(true);
             PlayVFX(0);
-            PlaySFX();
 
             yield return new WaitForSeconds(sceneChangeDelay);
 
@@ -62,12 +63,11 @@ namespace Scene
             {
                 if (operation.progress >= 0.9f)
                 {
-                    GameController.instance.PauseGame(false);
                     PlayVFX(1);
                     operation.allowSceneActivation = true;
 
                     // Unpause Game (Or do it at the start of every scene)
-                }    
+                }
                 yield return null;
             }
         }
@@ -92,7 +92,7 @@ namespace Scene
 
         private void PlaySFX()
         {
-          // FMODUnity.RuntimeManager.PlayOneShot(transitionSound);
+            FMODUnity.RuntimeManager.PlayOneShot(transitionSound);
         }
         #endregion PrivateFunctions
     }

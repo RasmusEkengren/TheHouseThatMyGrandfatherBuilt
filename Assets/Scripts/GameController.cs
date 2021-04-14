@@ -22,6 +22,7 @@ public class GameController : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1;
+        PauseGame(false);
     }
 
     public static bool GamePaused()
@@ -37,12 +38,14 @@ public class GameController : MonoBehaviour
         if (pause)
         {
             paused = true;
-            Time.timeScale = 0;
+            // Time.timeScale = 0;
+            Debug.Log("Game Paused", gameObject);
         }
         if (!pause)
         {
             paused = false;
-            Time.timeScale = 1;
+            // Time.timeScale = 1;
+            Debug.Log("Game Unpaused", gameObject);
         }
     }
 }

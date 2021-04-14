@@ -22,9 +22,9 @@ public class PlayerMovement : MonoBehaviour
 		direction = new Vector3(moveVal.x, 0f, moveVal.y);
 	}
 
-	void Update()
-	{
-		if (direction.magnitude >= 0.1f)
+    void Update()
+    {
+        if (direction.magnitude >= 0.1f && !GameController.GamePaused())
 		{
 			float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + mainCamera.transform.eulerAngles.y;
 			float rotationAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
