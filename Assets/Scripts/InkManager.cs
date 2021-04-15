@@ -1,11 +1,11 @@
-using Ink.Runtime;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using TMPro;
+using Ink.Runtime;
 using System.Collections;
 
 public class InkManager : MonoBehaviour
 {
-
 	[SerializeField] private TextMeshPro textField = null;
 	[SerializeField] private GameObject textBubble = null;
 	[SerializeField] private GameSettings Settings = null;
@@ -22,13 +22,10 @@ public class InkManager : MonoBehaviour
 		textBubble.SetActive(true);
 	}
 
-	public void OnClick()
+	public void OnInput(InputAction.CallbackContext value)
 	{
-		if (isStoryActive) DisplayNextLine();
-	}
-	public void OnSubmit()
-	{
-		if (isStoryActive) DisplayNextLine();
+		if (!gameObject.scene.IsValid()) return;
+		if (value.performed && isStoryActive) DisplayNextLine();
 	}
 
 	public void DisplayNextLine()

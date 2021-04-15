@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
+using UnityEngine.Events;
 using TMPro;
 using Ink.Runtime;
 using System.Collections;
@@ -11,6 +13,7 @@ public class IntroOutro : MonoBehaviour
 	[SerializeField] private TextMeshProUGUI textField;
 	[SerializeField] private float fadeDuration = 1f;
 	[SerializeField] private GameSettings Settings = null;
+	[SerializeField] private UnityEvent changeSceneEvent;
 	private Story story = null;
 	private int currentStory = 0;
 	private Coroutine type = null;
@@ -20,26 +23,21 @@ public class IntroOutro : MonoBehaviour
 		DisplayNextLine();
 		StartCoroutine(Fade());
 	}
-
 	void Start()
 	{
 		StartStory(stories[0]);
 	}
-	public void OnClick()
+	public void OnInput(InputAction.CallbackContext value)
 	{
-		DisplayNextLine();
+		if (!gameObject.scene.IsValid()) return;
+		if (value.performed) DisplayNextLine();
 	}
-	public void OnSubmit()
-	{
-		DisplayNextLine();
-	}
-
 	public void DisplayNextLine()
 	{
 		if (!story.canContinue)
 		{
 			currentStory++;
-			if (currentStory >= stories.Length) return;
+			if (currentStory >= stories.Length) changeSceneEvent.Invoke();
 			StartStory(stories[currentStory]);
 			return;
 		}
