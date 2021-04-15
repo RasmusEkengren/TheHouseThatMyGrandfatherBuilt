@@ -5,17 +5,14 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-	[SerializeField] private CharacterController playerController = null;
-	[SerializeField] private float moveSpeed = 6f;
-	[SerializeField] private float turnSmoothTime = 0.1f;
-	private Camera mainCamera = null;
-	private Vector3 direction = Vector3.zero;
-	private float turnSmoothVelocity = 0f;
+	public CharacterController playerController;
+	public Camera mainCamera;
+	public float moveSpeed = 6f;
+	public float turnSmoothTime = 0.1f;
 
-	void Start()
-	{
-		mainCamera = Camera.main;
-	}
+	private Vector3 direction;
+	private float turnSmoothVelocity;
+
 	public void OnMove(InputValue value)
 	{
 		Vector2 moveVal = value.Get<Vector2>();

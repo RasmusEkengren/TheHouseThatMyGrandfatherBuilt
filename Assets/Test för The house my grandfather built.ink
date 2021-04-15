@@ -1,5 +1,9 @@
 I remember the day clearly, when I got the key to my Grandfather’s house. It came as a shock that he chose me to have it when he passed away. 
+->continue
+==continue
 Since my father left, I haven’t been able to keep in contact with Grandfather. If I hadn’t gotten that letter, I wouldn’t have even known that he passed away.
+->continue1
+==continue1
 Now when I had gotten a house in the countryside, just like I had wanted, Rebecca started to talk more about moving in together. 
 We had been an official couple for two years then, she felt ready to move onto the next step. But with the grief of my grandfather’s passing still lingering, I made it into a fight. 
 I said things I regret, things I shouldn’t have, and fled.

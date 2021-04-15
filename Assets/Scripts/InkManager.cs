@@ -1,14 +1,15 @@
 using Ink.Runtime;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class InkManager : MonoBehaviour
 {
 
-	[SerializeField] private TextMeshPro textField = null;
-	[SerializeField] private GameObject textBubble = null;
-	private Story story = null;
-	private bool isStoryActive = false;
+	[SerializeField] private TextMeshPro textField;
+	[SerializeField] private GameObject textBubble;
+	private Story story;
+	private bool isStoryActive;
 
 	private void StartStory(TextAsset JsonAsset)
 	{
@@ -17,15 +18,16 @@ public class InkManager : MonoBehaviour
 		story = new Story(JsonAsset.text);
 		isStoryActive = true;
 		textBubble.SetActive(true);
+		DisplayNextLine();
 	}
 
 	public void OnClick()
 	{
-		if (isStoryActive) DisplayNextLine();
+		DisplayNextLine();
 	}
 	public void OnSubmit()
 	{
-		if (isStoryActive) DisplayNextLine();
+		DisplayNextLine();
 	}
 
 	public void DisplayNextLine()
