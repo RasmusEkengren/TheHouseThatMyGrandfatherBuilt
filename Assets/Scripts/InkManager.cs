@@ -1,43 +1,44 @@
 using Ink.Runtime;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class InkManager : MonoBehaviour
 {
-    [SerializeField]
-    private TextAsset _inkJsonAsset;
-    private Story _story;
 
-    [SerializeField]
-    private Text _textField;
+	[SerializeField] private TextMeshPro textField = null;
+	[SerializeField] private GameObject textBubble = null;
+	private Story story = null;
+	private bool isStoryActive = false;
 
-    void Start()
-    {
-        StartStory();
-    }
+	private void StartStory(TextAsset JsonAsset)
+	{
+		if (isStoryActive) return;
 
-    private void StartStory()
-    {
-        _story = new Story(_inkJsonAsset.text);
-        DisplayNextLine();
-    }
+		story = new Story(JsonAsset.text);
+		isStoryActive = true;
+		textBubble.SetActive(true);
+	}
 
-    public void OnClick()
-    {
-        DisplayNextLine();
-    }
-    public void OnSubmit()
-    {
-        DisplayNextLine();
-    }
+	public void OnClick()
+	{
+		if (isStoryActive) DisplayNextLine();
+	}
+	public void OnSubmit()
+	{
+		if (isStoryActive) DisplayNextLine();
+	}
 
-    public void DisplayNextLine()
-    {
-        if (!_story.canContinue) return;
+	public void DisplayNextLine()
+	{
+		if (!story.canContinue)
+		{
+			isStoryActive = false;
+			textBubble.SetActive(false);
+			return;
+		}
 
-        string text = _story.Continue(); // gets next line
-        text = text?.Trim(); // removes white space from text
-        _textField.text = text; // displays new text
-    }
-
+		string text = story.Continue(); // gets next line
+		text = text?.Trim(); // removes white space from text
+		textField.text = text; // displays new text
+	}
 }
