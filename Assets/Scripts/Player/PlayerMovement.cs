@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
 	private Vector3 direction = Vector3.zero;
 	private float turnSmoothVelocity = 0f;
 	private float groundCastMaxDist = 1.08f;
-	[SerializeField] private Collider groundCollider = null;
 	[SerializeField] private LayerMask groundLayer;
 
 	[SerializeField] [FMODUnity.EventRef] private string footstepSound = null;
