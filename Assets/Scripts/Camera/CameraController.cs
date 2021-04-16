@@ -2,14 +2,13 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-	public GameObject player;
-
 	public Vector3 cameraOffset;
-	public float smoothTime;
-	public float smoothLength;
+	[SerializeField] private GameObject player;
+	[SerializeField] private float smoothTime;
+	[SerializeField] private float smoothLength;
 
 	private Vector3 velocity = Vector3.zero;
-    void LateUpdate()
+	void LateUpdate()
 	{
 		Vector3 targetPosition = player.transform.position + cameraOffset;
 		if (Vector3.Distance(transform.position, targetPosition) > smoothLength)

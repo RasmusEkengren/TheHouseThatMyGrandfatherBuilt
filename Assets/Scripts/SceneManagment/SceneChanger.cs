@@ -21,6 +21,10 @@ namespace Scene
             {
                 Debug.LogWarning(gameObject.name + ": SceneChanger - No scene given", gameObject);
             }
+            if (!SceneController.instance)
+            {
+                Debug.LogWarning(gameObject.scene.name + " has no SceneController, add it from Prefabs -> Scene Essentials");
+            }
         }
         #endregion Initializations
 

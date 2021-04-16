@@ -5,23 +5,27 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-	public CharacterController playerController;
-	public Camera mainCamera;
-	public float moveSpeed = 6f;
-	public float turnSmoothTime = 0.1f;
+	[SerializeField] private CharacterController playerController = null;
+	[SerializeField] private float moveSpeed = 6f;
+	[SerializeField] private float turnSmoothTime = 0.1f;
+	private Camera mainCamera = null;
+	private Vector3 direction = Vector3.zero;
+	private float turnSmoothVelocity = 0f;
 
-	private Vector3 direction;
-	private float turnSmoothVelocity;
-
-	public void OnMove(InputValue value)
+	void Start()
 	{
-		Vector2 moveVal = value.Get<Vector2>();
+		mainCamera = Camera.main;
+	}
+	public void Move(InputAction.CallbackContext value)
+	{
+		if (!gameObject.scene.IsValid()) return;
+		Vector2 moveVal = value.ReadValue<Vector2>();
 		direction = new Vector3(moveVal.x, 0f, moveVal.y);
 	}
 
-    void Update()
-    {
-        if (direction.magnitude >= 0.1f && !GameController.GamePaused())
+	void Update()
+	{
+		if (direction.magnitude >= 0.1f && !GameController.GamePaused())
 		{
 			float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + mainCamera.transform.eulerAngles.y;
 			float rotationAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
