@@ -19,7 +19,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-8258578479776003570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40,10 +40,30 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -8616131859845857461}
+  - {fileID: 5377429349899822878}
   MinDistance: 0
   MaxDistance: 0
   Length: 501
+--- !u!114 &-6629669708157085272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Event_Manager/Track
+  m_EditorClassIdentifier: 
+  Name: Track
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 1703683490
+    data2: 3035703284
+  Exists: 1
 --- !u!114 &-6342776834125589189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,6 +150,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &-3156236215566893470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Event_Manager/Skip start
+  m_EditorClassIdentifier: 
+  Name: Skip start
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3983625027
+    data2: 1322644293
+  Exists: 1
 --- !u!114 &-2665952247041537005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,7 +185,7 @@ MonoBehaviour:
   Path: Assets/THTMGB Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637541873533757492
+  lastModified: 637541884304680208
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -182,7 +222,7 @@ MonoBehaviour:
   - {fileID: 7008268374007011970}
   StringsBanks:
   - {fileID: -2665952247041537005}
-  stringsBankWriteTime: 637541873533757492
+  stringsBankWriteTime: 637541884304680208
   cacheVersion: 6
 --- !u!114 &896704634950645692
 MonoBehaviour:
@@ -203,7 +243,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &1993428560342766858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,6 +379,26 @@ MonoBehaviour:
     data1: 3790197359
     data2: 564719953
   Exists: 1
+--- !u!114 &5377429349899822878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Player_Move/Surface
+  m_EditorClassIdentifier: 
+  Name: Surface
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &7008268374007011970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -354,7 +414,7 @@ MonoBehaviour:
   Path: Assets/THTMGB Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637541873533737549
+  lastModified: 637541884305109130
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -377,7 +437,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &7900076382208849997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -398,8 +458,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 7666742174571242568}
-  - {fileID: 896704634950645692}
+  - {fileID: -6629669708157085272}
+  - {fileID: -3156236215566893470}
   MinDistance: 0
   MaxDistance: 0
   Length: 2000
