@@ -7,16 +7,11 @@ public class PlayerMovement : MonoBehaviour
 {
 	[SerializeField] private CharacterController playerController = null;
 	[SerializeField] private float moveSpeed = 6f;
-<<<<<<< HEAD
-=======
 	[SerializeField] private float fallSpeed = 0.5f;
->>>>>>> Max
 	[SerializeField] private float turnSmoothTime = 0.1f;
 	private Camera mainCamera = null;
 	private Vector3 direction = Vector3.zero;
 	private float turnSmoothVelocity = 0f;
-<<<<<<< HEAD
-=======
 	private float groundCastMaxDist = 1.08f;
 	[SerializeField] private Collider groundCollider = null;
 	[SerializeField] private LayerMask groundLayer;
@@ -25,15 +20,11 @@ public class PlayerMovement : MonoBehaviour
 
 	private Vector3 previousFootstep;
 	[SerializeField] private float footstepInterval = 1.75f;
->>>>>>> Max
 
 	void Start()
 	{
 		mainCamera = Camera.main;
-<<<<<<< HEAD
-=======
 		previousFootstep = gameObject.GetComponent<Transform>().position;
->>>>>>> Max
 	}
 	public void Move(InputAction.CallbackContext value)
 	{
@@ -42,14 +33,11 @@ public class PlayerMovement : MonoBehaviour
 		direction = new Vector3(moveVal.x, 0f, moveVal.y);
 	}
 
-<<<<<<< HEAD
-=======
 	private void PlayFootstep()
 	{
 		FMODUnity.RuntimeManager.PlayOneShot(footstepSound);
 	}
 
->>>>>>> Max
 	void Update()
 	{
 		if (direction.magnitude >= 0.1f && !GameController.GamePaused())
@@ -60,10 +48,6 @@ public class PlayerMovement : MonoBehaviour
 
 			Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
 			playerController.Move(moveDir.normalized * moveSpeed * Time.deltaTime);
-<<<<<<< HEAD
-		}
-	}
-=======
 
 			if (Vector3.Distance(previousFootstep, gameObject.transform.position) > footstepInterval)
 			{
@@ -81,5 +65,4 @@ public class PlayerMovement : MonoBehaviour
 		bool isGroundHit = Physics.Raycast(transform.position, Vector3.down, groundCastMaxDist, groundLayer);
 		if (!isGroundHit) playerController.Move(Vector3.down * fallSpeed * Time.deltaTime);
 	}
->>>>>>> Max
 }
