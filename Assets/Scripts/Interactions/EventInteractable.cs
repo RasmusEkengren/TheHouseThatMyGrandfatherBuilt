@@ -12,6 +12,10 @@ public class EventInteractable : Interactable
 		{
 			interactions.Invoke();
 			interactIcon.SetActive(false);
+<<<<<<< HEAD
+=======
+			FMODUnity.RuntimeManager.PlayOneShot(interactSound);
+>>>>>>> Max
 			isTriggered = isOneTime;
 		}
 	}
