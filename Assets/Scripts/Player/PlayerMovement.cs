@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] [FMODUnity.EventRef] private string footstepSound = null;
 
     private Vector3 previousFootstep;
-    [SerializeField] private int footstepInterval = 1;
+    [SerializeField] private float footstepInterval = 1.75f;
 
 	void Start()
 	{
