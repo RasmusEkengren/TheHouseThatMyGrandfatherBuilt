@@ -2,10 +2,11 @@
 using System.Collections;
 
 public class QuitGameOnKeypress : MonoBehaviour {
-	
-	public KeyCode key = KeyCode.Escape;
-	
-	void Update () {
-		if(Input.GetKeyDown(key)) Application.Quit();
+	public void OnCancel () {
+#if UNITY_EDITOR
+		UnityEditor.EditorApplication.isPlaying = false;
+#else
+		Application.Quit();
+#endif
 	}
 }
