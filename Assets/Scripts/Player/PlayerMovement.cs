@@ -12,9 +12,15 @@ public class PlayerMovement : MonoBehaviour
 	private Vector3 direction = Vector3.zero;
 	private float turnSmoothVelocity = 0f;
 
+    [SerializeField] [FMODUnity.EventRef] private string footstepSound = null;
+
+    private Vector3 previousFootstep;
+    [SerializeField] private int footstepInterval = 1;
+
 	void Start()
 	{
 		mainCamera = Camera.main;
+        previousFootstep = gameObject.GetComponent<Transform>().position;
 	}
 	public void Move(InputAction.CallbackContext value)
 	{
@@ -22,6 +28,11 @@ public class PlayerMovement : MonoBehaviour
 		Vector2 moveVal = value.ReadValue<Vector2>();
 		direction = new Vector3(moveVal.x, 0f, moveVal.y);
 	}
+
+    private void PlayFootstep()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(footstepSound);
+    }
 
 	void Update()
 	{
@@ -33,6 +44,12 @@ public class PlayerMovement : MonoBehaviour
 
 			Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
 			playerController.Move(moveDir.normalized * moveSpeed * Time.deltaTime);
-		}
+
+            if (Vector3.Distance(previousFootstep, gameObject.transform.position) > footstepInterval)
+            {
+                PlayFootstep();
+                previousFootstep = gameObject.transform.position;
+            }
+        }
 	}
 }
