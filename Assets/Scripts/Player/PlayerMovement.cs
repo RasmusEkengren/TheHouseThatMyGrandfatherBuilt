@@ -14,13 +14,12 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] [FMODUnity.EventRef] private string footstepSound = null;
 
-    private Vector3 previousFootstep;
     [SerializeField] private float footstepInterval = 1.75f;
+    private float walkedDistance = 0f;
 
 	void Start()
 	{
 		mainCamera = Camera.main;
-        previousFootstep = gameObject.GetComponent<Transform>().position;
 	}
 	public void Move(InputAction.CallbackContext value)
 	{
@@ -38,6 +37,8 @@ public class PlayerMovement : MonoBehaviour
 	{
 		if (direction.magnitude >= 0.1f && !GameController.GamePaused())
 		{
+            walkedDistance += 1f * Time.deltaTime;
+
 			float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + mainCamera.transform.eulerAngles.y;
 			float rotationAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
 			transform.rotation = Quaternion.Euler(0f, rotationAngle, 0f);
@@ -45,10 +46,10 @@ public class PlayerMovement : MonoBehaviour
 			Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
 			playerController.Move(moveDir.normalized * moveSpeed * Time.deltaTime);
 
-            if (Vector3.Distance(previousFootstep, gameObject.transform.position) > footstepInterval)
+            if (walkedDistance >= footstepInterval)
             {
                 PlayFootstep();
-                previousFootstep = gameObject.transform.position;
+                walkedDistance = 0f;
             }
         }
 	}
