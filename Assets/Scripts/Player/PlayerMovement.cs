@@ -7,12 +7,15 @@ public class PlayerMovement : MonoBehaviour
 {
 	[SerializeField] private CharacterController playerController = null;
 	[SerializeField] private float moveSpeed = 6f;
+	[SerializeField] private float fallSpeed = 0.5f;
 	[SerializeField] private float turnSmoothTime = 0.1f;
 	private Camera mainCamera = null;
 	private Vector3 direction = Vector3.zero;
 	private float turnSmoothVelocity = 0f;
+	private float groundCastMaxDist = 1.08f;
+	[SerializeField] private LayerMask groundLayer;
 
-    [SerializeField] [FMODUnity.EventRef] private string footstepSound = null;
+	[SerializeField] [FMODUnity.EventRef] private string footstepSound = null;
 
     [SerializeField] private float footstepInterval = 1.75f;
     private float walkedDistance = 0f;
@@ -28,10 +31,10 @@ public class PlayerMovement : MonoBehaviour
 		direction = new Vector3(moveVal.x, 0f, moveVal.y);
 	}
 
-    private void PlayFootstep()
-    {
-        FMODUnity.RuntimeManager.PlayOneShot(footstepSound);
-    }
+	private void PlayFootstep()
+	{
+		FMODUnity.RuntimeManager.PlayOneShot(footstepSound);
+	}
 
 	void Update()
 	{
@@ -52,5 +55,14 @@ public class PlayerMovement : MonoBehaviour
                 walkedDistance = 0f;
             }
         }
+	}
+	void OnDrawGizmos()
+	{
+		Gizmos.DrawLine(transform.position, transform.position + Vector3.down * groundCastMaxDist);
+	}
+	void FixedUpdate()
+	{
+		bool isGroundHit = Physics.Raycast(transform.position, Vector3.down, groundCastMaxDist, groundLayer);
+		if (!isGroundHit) playerController.Move(Vector3.down * fallSpeed * Time.deltaTime);
 	}
 }
