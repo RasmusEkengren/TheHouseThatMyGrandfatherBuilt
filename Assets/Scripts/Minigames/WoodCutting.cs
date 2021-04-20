@@ -14,6 +14,7 @@ public class WoodCutting : MonoBehaviour
 	[SerializeField] private UnityEvent finishEvent = null;
 	private float health = 0;
 	private bool isGameActive = false;
+	private float waitTimer = 0.5f;
 	void Start()
 	{
 		circle.gameObject.SetActive(false);
@@ -23,20 +24,27 @@ public class WoodCutting : MonoBehaviour
 	{
 		if (isGameActive)
 		{
-			if (health <= 0)
+			if (waitTimer > 0f)
 			{
-				isGameActive = false;
-				finishEvent.Invoke();
-				circle.gameObject.SetActive(false);
-				HitIndicator.gameObject.SetActive(false);
-			}
-			if (circle.transform.localScale.x > 0)
-			{
-				circle.transform.localScale -= Vector3.one * gameSpeed * Time.deltaTime;
+				waitTimer -= Time.deltaTime;
 			}
 			else
 			{
-				ResetIndicator();
+				if (health <= 0)
+				{
+					isGameActive = false;
+					finishEvent.Invoke();
+					circle.gameObject.SetActive(false);
+					HitIndicator.gameObject.SetActive(false);
+				}
+				if (circle.transform.localScale.x > 0)
+				{
+					circle.transform.localScale -= Vector3.one * gameSpeed * Time.deltaTime;
+				}
+				else
+				{
+					ResetIndicator();
+				}
 			}
 		}
 	}
@@ -56,7 +64,7 @@ public class WoodCutting : MonoBehaviour
 	public void Hit(InputAction.CallbackContext value)
 	{
 		if (!gameObject.scene.IsValid()) return;
-		if (value.performed && isGameActive)
+		if (value.performed && isGameActive && waitTimer < 0f)
 		{
 			FMODUnity.RuntimeManager.PlayOneShot(cutSound);
 			float strength = circle.transform.localScale.x;

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
+using FMOD.Studio;
+using FMODUnity;
 
 public class PlankBalancing : MonoBehaviour
 {
@@ -22,6 +24,9 @@ public class PlankBalancing : MonoBehaviour
 	private float currentSpeed = 0;
 	private int moveDir = 0;
 	private int sameDir = 0;
+	[SerializeField] [EventRef] protected string plankBalancingSound = null;
+	private string plankShakeParameter = "ShakeLevel";
+	private EventInstance balancingSoundInstance;
 	public void OnInput(InputAction.CallbackContext value)
 	{
 		if (!gameObject.scene.IsValid()) return;
@@ -29,6 +34,7 @@ public class PlankBalancing : MonoBehaviour
 	}
 	public void ResetGame()
 	{
+		balancingSoundInstance.start();
 		offBalance = 0f;
 		timer = 0f;
 		greenPip.localPosition = new Vector3(greenPip.localPosition.x, 0f, greenPip.localPosition.z);
@@ -52,6 +58,13 @@ public class PlankBalancing : MonoBehaviour
 	void OnEnable()
 	{
 		ResetGame();
+		balancingSoundInstance = RuntimeManager.CreateInstance(plankBalancingSound);
+		balancingSoundInstance.start();
+	}
+	void OnDisable()
+	{
+		balancingSoundInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+		balancingSoundInstance.release();
 	}
 	void Update()
 	{
@@ -74,8 +87,13 @@ public class PlankBalancing : MonoBehaviour
 		{
 			offBalance -= Time.deltaTime;
 		}
+		float parameterValue = (Mathf.Abs(greenPip.localPosition.y) / Mathf.Abs(redZone1.localPosition.y)) * 2f;
+		balancingSoundInstance.setParameterByName(plankShakeParameter, parameterValue);
+		balancingSoundInstance.getParameterByName(plankShakeParameter, out parameterValue);
+		Debug.Log(parameterValue);
 		if (offBalance > fallLimit)
 		{
+			balancingSoundInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
 			fallEvents.Invoke();
 			ResetGame();
 		}
