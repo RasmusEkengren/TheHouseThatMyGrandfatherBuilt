@@ -6,7 +6,7 @@ public class InkInteractable : Interactable
 	public override void Interact(GameObject player)
 	{
 		//Super hacky fix, fix this into something good later
-		if (interactIcon.activeSelf == true)
+		if (interactIcon.activeSelf)
 		{
 			player.SendMessage("StartStory", StoryJson, SendMessageOptions.DontRequireReceiver);
 			FMODUnity.RuntimeManager.PlayOneShot(interactSound);
