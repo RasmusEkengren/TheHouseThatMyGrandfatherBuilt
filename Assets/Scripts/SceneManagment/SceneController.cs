@@ -7,93 +7,93 @@ using FMODUnity;
 
 namespace Scene
 {
-    // This class will be the core hub for managing scenes
-    public class SceneController : MonoBehaviour
-    {
-        #region Initializations
-        public static SceneController instance;
+	// This class will be the core hub for managing scenes
+	public class SceneController : MonoBehaviour
+	{
+		#region Initializations
+		public static SceneController instance;
 
-        public Animator animator;
-        public string fadeOutClip = null;
-        public string fadeInClip = null;
-        public GameObject transitionObject;
+		public Animator animator;
+		public string fadeOutClip = null;
+		public string fadeInClip = null;
+		public GameObject transitionObject;
 
-        [FMODUnity.EventRef] public string transitionSound = null;
+		[FMODUnity.EventRef] public string transitionSound = null;
 
-        public int sceneChangeDelay = 2;
+		public int sceneChangeDelay = 2;
 
-        // Something to use?
-        public static UnityAction<SceneController> onChange = delegate { };
+		// Something to use?
+		public static UnityAction<SceneController> onChange = delegate { };
 
-        private void Awake()
-        {
-            if (instance == null)
-            {
-                instance = this;
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
-        }
+		private void Awake()
+		{
+			if (instance == null)
+			{
+				instance = this;
+			}
+			else
+			{
+				Destroy(gameObject);
+			}
+		}
 
-        private void Start()
-        {
-            DontDestroyOnLoad(gameObject);
-        }
-        #endregion Initializations
+		private void Start()
+		{
+			DontDestroyOnLoad(gameObject);
+		}
+		#endregion Initializations
 
-        #region PublicFunctions
-        public IEnumerator LoadNextScene(string nextScene)
-        {
-            //GameController.instance.PauseGame(true);
-            AsyncOperation operation = SceneManager.LoadSceneAsync(nextScene);
-            PlaySFX();
-            GameController.instance.PauseGame(true);
-            operation.allowSceneActivation = false;
+		#region PublicFunctions
+		public IEnumerator LoadNextScene(string nextScene)
+		{
+			//GameController.instance.PauseGame(true);
+			AsyncOperation operation = SceneManager.LoadSceneAsync(nextScene);
+			PlaySFX();
+			GameController.instance.PauseGame(true);
+			operation.allowSceneActivation = false;
 
-            // While operation is loading
-            transitionObject.SetActive(true);
-            PlayVFX(0);
+			// While operation is loading
+			transitionObject.SetActive(true);
+			PlayVFX(0);
 
-            yield return new WaitForSeconds(sceneChangeDelay);
+			yield return new WaitForSeconds(sceneChangeDelay);
 
-            // Wait until done
-            while (!operation.isDone)
-            {
-                if (operation.progress >= 0.9f)
-                {
-                    PlayVFX(1);
-                    operation.allowSceneActivation = true;
+			// Wait until done
+			while (!operation.isDone)
+			{
+				if (operation.progress >= 0.9f)
+				{
+					PlayVFX(1);
+					operation.allowSceneActivation = true;
 
-                    // Unpause Game (Or do it at the start of every scene)
-                }
-                yield return null;
-            }
-        }
-        #endregion PublicFunctions
+					// Unpause Game (Or do it at the start of every scene)
+				}
+				yield return null;
+			}
+		}
+		#endregion PublicFunctions
 
-        #region PrivateFunctions
-        private void PlayVFX(int fadeIndex)
-        {
-            // Should we have VFX references here on this script or on a separate one?
-            if (fadeIndex <= 0)
-            {
-                Debug.Log("Playing fade in");
-                animator.Play(fadeInClip);
-            }
+		#region PrivateFunctions
+		private void PlayVFX(int fadeIndex)
+		{
+			// Should we have VFX references here on this script or on a separate one?
+			if (fadeIndex <= 0)
+			{
+				Debug.Log("Playing fade in");
+				animator.Play(fadeInClip);
+			}
 
-            if (fadeIndex >= 1)
-            {
-                Debug.Log("Playing fade out");
-                animator.Play(fadeOutClip);
-            }
-        }
+			if (fadeIndex >= 1)
+			{
+				Debug.Log("Playing fade out");
+				animator.Play(fadeOutClip);
+			}
+		}
 
-        private void PlaySFX()
-        {
-            FMODUnity.RuntimeManager.PlayOneShot(transitionSound);
-        }
-        #endregion PrivateFunctions
-    }
+		private void PlaySFX()
+		{
+			FMODUnity.RuntimeManager.PlayOneShot(transitionSound);
+		}
+		#endregion PrivateFunctions
+	}
 }

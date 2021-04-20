@@ -1,19 +1,20 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 using TMPro;
 using Ink.Runtime;
 using System.Collections;
 
 public class InkManager : MonoBehaviour
 {
-	[SerializeField] private TextMeshPro textField = null;
+	[SerializeField] private TextMeshProUGUI textField = null;
 	[SerializeField] private GameObject textBubble = null;
 	[SerializeField] private GameSettings Settings = null;
 	private Story story = null;
 	private bool isStoryActive = false;
 	private Coroutine type = null;
-
-	private void StartStory(TextAsset JsonAsset)
+	private UnityEvent endEvent;
+	public void StartStory(TextAsset JsonAsset)
 	{
 		if (isStoryActive) return;
 
@@ -27,13 +28,21 @@ public class InkManager : MonoBehaviour
 		if (!gameObject.scene.IsValid()) return;
 		if (value.performed && isStoryActive) DisplayNextLine();
 	}
-
+	public void SetEndEvent(UnityEvent end)
+	{
+		endEvent = end;
+	}
 	public void DisplayNextLine()
 	{
 		if (!story.canContinue)
 		{
 			isStoryActive = false;
 			textBubble.SetActive(false);
+			if (endEvent != null)
+			{
+				endEvent.Invoke();
+				endEvent = null;
+			}
 			return;
 		}
 
