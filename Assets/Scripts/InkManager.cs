@@ -1,46 +1,68 @@
-using Ink.Runtime;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.InputSystem;
+using UnityEngine.Events;
 using TMPro;
+using Ink.Runtime;
+using System.Collections;
 
 public class InkManager : MonoBehaviour
 {
-
-	[SerializeField] private TextMeshPro textField;
-	[SerializeField] private GameObject textBubble;
-	private Story story;
-	private bool isStoryActive;
-
-	private void StartStory(TextAsset JsonAsset)
+	[SerializeField] private TextMeshProUGUI textField = null;
+	[SerializeField] private GameObject textBubble = null;
+	[SerializeField] private GameSettings Settings = null;
+	private Story story = null;
+	private bool isStoryActive = false;
+	private Coroutine type = null;
+	private UnityEvent endEvent;
+	public void StartStory(TextAsset JsonAsset)
 	{
 		if (isStoryActive) return;
 
 		story = new Story(JsonAsset.text);
 		isStoryActive = true;
 		textBubble.SetActive(true);
-		DisplayNextLine();
 	}
 
-	public void OnClick()
+	public void OnInput(InputAction.CallbackContext value)
 	{
-		DisplayNextLine();
+		if (!gameObject.scene.IsValid()) return;
+		if (value.performed && isStoryActive) DisplayNextLine();
 	}
-	public void OnSubmit()
+	public void SetEndEvent(UnityEvent end)
 	{
-		DisplayNextLine();
+		endEvent = end;
 	}
-
 	public void DisplayNextLine()
 	{
 		if (!story.canContinue)
 		{
 			isStoryActive = false;
 			textBubble.SetActive(false);
+			if (endEvent != null)
+			{
+				endEvent.Invoke();
+				endEvent = null;
+			}
 			return;
 		}
 
-		string text = story.Continue(); // gets next line
-		text = text?.Trim(); // removes white space from text
-		textField.text = text; // displays new text
+		string sentence = story.Continue();
+		if (type != null) StopCoroutine(type);
+		type = StartCoroutine(TypeSentence(sentence));
+	}
+	private IEnumerator TypeSentence(string sentence)
+	{
+		textField.text = "";
+		foreach (char letter in sentence.ToCharArray())
+		{
+			int timer = 0;
+			while (timer <= Settings.TextSpeed)
+			{
+				timer++;
+				yield return null;
+			}
+			textField.text += letter;
+			yield return null;
+		}
 	}
 }

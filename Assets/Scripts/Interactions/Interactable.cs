@@ -1,14 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Ink.Runtime;
 
 public class Interactable : MonoBehaviour
 {
-	private Camera mainCamera;
-	[SerializeField] private GameObject interactIcon;
-	[SerializeField] private string playerTag;
-	[SerializeField] private TextAsset StoryJson;
+	private Camera mainCamera = null;
+	[SerializeField] protected GameObject interactIcon = null;
+	[SerializeField] private string playerTag = "Player";
+
+	[SerializeField] [FMODUnity.EventRef] protected string interactSound = null;
 	void Start()
 	{
 		mainCamera = Camera.main;
@@ -28,8 +26,9 @@ public class Interactable : MonoBehaviour
 			interactIcon.SetActive(false);
 		}
 	}
-	public void Interact(GameObject player)
+	public virtual void Interact(GameObject player)
 	{
-		player.SendMessage("StartStory", StoryJson, SendMessageOptions.DontRequireReceiver);
+		interactIcon.SetActive(false);
+		FMODUnity.RuntimeManager.PlayOneShot(interactSound);
 	}
 }
