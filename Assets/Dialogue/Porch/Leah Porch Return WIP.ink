@@ -1,5 +1,9 @@
 //jumping back from George
 //proud pose
-There, done! Grandpa would be proud of me for doing this on my own. Just like he did.
+ I did it! 
+ I actually built it by myself! 
+ Grandpa would be proud of me, if only he could see me now. 
+ From architect to builder…
 //looking over
-A few nails got a little bent but it should still hold up good.
+Some nails got bent, but that shouldn’t matter much. 
+It still looks stable.
