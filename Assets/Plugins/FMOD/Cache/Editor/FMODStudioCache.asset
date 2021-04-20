@@ -39,7 +39,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-8258578479776003570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,7 +60,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -8314688590156255807}
+  - {fileID: 900092915226735277}
   MinDistance: 0
   MaxDistance: 0
   Length: 501
@@ -229,7 +229,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-5518966797177265516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,6 +254,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 501
+--- !u!114 &-5117677450690774643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Event_Manager/Skip start
+  m_EditorClassIdentifier: 
+  Name: Skip start
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-5006727177970594162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,6 +317,29 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &-4652429536202827519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Interactions/2D/Interaction_Wood_Chop
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Interactions/2D/Interaction_Wood_Chop
+  guid: 71a7b30079ae124aaaadd8c7832db448
+  Banks:
+  - {fileID: 7008268374007011970}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 445
 --- !u!114 &-3156236215566893470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,11 +395,11 @@ MonoBehaviour:
   Path: Assets/THTMGB Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637544265656693486
+  lastModified: 637545243063606592
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1690
+    Value: 1950
   Exists: 1
 --- !u!114 &-2179219934082360233
 MonoBehaviour:
@@ -421,6 +464,49 @@ MonoBehaviour:
     data1: 3790197359
     data2: 564719953
   Exists: 1
+--- !u!114 &-1151928829034258811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Interaction_Plank_Shake/ShakeLevel
+  m_EditorClassIdentifier: 
+  Name: ShakeLevel
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &-402968636048595297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Interactions/2D/Interaction_Pickup_Axe
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Interactions/2D/Interaction_Pickup_Axe
+  guid: 2a7c0c4e5939ed4f99a8c84d6ceb95c6
+  Banks:
+  - {fileID: 7008268374007011970}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 667
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,13 +532,17 @@ MonoBehaviour:
   - {fileID: 2431150561815548764}
   - {fileID: 2755278336500240511}
   - {fileID: 7900076382208849997}
+  - {fileID: 401145635146370182}
+  - {fileID: -402968636048595297}
+  - {fileID: -4652429536202827519}
+  - {fileID: 5150585211852980548}
   EditorParameters:
   - {fileID: 4530182691157224123}
   MasterBanks:
   - {fileID: 7008268374007011970}
   StringsBanks:
   - {fileID: -2665952247041537005}
-  stringsBankWriteTime: 637544265656693486
+  stringsBankWriteTime: 637545243063606592
   cacheVersion: 6
 --- !u!114 &376610007543280610
 MonoBehaviour:
@@ -477,6 +567,30 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 3760
+--- !u!114 &401145635146370182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Interactions/2D/Interaction_Plank_Shake
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Interactions/2D/Interaction_Plank_Shake
+  guid: 07692cd68dbefa4d8a24f7a6b071234a
+  Banks:
+  - {fileID: 7008268374007011970}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -1151928829034258811}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 7918
 --- !u!114 &517424040587648745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -517,6 +631,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &900092915226735277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Player_Move/Surface
+  m_EditorClassIdentifier: 
+  Name: Surface
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &966057166195302779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -601,7 +735,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &1993428560342766858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -711,6 +845,26 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 1690
+  Exists: 1
+--- !u!114 &3075835684706629148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Event_Manager/Track
+  m_EditorClassIdentifier: 
+  Name: Track
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
   Exists: 1
 --- !u!114 &3932614409467255290
 MonoBehaviour:
@@ -826,6 +980,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 6000
+--- !u!114 &5150585211852980548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Interactions/2D/Interaction_Pickup_Planks
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Interactions/2D/Interaction_Pickup_Planks
+  guid: 790fc337884b3c42807bda8236e5a1f4
+  Banks:
+  - {fileID: 7008268374007011970}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 426
 --- !u!114 &5377429349899822878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -884,7 +1061,7 @@ MonoBehaviour:
   Path: Assets/THTMGB Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637544265657043289
+  lastModified: 637545243063936414
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -928,8 +1105,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -5629999032401209522}
-  - {fileID: 1620780475183077245}
+  - {fileID: 3075835684706629148}
+  - {fileID: -5117677450690774643}
   MinDistance: 0
   MaxDistance: 0
   Length: 2000
