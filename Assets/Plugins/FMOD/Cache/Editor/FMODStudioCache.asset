@@ -60,10 +60,50 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -878176185320962376}
+  - {fileID: 8972661699494437708}
   MinDistance: 0
   MaxDistance: 0
   Length: 501
+--- !u!114 &-8135188506539034849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Event_Manager/Skip start
+  m_EditorClassIdentifier: 
+  Name: Skip start
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &-7882702523312646547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Event_Manager/Track
+  m_EditorClassIdentifier: 
+  Name: Track
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-7869418901009854596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,6 +230,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 650
+--- !u!114 &-6172810059814670361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Interactions/2D/Interaction_Tree_Fall
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Interactions/2D/Interaction_Tree_Fall
+  guid: 7d9244095b90514cb121b1e430524dc6
+  Banks:
+  - {fileID: 7008268374007011970}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3440
 --- !u!114 &-5897169086981191928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -435,11 +498,11 @@ MonoBehaviour:
   Path: Assets/THTMGB Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637546012129012247
+  lastModified: 637546030524144254
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1950
+    Value: 1990
   Exists: 1
 --- !u!114 &-2179219934082360233
 MonoBehaviour:
@@ -524,6 +587,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &-888060954071548160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Interaction_Plank_Shake/ShakeLevel
+  m_EditorClassIdentifier: 
+  Name: ShakeLevel
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-878176185320962376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -573,14 +656,35 @@ MonoBehaviour:
   - {fileID: -5260908872426997430}
   - {fileID: 2626740103598372466}
   - {fileID: 4856823014191016303}
+  - {fileID: -6172810059814670361}
   EditorParameters:
   - {fileID: 4530182691157224123}
   MasterBanks:
   - {fileID: 7008268374007011970}
   StringsBanks:
   - {fileID: -2665952247041537005}
-  stringsBankWriteTime: 637546012129012247
+  stringsBankWriteTime: 637546030524144254
   cacheVersion: 6
+--- !u!114 &329764834612610254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Interaction_Plank_Shake/ShakeLevel
+  m_EditorClassIdentifier: 
+  Name: ShakeLevel
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &376610007543280610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -605,6 +709,26 @@ MonoBehaviour:
   MaxDistance: 0
   Length: 3760
 --- !u!114 &517424040587648745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Player_Move/Surface
+  m_EditorClassIdentifier: 
+  Name: Surface
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &573459870953313832
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -729,6 +853,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &1822160158045443484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Event_Manager/Track
+  m_EditorClassIdentifier: 
+  Name: Track
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &1993428560342766858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -772,7 +916,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 9106284625646145380}
+  - {fileID: 329764834612610254}
   MinDistance: 0
   MaxDistance: 0
   Length: 7918
@@ -1037,6 +1181,26 @@ MonoBehaviour:
     data1: 3790197359
     data2: 564719953
   Exists: 1
+--- !u!114 &4604717020903007412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Event_Manager/Skip start
+  m_EditorClassIdentifier: 
+  Name: Skip start
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &4790436077494440404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1161,7 +1325,7 @@ MonoBehaviour:
   Path: Assets/THTMGB Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637546012128967121
+  lastModified: 637546030524124324
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -1205,8 +1369,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 2550008305333411760}
-  - {fileID: 4105774902017391605}
+  - {fileID: -7882702523312646547}
+  - {fileID: 4604717020903007412}
   MinDistance: 0
   MaxDistance: 0
   Length: 2000
@@ -1289,6 +1453,26 @@ MonoBehaviour:
   ID:
     data1: 142602596
     data2: 159044236
+  Exists: 1
+--- !u!114 &8972661699494437708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Player_Move/Surface
+  m_EditorClassIdentifier: 
+  Name: Surface
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
   Exists: 1
 --- !u!114 &9106284625646145380
 MonoBehaviour:
