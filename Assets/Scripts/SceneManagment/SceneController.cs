@@ -12,15 +12,16 @@ namespace Scene
 	{
 		#region Initializations
 		public static SceneController instance;
+        public static int currentSceneLevel = 0;
 
-		public Animator animator;
-		public string fadeOutClip = null;
-		public string fadeInClip = null;
-		public GameObject transitionObject;
+        [SerializeField] private Animator animator;
+	    [SerializeField] private string fadeOutClip = null;
+        [SerializeField] private string fadeInClip = null;
+        [SerializeField] private GameObject transitionObject;
 
-		[FMODUnity.EventRef] public string transitionSound = null;
+		[FMODUnity.EventRef] [SerializeField] private string transitionSound = null;
 
-		public int sceneChangeDelay = 2;
+        [SerializeField] private int sceneChangeDelay = 2;
 
 		// Something to use?
 		public static UnityAction<SceneController> onChange = delegate { };
