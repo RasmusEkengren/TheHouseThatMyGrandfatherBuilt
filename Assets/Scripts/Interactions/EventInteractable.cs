@@ -8,12 +8,16 @@ public class EventInteractable : Interactable
 	private bool isTriggered = false;
 	public override void Interact(GameObject player)
 	{
-		if (!isTriggered)
+		if (!isTriggered && interactIcon.activeSelf)
 		{
-			interactions.Invoke();
 			interactIcon.SetActive(false);
+			interactions.Invoke();
 			FMODUnity.RuntimeManager.PlayOneShot(interactSound);
 			isTriggered = isOneTime;
 		}
+	}
+	public void setIsTrigger(bool triggered)
+	{
+		isTriggered = triggered;
 	}
 }
