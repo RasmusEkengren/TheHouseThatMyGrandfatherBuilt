@@ -5827,9 +5827,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   circle: {fileID: 477835484}
   HitIndicator: {fileID: 321761852}
-  startSize: 3
+  startSize: 6
   startHealth: 3
-  gameSpeed: 2.5
+  gameSpeed: 3
   tolerance: 0.2
   cutSound: event:/SFX/Interactions/2D/Interaction_Wood_Chop
   finishEvent:
@@ -9709,13 +9709,15 @@ MonoBehaviour:
   redZone1: {fileID: 948708180}
   redZone2: {fileID: 402805448}
   arrow: {fileID: 625009477}
-  moveSpeed: 100
+  moveSpeed: 70
   fallLimit: 2
   intervalRange:
   - 2
-  - 3
+  - 2
+  - 2
   speedRange:
   - 60
+  - 105
   - 105
   fallEvents:
     m_PersistentCalls:
