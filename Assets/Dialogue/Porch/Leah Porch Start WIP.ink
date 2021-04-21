@@ -1,2 +1,7 @@
 //looking over it
-Wow this is not usable at all. I need to rebuild it… I should sketch up a blueprint first but- what was it that Grandpa said he did? //thinking pose
+This doesn’t seem stable anymore, it’s so decayed. 
+As good a place to start as any I guess. 
+I want it to look like it used to, how grandpa built it. 
+How was it that it looked now again...? //thinking pose
+
+->END
