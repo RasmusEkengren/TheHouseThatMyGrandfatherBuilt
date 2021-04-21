@@ -37,7 +37,7 @@ public class PlankBalancing : MonoBehaviour
 		balancingSoundInstance.start();
 		offBalance = 0f;
 		timer = 0f;
-		greenPip.localPosition = new Vector3(greenPip.localPosition.x, 0f, greenPip.localPosition.z);
+		greenPip.localPosition = new Vector3(0f, greenPip.localPosition.y, greenPip.localPosition.z);
 		ChangeSpeed();
 	}
 	private void ChangeSpeed()
@@ -53,7 +53,7 @@ public class PlankBalancing : MonoBehaviour
 			if (moveDir == 1) moveDir = -1;
 			else moveDir = 1;
 		}
-		arrow.localScale = new Vector3(1, -moveDir, 1);
+		arrow.localScale = new Vector3(1, moveDir, 1);
 	}
 	void OnEnable()
 	{
@@ -74,12 +74,12 @@ public class PlankBalancing : MonoBehaviour
 			ChangeSpeed();
 			timer = 0f;
 		}
-		greenPip.localPosition += Vector3.up * Time.deltaTime * currentSpeed * moveDir;
-		greenPip.localPosition += new Vector3(0f, moveVal.y, 0f) * Time.deltaTime * moveSpeed;
-		if (greenPip.localPosition.y > redZone1.localPosition.y) greenPip.localPosition = new Vector3(greenPip.localPosition.x, redZone1.localPosition.y, greenPip.localPosition.z);
-		else if (greenPip.localPosition.y < redZone2.localPosition.y) greenPip.localPosition = new Vector3(greenPip.localPosition.x, redZone2.localPosition.y, greenPip.localPosition.z);
-		if (greenPip.localPosition.y + greenPip.sizeDelta.y * 0.5f > redZone1.localPosition.y - redZone1.sizeDelta.y * 0.5f ||
-			greenPip.localPosition.y - greenPip.sizeDelta.y * 0.5f < redZone2.localPosition.y + redZone1.sizeDelta.y * 0.5f)
+		greenPip.localPosition += Vector3.right * Time.deltaTime * currentSpeed * moveDir;
+		greenPip.localPosition += new Vector3(moveVal.x, 0f, 0f) * Time.deltaTime * moveSpeed;
+		if (greenPip.localPosition.x < redZone1.localPosition.x) greenPip.localPosition = new Vector3(redZone1.localPosition.x, greenPip.localPosition.y, greenPip.localPosition.z);
+		else if (greenPip.localPosition.x > redZone2.localPosition.x) greenPip.localPosition = new Vector3(redZone2.localPosition.x, greenPip.localPosition.y, greenPip.localPosition.z);
+		if (greenPip.localPosition.x - greenPip.sizeDelta.x * 0.5f < redZone1.localPosition.x + redZone1.sizeDelta.x * 0.5f ||
+			greenPip.localPosition.x + greenPip.sizeDelta.x * 0.5f > redZone2.localPosition.x - redZone1.sizeDelta.x * 0.5f)
 		{
 			offBalance += Time.deltaTime;
 		}
@@ -87,7 +87,7 @@ public class PlankBalancing : MonoBehaviour
 		{
 			offBalance -= Time.deltaTime;
 		}
-		float parameterValue = (Mathf.Abs(greenPip.localPosition.y) / Mathf.Abs(redZone1.localPosition.y)) * 2f;
+		float parameterValue = (Mathf.Abs(greenPip.localPosition.x) / Mathf.Abs(redZone1.localPosition.x)) * 2f;
 		balancingSoundInstance.setParameterByName(plankShakeParameter, parameterValue);
 		balancingSoundInstance.getParameterByName(plankShakeParameter, out parameterValue);
 		Debug.Log(parameterValue);
