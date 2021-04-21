@@ -11,6 +11,7 @@ public class WoodCutting : MonoBehaviour
 	[SerializeField] private float gameSpeed = 1f;
 	[SerializeField] private float tolerance = 0.2f;
 	[SerializeField] [FMODUnity.EventRef] protected string cutSound = null;
+	[SerializeField] [FMODUnity.EventRef] protected string missSound = null;
 	[SerializeField] private UnityEvent finishEvent = null;
 	private float health = 0;
 	private bool isGameActive = false;
@@ -66,10 +67,14 @@ public class WoodCutting : MonoBehaviour
 		if (!gameObject.scene.IsValid()) return;
 		if (value.performed && isGameActive && waitTimer < 0f)
 		{
-			FMODUnity.RuntimeManager.PlayOneShot(cutSound);
 			float strength = circle.transform.localScale.x;
 			float target = HitIndicator.transform.localScale.x;
-			if (strength < target + tolerance && strength > target - tolerance) health -= 1;
+			if (strength < target + tolerance && strength > target - tolerance)
+			{
+				health -= 1;
+				FMODUnity.RuntimeManager.PlayOneShot(cutSound);
+			}
+			else FMODUnity.RuntimeManager.PlayOneShot(missSound);
 			Debug.Log(strength + ", " + target);
 			ResetIndicator();
 		}

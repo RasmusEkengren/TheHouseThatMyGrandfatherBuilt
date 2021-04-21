@@ -23,7 +23,6 @@ public class PlankBalancing : MonoBehaviour
 	private float currentInterval = 0;
 	private float currentSpeed = 0;
 	private int moveDir = 0;
-	private int sameDir = 0;
 	[SerializeField] [EventRef] protected string plankBalancingSound = null;
 	private string plankShakeParameter = "ShakeLevel";
 	private EventInstance balancingSoundInstance;
@@ -44,16 +43,6 @@ public class PlankBalancing : MonoBehaviour
 	{
 		currentInterval = Random.Range(intervalRange[0], intervalRange[1]);
 		currentSpeed = Random.Range(speedRange[0], speedRange[1]);
-		int lastDir = moveDir;
-		if (Random.Range(0, 2) == 0) moveDir = 1;
-		else moveDir = -1;
-		if (lastDir == moveDir) sameDir++;
-		if (sameDir >= 2)
-		{
-			if (moveDir == 1) moveDir = -1;
-			else moveDir = 1;
-		}
-		arrow.localScale = new Vector3(1, moveDir, 1);
 	}
 	void OnEnable()
 	{
@@ -69,6 +58,15 @@ public class PlankBalancing : MonoBehaviour
 	void Update()
 	{
 		timer += Time.deltaTime;
+		if (greenPip.localPosition.x > 0f)
+		{
+			moveDir = 1;
+		}
+		else
+		{
+			moveDir = -1;
+		}
+		arrow.localScale = new Vector3(1, moveDir, 1);
 		if (timer > currentInterval)
 		{
 			ChangeSpeed();
