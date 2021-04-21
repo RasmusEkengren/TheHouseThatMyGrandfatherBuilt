@@ -1,2 +1,2 @@
-I need my axe before I can cut this down.
-There should be one around here somewhere.
+I'll need my axe before I can cut this down.
+Last I used it was by the workshop.
