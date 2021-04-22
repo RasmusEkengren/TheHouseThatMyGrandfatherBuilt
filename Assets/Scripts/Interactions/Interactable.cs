@@ -10,13 +10,13 @@ public class Interactable : MonoBehaviour
 	void Start()
 	{
 		mainCamera = Camera.main;
-		interactIcon.transform.forward = mainCamera.transform.forward;
 	}
 	void OnTriggerEnter(Collider collider)
 	{
 		if (collider.gameObject.tag == playerTag)
 		{
 			interactIcon.SetActive(true);
+			interactIcon.transform.forward = mainCamera.transform.forward;
 		}
 	}
 	void OnTriggerExit(Collider collider)
