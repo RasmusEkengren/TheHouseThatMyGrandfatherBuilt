@@ -53,13 +53,13 @@ public class PlayerMovement : MonoBehaviour
 	public void FallDown()
 	{
 		hasFallen = true;
-		savedWalkSpeed = autoWalkSpeed;
 		autoWalkSpeed = 0f;
 	}
 	void Start()
 	{
 		mainCamera = Camera.main;
 		direction = Vector2.zero;
+		savedWalkSpeed = autoWalkSpeed;
 	}
 	private void PlayFootstep()
 	{
