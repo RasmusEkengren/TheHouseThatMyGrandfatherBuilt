@@ -21,14 +21,13 @@ public class ObjectSceneLevel : MonoBehaviour
         UpdateState();
     }
 
-    private void MovePlayer()
+    public void MovePlayer()
     {
         player = FindObjectOfType<PlayerMovement>().gameObject;
         Debug.Log("Got player: " + player.gameObject.name, player.gameObject);
 
         player.gameObject.transform.rotation = transform.rotation;
         player.gameObject.transform.position = transform.position;
-        player.gameObject.transform.position = new Vector3(10,5,10);
         Debug.Log("Moved player", gameObject);
     }
 
@@ -37,8 +36,11 @@ public class ObjectSceneLevel : MonoBehaviour
         UpdateState();
     }
 
-    private void UpdateState()
+    public void UpdateState()
     {
+#if UNITY_EDITOR
+
+#endif
         if (sceneType == SceneController.instance.sceneType)
         {
             if (SceneController.currentSceneLevel == sceneLevel)
@@ -54,6 +56,6 @@ public class ObjectSceneLevel : MonoBehaviour
                 gameObject.SetActive(false);
             }
         }
-    }
+}
 }
 
