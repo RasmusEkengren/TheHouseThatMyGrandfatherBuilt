@@ -7,26 +7,37 @@ using System.Collections;
 
 public class InkManager : MonoBehaviour
 {
-	[SerializeField] private TextMeshProUGUI textField = null;
+	[System.NonSerialized] public bool isStoryActive = false;
+	[System.NonSerialized] public bool isCutsceneActive = false;
+	[SerializeField] private TextMeshProUGUI textBubbleTextField = null;
+	[SerializeField] private TextMeshProUGUI cutsceneTextField = null;
 	[SerializeField] private GameObject textBubble = null;
+	[SerializeField] private GameObject cutscenePanel = null;
 	[SerializeField] private GameSettings Settings = null;
 	private Story story = null;
-	private bool isStoryActive = false;
 	private Coroutine type = null;
 	private UnityEvent endEvent;
 	public void StartStory(TextAsset JsonAsset)
 	{
-		if (isStoryActive) return;
+		if (isStoryActive || isCutsceneActive) return;
 
 		story = new Story(JsonAsset.text);
 		isStoryActive = true;
 		textBubble.SetActive(true);
 	}
+	public void StartCutscene(TextAsset JsonAsset)
+	{
+		if (isCutsceneActive) return;
 
+		story = new Story(JsonAsset.text);
+		isCutsceneActive = true;
+		cutscenePanel.SetActive(true);
+		DisplayNextLine();
+	}
 	public void OnInput(InputAction.CallbackContext value)
 	{
 		if (!gameObject.scene.IsValid()) return;
-		if (value.performed && isStoryActive) DisplayNextLine();
+		if (value.performed && (isStoryActive || isCutsceneActive)) DisplayNextLine();
 	}
 	public void SetEndEvent(UnityEvent end)
 	{
@@ -36,23 +47,30 @@ public class InkManager : MonoBehaviour
 	{
 		if (!story.canContinue)
 		{
-			isStoryActive = false;
-			textBubble.SetActive(false);
+			if (isCutsceneActive)
+			{
+				isCutsceneActive = false;
+				cutscenePanel.SetActive(false);
+			}
+			else
+			{
+				isStoryActive = false;
+				textBubble.SetActive(false);
+			}
 			if (endEvent != null)
 			{
 				endEvent.Invoke();
-				endEvent = null;
 			}
 			return;
 		}
-
 		string sentence = story.Continue();
 		if (type != null) StopCoroutine(type);
 		type = StartCoroutine(TypeSentence(sentence));
 	}
 	private IEnumerator TypeSentence(string sentence)
 	{
-		textField.text = "";
+		if (isCutsceneActive) cutsceneTextField.text = "";
+		else textBubbleTextField.text = "";
 		foreach (char letter in sentence.ToCharArray())
 		{
 			int timer = 0;
@@ -61,7 +79,8 @@ public class InkManager : MonoBehaviour
 				timer++;
 				yield return null;
 			}
-			textField.text += letter;
+			if (isCutsceneActive) cutsceneTextField.text += letter;
+			else textBubbleTextField.text += letter;
 			yield return null;
 		}
 	}
