@@ -73,6 +73,10 @@ public class SceneController : MonoBehaviour
         {
             if (operation.progress >= 0.9f)
             {
+                if (sceneType == SceneType.Scene.Leah && !GameController.introDone)
+                {
+                    GameController.introDone = true;
+                }
                 PlayVFX(1);
                 currentSceneLevel += 1;
                 if (sceneType == SceneType.Scene.Leah) leahSceneLevel += 1;
