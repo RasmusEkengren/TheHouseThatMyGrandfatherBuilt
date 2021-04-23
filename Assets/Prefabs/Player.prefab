@@ -235,8 +235,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2e9d8173064ed7459b912cc905d667b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textField: {fileID: 0}
+  textBubbleTextField: {fileID: 0}
+  cutsceneTextField: {fileID: 0}
   textBubble: {fileID: 0}
+  cutscenePanel: {fileID: 0}
   Settings: {fileID: 11400000, guid: c5379837ec5447a468fb964687060575, type: 2}
 --- !u!114 &4563503609429547019
 MonoBehaviour:
@@ -314,6 +316,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5453718785326181456, guid: 954c85ce90f4e584e8398576075d4211, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: aa5d93999987b854eb1d6654dba4e83b, type: 2}
     - target: {fileID: 180053139347550964, guid: 954c85ce90f4e584e8398576075d4211, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -423,6 +429,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 480e96856a3c3764eb6460f86959f228, type: 3}
       propertyPath: m_Name
       value: Leah
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 480e96856a3c3764eb6460f86959f228, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6325058632294797589, guid: 480e96856a3c3764eb6460f86959f228, type: 3}
       propertyPath: m_Materials.Array.data[0]
