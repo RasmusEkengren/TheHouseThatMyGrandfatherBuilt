@@ -11,9 +11,12 @@ public class Sawing : MonoBehaviour
 	[SerializeField] private RectTransform saw = null;
 	[SerializeField] private RectTransform plank = null;
 	[SerializeField] private RectTransform cutLine = null;
+	[SerializeField] private RectTransform piece1 = null;
+	[SerializeField] private RectTransform piece2 = null;
 	private bool isCutting = false;
 	private Vector2 moveVal = Vector2.zero;
 	[SerializeField] private float sawMoveSpeed = 200f;
+	[SerializeField] private float sawCuttingSpeed = 200f;
 	[SerializeField] private float lineTolerance = 6f;
 	[SerializeField] [EventRef] protected string startCutSound = null;
 	[SerializeField] [EventRef] protected string CuttingSound = null;
@@ -48,10 +51,14 @@ public class Sawing : MonoBehaviour
 	{
 		if (isCutting)
 		{
-			//Maybe use volume instead, or parameter might work better;
+			//Maybe use volume instead, or an event parameter might work better;
 			if (Mathf.Abs(moveVal.y) < 0.1) cuttingSoundInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 			else cuttingSoundInstance.start();
+			saw.localPosition += new Vector3(0, moveVal.y, 0) * sawCuttingSpeed * Time.deltaTime;
 		}
-		saw.localPosition += new Vector3(isCutting ? 0 : moveVal.x, isCutting ? moveVal.y : 0, 0) * sawMoveSpeed * Time.deltaTime;
+		else
+		{
+			saw.localPosition += new Vector3(moveVal.x, 0, 0) * sawMoveSpeed * Time.deltaTime;
+		}
 	}
 }
