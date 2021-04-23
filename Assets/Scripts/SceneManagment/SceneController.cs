@@ -18,8 +18,7 @@ public class SceneController : MonoBehaviour
     #region Initializations
     public static SceneController instance;
     public SceneType.Scene sceneType;
-    //[Tooltip("Level of the current scene type, starting from 0")]
-    //[Range(0, 5)]
+
     public static int currentSceneLevel = 0;
     private static int leahSceneLevel = 0;
     private static int georgeSceneLevel = 0;
@@ -37,9 +36,10 @@ public class SceneController : MonoBehaviour
     {
         if (instance == null)
         {
+            DontDestroyOnLoad(gameObject);
             instance = this;
         }
-        else
+        else if (instance != this)
         {
             Destroy(gameObject);
         }
