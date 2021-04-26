@@ -17,6 +17,8 @@ public class IntroOutro : MonoBehaviour
 	private Story story = null;
 	private int currentStory = 0;
 	private Coroutine type = null;
+	private bool isTyping = false;
+	private string sentence = "";
 	private void StartStory(TextAsset JsonAsset)
 	{
 		story = new Story(JsonAsset.text);
@@ -34,20 +36,28 @@ public class IntroOutro : MonoBehaviour
 	}
 	public void DisplayNextLine()
 	{
+		if (isTyping)
+		{
+			textField.text = sentence;
+			if (type != null) StopCoroutine(type);
+			isTyping = false;
+			return;
+		}
 		if (!story.canContinue)
 		{
 			currentStory++;
 			if (currentStory >= stories.Length) changeSceneEvent.Invoke();
-			StartStory(stories[currentStory]);
+			if (currentStory < stories.Length) StartStory(stories[currentStory]);
 			return;
 		}
-		string sentence = story.Continue();
+		sentence = story.Continue();
 		if (type != null) StopCoroutine(type);
 		type = StartCoroutine(TypeSentence(sentence));
 	}
 	private IEnumerator TypeSentence(string sentence)
 	{
 		textField.text = "";
+		isTyping = true;
 		foreach (char letter in sentence.ToCharArray())
 		{
 			int timer = 0;
@@ -59,6 +69,7 @@ public class IntroOutro : MonoBehaviour
 			textField.text += letter;
 			yield return null;
 		}
+		isTyping = false;
 	}
 	private IEnumerator Fade()
 	{

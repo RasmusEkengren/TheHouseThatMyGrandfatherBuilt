@@ -17,6 +17,8 @@ public class InkManager : MonoBehaviour
 	private Story story = null;
 	private Coroutine type = null;
 	private UnityEvent endEvent;
+	private bool isTyping = false;
+	private string sentence = "";
 	public void StartStory(TextAsset JsonAsset)
 	{
 		if (isStoryActive || isCutsceneActive) return;
@@ -45,6 +47,14 @@ public class InkManager : MonoBehaviour
 	}
 	public void DisplayNextLine()
 	{
+		if (isTyping)
+		{
+			if (isCutsceneActive) cutsceneTextField.text = sentence;
+			else textBubbleTextField.text = sentence;
+			if (type != null) StopCoroutine(type);
+			isTyping = false;
+			return;
+		}
 		if (!story.canContinue)
 		{
 			if (isCutsceneActive)
@@ -63,7 +73,7 @@ public class InkManager : MonoBehaviour
 			}
 			return;
 		}
-		string sentence = story.Continue();
+		sentence = story.Continue();
 		if (type != null) StopCoroutine(type);
 		type = StartCoroutine(TypeSentence(sentence));
 	}
@@ -71,6 +81,7 @@ public class InkManager : MonoBehaviour
 	{
 		if (isCutsceneActive) cutsceneTextField.text = "";
 		else textBubbleTextField.text = "";
+		isTyping = true;
 		foreach (char letter in sentence.ToCharArray())
 		{
 			int timer = 0;
@@ -83,5 +94,6 @@ public class InkManager : MonoBehaviour
 			else textBubbleTextField.text += letter;
 			yield return null;
 		}
+		isTyping = false;
 	}
 }
