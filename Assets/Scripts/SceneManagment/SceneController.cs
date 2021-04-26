@@ -12,6 +12,11 @@ public class SceneType
     public Scene sceneType;
 }
 
+public class GeorgeState
+{
+    public enum State{ Porch, Windows };
+}
+
 // This class will be the core hub for managing scenes
 public class SceneController : MonoBehaviour
 {
@@ -33,6 +38,8 @@ public class SceneController : MonoBehaviour
     [SerializeField] private int sceneChangeDelay = 2;
     private bool changingScene = false;
 
+    private GameObject player = null;
+
     private void Awake()
     {
         if (instance == null)
@@ -50,6 +57,7 @@ public class SceneController : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
         Debug.Log("Current scene levels --- Leah: " + leahSceneLevel + " || George: " + georgeSceneLevel);
+        player = GetComponent<PlayerMovement>().gameObject;
         // SceneManager.sceneLoaded += OnSceneLoaded();
     }
     #endregion Initializations
@@ -63,6 +71,10 @@ public class SceneController : MonoBehaviour
             AsyncOperation operation = SceneManager.LoadSceneAsync(nextScene);
             PlaySFX();
             GameController.instance.PauseGame(true);
+
+            GlobalSceneData.lastLeahPosition = player.transform.position;
+            GlobalSceneData.lastLeahRotation = player.transform.rotation;
+
             operation.allowSceneActivation = false;
 
             // While operation is loading

@@ -920,6 +920,7 @@ GameObject:
   - component: {fileID: 1037339317}
   - component: {fileID: 1037339316}
   - component: {fileID: 1037339315}
+  - component: {fileID: 1037339319}
   m_Layer: 0
   m_Name: Dummy 1
   m_TagString: Untagged
@@ -1004,6 +1005,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1037339319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037339314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d980239c61277f4584010483933f79c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  containerList:
+  - name: 
+    georgeState: 0
+  - name: 
+    georgeState: 0
+  testlist: 0400000022000000
 --- !u!1 &1089986944
 GameObject:
   m_ObjectHideFlags: 0
@@ -2087,6 +2106,10 @@ PrefabInstance:
     - target: {fileID: 1317287304921871952, guid: 170f2e7c3b00fea4eb190be30235e8d2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1317287304921871953, guid: 170f2e7c3b00fea4eb190be30235e8d2, type: 3}
+      propertyPath: sceneType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1317287304921871953, guid: 170f2e7c3b00fea4eb190be30235e8d2, type: 3}
       propertyPath: transitionSound
