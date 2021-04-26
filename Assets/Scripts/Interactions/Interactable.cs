@@ -5,7 +5,6 @@ public class Interactable : MonoBehaviour
 	private Camera mainCamera = null;
 	[SerializeField] protected GameObject interactIcon = null;
 	[SerializeField] private string playerTag = "Player";
-
 	[SerializeField] [FMODUnity.EventRef] protected string interactSound = null;
 	void Start()
 	{
