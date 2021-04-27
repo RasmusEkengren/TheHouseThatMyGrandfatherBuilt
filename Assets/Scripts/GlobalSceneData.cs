@@ -21,9 +21,15 @@ public class GlobalSceneData : MonoBehaviour
 
     public static bool mg_porchFixed;
     public static bool mg_windowsFixed;
+    public static bool tutorialDone;
 
     private void Start()
     {
 
     }
+
+    /// Health component som man kan binda events till
+    /// Tänk inte på det för mycket
+    /// Avbinda events
+    /// ?.
 }
