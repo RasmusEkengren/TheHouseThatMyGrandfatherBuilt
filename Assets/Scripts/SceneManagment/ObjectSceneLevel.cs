@@ -43,19 +43,16 @@ public class ObjectSceneLevel : MonoBehaviour
 #endif
         if (sceneType == SceneController.instance.sceneType)
         {
-            if (SceneController.currentSceneLevel == sceneLevel)
+            gameObject.SetActive(true);
+            if (movePlayer)
             {
-                gameObject.SetActive(true);
-                if (movePlayer)
-                {
-                    MovePlayer();
-                }
+                MovePlayer();
             }
             else
             {
                 gameObject.SetActive(false);
             }
         }
-}
+    }
 }
 

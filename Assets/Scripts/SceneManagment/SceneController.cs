@@ -24,10 +24,6 @@ public class SceneController : MonoBehaviour
     public static SceneController instance;
     public SceneType.Scene sceneType;
 
-    public static int currentSceneLevel = 0;
-    private static int leahSceneLevel = 0;
-    private static int georgeSceneLevel = 0;
-
     [SerializeField] private Animator animator;
     [SerializeField] private string fadeOutClip = null;
     [SerializeField] private string fadeInClip = null;
@@ -56,7 +52,6 @@ public class SceneController : MonoBehaviour
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
-        Debug.Log("Current scene levels --- Leah: " + leahSceneLevel + " || George: " + georgeSceneLevel);
         player = GetComponent<PlayerMovement>().gameObject;
         // SceneManager.sceneLoaded += OnSceneLoaded();
     }
@@ -93,10 +88,6 @@ public class SceneController : MonoBehaviour
                         GameController.introDone = true;
                     }
                     PlayVFX(1);
-                    currentSceneLevel += 1;
-                    if (sceneType == SceneType.Scene.Leah) leahSceneLevel += 1;
-                    if (sceneType == SceneType.Scene.George) georgeSceneLevel += 1;
-                    Debug.Log("Current scene levels --- Leah: " + leahSceneLevel + " || George: " + georgeSceneLevel);
                     operation.allowSceneActivation = true;
 
                     // Unpause Game (Or do it at the start of every scene)
