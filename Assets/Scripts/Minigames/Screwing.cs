@@ -10,19 +10,49 @@ public class Screwing : MonoBehaviour
 	[Serializable]
 	private class Screw
 	{
-		[SerializeField] public RectTransform screwPos;
+		[SerializeField] public RectTransform screwRect;
+		[SerializeField] public RectTransform screwHeadRect;
+		[SerializeField] public RectTransform holeRect;
 		[SerializeField] public GameObject glow;
-		public Screw(RectTransform screwPos, GameObject glow)
+		private Vector2 headSize;
+		private Vector2 screwSize;
+		private Vector2 startPos;
+		private Vector2 finishPos;
+		public Screw(RectTransform screwRect, RectTransform screwHeadRect, RectTransform holeRect, GameObject glow)
 		{
-			this.screwPos = screwPos;
+			this.screwRect = screwRect;
+			this.screwHeadRect = screwHeadRect;
+			this.holeRect = holeRect;
 			this.glow = glow;
+		}
+		private void setHeadPos()
+		{
+			Vector2 headTargetPos = new Vector2(screwRect.anchorMin.x + (screwRect.pivot.x * screwSize.x), screwRect.anchorMin.y + (screwRect.pivot.y * screwSize.y));
+			screwHeadRect.anchorMin = new Vector2(headTargetPos.x - headSize.x * 0.5f, headTargetPos.y - headSize.y * 0.5f);
+			screwHeadRect.anchorMax = new Vector2(headTargetPos.x + headSize.x * 0.5f, headTargetPos.y + headSize.y * 0.5f);
+		}
+		public void Start()
+		{
+			headSize = new Vector2(screwHeadRect.anchorMax.x - screwHeadRect.anchorMin.x, screwHeadRect.anchorMax.y - screwHeadRect.anchorMin.y);
+			screwSize = new Vector2(screwRect.anchorMax.x - screwRect.anchorMin.x, screwRect.anchorMax.y - screwRect.anchorMin.y);
+			startPos = new Vector2(screwRect.anchorMin.x + (screwRect.pivot.x * screwSize.x), screwRect.anchorMin.y + (screwRect.pivot.y * screwSize.y));
+			finishPos = ((holeRect.anchorMax - holeRect.anchorMin) * 0.5f) + holeRect.anchorMin;
 		}
 		public void setAngle(float angle)
 		{
-			screwPos.eulerAngles = new Vector3(0, 0, angle);
+			setHeadPos();
+			screwHeadRect.eulerAngles = new Vector3(0, 0, angle);
+		}
+		public void Move(float t)
+		{
+			screwRect.anchorMin = Vector2.Lerp(startPos, finishPos, t);
+			screwRect.anchorMin = new Vector2(screwRect.anchorMin.x - (screwRect.pivot.x * screwSize.x), screwRect.anchorMin.y - (screwRect.pivot.y * screwSize.y));
+			screwRect.anchorMax = screwRect.anchorMin + screwSize;
 		}
 		public void Select()
 		{
+			screwHeadRect.gameObject.SetActive(true);
+			screwRect.gameObject.SetActive(true);
 			glow.SetActive(true);
 		}
 		public void DeSelect()
@@ -51,10 +81,13 @@ public class Screwing : MonoBehaviour
 	}
 	void Start()
 	{
+		foreach (Screw screw in screws)
+		{
+			screw.Start();
+		}
 		currentScrew = 0;
 		screws[currentScrew].Select();
 	}
-	// Update is called once per frame
 	void Update()
 	{
 		if (currentScrew < screws.Length)
@@ -65,6 +98,7 @@ public class Screwing : MonoBehaviour
 			{
 				targetAngle -= screwingSpeed * Time.deltaTime;
 				timer += Time.deltaTime;
+				screws[currentScrew].Move(timer / screwTime);
 				if (soundTimer >= soundLength)
 				{
 					FMODUnity.RuntimeManager.PlayOneShot(screwSound);
