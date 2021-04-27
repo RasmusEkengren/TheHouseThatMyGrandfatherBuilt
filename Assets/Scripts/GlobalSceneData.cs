@@ -5,31 +5,36 @@ using UnityEngine;
 
 public class GlobalSceneData : MonoBehaviour
 {
-    [Serializable]
-    public class DataContainer
-    {
-        public string name = null;
-        public GeorgeState.State georgeState = GeorgeState.State.Porch;
-        public GameObject obj;
-    }
+	[Serializable]
+	public class DataContainer
+	{
+		public string name = null;
+		public GeorgeState.State georgeState = GeorgeState.State.Porch;
+		public GameObject obj;
+	}
 
-    public static Vector3 lastLeahPosition;
-    public static Quaternion lastLeahRotation;
-    public SceneType sceneType;
-    public List<DataContainer> containerList = new List<DataContainer>();
-    public List<int> testlist = new List<int>();
+	public static Vector3 lastLeahPosition;
+	public static Quaternion lastLeahRotation;
+	public SceneType sceneType;
+	public List<DataContainer> containerList = new List<DataContainer>();
+	public List<int> testlist = new List<int>();
 
-    public static bool mg_porchFixed;
-    public static bool mg_windowsFixed;
-    public static bool tutorialDone;
+	public static bool mg_porchFixed;
+	public static bool mg_windowsFixed;
+	public static bool tutorialDone;
+	public static bool introDone = false;
 
-    private void Start()
-    {
+	private void Start()
+	{
 
-    }
+	}
+	void Update()
+	{
+		if (mg_windowsFixed) Debug.Log("Yay once again!");
+	}
 
-    /// Health component som man kan binda events till
-    /// Tänk inte på det för mycket
-    /// Avbinda events
-    /// ?.
+	/// Health component som man kan binda events till
+	/// Tï¿½nk inte pï¿½ det fï¿½r mycket
+	/// Avbinda events
+	/// ?.
 }

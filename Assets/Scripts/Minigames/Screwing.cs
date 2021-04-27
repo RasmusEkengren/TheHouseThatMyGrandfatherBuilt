@@ -68,15 +68,14 @@ public class Screwing : MonoBehaviour
 	[SerializeField] private UnityEvent endEvent = null;
 	[SerializeField] [FMODUnity.EventRef] protected string screwSound = null;
 	[SerializeField] private float soundLength = 0.5f;
+	private static int gameCompletions = 0;
 	private int currentScrew = 0;
 	private float moveAngle = 0f;
 	private float targetAngle = 90f;
 	private float timer = 0;
 	private float soundTimer = 0;
-	public void OnMove(InputAction.CallbackContext value)
+	public void Move(Vector2 val)
 	{
-		if (!gameObject.scene.IsValid()) return;
-		Vector2 val = value.ReadValue<Vector2>();
 		moveAngle = Mathf.Atan2(val.y, val.x) * Mathf.Rad2Deg + 180;
 	}
 	void Start()
@@ -114,12 +113,13 @@ public class Screwing : MonoBehaviour
 				if (currentScrew >= screws.Length)
 				{
 					endEvent.Invoke();
+					gameCompletions++;
+					if (gameCompletions >= 1) GlobalSceneData.mg_windowsFixed = true;
 					return;
 				}
 				screws[currentScrew].Select();
 				timer = 0;
 			}
-
 		}
 	}
 }
