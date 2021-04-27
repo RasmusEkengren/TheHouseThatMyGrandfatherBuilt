@@ -12,6 +12,11 @@ public class SceneType
     public Scene sceneType;
 }
 
+public class GeorgeState
+{
+    public enum State{ Porch, Windows };
+}
+
 // This class will be the core hub for managing scenes
 public class SceneController : MonoBehaviour
 {
@@ -31,6 +36,9 @@ public class SceneController : MonoBehaviour
     [FMODUnity.EventRef] [SerializeField] private string transitionSound = null;
 
     [SerializeField] private int sceneChangeDelay = 2;
+    private bool changingScene = false;
+
+    private GameObject player = null;
 
     private void Awake()
     {
@@ -49,6 +57,7 @@ public class SceneController : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
         Debug.Log("Current scene levels --- Leah: " + leahSceneLevel + " || George: " + georgeSceneLevel);
+        player = GetComponent<PlayerMovement>().gameObject;
         // SceneManager.sceneLoaded += OnSceneLoaded();
     }
     #endregion Initializations
@@ -56,33 +65,45 @@ public class SceneController : MonoBehaviour
     #region PublicFunctions
     public IEnumerator LoadNextScene(string nextScene)
     {
-        //GameController.instance.PauseGame(true);
-        AsyncOperation operation = SceneManager.LoadSceneAsync(nextScene);
-        PlaySFX();
-        GameController.instance.PauseGame(true);
-        operation.allowSceneActivation = false;
-
-        // While operation is loading
-        transitionObject.SetActive(true);
-        PlayVFX(0);
-
-        yield return new WaitForSeconds(sceneChangeDelay);
-
-        // Wait until done
-        while (!operation.isDone)
+        if (!changingScene)
         {
-            if (operation.progress >= 0.9f)
-            {
-                PlayVFX(1);
-                currentSceneLevel += 1;
-                if (sceneType == SceneType.Scene.Leah) leahSceneLevel += 1;
-                if (sceneType == SceneType.Scene.George) georgeSceneLevel += 1;
-                Debug.Log("Current scene levels --- Leah: " + leahSceneLevel + " || George: " + georgeSceneLevel);
-                operation.allowSceneActivation = true;
+            //GameController.instance.PauseGame(true);
+            AsyncOperation operation = SceneManager.LoadSceneAsync(nextScene);
+            PlaySFX();
+            GameController.instance.PauseGame(true);
 
-                // Unpause Game (Or do it at the start of every scene)
+            GlobalSceneData.lastLeahPosition = player.transform.position;
+            GlobalSceneData.lastLeahRotation = player.transform.rotation;
+
+            operation.allowSceneActivation = false;
+
+            // While operation is loading
+            transitionObject.SetActive(true);
+            PlayVFX(0);
+
+            yield return new WaitForSeconds(sceneChangeDelay);
+
+            // Wait until done
+            while (!operation.isDone)
+            {
+                if (operation.progress >= 0.9f)
+                {
+                    if (sceneType == SceneType.Scene.Leah && !GameController.introDone)
+                    {
+                        GameController.introDone = true;
+                    }
+                    PlayVFX(1);
+                    currentSceneLevel += 1;
+                    if (sceneType == SceneType.Scene.Leah) leahSceneLevel += 1;
+                    if (sceneType == SceneType.Scene.George) georgeSceneLevel += 1;
+                    Debug.Log("Current scene levels --- Leah: " + leahSceneLevel + " || George: " + georgeSceneLevel);
+                    operation.allowSceneActivation = true;
+
+                    // Unpause Game (Or do it at the start of every scene)
+                    GameController.instance.PauseGame(false);
+                }
+                yield return null;
             }
-            yield return null;
         }
     }
 

@@ -7,7 +7,7 @@ public class SceneLevelEditor : EditorWindow
 {
     List<GameObject> list = new List<GameObject>();
     List<GameObject> objectsUsingLevels = new List<GameObject>();
-    bool addOnce = false;
+    // bool addOnce = false;
     Scene scene;
 
     private void OnEnable()
