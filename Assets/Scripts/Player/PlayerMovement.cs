@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
 	private int currentPoint = 0;
 	private Vector3 direction = Vector3.zero;
 	private bool isAutoWalking = false;
+    [HideInInspector] public bool isWalking = false;
 	private bool hasFallen = false;
 	private float turnSmoothVelocity = 0f;
 	private float groundCastMaxDist = 1.08f;
