@@ -9,10 +9,10 @@ public class PlankPile : MonoBehaviour
 	[SerializeField] private GameObject[] planksToDeactivate;
 	public void PickUp()
 	{
-		player.AutoWalk(pointsToMoveTo.points);
-		foreach (GameObject plank in planksToDeactivate)
-		{
-			plank.SetActive(false);
-		}
+		//player.AutoWalk(pointsToMoveTo.points);
+		//foreach (GameObject plank in planksToDeactivate)
+		//{
+		//	plank.SetActive(false);
+		//}
 	}
 }
