@@ -29,6 +29,10 @@ public class SceneController : MonoBehaviour
     [SerializeField] private string fadeInClip = null;
     [SerializeField] private GameObject transitionObject;
 
+    [Space]
+    [SerializeField] private GameEvent onSceneChange;
+    [Space]
+
     [FMODUnity.EventRef] [SerializeField] private string transitionSound = null;
 
     [SerializeField] private int sceneChangeDelay = 2;
@@ -63,20 +67,20 @@ public class SceneController : MonoBehaviour
         if (!changingScene)
         {
             changingScene = true;
+            transitionObject.SetActive(true);
+            PlayVFX(0);
 
             //GameController.instance.PauseGame(true);
             AsyncOperation operation = SceneManager.LoadSceneAsync(nextScene);
             PlaySFX();
-            GameController.instance.PauseGame(true);
+            //GameController.instance.PauseGame(true);
 
-            GlobalSceneData.lastLeahPosition = player.transform.position;
-            GlobalSceneData.lastLeahRotation = player.transform.rotation;
+            //GlobalSceneData.lastLeahPosition = player.transform.position;
+            //GlobalSceneData.lastLeahRotation = player.transform.rotation;
 
             operation.allowSceneActivation = false;
 
             // While operation is loading
-            transitionObject.SetActive(true);
-            PlayVFX(0);
 
             yield return new WaitForSeconds(sceneChangeDelay);
 
