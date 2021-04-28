@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
-
+using UnityEngine.UI;
 public class WoodCutting : MonoBehaviour
 {
 	[SerializeField] private GameObject circle = null;
@@ -11,10 +11,15 @@ public class WoodCutting : MonoBehaviour
 	[SerializeField] private float gameSpeed = 1f;
 	[SerializeField] private float tolerance = 0.2f;
 	[SerializeField] [FMODUnity.EventRef] protected string cutSound = null;
+	[SerializeField] [FMODUnity.EventRef] protected string missSound = null;
 	[SerializeField] private UnityEvent finishEvent = null;
+	[SerializeField] private Color normalColor = Color.white;
+	[SerializeField] private Color hitColor = Color.green;
+	[SerializeField] private Color missColor = Color.red;
 	private float health = 0;
 	private bool isGameActive = false;
-	private float waitTimer = 0.5f;
+	private float waitTimer = 0.2f;
+	private Image circleImage = null;
 	void Start()
 	{
 		circle.gameObject.SetActive(false);
@@ -30,6 +35,7 @@ public class WoodCutting : MonoBehaviour
 			}
 			else
 			{
+				circleImage.color = normalColor;
 				if (health <= 0)
 				{
 					isGameActive = false;
@@ -52,6 +58,7 @@ public class WoodCutting : MonoBehaviour
 	{
 		isGameActive = true;
 		circle.gameObject.SetActive(true);
+		circleImage = circle.GetComponent<Image>();
 		HitIndicator.gameObject.SetActive(true);
 		health = startHealth;
 		ResetIndicator();
@@ -60,16 +67,26 @@ public class WoodCutting : MonoBehaviour
 	{
 		circle.transform.localScale = Vector3.one * startSize;
 		HitIndicator.transform.localScale = Vector3.one;
+		waitTimer = 0.2f;
 	}
 	public void Hit(InputAction.CallbackContext value)
 	{
 		if (!gameObject.scene.IsValid()) return;
 		if (value.performed && isGameActive && waitTimer < 0f)
 		{
-			FMODUnity.RuntimeManager.PlayOneShot(cutSound);
 			float strength = circle.transform.localScale.x;
 			float target = HitIndicator.transform.localScale.x;
-			if (strength < target + tolerance && strength > target - tolerance) health -= 1;
+			if (strength < target + tolerance && strength > target - tolerance)
+			{
+				circleImage.color = hitColor;
+				health -= 1;
+				FMODUnity.RuntimeManager.PlayOneShot(cutSound);
+			}
+			else
+			{
+				circleImage.color = missColor;
+				FMODUnity.RuntimeManager.PlayOneShot(missSound);
+			}
 			Debug.Log(strength + ", " + target);
 			ResetIndicator();
 		}
