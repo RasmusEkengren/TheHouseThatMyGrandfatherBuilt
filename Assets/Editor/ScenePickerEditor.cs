@@ -2,15 +2,15 @@ using UnityEngine;
 using UnityEditor;
 using UnityEngine.SceneManagement;
 
-[CustomEditor(typeof(Scene.SceneChanger))]
+[CustomEditor(typeof(SceneChanger))]
 public class ScenePickerEditor : Editor
 {
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
-   
+
         // Save the script that this editor is on
-        Scene.SceneChanger sceneChanger = (Scene.SceneChanger)target;
+        SceneChanger sceneChanger = (SceneChanger)target;
 
         EditorGUI.BeginChangeCheck();
         // When input has been changed, update the string in SceneChanger with the scene name

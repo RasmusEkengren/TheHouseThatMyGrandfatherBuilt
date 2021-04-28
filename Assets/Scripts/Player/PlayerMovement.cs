@@ -25,8 +25,8 @@ public class PlayerMovement : MonoBehaviour
 
 	[SerializeField] [FMODUnity.EventRef] private string footstepSound = null;
 
-	[SerializeField] private float footstepInterval = 1.75f;
-	private float walkedDistance = 0f;
+    [SerializeField] private float footstepInterval = 0.28f;
+    private float walkedDistance = 0f;
 
 	public void Move(InputAction.CallbackContext value)
 	{
