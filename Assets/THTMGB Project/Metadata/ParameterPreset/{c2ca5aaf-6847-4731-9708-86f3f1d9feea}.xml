@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{c2ca5aaf-6847-4731-9708-86f3f1d9feea}">
+		<property name="name">
+			<value>Skip start</value>
+		</property>
+		<relationship name="folder">
+			<destination>{fff1dd7c-a6b4-4abe-8f8b-b3feadcf3ab6}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{4461a6e3-df1e-4f2f-92a1-83f5fbff3ad3}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{4461a6e3-df1e-4f2f-92a1-83f5fbff3ad3}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Nopnope</value>
+			<value>Yeppers</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
