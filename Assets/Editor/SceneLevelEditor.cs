@@ -43,30 +43,29 @@ public class SceneLevelEditor : EditorWindow
 
         GUILayout.Space(10f);
 
-        GUILayout.Label("Current Scene Level: " + SceneController.currentSceneLevel, EditorStyles.boldLabel);
 
         GUILayout.Space(15f);
 
         if (GUILayout.Button("Increase Level"))
         {
-            if (SceneController.currentSceneLevel <= 9)
-            {
-                Debug.Log("Increased scene level: " + SceneController.currentSceneLevel);
-                SceneController.currentSceneLevel += 1;
-                UpdateAllObjects();
-            }
+            //if (SceneController.currentSceneLevel <= 9)
+            //{
+            //    Debug.Log("Increased scene level: " + SceneController.currentSceneLevel);
+            //    SceneController.currentSceneLevel += 1;
+            //    UpdateAllObjects();
+            //}
         }
 
         GUILayout.Space(10f);
 
         if (GUILayout.Button("Decrease Level"))
         {
-            if (SceneController.currentSceneLevel >= 1)
-            {
-                Debug.Log("Decreased scene level: " + SceneController.currentSceneLevel);
-                SceneController.currentSceneLevel -= 1;
-                UpdateAllObjects();
-            }
+            //if (SceneController.currentSceneLevel >= 1)
+            //{
+            //    Debug.Log("Decreased scene level: " + SceneController.currentSceneLevel);
+            //    SceneController.currentSceneLevel -= 1;
+            //    UpdateAllObjects();
+            //}
         }
     }
 
