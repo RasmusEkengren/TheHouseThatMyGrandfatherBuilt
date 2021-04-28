@@ -6,18 +6,18 @@ using UnityEngine;
 public class GameEvent : ScriptableObject
 {
     // HashSet is a list where all entries are unique
-    HashSet<GameEventListener> listeners = new HashSet<GameEventListener>();
+    HashSet<GameEventListener> _listeners = new HashSet<GameEventListener>();
 
     // This will invoke the events on all GameEventListeners with this scriptable object
     public void Invoke()
     {
-        foreach(var globalEventListener in listeners)
+        foreach(GameEventListener globalEventListener in _listeners)
         {
             globalEventListener.RaiseEvent();
         }
     }
 
     // Shortening of a regular function 
-    public void Register(GameEventListener gameEventListener) => listeners.Add(gameEventListener);
-    public void Deregister(GameEventListener gameEventListener) => listeners.Remove(gameEventListener);
+    public void Register(GameEventListener gameEventListener) => _listeners.Add(gameEventListener);
+    public void Deregister(GameEventListener gameEventListener) => _listeners.Remove(gameEventListener);
 }

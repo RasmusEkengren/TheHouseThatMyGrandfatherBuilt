@@ -28,6 +28,11 @@ public class GlobalSceneData : MonoBehaviour
 		if (mg_windowsFixed) Debug.Log("Yay once again!");
 	}
 
+    public void SavePlayerPosition()
+    {
+
+    }
+
 	/// Health component som man kan binda events till
 	/// T�nk inte p� det f�r mycket
 	/// Avbinda events
