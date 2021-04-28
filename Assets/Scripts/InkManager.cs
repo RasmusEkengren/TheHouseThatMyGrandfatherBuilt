@@ -19,6 +19,7 @@ public class InkManager : MonoBehaviour
 	private UnityEvent endEvent;
 	private bool isTyping = false;
 	private string sentence = "";
+	private string functionToCall = null;
 	public void StartStory(TextAsset JsonAsset)
 	{
 		if (isStoryActive || isCutsceneActive) return;
@@ -32,9 +33,14 @@ public class InkManager : MonoBehaviour
 		if (isCutsceneActive) return;
 
 		story = new Story(JsonAsset.text);
+		if (functionToCall != null) story.EvaluateFunction(functionToCall);
 		isCutsceneActive = true;
 		cutscenePanel.SetActive(true);
 		DisplayNextLine();
+	}
+	public void SetStoryFunction(string functionName)
+	{
+		functionToCall = functionName;
 	}
 	public void OnInput(InputAction.CallbackContext value)
 	{
