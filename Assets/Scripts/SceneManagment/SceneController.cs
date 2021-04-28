@@ -57,7 +57,7 @@ public class SceneController : MonoBehaviour
 	{
 		DontDestroyOnLoad(gameObject);
 		Debug.Log("Current scene levels --- Leah: " + leahSceneLevel + " || George: " + georgeSceneLevel);
-		player = GetComponent<PlayerMovement>().gameObject;
+		//player = GetComponent<PlayerMovement>().gameObject;
 		// SceneManager.sceneLoaded += OnSceneLoaded();
 	}
 	#endregion Initializations
@@ -72,8 +72,8 @@ public class SceneController : MonoBehaviour
 			PlaySFX();
 			GameController.instance.PauseGame(true);
 
-			GlobalSceneData.lastLeahPosition = player.transform.position;
-			GlobalSceneData.lastLeahRotation = player.transform.rotation;
+			//GlobalSceneData.lastLeahPosition = player.transform.position;
+			//GlobalSceneData.lastLeahRotation = player.transform.rotation;
 
 			operation.allowSceneActivation = false;
 
