@@ -11,7 +11,7 @@ public class GameEvent : ScriptableObject
     // This will invoke the events on all GameEventListeners with this scriptable object
     public void Invoke()
     {
-        foreach(GameEventListener globalEventListener in listeners)
+        foreach(var globalEventListener in listeners)
         {
             globalEventListener.RaiseEvent();
         }
