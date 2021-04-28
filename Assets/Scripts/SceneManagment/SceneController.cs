@@ -67,24 +67,17 @@ public class SceneController : MonoBehaviour
         if (!changingScene)
         {
             changingScene = true;
+            GameController.instance.PauseGame(true);
+
             transitionObject.SetActive(true);
             PlayVFX(0);
-
-            //GameController.instance.PauseGame(true);
-            AsyncOperation operation = SceneManager.LoadSceneAsync(nextScene);
             PlaySFX();
-            //GameController.instance.PauseGame(true);
 
-            //GlobalSceneData.lastLeahPosition = player.transform.position;
-            //GlobalSceneData.lastLeahRotation = player.transform.rotation;
-
+            AsyncOperation operation = SceneManager.LoadSceneAsync(nextScene);
             operation.allowSceneActivation = false;
-
-            // While operation is loading
 
             yield return new WaitForSeconds(sceneChangeDelay);
 
-            // Wait until done
             while (!operation.isDone)
             {
                 if (operation.progress >= 0.9f)
@@ -93,10 +86,9 @@ public class SceneController : MonoBehaviour
                     {
                         GameController.introDone = true;
                     }
+
                     PlayVFX(1);
                     operation.allowSceneActivation = true;
-
-                    // Unpause Game (Or do it at the start of every scene)
                     GameController.instance.PauseGame(false);
                 }
                 yield return null;
