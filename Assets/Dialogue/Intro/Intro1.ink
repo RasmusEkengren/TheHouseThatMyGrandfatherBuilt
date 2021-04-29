@@ -1,4 +1,5 @@
-When I got the letter telling me I had inherited my grandfather's house, I was shocked. 
-We hadn’t been in contact for many years and had it not been for that letter, I wouldn’t even have known that he’d passed away. 
-Apparently he was still fond of me up until his last moments.
+I hadn’t talked to my grandpa in years, yet he chose me to inherit his house. 
+When I got the letter stating such, Rebecca wanted to - once again - talk about moving in together. I had always loved the countryside and this seemed like an ideal start to her. 
+She didn’t want to listen to me, so I fled. There was too much going on in my head for me to stay. 
+I hoped that going to my grandpa’s old house would give me a moment of respite, it held a lot of fond memories; The house my grandfather built.
 ->END
