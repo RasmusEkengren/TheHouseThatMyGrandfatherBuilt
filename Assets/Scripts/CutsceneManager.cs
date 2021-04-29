@@ -11,7 +11,14 @@ public class CutsceneManager : MonoBehaviour
 	[SerializeField] private UnityEvent startEvents;
 	void Start()
 	{
-		startEvents.Invoke();
+        if (!GlobalSceneData.introDone)
+        {
+            startEvents.Invoke();
+        }
+        else
+        {
+            EndBorder();
+        }
 	}
 	public void StartBorder()
 	{

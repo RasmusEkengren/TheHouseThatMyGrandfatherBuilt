@@ -15,14 +15,25 @@ public class SceneChangeListener : MonoBehaviour
     {
         if (scene.name == "Leah")
         {
-            player = FindObjectOfType<PlayerMovement>().gameObject;
-            player.transform.position = GlobalSceneData.lastLeahPosition;
-            player.transform.rotation = GlobalSceneData.lastLeahRotation;
+            LoadLeahPosition();
         }
 
         if (scene.name == "George")
         {
+            if (!GlobalSceneData.introDone)
+            {
+                GlobalSceneData.introDone = true;
+            }
+        }
+    }
 
+    public void LoadLeahPosition()
+    {
+        if (GlobalSceneData.introDone)
+        {
+            player = FindObjectOfType<PlayerMovement>().gameObject;
+            player.transform.position = GlobalSceneData.lastLeahPosition;
+            player.transform.rotation = GlobalSceneData.lastLeahRotation;
         }
     }
 }
