@@ -22,8 +22,6 @@ public class LeahSceneUpdater : MonoBehaviour
 
     private void Start()
     {
-
-        Debug.Log("STartu " + GlobalSceneData.mg_porchFixed);
         if (GlobalSceneData.mg_porchFixed == true)
         {
             BrokenWindowsEvent.SetActive(true);
@@ -62,5 +60,14 @@ public class LeahSceneUpdater : MonoBehaviour
             FixedWindows.SetActive(true);
             Debug.Log("Windows fixed");
         }
+    }
+
+    public void ActivatePorch()
+    {
+        GlobalSceneData.georgeState = GlobalSceneData.GeorgeState.Porch;
+    }
+    public void ActivateWindows()
+    {
+        GlobalSceneData.georgeState = GlobalSceneData.GeorgeState.Windows;
     }
 }
