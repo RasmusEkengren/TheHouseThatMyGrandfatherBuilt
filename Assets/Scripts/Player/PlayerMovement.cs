@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
 	private int currentPoint = 0;
 	private Vector3 direction = Vector3.zero;
 	private bool isAutoWalking = false;
+    [HideInInspector] public bool isWalking = false;
 	private bool hasFallen = false;
 	private float turnSmoothVelocity = 0f;
 	private float groundCastMaxDist = 1.08f;
@@ -86,6 +87,7 @@ public class PlayerMovement : MonoBehaviour
 			}
 			if (direction.magnitude >= 0.1f && !GameController.GamePaused())
 			{
+                isWalking = true;
 				walkedDistance += 1f * Time.deltaTime;
 
 				float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + mainCamera.transform.eulerAngles.y;
@@ -101,6 +103,7 @@ public class PlayerMovement : MonoBehaviour
 					walkedDistance = 0f;
 				}
 			}
+            else { isWalking = false; }
 		}
 	}
 	void OnDrawGizmos()
