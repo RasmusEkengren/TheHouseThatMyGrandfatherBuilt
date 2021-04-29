@@ -24,6 +24,8 @@ public class SceneChangeListener : MonoBehaviour
             {
                 GlobalSceneData.introDone = true;
             }
+
+            GlobalSceneData.SaveLeahPosition(FindObjectOfType<PlayerMovement>());
         }
     }
 

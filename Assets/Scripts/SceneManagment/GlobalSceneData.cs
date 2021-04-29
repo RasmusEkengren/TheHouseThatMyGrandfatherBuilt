@@ -50,10 +50,12 @@ public class GlobalSceneData : MonoBehaviour
         if (mg_windowsFixed) Debug.Log("Yay once again!");
     }
 
-    public void SaveLeahPosition()
+    public static void SaveLeahPosition(PlayerMovement player)
     {
-
+        lastLeahPosition = player.transform.position;
+        lastLeahRotation = player.transform.rotation;
     }
+
 
     /// Health component som man kan binda events till
     /// T�nk inte p� det f�r mycket
