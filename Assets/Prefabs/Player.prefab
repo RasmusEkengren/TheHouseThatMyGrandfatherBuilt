@@ -192,7 +192,19 @@ MonoBehaviour:
     m_ActionId: 94f48ad1-6207-4984-aeb7-f0c601dd2a00
     m_ActionName: Player/Submit[/XInputControllerWindows/buttonSouth,/Keyboard/enter,/Keyboard/space,/Keyboard/enter,/XInputControllerWindows/buttonSouth]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: ToggleMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 1a3a2fb0-41b3-4218-aab2-64b50a031c3d
     m_ActionName: Player/Pause[/Keyboard/escape,/XInputControllerWindows/start]
   m_NeverAutoSwitchControlSchemes: 0
@@ -213,7 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 4563503609429547012}
-  moveSpeed: 3
+  moveSpeed: 4
   autoWalkSpeed: 3
   fallSpeed: 2
   turnSmoothTime: 0.1
