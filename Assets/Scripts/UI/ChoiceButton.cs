@@ -53,10 +53,10 @@ public class ChoiceButton : MonoBehaviour, IPointerEnterHandler, ISelectHandler,
 	}
 	public void OnSelect(BaseEventData selectData)
 	{
-		if (selectData.selectedObject == this.gameObject && isSelectable) animator.SetBool(isSelected, true);
+		if (selectData.selectedObject == this.gameObject && isSelectable && animator != null) animator.SetBool(isSelected, true);
 	}
 	public void OnDeselect(BaseEventData deselectData)
 	{
-		if (deselectData.selectedObject == this.gameObject && isSelectable) animator.SetBool(isSelected, false);
+		if (deselectData.selectedObject == this.gameObject && isSelectable && animator != null) animator.SetBool(isSelected, false);
 	}
 }
