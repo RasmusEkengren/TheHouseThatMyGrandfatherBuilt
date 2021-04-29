@@ -16,6 +16,7 @@ public class CameraController : MonoBehaviour
 	{
 		inkManager = player.GetComponent<InkManager>();
 		targetRotation = transform.rotation.eulerAngles;
+        if (GlobalSceneData.introDone) { ResetRotation(); }
 	}
 	void LateUpdate()
 	{
