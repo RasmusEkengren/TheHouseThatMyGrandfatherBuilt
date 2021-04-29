@@ -56,8 +56,6 @@ public class SceneController : MonoBehaviour
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
-        player = GetComponent<PlayerMovement>().gameObject;
-        // SceneManager.sceneLoaded += OnSceneLoaded();
     }
     #endregion Initializations
 
@@ -82,6 +80,7 @@ public class SceneController : MonoBehaviour
             {
                 if (operation.progress >= 0.9f)
                 {
+                    onSceneChange.Invoke(); // Placing this here to hide it behind transition (in case something is disabled in player sight)
                     if (sceneType == SceneType.Scene.Leah && !GameController.introDone)
                     {
                         GameController.introDone = true;
@@ -94,11 +93,6 @@ public class SceneController : MonoBehaviour
                 yield return null;
             }
         }
-    }
-
-    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-
     }
     #endregion PublicFunctions
 
