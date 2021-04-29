@@ -89,6 +89,7 @@ public class SceneController : MonoBehaviour
                     PlayVFX(1);
                     operation.allowSceneActivation = true;
                     GameController.instance.PauseGame(false);
+                    changingScene = false;
                 }
                 yield return null;
             }

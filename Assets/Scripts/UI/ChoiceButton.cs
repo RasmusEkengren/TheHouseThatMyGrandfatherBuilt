@@ -16,6 +16,8 @@ public class ChoiceButton : MonoBehaviour, IPointerEnterHandler, ISelectHandler,
 	private float timer = 0;
 	private string isSelected = "IsSelected";
 
+    [SerializeField] private GameEvent porchChoiceEvent = null;
+
 	void OnEnable()
 	{
 		button = GetComponent<Button>();
@@ -59,4 +61,14 @@ public class ChoiceButton : MonoBehaviour, IPointerEnterHandler, ISelectHandler,
 	{
 		if (deselectData.selectedObject == this.gameObject && isSelectable && animator != null) animator.SetBool(isSelected, false);
 	}
+
+    public void FlatPorch()
+    {
+        GlobalSceneData.porchFixed = GlobalSceneData.PorchFixed.Flat;
+    }
+
+    public void SlantedPorch()
+    {
+        GlobalSceneData.porchFixed = GlobalSceneData.PorchFixed.Slanted;
+    }
 }
