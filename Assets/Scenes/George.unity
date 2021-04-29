@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657892, g: 0.4964133, b: 0.57481736, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657832, g: 0.49641216, b: 0.5748164, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3104,6 +3104,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 141595277}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &149050511
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 149050512}
+  m_Layer: 0
+  m_Name: Screw
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &149050512
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149050511}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.46035, y: -22.809818, z: -75.95735}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &155737177
 GameObject:
   m_ObjectHideFlags: 0
@@ -17410,6 +17440,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4196952040310456772, guid: 6f7da07422b0d714dbf9dc876cb2d202, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6f7da07422b0d714dbf9dc876cb2d202, type: 3}
       propertyPath: m_Name
       value: House_base
@@ -20221,10 +20255,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Axe: {fileID: 2131193554}
-  ScrewMinigame: {fileID: 747531020}
+  ScrewMinigame: {fileID: 149050511}
   Tree: {fileID: 686396232}
-  FlatPorch: {fileID: 662747174}
-  SlantedPorch: {fileID: 664549084}
+  FlatPorch: {fileID: 1486225513}
+  SlantedPorch: {fileID: 1394769930}
   PorchEvent: {fileID: 1445178843}
 --- !u!4 &1038865540
 Transform:
@@ -26656,6 +26690,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: aec9b19ae7c659c478290abe25d3e755, type: 3}
   m_PrefabInstance: {fileID: 1394769928}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1394769930 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: aec9b19ae7c659c478290abe25d3e755, type: 3}
+  m_PrefabInstance: {fileID: 1394769928}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1397750544
 GameObject:
   m_ObjectHideFlags: 0
@@ -27845,6 +27884,11 @@ PrefabInstance:
 --- !u!4 &1486225512 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d5b77d15e164efb4c905f2db8dc1b2ae, type: 3}
+  m_PrefabInstance: {fileID: 1486225511}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1486225513 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d5b77d15e164efb4c905f2db8dc1b2ae, type: 3}
   m_PrefabInstance: {fileID: 1486225511}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1491108641

@@ -13,8 +13,11 @@ public class GeorgeSceneUpdater : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("Staaarrt");
         if (GlobalSceneData.georgeState == GlobalSceneData.GeorgeState.Porch)
         {
+            Debug.Log("Porch");
+
             PorchEvent.SetActive(true);
             ScrewMinigame.SetActive(false);
             Tree.SetActive(true);
@@ -23,6 +26,11 @@ public class GeorgeSceneUpdater : MonoBehaviour
 
         if (GlobalSceneData.georgeState == GlobalSceneData.GeorgeState.Windows)
         {
+            Debug.Log("Windows");
+            ScrewMinigame.SetActive(true);
+            Tree.SetActive(false);
+            Axe.SetActive(false);
+
             if (GlobalSceneData.porchFixed == GlobalSceneData.PorchFixed.Flat)
             {
                 FlatPorch.SetActive(true);
@@ -34,9 +42,6 @@ public class GeorgeSceneUpdater : MonoBehaviour
                 PorchEvent.SetActive(false);
             }
 
-            ScrewMinigame.SetActive(true);
-            Tree.SetActive(false);
-            Axe.SetActive(false);
         }
     }
 }
