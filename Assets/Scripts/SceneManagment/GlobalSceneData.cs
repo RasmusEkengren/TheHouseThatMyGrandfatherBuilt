@@ -23,6 +23,10 @@ public class GlobalSceneData : MonoBehaviour
     public static bool mg_windowsFixed;
     public static bool tutorialDone;
     public static bool introDone = false;
+    private bool leahPositionUpdated = false;
+
+    public enum GeorgeState { Porch, Windows }
+    public static GeorgeState georgeState;
 
     public enum PorchFixed { None, Flat, Slanted }
     public static PorchFixed porchFixed

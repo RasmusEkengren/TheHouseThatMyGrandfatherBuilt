@@ -20,6 +20,15 @@ public class SceneChangeListener : MonoBehaviour
 
         if (scene.name == "George")
         {
+            //if (GlobalSceneData.mg_porchFixed)
+            //{
+            //    GlobalSceneData.georgeState = GlobalSceneData.GeorgeState.Windows;
+            //}
+            //else
+            //{
+            //    GlobalSceneData.georgeState = GlobalSceneData.GeorgeState.Porch;
+            //}
+
             if (!GlobalSceneData.introDone)
             {
                 GlobalSceneData.introDone = true;
