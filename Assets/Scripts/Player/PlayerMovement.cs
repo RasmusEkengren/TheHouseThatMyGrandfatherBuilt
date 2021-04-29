@@ -87,6 +87,7 @@ public class PlayerMovement : MonoBehaviour
 			}
 			if (direction.magnitude >= 0.1f && !GameController.GamePaused())
 			{
+                isWalking = true;
 				walkedDistance += 1f * Time.deltaTime;
 
 				float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + mainCamera.transform.eulerAngles.y;
@@ -102,6 +103,7 @@ public class PlayerMovement : MonoBehaviour
 					walkedDistance = 0f;
 				}
 			}
+            else { isWalking = false; }
 		}
 	}
 	void OnDrawGizmos()
