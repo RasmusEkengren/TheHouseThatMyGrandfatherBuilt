@@ -54,7 +54,8 @@ public class PlankBalancing : MonoBehaviour
 	[SerializeField] private RectTransform greenPip = null;
 	[SerializeField] private RectTransform redZone1 = null;
 	[SerializeField] private RectTransform redZone2 = null;
-	[SerializeField] private RectTransform arrow = null;
+	[SerializeField] private RectTransform leftArrow = null;
+	[SerializeField] private RectTransform rightArrow = null;
 	[SerializeField] private float moveSpeed = 1f;
 	[SerializeField] private float fallLimit = 4f;
 	[SerializeField] private float[] intervalRange = new float[2];
@@ -107,12 +108,15 @@ public class PlankBalancing : MonoBehaviour
 		if (greenPos > 0.5f)
 		{
 			moveDir = 1;
+			leftArrow.gameObject.SetActive(true);
+			rightArrow.gameObject.SetActive(false);
 		}
 		else
 		{
 			moveDir = -1;
+			leftArrow.gameObject.SetActive(false);
+			rightArrow.gameObject.SetActive(true);
 		}
-		arrow.localScale = new Vector3(1, moveDir, 1);
 		if (timer > currentInterval)
 		{
 			ChangeSpeed();
@@ -128,7 +132,7 @@ public class PlankBalancing : MonoBehaviour
 			offBalance -= Time.deltaTime;
 		}
 		float parameterValue = greenZone.GetParameterValue();
-		Debug.Log(parameterValue);
+		//Debug.Log(parameterValue);
 		balancingSoundInstance.setParameterByName(plankShakeParameter, parameterValue);
 		balancingSoundInstance.getParameterByName(plankShakeParameter, out parameterValue);
 		if (offBalance > fallLimit)

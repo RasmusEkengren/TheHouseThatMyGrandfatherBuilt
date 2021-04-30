@@ -3,7 +3,12 @@ guid: 9b5d790768f7aac4ba67f4a26ef7b03b
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cellar
+    second: {fileID: 2100000, guid: 7bcb4f8cce0f4c342a07dfcb524e77ab, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -36,7 +41,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importVisibility: 1

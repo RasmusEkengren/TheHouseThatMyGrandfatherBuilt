@@ -15,14 +15,36 @@ public class SceneChangeListener : MonoBehaviour
     {
         if (scene.name == "Leah")
         {
-            player = FindObjectOfType<PlayerMovement>().gameObject;
-            player.transform.position = GlobalSceneData.lastLeahPosition;
-            player.transform.rotation = GlobalSceneData.lastLeahRotation;
+            LoadLeahPosition();
         }
 
         if (scene.name == "George")
         {
+            //if (GlobalSceneData.mg_porchFixed)
+            //{
+            //    GlobalSceneData.georgeState = GlobalSceneData.GeorgeState.Windows;
+            //}
+            //else
+            //{
+            //    GlobalSceneData.georgeState = GlobalSceneData.GeorgeState.Porch;
+            //}
 
+            if (!GlobalSceneData.introDone)
+            {
+                GlobalSceneData.introDone = true;
+            }
+
+            GlobalSceneData.SaveLeahPosition(FindObjectOfType<PlayerMovement>());
+        }
+    }
+
+    public void LoadLeahPosition()
+    {
+        if (GlobalSceneData.introDone)
+        {
+            player = FindObjectOfType<PlayerMovement>().gameObject;
+            player.transform.position = GlobalSceneData.lastLeahPosition;
+            player.transform.rotation = GlobalSceneData.lastLeahRotation;
         }
     }
 }
