@@ -9,7 +9,7 @@ public class PlayerFootstepSound : MonoBehaviour
     [SerializeField] [FMODUnity.EventRef] private string footstepSound = null;
     [SerializeField] private Collider footstepCollider = null;
 
-    [SerializeField] [Range(0, 3)] private int soundParameter = 0;
+    [SerializeField] [Range(0, 2)] private int soundParameter = 0;
 
     //private float _interval;
     //[SerializeField] public float footstepInterval { get { return _interval; } [SerializeField] private set { _interval = value; } }
@@ -24,7 +24,7 @@ public class PlayerFootstepSound : MonoBehaviour
     private void OnEnable()
     {
         footstepInstance = RuntimeManager.CreateInstance(footstepSound);
-        footstepInstance.setParameterByName(footstepSound.ToString(), soundParameter);
+        footstepInstance.setParameterByName("Surface", soundParameter);
     }
 
     private void OnDisable()
@@ -37,9 +37,14 @@ public class PlayerFootstepSound : MonoBehaviour
         footstepInstance.start();
     }
 
+    public void UpdateParameter()
+    {
+    // Update current parameter with the sound equivalent to that tag
+
+    }
+
     // Player moves, colliding with  different object
     // If object is ground. Get the tag of that ground
-    // Update current parameter with the sound equivalent to that tag
     // When PlayerMovement calls PlayFootstep(), play that sound
 
     // Get current collided tag
