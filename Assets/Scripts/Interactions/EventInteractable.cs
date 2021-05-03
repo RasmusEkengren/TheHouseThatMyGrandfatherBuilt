@@ -10,9 +10,8 @@ public class EventInteractable : Interactable
 	{
 		if (!isTriggered && interactIcon.activeSelf)
 		{
-			interactIcon.SetActive(false);
+			base.Interact(player);
 			interactions.Invoke();
-			FMODUnity.RuntimeManager.PlayOneShot(interactSound);
 			isTriggered = isOneTime;
 		}
 	}
