@@ -18,6 +18,7 @@ public class InkManager : MonoBehaviour
 	private Coroutine type = null;
 	private UnityEvent endEvent;
 	private bool isTyping = false;
+	private bool isSkippingResetEvent = false;
 	private string sentence = "";
 	private string functionToCall = null;
 	public void StartStory(TextAsset JsonAsset)
@@ -51,6 +52,10 @@ public class InkManager : MonoBehaviour
 	{
 		endEvent = end;
 	}
+	public void SkipResetEvent()
+	{
+
+	}
 	public void DisplayNextLine()
 	{
 		if (isTyping)
@@ -76,6 +81,11 @@ public class InkManager : MonoBehaviour
 			if (endEvent != null)
 			{
 				endEvent.Invoke();
+				if (isSkippingResetEvent)
+				{
+					endEvent = null;
+					isSkippingResetEvent = false;
+				}
 			}
 			return;
 		}
