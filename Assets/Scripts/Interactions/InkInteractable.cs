@@ -8,9 +8,8 @@ public class InkInteractable : Interactable
 		//Super hacky fix, fix this into something good later
 		if (interactIcon.activeSelf)
 		{
+			base.Interact(player);
 			player.SendMessage("StartStory", StoryJson, SendMessageOptions.DontRequireReceiver);
-			FMODUnity.RuntimeManager.PlayOneShot(interactSound);
-			interactIcon.SetActive(false);
 		}
 	}
 }
