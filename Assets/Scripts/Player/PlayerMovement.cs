@@ -24,9 +24,6 @@ public class PlayerMovement : MonoBehaviour
 	private float savedWalkSpeed = 0f;
 	[SerializeField] private LayerMask groundLayer;
 
-	[SerializeField] [FMODUnity.EventRef] private string footstepSound = null;
-
-    [SerializeField] private float footstepInterval = 0.28f;
     private float walkedDistance = 0f;
 
 	public void Move(InputAction.CallbackContext value)
@@ -62,10 +59,7 @@ public class PlayerMovement : MonoBehaviour
 		direction = Vector2.zero;
 		savedWalkSpeed = autoWalkSpeed;
 	}
-	private void PlayFootstep()
-	{
-		FMODUnity.RuntimeManager.PlayOneShot(footstepSound);
-	}
+
 	void Update()
 	{
 		if (hasFallen)
@@ -96,12 +90,6 @@ public class PlayerMovement : MonoBehaviour
 
 				Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
 				playerController.Move(moveDir.normalized * (isAutoWalking ? autoWalkSpeed : moveSpeed) * Time.deltaTime);
-
-				if (walkedDistance >= footstepInterval)
-				{
-					PlayFootstep();
-					walkedDistance = 0f;
-				}
 			}
             else { isWalking = false; }
 		}
