@@ -7,18 +7,13 @@ using FMODUnity;
 public class PlayerFootstepSound : MonoBehaviour
 {
     [SerializeField] [FMODUnity.EventRef] private string footstepSound = null;
-    [SerializeField] private Collider footstepCollider = null;
-
     [SerializeField] [Range(0, 2)] private int soundParameter = 0;
-
-    //private float _interval;
-    //[SerializeField] public float footstepInterval { get { return _interval; } [SerializeField] private set { _interval = value; } }
-    [SerializeField] public float footstepInterval = 0.5f;
-
     private EventInstance footstepInstance;
+
+    [HideInInspector] public GameObject currentCollision = null;
+
     private void Start()
     {
-        footstepCollider = GetComponent<Collider>();
     }
 
     private void OnEnable()
@@ -34,13 +29,42 @@ public class PlayerFootstepSound : MonoBehaviour
 
     public void PlayFootstep()
     {
+        GetParameter();
+        footstepInstance.setParameterByName("Surface", soundParameter);
         footstepInstance.start();
     }
 
-    public void UpdateParameter()
+    public void GetParameter()
     {
-    // Update current parameter with the sound equivalent to that tag
 
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Collision");
+        if (collision.gameObject.tag == "Grass")
+        {
+            Debug.Log("Player collided with: Grass");
+            currentCollision = collision.gameObject;
+            soundParameter = 0;
+        }
+        if (collision.gameObject.tag == "Mud")
+        {
+            Debug.Log("Player collided with: Mud/Path");
+            currentCollision = collision.gameObject;
+            soundParameter = 1;
+        }
+        if (collision.gameObject.tag == "Wood")
+        {
+            Debug.Log("Player collided with: Wood");
+            currentCollision = collision.gameObject;
+            soundParameter = 2;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+       
     }
 
     // Player moves, colliding with  different object
