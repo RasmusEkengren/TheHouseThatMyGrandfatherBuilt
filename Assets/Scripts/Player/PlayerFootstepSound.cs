@@ -6,15 +6,15 @@ using FMODUnity;
 
 public class PlayerFootstepSound : MonoBehaviour
 {
+    // Minor bug: The sound doesnt update flawlessly on every single step.
+    // Tried a list of ints to stack the collisions. But that doesnt work out well in practice
     [SerializeField] [FMODUnity.EventRef] private string footstepSound = null;
     [SerializeField] [Range(0, 2)] private int soundParameter = 0;
     private EventInstance footstepInstance;
 
-    [HideInInspector] public GameObject currentCollision = null;
+    [HideInInspector] public Collision currentCollision = null;
 
-    private void Start()
-    {
-    }
+    private List<int> collisions = new List<int>();
 
     private void OnEnable()
     {
@@ -29,48 +29,44 @@ public class PlayerFootstepSound : MonoBehaviour
 
     public void PlayFootstep()
     {
-        GetParameter();
+        //UpdateCollision();
+
         footstepInstance.setParameterByName("Surface", soundParameter);
         footstepInstance.start();
     }
 
-    public void GetParameter()
-    {
-
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collision");
         if (collision.gameObject.tag == "Grass")
         {
             Debug.Log("Player collided with: Grass");
-            currentCollision = collision.gameObject;
             soundParameter = 0;
+            //collisions.Add(0);
         }
         if (collision.gameObject.tag == "Mud")
         {
             Debug.Log("Player collided with: Mud/Path");
-            currentCollision = collision.gameObject;
             soundParameter = 1;
+            //collisions.Add(1);
         }
         if (collision.gameObject.tag == "Wood")
         {
             Debug.Log("Player collided with: Wood");
-            currentCollision = collision.gameObject;
             soundParameter = 2;
+            //collisions.Add(2);
         }
     }
 
-    private void OnCollisionExit(Collision collision)
-    {
-       
-    }
+    //private void UpdateCollision()
+    //{
+    //    soundParameter = collisions[0];
+    //}
 
-    // Player moves, colliding with  different object
-    // If object is ground. Get the tag of that ground
-    // When PlayerMovement calls PlayFootstep(), play that sound
-
-    // Get current collided tag
-    // Change sound based on that
+    //private void OnCollisionExit(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "Grass" || collision.gameObject.tag == "Mud" || collision.gameObject.tag == "Wood")
+    //    {
+    //        collisions.RemoveAt(0);
+    //    }
+    //}
 }
