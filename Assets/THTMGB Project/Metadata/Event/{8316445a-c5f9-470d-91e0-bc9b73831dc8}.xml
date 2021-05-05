@@ -99,16 +99,16 @@
 			<value>6</value>
 		</property>
 		<property name="minimumTimeBetweenSounds">
-			<value>1500</value>
+			<value>8650</value>
 		</property>
 		<property name="maximumTimeBetweenSounds">
-			<value>6000</value>
+			<value>24000</value>
 		</property>
 		<property name="minimumScatterDistance">
-			<value>3.20000005</value>
+			<value>8.19999981</value>
 		</property>
 		<property name="maximumScatterDistance">
-			<value>10</value>
+			<value>91.5</value>
 		</property>
 		<property name="pitchRandomization">
 			<value>2.9000001</value>
@@ -182,25 +182,38 @@
 	</object>
 	<object class="MixerBusPanner" id="{186db50b-99a8-4646-8279-39fa49ed4f56}" />
 	<object class="MixerBusFader" id="{d23d10b6-17fb-4ab7-9fd7-3a1e67224995}" />
-	<object class="SpatialiserEffect" id="{41721849-5d20-470e-87b7-93f43e4cba90}" />
+	<object class="SpatialiserEffect" id="{41721849-5d20-470e-87b7-93f43e4cba90}">
+		<property name="minimumDistance">
+			<value>600</value>
+		</property>
+		<property name="maximumDistance">
+			<value>1400</value>
+		</property>
+	</object>
 	<object class="SingleSound" id="{bd88097b-e4d1-4fcd-b96d-b2d29ddf9802}">
 		<relationship name="audioFile">
 			<destination>{007fd778-b7ed-4da8-91bd-49b6913f2dbe}</destination>
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{5a85772a-7996-4e3c-bd15-13fc0a222d46}">
+		<property name="volume">
+			<value>-13</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{91cf4813-57b3-4d29-b9c5-e314b534863d}</destination>
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{d49bdeaf-afc9-4347-8eef-2f7ca9dd0586}">
+		<property name="volume">
+			<value>-2.5</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{6a991316-07bf-4683-9f0f-18cd4b31c064}</destination>
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{2f667289-ffb2-4936-b300-6979e483d28f}">
 		<property name="volume">
-			<value>-2.5</value>
+			<value>-13.5</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{984012d1-b032-4f4f-a745-40abb7611a96}</destination>
