@@ -7,19 +7,9 @@ using FMODUnity;
 public class PlayerFootstepSound : MonoBehaviour
 {
     [SerializeField] [FMODUnity.EventRef] private string footstepSound = null;
-    [SerializeField] private Collider footstepCollider = null;
-
     [SerializeField] [Range(0, 2)] private int soundParameter = 0;
-
-    //private float _interval;
-    //[SerializeField] public float footstepInterval { get { return _interval; } [SerializeField] private set { _interval = value; } }
-    [SerializeField] public float footstepInterval = 0.5f;
-
     private EventInstance footstepInstance;
-    private void Start()
-    {
-        footstepCollider = GetComponent<Collider>();
-    }
+    [HideInInspector] public GameObject currentCollision = null;
 
     private void OnEnable()
     {
@@ -34,19 +24,27 @@ public class PlayerFootstepSound : MonoBehaviour
 
     public void PlayFootstep()
     {
+        UpdateCollision();
+        footstepInstance.setParameterByName("Surface", soundParameter);
         footstepInstance.start();
     }
 
-    public void UpdateParameter()
+    private void UpdateCollision()
     {
-    // Update current parameter with the sound equivalent to that tag
-
+        if (currentCollision.tag == "Grass")
+        {
+            //Debug.Log("Player collided with: Grass");
+            soundParameter = 0;
+        }
+        if (currentCollision.tag == "Mud")
+        {
+            //Debug.Log("Player collided with: Mud/Path");
+            soundParameter = 1;
+        }
+        if (currentCollision.tag == "Wood")
+        {
+            //Debug.Log("Player collided with: Wood");
+            soundParameter = 2;
+        }
     }
-
-    // Player moves, colliding with  different object
-    // If object is ground. Get the tag of that ground
-    // When PlayerMovement calls PlayFootstep(), play that sound
-
-    // Get current collided tag
-    // Change sound based on that
 }
