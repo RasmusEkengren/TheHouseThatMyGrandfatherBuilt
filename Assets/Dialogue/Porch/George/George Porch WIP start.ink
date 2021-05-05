@@ -1,5 +1,5 @@
 //Proud pose
 Alright, break time’s over. 
-I gotta get to building the porch. 
-I spotted out a tree that I could chop down to get materials, 
-I’ll just need to grab my axe first. //looks around
+I gotta get to building the porch, just need to get the materials. 
+Meaning I can finally get rid of that old and annoying tree close to the house. 
+Gotta go and grab my axe so I can get started. //looks around
