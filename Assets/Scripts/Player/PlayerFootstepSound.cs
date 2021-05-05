@@ -33,17 +33,17 @@ public class PlayerFootstepSound : MonoBehaviour
     {
         if (currentCollision.tag == "Grass")
         {
-            Debug.Log("Player collided with: Grass");
+            //Debug.Log("Player collided with: Grass");
             soundParameter = 0;
         }
         if (currentCollision.tag == "Mud")
         {
-            Debug.Log("Player collided with: Mud/Path");
+            //Debug.Log("Player collided with: Mud/Path");
             soundParameter = 1;
         }
         if (currentCollision.tag == "Wood")
         {
-            Debug.Log("Player collided with: Wood");
+            //Debug.Log("Player collided with: Wood");
             soundParameter = 2;
         }
     }
