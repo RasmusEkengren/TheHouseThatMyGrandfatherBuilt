@@ -36,6 +36,7 @@ Includes a snapshot for cavern like reverb for when the player enter the zone</v
 			<destination>{d4d13486-1610-4ab9-a21e-da7e4bad2c21}</destination>
 			<destination>{608d2f35-1b00-42c5-a75b-e7cb79ed3b44}</destination>
 			<destination>{758154a2-22f9-4cd3-9012-be9beff92602}</destination>
+			<destination>{8defdd88-b38d-4656-8944-5e18e37b4f57}</destination>
 		</relationship>
 		<relationship name="timeline">
 			<destination>{114ade71-5ffe-43e1-b2d1-47e19698a4e7}</destination>
@@ -78,7 +79,7 @@ Includes a snapshot for cavern like reverb for when the player enter the zone</v
 			<destination>{5d097cc5-6846-4e0d-a8b1-b93734f3ae41}</destination>
 		</relationship>
 		<relationship name="modules">
-			<destination>{302780f9-6421-4f70-a157-158c4a6ad34e}</destination>
+			<destination>{111624bc-1f13-4c7a-843e-89f1ce1541bb}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{edf581bb-904c-4798-8c3a-b862f41799aa}</destination>
@@ -93,13 +94,26 @@ Includes a snapshot for cavern like reverb for when the player enter the zone</v
 		</relationship>
 	</object>
 	<object class="GroupTrack" id="{758154a2-22f9-4cd3-9012-be9beff92602}">
+		<relationship name="modules">
+			<destination>{33ddf76e-ba82-49d9-8e81-50948491f894}</destination>
+		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{3833d83d-3561-4e9f-85bf-a9c6bef82ad6}</destination>
 		</relationship>
 	</object>
+	<object class="GroupTrack" id="{8defdd88-b38d-4656-8944-5e18e37b4f57}">
+		<relationship name="modules">
+			<destination>{565d13b7-1ef4-4ef3-b5e9-c551aa2863b8}</destination>
+		</relationship>
+		<relationship name="mixerGroup">
+			<destination>{d4a36c2e-014c-4c55-858a-b4f75066b33b}</destination>
+		</relationship>
+	</object>
 	<object class="Timeline" id="{114ade71-5ffe-43e1-b2d1-47e19698a4e7}">
 		<relationship name="modules">
-			<destination>{302780f9-6421-4f70-a157-158c4a6ad34e}</destination>
+			<destination>{33ddf76e-ba82-49d9-8e81-50948491f894}</destination>
+			<destination>{111624bc-1f13-4c7a-843e-89f1ce1541bb}</destination>
+			<destination>{565d13b7-1ef4-4ef3-b5e9-c551aa2863b8}</destination>
 		</relationship>
 		<relationship name="markers">
 			<destination>{1b49e702-8d1b-4c22-a31a-9c002c6091f3}</destination>
@@ -145,20 +159,17 @@ Includes a snapshot for cavern like reverb for when the player enter the zone</v
 			<destination>{e55a4ae7-70fa-46eb-bbcb-c83248da56ab}</destination>
 		</relationship>
 	</object>
-	<object class="SingleSound" id="{302780f9-6421-4f70-a157-158c4a6ad34e}">
-		<property name="isAsync">
-			<value>true</value>
-		</property>
+	<object class="EventSound" id="{111624bc-1f13-4c7a-843e-89f1ce1541bb}">
 		<property name="length">
 			<value>2</value>
 		</property>
-		<relationship name="audioFile">
-			<destination>{c04f4280-9e32-4120-a09b-f2cca580da3e}</destination>
+		<relationship name="event">
+			<destination>{f6cc0a22-eae0-46e3-be80-6b97c2cb5718}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{edf581bb-904c-4798-8c3a-b862f41799aa}">
 		<property name="name">
-			<value>Wind</value>
+			<value>Outdoor</value>
 		</property>
 		<relationship name="automators">
 			<destination>{c256b085-c043-43d7-8088-8d2e5216e687}</destination>
@@ -195,18 +206,75 @@ Includes a snapshot for cavern like reverb for when the player enter the zone</v
 			<destination>{5d7d1bce-9907-4047-b19c-af847d5d91fa}</destination>
 		</relationship>
 	</object>
+	<object class="EventSound" id="{33ddf76e-ba82-49d9-8e81-50948491f894}">
+		<property name="start">
+			<value>4</value>
+		</property>
+		<property name="length">
+			<value>1.8985292498375053</value>
+		</property>
+		<relationship name="event">
+			<destination>{8fb02a98-2892-4715-84e5-d2f60258d7bd}</destination>
+		</relationship>
+	</object>
 	<object class="EventMixerGroup" id="{3833d83d-3561-4e9f-85bf-a9c6bef82ad6}">
+		<property name="volume">
+			<value>-3.5</value>
+		</property>
 		<property name="overridingInputFormat">
 			<value>1</value>
 		</property>
 		<property name="name">
-			<value>SnappyShot</value>
+			<value>Indoor</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{b02cd8b0-3594-4a22-b4e1-55c73afae581}</destination>
 		</relationship>
 		<relationship name="panner">
 			<destination>{2fa3ae85-c050-45d7-8371-2b4a359e34f8}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{5d7d1bce-9907-4047-b19c-af847d5d91fa}</destination>
+		</relationship>
+	</object>
+	<object class="SoundScatterer" id="{565d13b7-1ef4-4ef3-b5e9-c551aa2863b8}">
+		<property name="start">
+			<value>4.1000000000000005</value>
+		</property>
+		<property name="length">
+			<value>1.7985292498375047</value>
+		</property>
+		<property name="minimumTimeBetweenSounds">
+			<value>3000</value>
+		</property>
+		<property name="maximumTimeBetweenSounds">
+			<value>7550</value>
+		</property>
+		<property name="minimumScatterDistance">
+			<value>8.94999981</value>
+		</property>
+		<property name="maximumScatterDistance">
+			<value>150</value>
+		</property>
+		<property name="pitchRandomization">
+			<value>2.9000001</value>
+		</property>
+		<relationship name="sound">
+			<destination>{14ec9ac8-8f86-43a0-8103-73c27bd4a7ed}</destination>
+		</relationship>
+	</object>
+	<object class="EventMixerGroup" id="{d4a36c2e-014c-4c55-858a-b4f75066b33b}">
+		<property name="volume">
+			<value>-5.5</value>
+		</property>
+		<property name="name">
+			<value>Knarr</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{11442339-ebc2-4bc9-abc9-f45f04123d96}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{049b655c-0154-4b4a-9064-a8f47fc71d82}</destination>
 		</relationship>
 		<relationship name="output">
 			<destination>{5d7d1bce-9907-4047-b19c-af847d5d91fa}</destination>
@@ -231,7 +299,7 @@ Includes a snapshot for cavern like reverb for when the player enter the zone</v
 			<value>4</value>
 		</property>
 		<property name="length">
-			<value>2</value>
+			<value>1.8985292498375053</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{114ade71-5ffe-43e1-b2d1-47e19698a4e7}</destination>
@@ -293,7 +361,7 @@ Includes a snapshot for cavern like reverb for when the player enter the zone</v
 			<value>4</value>
 		</property>
 		<property name="length">
-			<value>2</value>
+			<value>1.8985292498375053</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{114ade71-5ffe-43e1-b2d1-47e19698a4e7}</destination>
@@ -347,6 +415,24 @@ Includes a snapshot for cavern like reverb for when the player enter the zone</v
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{2fa3ae85-c050-45d7-8371-2b4a359e34f8}" />
+	<object class="MultiSound" id="{14ec9ac8-8f86-43a0-8103-73c27bd4a7ed}">
+		<relationship name="sounds">
+			<destination>{9442058a-2252-4601-9dd6-5417ccefda5d}</destination>
+			<destination>{7f30e00e-3eb6-49e3-b04b-460408ec47f2}</destination>
+			<destination>{9b3430ce-0feb-4b68-b374-d5ef1ec98389}</destination>
+			<destination>{0184dfc5-babd-4042-80a4-3900e5e4a746}</destination>
+			<destination>{d9caaa5a-cb67-45df-8593-a762dcadc21e}</destination>
+			<destination>{96eaeced-67db-410b-939d-fda6d00f0892}</destination>
+			<destination>{82383405-42b5-4153-a5ca-ed22b6b32c70}</destination>
+			<destination>{7e99d5f1-6a01-406c-8b56-a2e741721d5d}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{11442339-ebc2-4bc9-abc9-f45f04123d96}">
+		<relationship name="effects">
+			<destination>{de1f6299-afc6-4f08-afd8-f78159ea4827}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{049b655c-0154-4b4a-9064-a8f47fc71d82}" />
 	<object class="ParameterCondition" id="{d363b735-b402-4a3d-aeec-cde31cd12804}">
 		<property name="minimum">
 			<value>0.5</value>
@@ -398,6 +484,56 @@ Includes a snapshot for cavern like reverb for when the player enter the zone</v
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{556c8553-ec88-47a1-b273-f3658f4ae9f2}" />
+	<object class="SingleSound" id="{9442058a-2252-4601-9dd6-5417ccefda5d}">
+		<relationship name="audioFile">
+			<destination>{007fd778-b7ed-4da8-91bd-49b6913f2dbe}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{7f30e00e-3eb6-49e3-b04b-460408ec47f2}">
+		<property name="volume">
+			<value>-13</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{91cf4813-57b3-4d29-b9c5-e314b534863d}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{9b3430ce-0feb-4b68-b374-d5ef1ec98389}">
+		<property name="volume">
+			<value>-2.5</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{6a991316-07bf-4683-9f0f-18cd4b31c064}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{0184dfc5-babd-4042-80a4-3900e5e4a746}">
+		<property name="volume">
+			<value>-13.5</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{984012d1-b032-4f4f-a745-40abb7611a96}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{d9caaa5a-cb67-45df-8593-a762dcadc21e}">
+		<relationship name="audioFile">
+			<destination>{542c10e9-b144-4a38-af3c-440ed7f77d53}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{96eaeced-67db-410b-939d-fda6d00f0892}">
+		<relationship name="audioFile">
+			<destination>{8e0e01ca-36b8-4082-ac7c-53a878222d81}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{82383405-42b5-4153-a5ca-ed22b6b32c70}">
+		<relationship name="audioFile">
+			<destination>{f7d374b0-b7b6-4e9e-86df-190852d8358a}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{7e99d5f1-6a01-406c-8b56-a2e741721d5d}">
+		<relationship name="audioFile">
+			<destination>{79c0c4ef-caae-498b-b866-f35cf36121e2}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusFader" id="{de1f6299-afc6-4f08-afd8-f78159ea4827}" />
 	<object class="AutomationPoint" id="{ef53e467-238b-41ab-a57d-611a17d695b3}">
 		<property name="position">
 			<value>3.9000000000000004</value>
