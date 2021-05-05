@@ -1782,11 +1782,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3353782579212578914, guid: 5a85e374ac3c2d44c96e2c93273577a3, type: 3}
+      propertyPath: m_TagString
+      value: Wood
+      objectReference: {fileID: 0}
+    - target: {fileID: 586637462984183407, guid: 5a85e374ac3c2d44c96e2c93273577a3, type: 3}
+      propertyPath: m_TagString
+      value: Wood
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5a85e374ac3c2d44c96e2c93273577a3, type: 3}
       propertyPath: m_Name
       value: House_staircase_front_broken
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5a85e374ac3c2d44c96e2c93273577a3, type: 3}
+      propertyPath: m_TagString
+      value: Wood
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018786481215142157, guid: 5a85e374ac3c2d44c96e2c93273577a3, type: 3}
       propertyPath: m_TagString
       value: Wood
       objectReference: {fileID: 0}
@@ -3094,6 +3106,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95ce34b50975c674fb04d73e191b6c9f, type: 3}
+--- !u!1 &114124498 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 586637462984183407, guid: 5a85e374ac3c2d44c96e2c93273577a3, type: 3}
+  m_PrefabInstance: {fileID: 90064968}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &114124502
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114124498}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4797735818623291466, guid: 5a85e374ac3c2d44c96e2c93273577a3, type: 3}
 --- !u!1 &114139673
 GameObject:
   m_ObjectHideFlags: 0
@@ -9260,6 +9291,10 @@ PrefabInstance:
       value: House_base
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6f7da07422b0d714dbf9dc876cb2d202, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 2832008979864378186, guid: 6f7da07422b0d714dbf9dc876cb2d202, type: 3}
       propertyPath: m_TagString
       value: Wood
       objectReference: {fileID: 0}
@@ -21067,6 +21102,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 907ba5330bc91dd40bfbb3120ce99004, type: 3}
   m_PrefabInstance: {fileID: 1157427989}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1117588195 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -3353782579212578914, guid: 5a85e374ac3c2d44c96e2c93273577a3, type: 3}
+  m_PrefabInstance: {fileID: 90064968}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1117588199
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117588195}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7028297504040612228, guid: 5a85e374ac3c2d44c96e2c93273577a3, type: 3}
 --- !u!1 &1118552642
 GameObject:
   m_ObjectHideFlags: 0
@@ -38706,6 +38760,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2141955872}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2143265844 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6018786481215142157, guid: 5a85e374ac3c2d44c96e2c93273577a3, type: 3}
+  m_PrefabInstance: {fileID: 90064968}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &2143265848
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143265844}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4851412621035963335, guid: 5a85e374ac3c2d44c96e2c93273577a3, type: 3}
 --- !u!1 &2143411305
 GameObject:
   m_ObjectHideFlags: 0
