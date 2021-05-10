@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657832, g: 0.49641216, b: 0.5748164, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657892, g: 0.4964133, b: 0.57481736, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -39639,14 +39639,10 @@ MonoBehaviour:
   redZone2: {fileID: 402805448}
   leftArrow: {fileID: 625009477}
   rightArrow: {fileID: 1396370826}
-  moveSpeed: 1
-  fallLimit: 2
-  intervalRange:
-  - 1
-  - 3
-  speedRange:
-  - 0.5
-  - 0.9
+  nudgeSpeed: 3
+  fallLimit: 1
+  fallSpeed: 0.1
+  fallSpeedMultiplier: 0.2
   fallEvents:
     m_PersistentCalls:
       m_Calls:

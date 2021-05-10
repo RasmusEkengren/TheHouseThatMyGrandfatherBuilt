@@ -33,13 +33,13 @@ public class GameController : MonoBehaviour
 		{
 			paused = true;
 			// Time.timeScale = 0;
-			Debug.Log("Game Paused", gameObject);
+			//Debug.Log("Game Paused", gameObject);
 		}
 		if (!pause)
 		{
 			paused = false;
 			// Time.timeScale = 1;
-			Debug.Log("Game Unpaused", gameObject);
+			//Debug.Log("Game Unpaused", gameObject);
 		}
 	}
 }
