@@ -13,28 +13,37 @@ public class Screwing : MonoBehaviour
 		[SerializeField] public RectTransform screwRect;
 		[SerializeField] public RectTransform screwHeadRect;
 		[SerializeField] public RectTransform holeRect;
+
+		[SerializeField] public RectTransform buttonPromptsRect;
+		[SerializeField] public GameObject[] buttonPrompts = new GameObject[4];
 		[SerializeField] public GameObject glow;
 		private Vector2 headSize;
 		private Vector2 screwSize;
+		private Vector2 buttonPromptsSize;
 		private Vector2 startPos;
 		private Vector2 finishPos;
-		public Screw(RectTransform screwRect, RectTransform screwHeadRect, RectTransform holeRect, GameObject glow)
+		public Screw(RectTransform screwRect, RectTransform screwHeadRect, RectTransform holeRect, RectTransform buttonPromptsRect, GameObject[] buttonPrompts, GameObject glow)
 		{
 			this.screwRect = screwRect;
 			this.screwHeadRect = screwHeadRect;
 			this.holeRect = holeRect;
 			this.glow = glow;
+			this.buttonPromptsRect = buttonPromptsRect;
+			this.buttonPrompts = buttonPrompts;
 		}
 		private void setHeadPos()
 		{
 			Vector2 headTargetPos = new Vector2(screwRect.anchorMin.x + (screwRect.pivot.x * screwSize.x), screwRect.anchorMin.y + (screwRect.pivot.y * screwSize.y));
 			screwHeadRect.anchorMin = new Vector2(headTargetPos.x - headSize.x * 0.5f, headTargetPos.y - headSize.y * 0.5f);
 			screwHeadRect.anchorMax = new Vector2(headTargetPos.x + headSize.x * 0.5f, headTargetPos.y + headSize.y * 0.5f);
+			buttonPromptsRect.anchorMin = new Vector2(screwHeadRect.anchorMin.x - buttonPromptsSize.x * 0.5f, screwHeadRect.anchorMin.y - buttonPromptsSize.y * 0.5f);
+			buttonPromptsRect.anchorMax = new Vector2(screwHeadRect.anchorMax.x + buttonPromptsSize.x * 0.5f, screwHeadRect.anchorMax.y + buttonPromptsSize.y * 0.5f);
 		}
 		public void Start()
 		{
 			headSize = new Vector2(screwHeadRect.anchorMax.x - screwHeadRect.anchorMin.x, screwHeadRect.anchorMax.y - screwHeadRect.anchorMin.y);
 			screwSize = new Vector2(screwRect.anchorMax.x - screwRect.anchorMin.x, screwRect.anchorMax.y - screwRect.anchorMin.y);
+			buttonPromptsSize = new Vector2(buttonPromptsRect.anchorMax.x - buttonPromptsRect.anchorMin.x, buttonPromptsRect.anchorMax.y - buttonPromptsRect.anchorMin.y);
 			startPos = new Vector2(screwRect.anchorMin.x + (screwRect.pivot.x * screwSize.x), screwRect.anchorMin.y + (screwRect.pivot.y * screwSize.y));
 			finishPos = ((holeRect.anchorMax - holeRect.anchorMin) * 0.5f) + holeRect.anchorMin;
 		}
@@ -42,6 +51,14 @@ public class Screwing : MonoBehaviour
 		{
 			setHeadPos();
 			screwHeadRect.eulerAngles = new Vector3(0, 0, angle);
+			if (angle <= 337.5 && angle >= 202.5) buttonPrompts[0].SetActive(true);
+			else buttonPrompts[0].SetActive(false);
+			if (angle <= 247.5 && angle >= 112.5) buttonPrompts[1].SetActive(true);
+			else buttonPrompts[1].SetActive(false);
+			if (angle <= 157.5 && angle >= 22.5) buttonPrompts[2].SetActive(true);
+			else buttonPrompts[2].SetActive(false);
+			if (angle <= 67.5 || angle >= 292.5) buttonPrompts[3].SetActive(true);
+			else buttonPrompts[3].SetActive(false);
 		}
 		public void Move(float t)
 		{
@@ -58,12 +75,15 @@ public class Screwing : MonoBehaviour
 		public void DeSelect()
 		{
 			glow.SetActive(false);
+			foreach (GameObject buttonPrompt in buttonPrompts)
+			{
+				buttonPrompt.SetActive(false);
+			}
 		}
 	}
 	[SerializeField] private float screwTime = 3;
 	[SerializeField] private float angleTolerance = 40;
 	[SerializeField] private float screwingSpeed = 720;
-	[SerializeField] private float arrowOffsetAngle = 45;
 	[SerializeField] private Screw[] screws = new Screw[4];
 	[SerializeField] private UnityEvent endEvent = null;
 	[SerializeField] [FMODUnity.EventRef] protected string screwSound = null;
@@ -85,7 +105,9 @@ public class Screwing : MonoBehaviour
 			screw.Start();
 		}
 		currentScrew = 0;
+		targetAngle = UnityEngine.Random.Range(0, 360);
 		screws[currentScrew].Select();
+		screws[currentScrew].setAngle(targetAngle);
 	}
 	void Update()
 	{
@@ -104,7 +126,7 @@ public class Screwing : MonoBehaviour
 					soundTimer = 0;
 				}
 				if (targetAngle <= 0) targetAngle = 360;
-				screws[currentScrew].setAngle(targetAngle + arrowOffsetAngle);
+				screws[currentScrew].setAngle(targetAngle);
 			}
 			if (timer >= screwTime)
 			{
@@ -117,7 +139,9 @@ public class Screwing : MonoBehaviour
 					if (gameCompletions >= 1) GlobalSceneData.mg_windowsFixed = true;
 					return;
 				}
+				targetAngle = UnityEngine.Random.Range(0, 360);
 				screws[currentScrew].Select();
+				screws[currentScrew].setAngle(targetAngle);
 				timer = 0;
 			}
 		}
