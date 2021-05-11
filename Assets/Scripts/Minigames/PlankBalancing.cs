@@ -26,9 +26,24 @@ public class PlankBalancing : MonoBehaviour
 			greenPip.anchorMin = greenStartMin;
 			greenPip.anchorMax = greenStartMax;
 		}
-		public void Move(float deltaTime, float currentSpeed, float moveSpeed, float moveVal, int moveDir)
+		public void Nudge(float moveVal, float moveSpeed, float deltaTime)
 		{
-			greenPip.anchorMin = new Vector2(greenPip.anchorMin.x + (deltaTime * currentSpeed * moveDir) + (moveVal * deltaTime * moveSpeed), greenPip.anchorMin.y);
+			greenPip.anchorMin = new Vector2(greenPip.anchorMin.x + deltaTime * moveSpeed * moveVal, greenPip.anchorMin.y);
+			greenPip.anchorMax = new Vector2(greenPip.anchorMin.x + size.x, greenPip.anchorMax.y);
+			if (greenPip.anchorMin.x < 0.0075)
+			{
+				greenPip.anchorMin = new Vector2(0.0075f, greenPip.anchorMin.y);
+				greenPip.anchorMax = new Vector2(greenPip.anchorMin.x + size.x, greenPip.anchorMax.y);
+			}
+			if (greenPip.anchorMax.x > 0.9925)
+			{
+				greenPip.anchorMax = new Vector2(0.9925f, greenPip.anchorMax.y);
+				greenPip.anchorMin = new Vector2(greenPip.anchorMax.x - size.x, greenPip.anchorMin.y);
+			}
+		}
+		public void Move(float deltaTime, float currentSpeed, int moveDir)
+		{
+			greenPip.anchorMin = new Vector2(greenPip.anchorMin.x + deltaTime * currentSpeed * moveDir, greenPip.anchorMin.y);
 			greenPip.anchorMax = new Vector2(greenPip.anchorMin.x + size.x, greenPip.anchorMax.y);
 			if (greenPip.anchorMin.x < 0.0075)
 			{
@@ -50,20 +65,23 @@ public class PlankBalancing : MonoBehaviour
 		{
 			return Mathf.Abs(((greenPip.anchorMin.x + greenPip.anchorMax.x) / 2) - 0.5f) * 4 + 0.2f;
 		}
+		public float GetDistanceFromMiddle()
+		{
+			return Mathf.Abs(((greenPip.anchorMin.x + greenPip.anchorMax.x) / 2) - 0.5f) * 2;
+		}
 	}
 	[SerializeField] private RectTransform greenPip = null;
 	[SerializeField] private RectTransform redZone1 = null;
 	[SerializeField] private RectTransform redZone2 = null;
 	[SerializeField] private RectTransform leftArrow = null;
 	[SerializeField] private RectTransform rightArrow = null;
-	[SerializeField] private float moveSpeed = 1f;
-	[SerializeField] private float fallLimit = 4f;
-	[SerializeField] private float[] intervalRange = new float[2];
-	[SerializeField] private float[] speedRange = new float[2];
+	[SerializeField] private float nudgeSpeed = 5f;
+	[SerializeField] private float fallLimit = 1f;
+	[SerializeField] private float fallSpeed = 1f;
+	[SerializeField] private float fallSpeedMultiplier = 1f;
 	[SerializeField] private UnityEvent fallEvents = null;
 	private Vector2 moveVal = Vector2.zero;
 	private float offBalance = 0f;
-	private float timer = 0f;
 	private float currentInterval = 0;
 	private float currentSpeed = 0;
 	private int moveDir = 0;
@@ -73,22 +91,18 @@ public class PlankBalancing : MonoBehaviour
 	private EventInstance balancingSoundInstance;
 	public void OnInput(InputAction.CallbackContext value)
 	{
-		if (!gameObject.scene.IsValid()) return;
+		if (!gameObject.scene.IsValid() || gameObject.activeSelf == false) return;
 		moveVal = value.ReadValue<Vector2>();
+		if (moveVal.x > 0 && moveDir > 0) moveVal.x = 0;
+		if (moveVal.x < 0 && moveDir < 0) moveVal.x = 0;
+		greenZone.Nudge(moveVal.x, nudgeSpeed, Time.deltaTime);
 	}
 	public void ResetGame()
 	{
 		balancingSoundInstance.start();
 		offBalance = 0f;
-		timer = 0f;
 		if (greenZone == null) greenZone = new GreenZone(ref greenPip);
 		greenZone.Reset();
-		ChangeSpeed();
-	}
-	private void ChangeSpeed()
-	{
-		currentInterval = Random.Range(intervalRange[0], intervalRange[1]);
-		currentSpeed = Random.Range(speedRange[0], speedRange[1]);
 	}
 	void OnEnable()
 	{
@@ -104,7 +118,6 @@ public class PlankBalancing : MonoBehaviour
 	void Update()
 	{
 		float greenPos = (greenPip.anchorMax.x + greenPip.anchorMin.x) * 0.5f;
-		timer += Time.deltaTime;
 		if (greenPos > 0.5f)
 		{
 			moveDir = 1;
@@ -117,12 +130,8 @@ public class PlankBalancing : MonoBehaviour
 			leftArrow.gameObject.SetActive(false);
 			rightArrow.gameObject.SetActive(true);
 		}
-		if (timer > currentInterval)
-		{
-			ChangeSpeed();
-			timer = 0f;
-		}
-		greenZone.Move(Time.deltaTime, currentSpeed, moveSpeed, moveVal.x, moveDir);
+		currentSpeed = greenZone.GetDistanceFromMiddle() * fallSpeedMultiplier + fallSpeed;
+		greenZone.Move(Time.deltaTime, currentSpeed, moveDir);
 		if (greenZone.CheckBalance(redZone1.anchorMax.x, redZone2.anchorMin.x))
 		{
 			offBalance += Time.deltaTime;

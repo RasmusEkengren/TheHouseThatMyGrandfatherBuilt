@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657832, g: 0.49641216, b: 0.5748164, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657892, g: 0.4964133, b: 0.57481736, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -15490,6 +15490,27 @@ MonoBehaviour:
   tree: {fileID: 686396232}
   planks: {fileID: 1278086516}
   leavesParticles: {fileID: 0}
+--- !u!114 &686396234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686396232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7894a0cb63ba9684683b8d40ef8460c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boolStates:
+    OnPorchFixed: 2
+    OnPorchFlat: 2
+    OnPorchSlanted: 2
+    OnPorchBroken: 2
+    OnWindowsFixed: 2
+    OnWindowsBroken: 2
+    OnGeorgeStatePorch: 0
+    OnGeorgeStateWindows: 1
 --- !u!4 &686396238 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3848708273438668141, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
@@ -20823,6 +20844,7 @@ GameObject:
   m_Component:
   - component: {fileID: 982498266}
   - component: {fileID: 982498267}
+  - component: {fileID: 982498268}
   m_Layer: 8
   m_Name: ScrewMinigame Start
   m_TagString: Untagged
@@ -20871,6 +20893,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &982498268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982498265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7894a0cb63ba9684683b8d40ef8460c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boolStates:
+    OnPorchFixed: 2
+    OnPorchFlat: 2
+    OnPorchSlanted: 2
+    OnPorchBroken: 2
+    OnWindowsFixed: 2
+    OnWindowsBroken: 2
+    OnGeorgeStatePorch: 1
+    OnGeorgeStateWindows: 0
 --- !u!4 &987991399 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f3cf01974b19dbc48947cd7f6bef9ce4, type: 3}
@@ -21807,14 +21850,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac593b62c6368bf48809080e560972ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Axe: {fileID: 2131193554}
-  ScrewMinigame: {fileID: 1208431210}
-  Tree: {fileID: 686396232}
-  FlatPorch: {fileID: 1486225513}
-  SlantedPorch: {fileID: 1394769930}
-  PorchEvent: {fileID: 1445178843}
-  StartThoughtEvent: {fileID: 1950387487}
-  StartScrewEvent: {fileID: 982498265}
 --- !u!4 &1038865540
 Transform:
   m_ObjectHideFlags: 0
@@ -25401,6 +25436,27 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7030690857849919521, guid: e3cc6992788be4c4da091b9392dca706, type: 3}
   m_PrefabInstance: {fileID: 1208431209}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1208431211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208431210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7894a0cb63ba9684683b8d40ef8460c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boolStates:
+    OnPorchFixed: 2
+    OnPorchFlat: 2
+    OnPorchSlanted: 2
+    OnPorchBroken: 2
+    OnWindowsFixed: 2
+    OnWindowsBroken: 2
+    OnGeorgeStatePorch: 1
+    OnGeorgeStateWindows: 0
 --- !u!4 &1209273162 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f3cf01974b19dbc48947cd7f6bef9ce4, type: 3}
@@ -28802,7 +28858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: aec9b19ae7c659c478290abe25d3e755, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aec9b19ae7c659c478290abe25d3e755, type: 3}
@@ -28816,6 +28872,27 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: aec9b19ae7c659c478290abe25d3e755, type: 3}
   m_PrefabInstance: {fileID: 1394769928}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1394769931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394769930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7894a0cb63ba9684683b8d40ef8460c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boolStates:
+    OnPorchFixed: 2
+    OnPorchFlat: 0
+    OnPorchSlanted: 2
+    OnPorchBroken: 2
+    OnWindowsFixed: 2
+    OnWindowsBroken: 2
+    OnGeorgeStatePorch: 1
+    OnGeorgeStateWindows: 2
 --- !u!1 &1396370825
 GameObject:
   m_ObjectHideFlags: 0
@@ -29510,6 +29587,27 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6309852347379112966, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
   m_PrefabInstance: {fileID: 1445178842}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1445178844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445178843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7894a0cb63ba9684683b8d40ef8460c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boolStates:
+    OnPorchFixed: 2
+    OnPorchFlat: 2
+    OnPorchSlanted: 2
+    OnPorchBroken: 2
+    OnWindowsFixed: 2
+    OnWindowsBroken: 2
+    OnGeorgeStatePorch: 0
+    OnGeorgeStateWindows: 1
 --- !u!1 &1451346299
 GameObject:
   m_ObjectHideFlags: 0
@@ -30136,6 +30234,27 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d5b77d15e164efb4c905f2db8dc1b2ae, type: 3}
   m_PrefabInstance: {fileID: 1486225511}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1486225514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486225513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7894a0cb63ba9684683b8d40ef8460c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boolStates:
+    OnPorchFixed: 2
+    OnPorchFlat: 2
+    OnPorchSlanted: 0
+    OnPorchBroken: 2
+    OnWindowsFixed: 2
+    OnWindowsBroken: 2
+    OnGeorgeStatePorch: 1
+    OnGeorgeStateWindows: 2
 --- !u!1 &1491108641
 GameObject:
   m_ObjectHideFlags: 0
@@ -39639,14 +39758,10 @@ MonoBehaviour:
   redZone2: {fileID: 402805448}
   leftArrow: {fileID: 625009477}
   rightArrow: {fileID: 1396370826}
-  moveSpeed: 1
-  fallLimit: 2
-  intervalRange:
-  - 1
-  - 3
-  speedRange:
-  - 0.5
-  - 0.9
+  nudgeSpeed: 3
+  fallLimit: 1
+  fallSpeed: 0.1
+  fallSpeedMultiplier: 0.2
   fallEvents:
     m_PersistentCalls:
       m_Calls:
@@ -40275,6 +40390,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1950387488}
   - component: {fileID: 1950387489}
+  - component: {fileID: 1950387490}
   m_Layer: 8
   m_Name: StartDialogue
   m_TagString: Untagged
@@ -40335,6 +40451,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1950387490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950387487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7894a0cb63ba9684683b8d40ef8460c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boolStates:
+    OnPorchFixed: 2
+    OnPorchFlat: 2
+    OnPorchSlanted: 2
+    OnPorchBroken: 2
+    OnWindowsFixed: 2
+    OnWindowsBroken: 2
+    OnGeorgeStatePorch: 0
+    OnGeorgeStateWindows: 1
 --- !u!1 &1953718700
 GameObject:
   m_ObjectHideFlags: 0
@@ -43660,6 +43797,27 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3848708273438668145, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
   m_PrefabInstance: {fileID: 2131193553}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2131193555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131193554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7894a0cb63ba9684683b8d40ef8460c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boolStates:
+    OnPorchFixed: 2
+    OnPorchFlat: 2
+    OnPorchSlanted: 2
+    OnPorchBroken: 2
+    OnWindowsFixed: 2
+    OnWindowsBroken: 2
+    OnGeorgeStatePorch: 0
+    OnGeorgeStateWindows: 1
 --- !u!4 &2131193556 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3848708273438668141, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
