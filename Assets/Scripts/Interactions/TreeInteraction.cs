@@ -6,11 +6,12 @@ public class TreeInteraction : ConditionalInteraction
 {
 	[SerializeField] private AxeTracker player;
 	[SerializeField] [FMODUnity.EventRef] string treeFall = null;
-    public float treeFallDuration = 3f;
+    public float treeFallDuration = 6f;
     [SerializeField] public Rigidbody treeRigidbody = null;
     [SerializeField] public GameObject tree = null;
     [SerializeField] public GameObject planks = null;
-    public ParticleSystem leavesParticles = null;
+    [SerializeField] public Collider InteractCollider = null;
+
 
 	public void CheckAxe() 
 	{
@@ -24,21 +25,14 @@ public class TreeInteraction : ConditionalInteraction
 
     IEnumerator TreeFallSequence()
     {
+        InteractCollider.enabled = false;
         FMODUnity.RuntimeManager.PlayOneShot(treeFall);
         treeRigidbody.isKinematic = false;
-
-        // Leaves particle effects
 
         yield return new WaitForSeconds(treeFallDuration);
         tree.SetActive(false);
         planks.SetActive(true);
-        // Play particle effects and transform tree into planks
 
         yield return null;
-    }
-
-    public void EmitLeaves()
-    {
-        leavesParticles.Play();
     }
 }
