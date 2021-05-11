@@ -6,7 +6,7 @@ public class TreeInteraction : ConditionalInteraction
 {
 	[SerializeField] private AxeTracker player;
 	[SerializeField] [FMODUnity.EventRef] string treeFall = null;
-    public float treeFallDuration = 3f;
+    public float treeFallDuration = 6f;
     [SerializeField] public Rigidbody treeRigidbody = null;
     [SerializeField] public GameObject tree = null;
     [SerializeField] public GameObject planks = null;
