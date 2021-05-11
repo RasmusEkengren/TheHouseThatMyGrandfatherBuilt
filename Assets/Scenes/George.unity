@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657892, g: 0.4964133, b: 0.57481736, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657832, g: 0.49641216, b: 0.5748164, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -15489,7 +15489,7 @@ MonoBehaviour:
   treeRigidbody: {fileID: 676946123}
   tree: {fileID: 686396232}
   planks: {fileID: 1278086516}
-  leavesParticles: {fileID: 0}
+  InteractCollider: {fileID: 686396236}
 --- !u!114 &686396234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15511,6 +15511,11 @@ MonoBehaviour:
     OnWindowsBroken: 2
     OnGeorgeStatePorch: 0
     OnGeorgeStateWindows: 1
+--- !u!135 &686396236 stripped
+SphereCollider:
+  m_CorrespondingSourceObject: {fileID: 3848708273438668140, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
+  m_PrefabInstance: {fileID: 1112237446}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &686396238 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3848708273438668141, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
@@ -35649,6 +35654,63 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704496582}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1705075002
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1278086517}
+    m_Modifications:
+    - target: {fileID: 5111109208382373363, guid: 482b7bf47aecba44384eb237d0c87724, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111109208382373363, guid: 482b7bf47aecba44384eb237d0c87724, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111109208382373363, guid: 482b7bf47aecba44384eb237d0c87724, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111109208382373363, guid: 482b7bf47aecba44384eb237d0c87724, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111109208382373363, guid: 482b7bf47aecba44384eb237d0c87724, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.23628443
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111109208382373363, guid: 482b7bf47aecba44384eb237d0c87724, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.01339804
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111109208382373363, guid: 482b7bf47aecba44384eb237d0c87724, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9715913
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111109208382373363, guid: 482b7bf47aecba44384eb237d0c87724, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.000775627
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111109208382373363, guid: 482b7bf47aecba44384eb237d0c87724, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -180.449
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111109208382373363, guid: 482b7bf47aecba44384eb237d0c87724, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 27.330994
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111109208382373363, guid: 482b7bf47aecba44384eb237d0c87724, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 178.529
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118093067408152601, guid: 482b7bf47aecba44384eb237d0c87724, type: 3}
+      propertyPath: m_Name
+      value: PlankTransformParticles
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 482b7bf47aecba44384eb237d0c87724, type: 3}
 --- !u!1 &1706020362
 GameObject:
   m_ObjectHideFlags: 0
