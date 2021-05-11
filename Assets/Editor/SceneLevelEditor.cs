@@ -74,7 +74,7 @@ public class SceneLevelEditor : EditorWindow
 
         for (int i = 0; i < list.Count; i++)
         {
-            if (list[i].gameObject.GetComponent<ObjectSceneLevel>())
+            if (list[i].gameObject.GetComponent<SavedObjectData>())
             {
                 objectsUsingLevels.Add(list[i]);
             }
@@ -83,10 +83,7 @@ public class SceneLevelEditor : EditorWindow
 
     private void UpdateAllObjects()
     {
-        foreach(GameObject obj in objectsUsingLevels)
-        {
-            obj.GetComponent<ObjectSceneLevel>().UpdateState();
-        }
+
     }
 
     /// What I want:

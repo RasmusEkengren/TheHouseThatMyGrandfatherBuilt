@@ -19,7 +19,7 @@ public class GlobalSceneData : MonoBehaviour
 	public SceneType sceneType;
 	//public List<DataContainer> containerList = new List<DataContainer>();
 
-	public static bool mg_porchFixed /*{ get { return mg_porchFixed; } private set { mg_porchFixed = value; } }*/;
+	public static bool mg_porchFixed; /*{ get { return mg_porchFixed; } private set { mg_porchFixed = value; } }*/
 	public static bool mg_windowsFixed;
 	public static bool tutorialDone = false;
 	public static bool introDone = false;
@@ -30,12 +30,13 @@ public class GlobalSceneData : MonoBehaviour
 
 	public enum PorchFixed { None, Flat, Slanted }
 	public static PorchFixed porchFixed = PorchFixed.None;
+	public static List<string> interactedObjectIDs = new List<string>();
 
 	private GameObject player;
 
 	void Update()
 	{
-		if (mg_windowsFixed) Debug.Log("Yay once again!");
+		//if (mg_windowsFixed) Debug.Log("Yay once again!");
 	}
 
 	public static void SaveLeahPosition(PlayerMovement player)
@@ -43,9 +44,12 @@ public class GlobalSceneData : MonoBehaviour
 		lastLeahPosition = player.transform.position;
 		lastLeahRotation = player.transform.rotation;
 	}
-
-	/// Health component som man kan binda events till
-	/// T�nk inte p� det f�r mycket
-	/// Avbinda events
-	/// ?.
+	public static bool FindInteractedState(string _id)
+	{
+		foreach (string id in interactedObjectIDs)
+		{
+			if (id == _id) return true;
+		}
+		return false;
+	}
 }

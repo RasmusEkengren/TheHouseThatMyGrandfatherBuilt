@@ -12,10 +12,12 @@ public class Interactable : MonoBehaviour
 	private bool hasInteracted = false;
 	void Start()
 	{
+		this.gameObject.GetComponent<UniqueID>().CheckID();
 		mainCamera = Camera.main;
 		//Check if has interacted before in data
 		ParticleSystem.MainModule main = particle.main;
 		ParticleSystem.ColorOverLifetimeModule colorModule = particle.colorOverLifetime;
+		if (GlobalSceneData.FindInteractedState(this.gameObject.GetComponent<UniqueID>().ID)) hasInteracted = true;
 		if (hasInteracted)
 		{
 			main.startColor = Color.white;
@@ -42,11 +44,17 @@ public class Interactable : MonoBehaviour
 	{
 		interactIcon.SetActive(false);
 		hasInteracted = true;
+		GlobalSceneData.interactedObjectIDs.Add(this.gameObject.GetComponent<UniqueID>().ID);
 		//Set to interacted with in data
 		ParticleSystem.MainModule main = particle.main;
 		ParticleSystem.ColorOverLifetimeModule colorModule = particle.colorOverLifetime;
 		main.startColor = Color.white;
 		colorModule.color = interactedColor;
 		FMODUnity.RuntimeManager.PlayOneShot(interactSound);
+	}
+	public void ResetInteraction()
+	{
+		hasInteracted = false;
+		GlobalSceneData.interactedObjectIDs.Remove(this.gameObject.GetComponent<UniqueID>().ID);
 	}
 }
