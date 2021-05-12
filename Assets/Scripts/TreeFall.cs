@@ -28,9 +28,12 @@ public class TreeFall : MonoBehaviour
     IEnumerator TreeFallSequence()
     {
         FMODUnity.RuntimeManager.PlayOneShot(treeFall);
-        //treeRigidbody.isKinematic = false;
+        treeRigidbody.isKinematic = false;
 
-        treeRigidbody.AddForceAtPosition(forcePower, player.gameObject.transform.position);
+
+
+        treeRigidbody.AddForce(forcePower);
+        //treeRigidbody.AddForceAtPosition(forcePower, player.gameObject.transform.position);
         // treeRigidbody.AddForceAtPosition(Vector3.zero, Vector3.zero, ForceMode.Impulse);
 
         yield return new WaitForSeconds(treeFallDuration);
