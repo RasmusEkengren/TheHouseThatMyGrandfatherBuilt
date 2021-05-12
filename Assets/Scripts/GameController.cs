@@ -5,7 +5,6 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
 	private static bool paused = false;
-	public static bool introDone = false;
 
 	public static GameController instance;
 
