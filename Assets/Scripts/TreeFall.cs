@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class TreeFall : MonoBehaviour
 {
-    [SerializeField] private AxeTracker player;
     [SerializeField] [FMODUnity.EventRef] string treeFall = null;
     public float treeFallDuration = 6f;
-    [SerializeField] private Rigidbody treeRigidbody = null;
-    [SerializeField] public GameObject tree = null;
-    [SerializeField] public GameObject planks = null;
-    [SerializeField] public Collider InteractCollider = null;
+    private Rigidbody treeRigidbody = null;
+    [SerializeField] public GameObject treeToDisable = null;
+    [SerializeField] public GameObject planksToSpawn = null;
     private bool done = false;
+    public Vector3 forcePower = new Vector3(1f,0f,0f);
+
+    private GameObject player = null;
 
     private void Start()
     {
+        player = FindObjectOfType<PlayerMovement>().gameObject;
         treeRigidbody = GetComponent<Rigidbody>();
     }
 
@@ -25,15 +27,15 @@ public class TreeFall : MonoBehaviour
 
     IEnumerator TreeFallSequence()
     {
-        InteractCollider.enabled = false;
         FMODUnity.RuntimeManager.PlayOneShot(treeFall);
-        treeRigidbody.isKinematic = false;
+        //treeRigidbody.isKinematic = false;
 
-        treeRigidbody.AddForceAtPosition(Vector3.zero, Vector3.zero, ForceMode.Impulse);
+        treeRigidbody.AddForceAtPosition(forcePower, player.gameObject.transform.position);
+        // treeRigidbody.AddForceAtPosition(Vector3.zero, Vector3.zero, ForceMode.Impulse);
 
         yield return new WaitForSeconds(treeFallDuration);
-        tree.SetActive(false);
-        planks.SetActive(true);
+        treeToDisable.SetActive(false);
+        planksToSpawn.SetActive(true);
 
         yield return null;
     }
