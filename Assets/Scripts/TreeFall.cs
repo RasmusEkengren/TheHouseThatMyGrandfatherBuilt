@@ -5,18 +5,14 @@ using UnityEngine;
 public class TreeFall : MonoBehaviour
 {
     [SerializeField] [FMODUnity.EventRef] string treeFall = null;
-    public float treeFallDuration = 6f;
+    public float timeUntilPlanks = 3f;
     private Rigidbody treeRigidbody = null;
-    [SerializeField] public GameObject treeToDisable = null;
     [SerializeField] public GameObject planksToSpawn = null;
-    private bool done = false;
+    [SerializeField] public GameObject treeToDisable = null;
     public Vector3 forcePower = new Vector3(1f,0f,0f);
-
-    private GameObject player = null;
 
     private void Start()
     {
-        player = FindObjectOfType<PlayerMovement>().gameObject;
         treeRigidbody = GetComponent<Rigidbody>();
     }
 
@@ -30,13 +26,10 @@ public class TreeFall : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShot(treeFall);
         treeRigidbody.isKinematic = false;
 
-
-
         treeRigidbody.AddForce(forcePower);
-        //treeRigidbody.AddForceAtPosition(forcePower, player.gameObject.transform.position);
-        // treeRigidbody.AddForceAtPosition(Vector3.zero, Vector3.zero, ForceMode.Impulse);
 
-        yield return new WaitForSeconds(treeFallDuration);
+        yield return new WaitForSeconds(timeUntilPlanks);
+
         treeToDisable.SetActive(false);
         planksToSpawn.SetActive(true);
 
