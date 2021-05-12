@@ -4,35 +4,36 @@ using UnityEngine;
 
 public class TreeFall : MonoBehaviour
 {
-    [SerializeField] [FMODUnity.EventRef] string treeFall = null;
-    public float timeUntilPlanks = 3f;
-    private Rigidbody treeRigidbody = null;
-    [SerializeField] public GameObject planksToSpawn = null;
-    [SerializeField] public GameObject treeToDisable = null;
-    public Vector3 forcePower = new Vector3(1f,0f,0f);
+	[SerializeField] [FMODUnity.EventRef] string treeFall = null;
+	public float timeUntilPlanks = 3f;
+	private Rigidbody treeRigidbody = null;
+	[SerializeField] public GameObject planksToSpawn = null;
+	[SerializeField] public GameObject treeToDisable = null;
+	public Vector3 forcePower = new Vector3(1f, 0f, 0f);
 
-    private void Start()
-    {
-        treeRigidbody = GetComponent<Rigidbody>();
-    }
+	private void Start()
+	{
+		treeRigidbody = GetComponent<Rigidbody>();
+	}
 
-    public void FellTree()
-    {
-        StartCoroutine("TreeFallSequence");
-    }
+	public void FellTree()
+	{
+		StartCoroutine("TreeFallSequence");
+		this.GetComponentInParent<EventInteractable>().setIsTrigger(true);
+	}
 
-    IEnumerator TreeFallSequence()
-    {
-        FMODUnity.RuntimeManager.PlayOneShot(treeFall);
-        treeRigidbody.isKinematic = false;
+	IEnumerator TreeFallSequence()
+	{
+		FMODUnity.RuntimeManager.PlayOneShot(treeFall);
+		treeRigidbody.isKinematic = false;
 
-        treeRigidbody.AddForce(forcePower);
+		treeRigidbody.AddForce(forcePower);
 
-        yield return new WaitForSeconds(timeUntilPlanks);
+		yield return new WaitForSeconds(timeUntilPlanks);
 
-        treeToDisable.SetActive(false);
-        planksToSpawn.SetActive(true);
+		treeToDisable.SetActive(false);
+		planksToSpawn.SetActive(true);
 
-        yield return null;
-    }
+		yield return null;
+	}
 }

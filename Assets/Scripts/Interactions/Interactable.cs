@@ -56,5 +56,9 @@ public class Interactable : MonoBehaviour
 	{
 		hasInteracted = false;
 		GlobalSceneData.interactedObjectIDs.Remove(this.gameObject.GetComponent<UniqueID>().ID);
+		ParticleSystem.MainModule main = particle.main;
+		ParticleSystem.ColorOverLifetimeModule colorModule = particle.colorOverLifetime;
+		main.startColor = new Color(255, 243, 0, 255);
+		colorModule.color = normalColor;
 	}
 }
