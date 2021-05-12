@@ -14920,10 +14920,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   treeFall: event:/SFX/Interactions/2D/Interaction_Tree_Fall
-  treeFallDuration: 3.4
-  treeToDisable: {fileID: 686396232}
+  timeUntilPlanks: 1.8
   planksToSpawn: {fileID: 1278086516}
-  forcePower: {x: 0, y: 0, z: -575}
+  treeToDisable: {fileID: 686396232}
+  forcePower: {x: 0, y: 0, z: -900}
 --- !u!1001 &678925299
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35323,7 +35323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5111109208382373363, guid: 482b7bf47aecba44384eb237d0c87724, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.06
+      value: -0.552
       objectReference: {fileID: 0}
     - target: {fileID: 5111109208382373363, guid: 482b7bf47aecba44384eb237d0c87724, type: 3}
       propertyPath: m_LocalPosition.z
@@ -35360,34 +35360,6 @@ PrefabInstance:
     - target: {fileID: 8118093067408152601, guid: 482b7bf47aecba44384eb237d0c87724, type: 3}
       propertyPath: m_Name
       value: PlankTransformParticles
-      objectReference: {fileID: 0}
-    - target: {fileID: 9213533298565183498, guid: 482b7bf47aecba44384eb237d0c87724, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[1].time
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 9213533298565183498, guid: 482b7bf47aecba44384eb237d0c87724, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[2].time
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9213533298565183498, guid: 482b7bf47aecba44384eb237d0c87724, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[3].time
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 9213533298565183498, guid: 482b7bf47aecba44384eb237d0c87724, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 9213533298565183498, guid: 482b7bf47aecba44384eb237d0c87724, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[1].countCurve.scalar
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 9213533298565183498, guid: 482b7bf47aecba44384eb237d0c87724, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[2].countCurve.scalar
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 9213533298565183498, guid: 482b7bf47aecba44384eb237d0c87724, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[3].countCurve.scalar
-      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 482b7bf47aecba44384eb237d0c87724, type: 3}

@@ -29,9 +29,9 @@ public class TreeFall : MonoBehaviour
         treeRigidbody.AddForce(forcePower);
 
         yield return new WaitForSeconds(timeUntilPlanks);
-
         treeToDisable.SetActive(false);
         planksToSpawn.SetActive(true);
+
 
         yield return null;
     }
