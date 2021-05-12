@@ -4,35 +4,24 @@ using UnityEngine;
 
 public class TreeInteraction : ConditionalInteraction
 {
-	[SerializeField] private AxeTracker player;
-	[SerializeField] [FMODUnity.EventRef] string treeFall = null;
-    public float treeFallDuration = 6f;
-    [SerializeField] public Rigidbody treeRigidbody = null;
-    [SerializeField] public GameObject tree = null;
-    [SerializeField] public GameObject planks = null;
-    [SerializeField] public Collider InteractCollider = null;
+    [SerializeField] private AxeTracker player;
+    private bool allowInteraction = true;
 
-
-	public void CheckAxe() 
-	{
-		CheckCondition(player.hasAxe);
-	}
-
-	public void Play()
-	{
-        StartCoroutine("TreeFallSequence");
-	}
-
-    IEnumerator TreeFallSequence()
+    public override void CheckCondition(bool condition)
     {
-        InteractCollider.enabled = false;
-        FMODUnity.RuntimeManager.PlayOneShot(treeFall);
-        treeRigidbody.isKinematic = false;
+        if (allowInteraction)
+        {
+            base.CheckCondition(condition);
+        }
+    }
 
-        yield return new WaitForSeconds(treeFallDuration);
-        tree.SetActive(false);
-        planks.SetActive(true);
+    public void CheckAxe()
+    {
+        CheckCondition(player.hasAxe);
+    }
 
-        yield return null;
+    public void AllowInteraction(bool _bool)
+    {
+        allowInteraction = _bool;
     }
 }

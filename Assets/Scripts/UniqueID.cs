@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEditor.SceneManagement;
 
 [ExecuteInEditMode]
 public class UniqueID : MonoBehaviour
