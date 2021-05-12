@@ -8,17 +8,12 @@ public class CutsceneManager : MonoBehaviour
 	[SerializeField] private float borderSpeed;
 	[SerializeField] private RectTransform topBorder;
 	[SerializeField] private RectTransform bottomBorder;
-	[SerializeField] private UnityEvent startEvents;
 	void Start()
 	{
-        if (!GlobalSceneData.introDone)
-        {
-            startEvents.Invoke();
-        }
-        else
-        {
-            EndBorder();
-        }
+		if (GlobalSceneData.leahState != GlobalSceneData.LeahState.Entering)
+		{
+			EndBorder();
+		}
 	}
 	public void StartBorder()
 	{

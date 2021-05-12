@@ -39,8 +39,6 @@ public class SceneController : MonoBehaviour
 	[SerializeField] private int sceneChangeDelay = 2;
 	private bool changingScene = false;
 
-	private GameObject player = null;
-
 	private void Awake()
 	{
 		if (instance == null)
@@ -86,10 +84,6 @@ public class SceneController : MonoBehaviour
 				if (operation.progress >= 0.9f)
 				{
 					onSceneChange.Invoke(); // Placing this here to hide it behind transition (in case something is disabled in player sight)
-					if (sceneType == SceneType.Scene.Leah && !GameController.introDone)
-					{
-						GameController.introDone = true;
-					}
 
 					PlayVFX(1);
 					operation.allowSceneActivation = true;
