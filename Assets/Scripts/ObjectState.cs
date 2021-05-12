@@ -9,16 +9,20 @@ public class ObjectState : MonoBehaviour
 	private class BoolStates
 	{
 		public enum activeStates { ON, OFF, NONE }
+        [Header("Porch")]
 		public activeStates OnPorchFixed = activeStates.NONE;
 		public activeStates OnPorchFlat = activeStates.NONE;
 		public activeStates OnPorchSlanted = activeStates.NONE;
 		public activeStates OnPorchBroken = activeStates.NONE;
+        [Header("Windows")]
 		public activeStates OnWindowsFixed = activeStates.NONE;
 		public activeStates OnWindowsBroken = activeStates.NONE;
+        [Header("George States")]
 		public activeStates OnGeorgeStatePorch = activeStates.NONE;
 		public activeStates OnGeorgeStateWindows = activeStates.NONE;
 	}
 	[SerializeField] private BoolStates boolStates;
+
 	public void SetState()
 	{
 		if (GlobalSceneData.mg_porchFixed)

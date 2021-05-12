@@ -44,6 +44,7 @@ public class GlobalSceneData : MonoBehaviour
 		lastLeahPosition = player.transform.position;
 		lastLeahRotation = player.transform.rotation;
 	}
+
 	public static bool FindInteractedState(string _id)
 	{
 		foreach (string id in interactedObjectIDs)

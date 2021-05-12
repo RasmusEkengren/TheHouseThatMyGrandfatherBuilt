@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float fallTime = 1f;
     private float savedWalkSpeed = 0f;
     [SerializeField] private LayerMask groundLayer;
+    [HideInInspector]public bool speedrunMode = false;
 
     private PlayerFootstepSound playerFootstep = null;
 
