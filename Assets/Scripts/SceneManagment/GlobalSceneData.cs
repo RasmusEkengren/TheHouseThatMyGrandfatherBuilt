@@ -32,8 +32,8 @@ public class GlobalSceneData : MonoBehaviour
 	public enum GeorgeState { Porch, Windows, Fence }
 	public static GeorgeState georgeState;
 
-	public enum PorchFixed { None, Flat, Slanted }
-	public static PorchFixed porchFixed = PorchFixed.None;
+	public enum PorchState { Broken, Flat, Slanted }
+	public static PorchState porchState = PorchState.Broken;
 	public static List<string> interactedObjectIDs = new List<string>();
 
 	private GameObject player;
