@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Animations;
 using UnityEngine.Events;
@@ -59,7 +60,7 @@ public class SceneController : MonoBehaviour
 	#endregion Initializations
 
 	#region PublicFunctions
-	public IEnumerator LoadNextScene(string nextScene)
+	public IEnumerator LoadNextScene(string nextScene, Color transitionColor)
 	{
 		if (!changingScene)
 		{
@@ -70,6 +71,8 @@ public class SceneController : MonoBehaviour
 				gameController = FindObjectOfType<GameController>();
 				gameController.PauseGame(true);
 			}
+            transitionColor.a = 0;
+            transitionObject.GetComponent<Image>().color = transitionColor;
 			transitionObject.SetActive(true);
 			PlayVFX(0);
 			PlaySFX();

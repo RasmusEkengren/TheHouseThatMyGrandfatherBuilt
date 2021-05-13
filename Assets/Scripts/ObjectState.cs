@@ -9,22 +9,28 @@ public class ObjectState : MonoBehaviour
 	private class BoolStates
 	{
 		public enum activeStates { ON, OFF, NONE }
+        [Header("Porch")]
 		public activeStates OnPorchFixed = activeStates.NONE;
 		public activeStates OnPorchFlat = activeStates.NONE;
 		public activeStates OnPorchSlanted = activeStates.NONE;
 		public activeStates OnPorchBroken = activeStates.NONE;
+        [Header("Windows")]
 		public activeStates OnWindowsFixed = activeStates.NONE;
 		public activeStates OnWindowsBroken = activeStates.NONE;
-		public activeStates OnFenceFixed = activeStates.NONE;
+        [Header("Fence")]
+        public activeStates OnFenceFixed = activeStates.NONE;
 		public activeStates OnFenceBroken = activeStates.NONE;
-		public activeStates OnLeahEntering = activeStates.NONE;
+        [Header("Leah")]
+        public activeStates OnLeahEntering = activeStates.NONE;
 		public activeStates OnLeahBuilding = activeStates.NONE;
 		public activeStates OnLeahDone = activeStates.NONE;
-		public activeStates OnGeorgeStatePorch = activeStates.NONE;
+        [Header("George")]
+        public activeStates OnGeorgeStatePorch = activeStates.NONE;
 		public activeStates OnGeorgeStateWindows = activeStates.NONE;
 		public activeStates OnGeorgeStateFence = activeStates.NONE;
 	}
 	[SerializeField] private BoolStates boolStates;
+
 	public void SetState()
 	{
 		if (GlobalSceneData.mg_porchFixed)
@@ -40,7 +46,7 @@ public class ObjectState : MonoBehaviour
 				default:
 					break;
 			}
-			if (GlobalSceneData.porchFixed == GlobalSceneData.PorchFixed.Flat)
+			if (GlobalSceneData.porchState == GlobalSceneData.PorchState.Flat)
 			{
 				switch (boolStates.OnPorchFlat)
 				{
@@ -54,7 +60,7 @@ public class ObjectState : MonoBehaviour
 						break;
 				}
 			}
-			else if (GlobalSceneData.porchFixed == GlobalSceneData.PorchFixed.Slanted)
+			else if (GlobalSceneData.porchState == GlobalSceneData.PorchState.Slanted)
 			{
 				switch (boolStates.OnPorchSlanted)
 				{
