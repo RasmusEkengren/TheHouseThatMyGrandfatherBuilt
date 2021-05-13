@@ -7,11 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-<<<<<<< HEAD
-[LOG] AsyncManager::init                       : manager 000002855E0433F8 isAsync 0 updatePeriod 0.02
-=======
-[LOG] AsyncManager::init                       : manager 0000023BF1993F88 isAsync 0 updatePeriod 0.02
->>>>>>> Jens
+[LOG] AsyncManager::init                       : manager 000001A71670C188 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -19,156 +15,71 @@
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-<<<<<<< HEAD
-[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 3
-=======
-[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 3
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 5034016
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 69760
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000CC40AFF088
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF9D8587B10
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF9D8587AE0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF9D8587BE0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF9D8587CA0
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000023B2A1CEFC8
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='THMGB_Tree_Fall_ver1.1', format=5, channels=2, frequency=48000, lengthbytes=51264, lengthpcm=165120, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.680103.
-[WRN] EventInstance::update                    : Event {0944927d-905b-4c51-b121-b1e430524dc6} waited 62 milliseconds for sample data to load.  Preload sample data to avoid this delay.
-[LOG] SystemI::createSound                     : filename = Assets\THTMGB Project\Build\Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 0000023B2A31B928 : node = 0000023B2B4EECA0
-[LOG] SystemI::createSound                     : add node to async list : head = 0000023BD72E7B28.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000023B2A31B928
-[LOG] SystemI::createSoundInternal             :     Create name='Assets\THTMGB Project\Build\Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 5034016
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 69760
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000023B2B4EEDB0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Ambiance_Temp_Windchime_02', format=5, channels=2, frequency=48000, lengthbytes=654496, lengthpcm=2581625, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.041214.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000023B2A31B928
-[LOG] SoundI::release                          :  (0000023BF1FE60E8)
-[LOG] SoundI::release                          :     THMGB_Tree_Fall_ver1.1 (0000023B2FC095F8)
-[LOG] SystemI::createSound                     : filename = Assets\THTMGB Project\Build\Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 0000023B2A31A698 : node = 0000023BF2391250
-[LOG] SystemI::createSound                     : add node to async list : head = 0000023BD72E7B28.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000023B2A31A698
-[LOG] SystemI::createSoundInternal             :     Create name='Assets\THTMGB Project\Build\Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 5034016
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 69760
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000023BF2391360
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Ambiance_Temp_Windchime_01', format=5, channels=2, frequency=48000, lengthbytes=420512, lengthpcm=1830636, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.016585.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000023B2A31A698
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 5034016
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 69760
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000CC3FD2F0D8
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF9D8587B10
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF9D8587AE0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF9D8587BE0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF9D8587CA0
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000023BD68F68C8
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Interaction_Sound_6', format=5, channels=2, frequency=48000, lengthbytes=4064, lengthpcm=22843, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.330909.
-[LOG] SoundI::release                          :  (0000023BF1FD6DF8)
-[LOG] SoundI::release                          :     Interaction_Sound_6 (0000023B2FC07578)
-[LOG] SoundI::release                          :  (0000023BF1FDF688)
-[LOG] SoundI::release                          :     Footsteps_George_Gravel_04 (0000023B2FC0BE98)
-[LOG] SoundI::release                          :  (0000023BF1FDD858)
-[LOG] SoundI::release                          :     Footsteps_George_Gravel_05 (0000023B2FC08418)
-[LOG] SoundI::release                          :  (0000023BF1FDC888)
-[LOG] SoundI::release                          :     Footsteps_George_Gravel_01 (0000023B2FC0ACB8)
-[LOG] SoundI::release                          :  (0000023BF1FE0C18)
-[LOG] SoundI::release                          :     Footsteps_George_Gravel_02 (0000023B2FC0CD38)
-[LOG] SoundI::release                          :  (0000023BF1FDC718)
-[LOG] SoundI::release                          :     Footsteps_George_Gravel_03 (0000023B2FC07BF8)
-[LOG] SoundI::release                          :  (0000023BF1FE1348)
-[LOG] SoundI::release                          :     Footstep_George_Grass_03 (0000023B2FC0BB58)
-[LOG] SoundI::release                          :  (0000023BF1FDCFB8)
-[LOG] SoundI::release                          :     Footstep_George_Grass_04 (0000023B2FC0AE58)
-[LOG] SoundI::release                          :  (0000023BF1FDDCA8)
-[LOG] SoundI::release                          :     Footstep_George_Grass_05 (0000023B2FC0C6B8)
-[LOG] SoundI::release                          :  (0000023BF1FDDB38)
-[LOG] SoundI::release                          :     Footstep_George_Grass_06 (0000023B2FC0A158)
-[LOG] SoundI::release                          :  (0000023BF1FE14B8)
-[LOG] SoundI::release                          :     Footstep_George_Grass_01 (0000023B2FC0C038)
-[LOG] SoundI::release                          :  (0000023BF1FDEF58)
-[LOG] SoundI::release                          :     Footstep_George_Grass_02 (0000023B2FC07D98)
-[LOG] SoundI::release                          :  (0000023BF1FE0098)
-[LOG] SoundI::release                          :     Footsteps_George_Wood_03 (0000023B2FC08758)
-[LOG] SoundI::release                          :  (0000023BF1FDE548)
-[LOG] SoundI::release                          :     Footsteps_George_Wood_04 (0000023B2FC08DD8)
-[LOG] SoundI::release                          :  (0000023BF1FDC9F8)
-[LOG] SoundI::release                          :     Footsteps_George_Wood_05 (0000023B2FC0B198)
-[LOG] SoundI::release                          :  (0000023BF1FDDF88)
-[LOG] SoundI::release                          :     Footsteps_George_Wood_06 (0000023B2FC0AFF8)
-[LOG] SoundI::release                          :  (0000023BF1FDF7F8)
-[LOG] SoundI::release                          :     Footsteps_George_Wood_01 (0000023B2FC07098)
-[LOG] SoundI::release                          :  (0000023BF1FDE0F8)
-[LOG] SoundI::release                          :     Footsteps_George_Wood_02 (0000023B2FC07238)
-[LOG] SoundI::release                          :  (0000023BF1FE1908)
-[LOG] SoundI::release                          :     SP2 koncept 4 Leah stem intro (0000023B2FC0C1D8)
-[LOG] SoundI::release                          : Ambiance_Dead_02 (0000023BF23B7878)
-[LOG] SoundI::release                          :     Ambiance_Dead_02 (0000023B2FC0B338)
-[LOG] SoundI::release                          :     Ambiance_Dead_02 (0000023BF23B3D68)
-[LOG] SoundI::release                          : Ambiance_Temp_Windchime_01 (0000023B2A31A698)
-[LOG] SoundI::release                          :     Ambiance_Temp_Windchime_01 (0000023B2FC0C858)
-[LOG] SoundI::release                          :     Ambiance_Temp_Windchime_01 (0000023B2A31CA08)
-[LOG] SoundI::release                          : Ambiance_Temp_Windchime_02 (0000023B2A31B928)
-[LOG] SoundI::release                          :     Ambiance_Temp_Windchime_02 (0000023B2FC09E18)
-[LOG] SoundI::release                          :     Ambiance_Temp_Windchime_02 (0000023B2A31A338)
-[LOG] SoundI::release                          : Ambiance_Temp_Windchime_01 (0000023BF23B96D8)
-[LOG] SoundI::release                          :     Ambiance_Temp_Windchime_01 (0000023B2FC0B4D8)
-[LOG] SoundI::release                          :     Ambiance_Temp_Windchime_01 (0000023BF23B5358)
-[LOG] SoundI::release                          : Vinyl SFX loop (0000023BF23B56B8)
-[LOG] SoundI::release                          :     Vinyl SFX loop (0000023B2FC073D8)
-[LOG] SoundI::release                          :     Vinyl SFX loop (0000023BF23B5868)
-[LOG] SoundI::release                          : SP2 koncept 5 piano stem (0000023BF23B6E58)
-[LOG] SoundI::release                          :     SP2 koncept 5 piano stem (0000023B2FC0A638)
-[LOG] SoundI::release                          :     SP2 koncept 5 piano stem (0000023BF23B40C8)
-[LOG] SoundI::release                          :  (0000023BF1FE11D8)
-[LOG] SoundI::release                          :     Creaks_01 (0000023B2FC0A2F8)
-[LOG] SoundI::release                          :  (0000023BF1FDF518)
-[LOG] SoundI::release                          :     Creaks_06 (0000023B2FC07F38)
-[LOG] SoundI::release                          :  (0000023BF1FE1798)
-[LOG] SoundI::release                          :     Creaks_07 (0000023B2FC080D8)
-[LOG] SoundI::release                          :  (0000023BF1FDCE48)
-[LOG] SoundI::release                          :     Creaks_08 (0000023B2FC0A498)
-[LOG] SoundI::release                          :  (0000023BF1FE0378)
-[LOG] SoundI::release                          :     Creaks_02 (0000023B2FC088F8)
-[LOG] SoundI::release                          :  (0000023BF1FDD9C8)
-[LOG] SoundI::release                          :     Creaks_03 (0000023B2FC0A7D8)
-[LOG] SoundI::release                          :  (0000023BF1FDCCD8)
-[LOG] SoundI::release                          :     Creaks_04 (0000023B2FC0C378)
-[LOG] SoundI::release                          :  (0000023BF1FE0658)
-[LOG] SoundI::release                          :     Creaks_05 (0000023B2FC0C518)
+[LOG] SoundI::release                          :  (000001A784472D28)
+[LOG] SoundI::release                          :     Footsteps_George_Gravel_04 (000001A71EAF1A78)
+[LOG] SoundI::release                          :  (000001A784476988)
+[LOG] SoundI::release                          :     Footsteps_George_Gravel_05 (000001A71EAFC6B8)
+[LOG] SoundI::release                          :  (000001A7844777E8)
+[LOG] SoundI::release                          :     Footsteps_George_Gravel_01 (000001A71EAFBCF8)
+[LOG] SoundI::release                          :  (000001A784473008)
+[LOG] SoundI::release                          :     Footsteps_George_Gravel_02 (000001A71EAF0A38)
+[LOG] SoundI::release                          :  (000001A784476538)
+[LOG] SoundI::release                          :     Footsteps_George_Gravel_03 (000001A71EAF4998)
+[LOG] SoundI::release                          :  (000001A784477AC8)
+[LOG] SoundI::release                          :     Footstep_George_Grass_03 (000001A71EAFA498)
+[LOG] SoundI::release                          :  (000001A784475C98)
+[LOG] SoundI::release                          :     Footstep_George_Grass_04 (000001A71EAFDF18)
+[LOG] SoundI::release                          :  (000001A784476818)
+[LOG] SoundI::release                          :     Footstep_George_Grass_05 (000001A71F7E9BF8)
+[LOG] SoundI::release                          :  (000001A784473CF8)
+[LOG] SoundI::release                          :     Footstep_George_Grass_06 (000001A71EAFE738)
+[LOG] SoundI::release                          :  (000001A784473738)
+[LOG] SoundI::release                          :     Footstep_George_Grass_01 (000001A71EAF3618)
+[LOG] SoundI::release                          :  (000001A784478368)
+[LOG] SoundI::release                          :     Footstep_George_Grass_02 (000001A71EAFA978)
+[LOG] SoundI::release                          :  (000001A784476C68)
+[LOG] SoundI::release                          :     Footsteps_George_Wood_03 (000001A71EAF18D8)
+[LOG] SoundI::release                          :  (000001A7844756D8)
+[LOG] SoundI::release                          :     Footsteps_George_Wood_04 (000001A71EAF5838)
+[LOG] SoundI::release                          :  (000001A7844766A8)
+[LOG] SoundI::release                          :     Footsteps_George_Wood_05 (000001A71EAF9938)
+[LOG] SoundI::release                          :  (000001A784473178)
+[LOG] SoundI::release                          :     Footsteps_George_Wood_06 (000001A71EAFF438)
+[LOG] SoundI::release                          :  (000001A784474CC8)
+[LOG] SoundI::release                          :     Footsteps_George_Wood_01 (000001A71EAF6878)
+[LOG] SoundI::release                          :  (000001A7844728D8)
+[LOG] SoundI::release                          :     Footsteps_George_Wood_02 (000001A71EAFE258)
+[LOG] SoundI::release                          :  (000001A784473A18)
+[LOG] SoundI::release                          :     SP2 koncept 4 Leah stem intro (000001A71EAF8A98)
+[LOG] SoundI::release                          : Ambiance_Dead_02 (000001A7A67CAD78)
+[LOG] SoundI::release                          :     Ambiance_Dead_02 (000001A71F7EAA98)
+[LOG] SoundI::release                          :     Ambiance_Dead_02 (000001A7A67CB5E8)
+[LOG] SoundI::release                          : Ambiance_Temp_Windchime_01 (000001A7A67CC6C8)
+[LOG] SoundI::release                          :     Ambiance_Temp_Windchime_01 (000001A71EAF6398)
+[LOG] SoundI::release                          :     Ambiance_Temp_Windchime_01 (000001A7A67CDCB8)
+[LOG] SoundI::release                          : Vinyl SFX loop (000001A7A67CA358)
+[LOG] SoundI::release                          :     Vinyl SFX loop (000001A71F7EC158)
+[LOG] SoundI::release                          :     Vinyl SFX loop (000001A7A67CB438)
+[LOG] SoundI::release                          : SP2 koncept 5 piano stem (000001A7A67CABC8)
+[LOG] SoundI::release                          :     SP2 koncept 5 piano stem (000001A71F7EA5B8)
+[LOG] SoundI::release                          :     SP2 koncept 5 piano stem (000001A7A67C4EF8)
+[LOG] SoundI::release                          :  (000001A784474878)
+[LOG] SoundI::release                          :     Creaks_01 (000001A71EAFC038)
+[LOG] SoundI::release                          :  (000001A784474E38)
+[LOG] SoundI::release                          :     Creaks_06 (000001A71EAF20F8)
+[LOG] SoundI::release                          :  (000001A784477678)
+[LOG] SoundI::release                          :     Creaks_07 (000001A71EAF32D8)
+[LOG] SoundI::release                          :  (000001A7844749E8)
+[LOG] SoundI::release                          :     Creaks_08 (000001A71EAFDBD8)
+[LOG] SoundI::release                          :  (000001A7844732E8)
+[LOG] SoundI::release                          :     Creaks_02 (000001A71EAFD558)
+[LOG] SoundI::release                          :  (000001A784477F18)
+[LOG] SoundI::release                          :     Creaks_03 (000001A71EAF6D58)
+[LOG] SoundI::release                          :  (000001A784473FD8)
+[LOG] SoundI::release                          :     Creaks_04 (000001A71EAFC9F8)
+[LOG] SoundI::release                          :  (000001A784474FA8)
+[LOG] SoundI::release                          :     Creaks_05 (000001A71EAFD898)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
->>>>>>> Jens
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
@@ -179,25 +90,12 @@
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
 [LOG] SystemI::close                           : Closed.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 3
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 5034016
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 69760
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000CC40AFF088
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF9D8587B10
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF9D8587AE0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF9D8587BE0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF9D8587CA0
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000023B261CC078
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='THMGB_Tree_Fall_ver1.1', format=5, channels=2, frequency=48000, lengthbytes=51264, lengthpcm=165120, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.680103.
-[LOG] SoundI::release                          :  (0000023BF1FE1798)
-[LOG] SoundI::release                          :     THMGB_Tree_Fall_ver1.1 (0000023B2FC0ACB8)
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
