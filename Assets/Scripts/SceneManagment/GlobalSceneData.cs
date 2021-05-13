@@ -16,20 +16,24 @@ public class GlobalSceneData : MonoBehaviour
 
 	public static Vector3 lastLeahPosition;
 	public static Quaternion lastLeahRotation;
+	public static Vector3 lastCameraPosition;
+	public static Quaternion lastCameraRotation;
 	public SceneType sceneType;
 	//public List<DataContainer> containerList = new List<DataContainer>();
 
 	public static bool mg_porchFixed; /*{ get { return mg_porchFixed; } private set { mg_porchFixed = value; } }*/
 	public static bool mg_windowsFixed;
-	public static bool tutorialDone = false;
-	public static bool introDone = false;
-	private bool leahPositionUpdated = false;
+	public static bool mg_fenceFixed;
+	//private bool leahPositionUpdated = false;
 
-	public enum GeorgeState { Porch, Windows }
+	public enum LeahState { Entering, Building, Done }
+	public static LeahState leahState = LeahState.Entering;
+
+	public enum GeorgeState { Porch, Windows, Fence }
 	public static GeorgeState georgeState;
 
-	public enum PorchFixed { None, Flat, Slanted }
-	public static PorchFixed porchFixed = PorchFixed.None;
+	public enum PorchState { Broken, Flat, Slanted }
+	public static PorchState porchState = PorchState.Broken;
 	public static List<string> interactedObjectIDs = new List<string>();
 
 	private GameObject player;
@@ -43,6 +47,11 @@ public class GlobalSceneData : MonoBehaviour
 	{
 		lastLeahPosition = player.transform.position;
 		lastLeahRotation = player.transform.rotation;
+	}
+	public static void SaveCameraPosition(CameraController camera)
+	{
+		lastCameraPosition = camera.transform.position;
+		lastCameraRotation = camera.transform.rotation;
 	}
 	public static bool FindInteractedState(string _id)
 	{

@@ -24,7 +24,16 @@ public class PlayerMovement : MonoBehaviour
     private float savedWalkSpeed = 0f;
     [SerializeField] private LayerMask groundLayer;
 
+    private bool _speedrun = false;
+    [HideInInspector]
+
     private PlayerFootstepSound playerFootstep = null;
+
+    public void ChangeSpeed(float _moveSpeed, float _autoMoveSpeed)
+    {
+        moveSpeed = _moveSpeed;
+        autoWalkSpeed = _autoMoveSpeed;
+    }
 
     public void Move(InputAction.CallbackContext value)
     {
@@ -59,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
         direction = Vector2.zero;
         savedWalkSpeed = autoWalkSpeed;
         playerFootstep = GetComponentInChildren<PlayerFootstepSound>();
+        Debug.Log(playerFootstep + ": ehh", playerFootstep);
     }
 
     void Update()

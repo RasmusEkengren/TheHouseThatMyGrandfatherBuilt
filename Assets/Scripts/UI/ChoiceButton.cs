@@ -16,8 +16,6 @@ public class ChoiceButton : MonoBehaviour, IPointerEnterHandler, ISelectHandler,
 	private float timer = 0;
 	private string isSelected = "IsSelected";
 
-	[SerializeField] private GameEvent porchChoiceEvent = null;
-
 	void OnEnable()
 	{
 		button = GetComponent<Button>();
@@ -67,13 +65,13 @@ public class ChoiceButton : MonoBehaviour, IPointerEnterHandler, ISelectHandler,
 	}
 	public void FlatPorch()
 	{
-		GlobalSceneData.porchFixed = GlobalSceneData.PorchFixed.Flat;
+		GlobalSceneData.porchState = GlobalSceneData.PorchState.Flat;
 		GlobalSceneData.mg_porchFixed = true;
 	}
 
 	public void SlantedPorch()
 	{
-		GlobalSceneData.porchFixed = GlobalSceneData.PorchFixed.Slanted;
+		GlobalSceneData.porchState = GlobalSceneData.PorchState.Slanted;
 		GlobalSceneData.mg_porchFixed = true;
 	}
 }
