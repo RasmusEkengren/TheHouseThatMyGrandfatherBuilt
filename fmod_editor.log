@@ -7,11 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-<<<<<<< HEAD
-[LOG] AsyncManager::init                       : manager 000001A71670C188 isAsync 0 updatePeriod 0.02
-=======
-[LOG] AsyncManager::init                       : manager 0000025E2D6C4D18 isAsync 0 updatePeriod 0.02
->>>>>>> Dev
+[LOG] AsyncManager::init                       : manager 000002487FAB9468 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -19,96 +15,9 @@
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] SoundI::release                          :  (000001A784472D28)
-[LOG] SoundI::release                          :     Footsteps_George_Gravel_04 (000001A71EAF1A78)
-[LOG] SoundI::release                          :  (000001A784476988)
-[LOG] SoundI::release                          :     Footsteps_George_Gravel_05 (000001A71EAFC6B8)
-[LOG] SoundI::release                          :  (000001A7844777E8)
-[LOG] SoundI::release                          :     Footsteps_George_Gravel_01 (000001A71EAFBCF8)
-[LOG] SoundI::release                          :  (000001A784473008)
-[LOG] SoundI::release                          :     Footsteps_George_Gravel_02 (000001A71EAF0A38)
-[LOG] SoundI::release                          :  (000001A784476538)
-[LOG] SoundI::release                          :     Footsteps_George_Gravel_03 (000001A71EAF4998)
-[LOG] SoundI::release                          :  (000001A784477AC8)
-[LOG] SoundI::release                          :     Footstep_George_Grass_03 (000001A71EAFA498)
-[LOG] SoundI::release                          :  (000001A784475C98)
-[LOG] SoundI::release                          :     Footstep_George_Grass_04 (000001A71EAFDF18)
-[LOG] SoundI::release                          :  (000001A784476818)
-[LOG] SoundI::release                          :     Footstep_George_Grass_05 (000001A71F7E9BF8)
-[LOG] SoundI::release                          :  (000001A784473CF8)
-[LOG] SoundI::release                          :     Footstep_George_Grass_06 (000001A71EAFE738)
-[LOG] SoundI::release                          :  (000001A784473738)
-[LOG] SoundI::release                          :     Footstep_George_Grass_01 (000001A71EAF3618)
-[LOG] SoundI::release                          :  (000001A784478368)
-[LOG] SoundI::release                          :     Footstep_George_Grass_02 (000001A71EAFA978)
-[LOG] SoundI::release                          :  (000001A784476C68)
-[LOG] SoundI::release                          :     Footsteps_George_Wood_03 (000001A71EAF18D8)
-[LOG] SoundI::release                          :  (000001A7844756D8)
-[LOG] SoundI::release                          :     Footsteps_George_Wood_04 (000001A71EAF5838)
-[LOG] SoundI::release                          :  (000001A7844766A8)
-[LOG] SoundI::release                          :     Footsteps_George_Wood_05 (000001A71EAF9938)
-[LOG] SoundI::release                          :  (000001A784473178)
-[LOG] SoundI::release                          :     Footsteps_George_Wood_06 (000001A71EAFF438)
-[LOG] SoundI::release                          :  (000001A784474CC8)
-[LOG] SoundI::release                          :     Footsteps_George_Wood_01 (000001A71EAF6878)
-[LOG] SoundI::release                          :  (000001A7844728D8)
-[LOG] SoundI::release                          :     Footsteps_George_Wood_02 (000001A71EAFE258)
-[LOG] SoundI::release                          :  (000001A784473A18)
-[LOG] SoundI::release                          :     SP2 koncept 4 Leah stem intro (000001A71EAF8A98)
-[LOG] SoundI::release                          : Ambiance_Dead_02 (000001A7A67CAD78)
-[LOG] SoundI::release                          :     Ambiance_Dead_02 (000001A71F7EAA98)
-[LOG] SoundI::release                          :     Ambiance_Dead_02 (000001A7A67CB5E8)
-[LOG] SoundI::release                          : Ambiance_Temp_Windchime_01 (000001A7A67CC6C8)
-[LOG] SoundI::release                          :     Ambiance_Temp_Windchime_01 (000001A71EAF6398)
-[LOG] SoundI::release                          :     Ambiance_Temp_Windchime_01 (000001A7A67CDCB8)
-[LOG] SoundI::release                          : Vinyl SFX loop (000001A7A67CA358)
-[LOG] SoundI::release                          :     Vinyl SFX loop (000001A71F7EC158)
-[LOG] SoundI::release                          :     Vinyl SFX loop (000001A7A67CB438)
-[LOG] SoundI::release                          : SP2 koncept 5 piano stem (000001A7A67CABC8)
-[LOG] SoundI::release                          :     SP2 koncept 5 piano stem (000001A71F7EA5B8)
-[LOG] SoundI::release                          :     SP2 koncept 5 piano stem (000001A7A67C4EF8)
-[LOG] SoundI::release                          :  (000001A784474878)
-[LOG] SoundI::release                          :     Creaks_01 (000001A71EAFC038)
-[LOG] SoundI::release                          :  (000001A784474E38)
-[LOG] SoundI::release                          :     Creaks_06 (000001A71EAF20F8)
-[LOG] SoundI::release                          :  (000001A784477678)
-[LOG] SoundI::release                          :     Creaks_07 (000001A71EAF32D8)
-[LOG] SoundI::release                          :  (000001A7844749E8)
-[LOG] SoundI::release                          :     Creaks_08 (000001A71EAFDBD8)
-[LOG] SoundI::release                          :  (000001A7844732E8)
-[LOG] SoundI::release                          :     Creaks_02 (000001A71EAFD558)
-[LOG] SoundI::release                          :  (000001A784477F18)
-[LOG] SoundI::release                          :     Creaks_03 (000001A71EAF6D58)
-[LOG] SoundI::release                          :  (000001A784473FD8)
-[LOG] SoundI::release                          :     Creaks_04 (000001A71EAFC9F8)
-[LOG] SoundI::release                          :  (000001A784474FA8)
-[LOG] SoundI::release                          :     Creaks_05 (000001A71EAFD898)
-[LOG] Thread::callback                         : FMOD Studio update thread finished.
-[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
-[LOG] LiveUpdate::release                      : 
-[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
-[LOG] Thread::callback                         : FMOD stream thread finished.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] SystemI::close                           : Closed.
-[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 3
-<<<<<<< HEAD
-[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
-[LOG] LiveUpdate::release                      : 
-[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
-[LOG] Thread::callback                         : FMOD stream thread finished.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] SystemI::close                           : Closed.
-[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
-[LOG] Thread::callback                         : FMOD file thread finished.
-=======
->>>>>>> Dev
