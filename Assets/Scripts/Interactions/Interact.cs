@@ -12,11 +12,15 @@ public class Interact : MonoBehaviour
 		if (!gameObject.scene.IsValid()) return;
 		if (value.performed)
 		{
-			center = transform.position;
-			Collider[] hits = Physics.OverlapSphere(center, interactRadius);
-			foreach (Collider hit in hits)
+			InkManager manager = this.gameObject.GetComponent<InkManager>();
+			if (manager.isCutsceneActive == false && manager.isStoryActive == false)
 			{
-				hit.SendMessage("Interact", this.gameObject, SendMessageOptions.DontRequireReceiver);
+				center = transform.position;
+				Collider[] hits = Physics.OverlapSphere(center, interactRadius);
+				foreach (Collider hit in hits)
+				{
+					hit.SendMessage("Interact", this.gameObject, SendMessageOptions.DontRequireReceiver);
+				}
 			}
 		}
 	}

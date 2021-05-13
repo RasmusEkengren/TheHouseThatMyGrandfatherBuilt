@@ -85,6 +85,7 @@ public class Screwing : MonoBehaviour
 	[SerializeField] private float angleTolerance = 40;
 	[SerializeField] private float screwingSpeed = 720;
 	[SerializeField] private Screw[] screws = new Screw[4];
+	[SerializeField] private int numberOfGameCompletions = 1;
 	[SerializeField] private UnityEvent endEvent = null;
 	[SerializeField] [FMODUnity.EventRef] protected string screwSound = null;
 	[SerializeField] private float soundLength = 0.5f;
@@ -134,9 +135,14 @@ public class Screwing : MonoBehaviour
 				currentScrew++;
 				if (currentScrew >= screws.Length)
 				{
-					endEvent.Invoke();
 					gameCompletions++;
-					if (gameCompletions >= 1) GlobalSceneData.mg_windowsFixed = true;
+					if (gameCompletions >= numberOfGameCompletions)
+					{
+						GlobalSceneData.mg_windowsFixed = true;
+						//Change this once we have sawing game done
+						GlobalSceneData.leahState = GlobalSceneData.LeahState.Done;
+						endEvent.Invoke();
+					}
 					return;
 				}
 				targetAngle = UnityEngine.Random.Range(0, 360);

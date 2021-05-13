@@ -31,7 +31,7 @@ public class TestingHelper : EditorWindow
     {
 
         GUILayout.Space(10f);
-        if (GUILayout.Button("Speedrun mode"))
+        if (GUILayout.Toggle(true, "Speedrun mode"))
         {
             Debug.Log("Speedrun mode engaged! (Character speeds increased)");
             PlayerMovement player = FindObjectOfType<PlayerMovement>();

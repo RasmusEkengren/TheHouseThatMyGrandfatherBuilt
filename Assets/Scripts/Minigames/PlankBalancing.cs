@@ -82,7 +82,6 @@ public class PlankBalancing : MonoBehaviour
 	[SerializeField] private UnityEvent fallEvents = null;
 	private Vector2 moveVal = Vector2.zero;
 	private float offBalance = 0f;
-	private float currentInterval = 0;
 	private float currentSpeed = 0;
 	private int moveDir = 0;
 	private GreenZone greenZone;

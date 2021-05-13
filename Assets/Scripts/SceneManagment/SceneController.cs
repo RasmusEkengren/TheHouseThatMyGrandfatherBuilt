@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Animations;
 using UnityEngine.Events;
@@ -39,8 +40,6 @@ public class SceneController : MonoBehaviour
 	[SerializeField] private int sceneChangeDelay = 2;
 	private bool changingScene = false;
 
-	private GameObject player = null;
-
 	private void Awake()
 	{
 		if (instance == null)
@@ -61,7 +60,7 @@ public class SceneController : MonoBehaviour
 	#endregion Initializations
 
 	#region PublicFunctions
-	public IEnumerator LoadNextScene(string nextScene)
+	public IEnumerator LoadNextScene(string nextScene, Color transitionColor)
 	{
 		if (!changingScene)
 		{
@@ -72,6 +71,8 @@ public class SceneController : MonoBehaviour
 				gameController = FindObjectOfType<GameController>();
 				gameController.PauseGame(true);
 			}
+            transitionColor.a = 0;
+            transitionObject.GetComponent<Image>().color = transitionColor;
 			transitionObject.SetActive(true);
 			PlayVFX(0);
 			PlaySFX();
@@ -86,10 +87,6 @@ public class SceneController : MonoBehaviour
 				if (operation.progress >= 0.9f)
 				{
 					onSceneChange.Invoke(); // Placing this here to hide it behind transition (in case something is disabled in player sight)
-					if (sceneType == SceneType.Scene.Leah && !GameController.introDone)
-					{
-						GameController.introDone = true;
-					}
 
 					PlayVFX(1);
 					operation.allowSceneActivation = true;

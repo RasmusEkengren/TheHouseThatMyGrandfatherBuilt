@@ -16,8 +16,6 @@ public class ChoiceButton : MonoBehaviour, IPointerEnterHandler, ISelectHandler,
 	private float timer = 0;
 	private string isSelected = "IsSelected";
 
-	[SerializeField] private GameEvent porchChoiceEvent = null;
-
 	void OnEnable()
 	{
 		button = GetComponent<Button>();
