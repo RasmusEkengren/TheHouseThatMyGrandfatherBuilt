@@ -6,25 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class GlobalSceneData : MonoBehaviour
 {
-	//[Serializable]
-	//public class DataContainer
-	//{
-	//	public string name = null;
-	//	public GeorgeState.State georgeState = GeorgeState.State.Porch;
-	//	public GameObject obj;
-	//}
-
 	public static Vector3 lastLeahPosition;
 	public static Quaternion lastLeahRotation;
 	public static Vector3 lastCameraPosition;
 	public static Quaternion lastCameraRotation;
 	public SceneType sceneType;
-	//public List<DataContainer> containerList = new List<DataContainer>();
 
-	public static bool mg_porchFixed; /*{ get { return mg_porchFixed; } private set { mg_porchFixed = value; } }*/
+	public static bool mg_porchFixed;
 	public static bool mg_windowsFixed;
 	public static bool mg_fenceFixed;
-	//private bool leahPositionUpdated = false;
 
 	public enum LeahState { Entering, Building, Done }
 	public static LeahState leahState = LeahState.Entering;
@@ -57,11 +47,6 @@ public class GlobalSceneData : MonoBehaviour
             mg_porchFixed = true;
         }
     }
-
-    void Update()
-	{
-		//if (mg_windowsFixed) Debug.Log("Yay once again!");
-	}
 
 	public static void SaveLeahPosition(PlayerMovement player)
 	{
