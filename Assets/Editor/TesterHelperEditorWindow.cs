@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEditor;
 using UnityEditor.SceneManagement;
+using UnityEditor.AssetImporters;
 
 public class TesterHelperEditorWindow : EditorWindow
 {
@@ -35,7 +36,8 @@ public class TesterHelperEditorWindow : EditorWindow
         EditorApplication.playModeStateChanged += OnExitPlaymode;
         SceneManager.sceneLoaded += OnSceneLoaded;
 
-        minSize = new Vector2(100f, 100f);
+        minSize = new Vector2(248f, 275f);
+        maxSize = new Vector2(550f, 500f); 
 
         THObject = ScriptableObject.CreateInstance<TesterHelperObject>();
         if (so == null) { so = new SerializedObject(THObject); }
@@ -88,6 +90,7 @@ public class TesterHelperEditorWindow : EditorWindow
         speedToggle = GUILayout.Toggle(speedToggle, "Increase Movement Speed");
         GUILayout.Space(10f);
 
+        GUILayout.Label("Current game progress (change in-game)");
         EditorGUILayout.PropertyField(propLeah);
         GUILayout.Space(5f);
         EditorGUILayout.PropertyField(propGeorge);
@@ -101,7 +104,10 @@ public class TesterHelperEditorWindow : EditorWindow
         }
 
         GUILayout.Space(10f);
-        if (GUILayout.Button("Load Leah Scene"))
+        GUILayout.Label("Scene Changing");
+        GUILayout.Label("(Load after state changes to apply them)");
+        GUILayout.BeginHorizontal();
+        if (GUILayout.Button("Load Leah Scene", GUILayout.Height(40f)))
         {
             if (EditorApplication.isPlaying)
             {
@@ -114,8 +120,8 @@ public class TesterHelperEditorWindow : EditorWindow
             }
         }
 
-        GUILayout.Space(10f);
-        if (GUILayout.Button("Load George Scene"))
+        GUILayout.Space(5f);
+        if (GUILayout.Button("Load George Scene", GUILayout.Height(40f)))
         {
             if (EditorApplication.isPlaying)
             {
@@ -127,12 +133,13 @@ public class TesterHelperEditorWindow : EditorWindow
                 EditorSceneManager.OpenScene("Assets/Scenes/George.unity");
             }
         }
+        GUILayout.EndHorizontal();
         GUILayout.Space(10f);
 
-        if (GUILayout.Button("Clear Interacts"))
-        {
-            ClearInteracts();
-        }
+        //if (GUILayout.Button("Clear Interacts", GUILayout.Height(30f)))
+        //{
+        //    ClearInteracts();
+        //}
 
         if (so != null && EditorApplication.isPlaying)
         {
