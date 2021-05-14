@@ -8,13 +8,6 @@ public class CutsceneManager : MonoBehaviour
 	[SerializeField] private float borderSpeed;
 	[SerializeField] private RectTransform topBorder;
 	[SerializeField] private RectTransform bottomBorder;
-	void Start()
-	{
-		if (GlobalSceneData.leahState != GlobalSceneData.LeahState.Entering)
-		{
-			EndBorder();
-		}
-	}
 	public void StartBorder()
 	{
 		StartCoroutine(MoveBorder(true));

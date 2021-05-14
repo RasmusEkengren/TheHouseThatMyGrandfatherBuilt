@@ -11,4 +11,12 @@ public class GeorgeSceneUpdater : MonoBehaviour
 			objectState.SetState();
 		}
 	}
+	public void ActivateWindowsFixed()
+	{
+		GlobalSceneData.mg_windowsFixed = true;
+	}
+	public void ActivateLeahDone()
+	{
+		GlobalSceneData.leahState = GlobalSceneData.LeahState.Done;
+	}
 }
