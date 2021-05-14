@@ -10,7 +10,7 @@ public class TesterHelperEditor : Editor
     {
         if (GUILayout.Button("Open Tester Helper!"))
         {
-            TesterHelperEditorWindow.Open((TesterHelperObject)target);
+            // TesterHelperEditorWindow.Open((TesterHelperObject)target);
         }
     }
 }

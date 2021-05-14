@@ -5,10 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 
-
-// Video I got help from https://www.youtube.com/watch?v=c_3DXBrH-Is
-
-public class TesterHelperEditorWindow : ExtendedEditorWindow
+public class TesterHelperEditorWindow : EditorWindow
 {
     private PlayerMovement player = null;
 
@@ -19,18 +16,39 @@ public class TesterHelperEditorWindow : ExtendedEditorWindow
     private float playerOriginalSpeed = 3f;
     private float playerOriginalAutoSpeed = 3f;
 
-    private SerializedProperty serializedGeorge = null;
+    TesterHelperObject THObject = null;
 
-    public static void Open(TesterHelperObject testerObject)
+    public SerializedObject so;
+    public SerializedProperty propGeorge = null;
+    public SerializedProperty propLeah = null;
+    public SerializedProperty propPorch = null;
+
+    [MenuItem("Tools/Tester Helper")]
+    public static void OpenWindow()
     {
-        TesterHelperEditorWindow window = GetWindow<TesterHelperEditorWindow>("Tester Helper Window :D");
-        window.serializedObject = new SerializedObject(testerObject);
+        GetWindow<TesterHelperEditorWindow>("Tester Helper");
+        Debug.Log("Hello user! I am your personal Tester Helper, use me to reduce your precious time testing");
     }
+
+    //public static void Open(TesterHelperObject testerObject)
+    //{
+    //    TesterHelperEditorWindow window = GetWindow<TesterHelperEditorWindow>("Tester Helper Window :D");
+    //    // window.serializedObject = new SerializedObject(testerObject);
+    //}
 
     private void OnEnable()
     {
         EditorApplication.playModeStateChanged += OnExitPlaymode;
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
         minSize = new Vector2(100f, 100f);
+
+        THObject = ScriptableObject.CreateInstance<TesterHelperObject>();
+        so = new SerializedObject(THObject);
+
+        propLeah = so.FindProperty("leahState");
+        propGeorge = so.FindProperty("georgeState");
+        propPorch = so.FindProperty("porchState");
     }
 
     private void OnDestroy()
@@ -43,11 +61,16 @@ public class TesterHelperEditorWindow : ExtendedEditorWindow
         player.ChangeSpeed(playerOriginalSpeed, playerOriginalAutoSpeed);
     }
 
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        THObject.GetStates();
+    }
+
     private void UpdateStates()
     {
-        //GlobalSceneData.leahState = leahState;
-        //GlobalSceneData.georgeState = georgeState;
-        //GlobalSceneData.porchState = porchState;
+        GlobalSceneData.georgeState = THObject.georgeState;
+        GlobalSceneData.leahState = THObject.leahState;
+        GlobalSceneData.porchState = THObject.porchState;
     }
 
     private void ToggleSpeed()
@@ -65,24 +88,25 @@ public class TesterHelperEditorWindow : ExtendedEditorWindow
         }
     }
 
-    [MenuItem("Window/Tester Helper")]
-    public static void ShowWindow()
-    {
-        GetWindow<TesterHelperEditorWindow>("Tester Helper");
-        Debug.Log("Hello user! I am your personal Tester Helper, use me to reduce your precious time testing");
-    }
-
     private void OnGUI()
     {
-        currentProperty = serializedObject.FindProperty("georgeState");
-        DrawProperties(currentProperty, false);
+        so.Update();
 
         GUILayout.Space(10f);
         speedToggle = GUILayout.Toggle(speedToggle, "Increase Movement Speed");
+        GUILayout.Space(10f);
+
+     
+        EditorGUILayout.PropertyField(propLeah);
+        GUILayout.Space(5f);
+        EditorGUILayout.PropertyField(propGeorge);
+        GUILayout.Space(5f);
+        EditorGUILayout.PropertyField(propPorch);
 
         if (EditorApplication.isPlaying)
         {
             ToggleSpeed();
+            UpdateStates();
         }
 
         GUILayout.Space(10f);
@@ -119,6 +143,7 @@ public class TesterHelperEditorWindow : ExtendedEditorWindow
             ClearInteracts();
         }
 
+        so.ApplyModifiedProperties();
     }
 
     private void ClearInteracts()
