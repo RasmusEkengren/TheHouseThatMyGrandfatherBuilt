@@ -21,10 +21,6 @@ public class ScrewParent : MonoBehaviour
 		child.GetComponent<RectTransform>().offsetMax = Vector2.zero;
 		child.GetComponent<RectTransform>().offsetMin = Vector2.zero;
 	}
-	void Start()
-	{
-		StartGame();
-	}
 	public void NextGame()
 	{
 		gameCompletions++;

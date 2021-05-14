@@ -24,6 +24,9 @@ public class GlobalSceneData : MonoBehaviour
 
 	public enum PorchState { Broken, Flat, Slanted }
 	public static PorchState porchState = PorchState.Broken;
+
+	public enum WindowsState { Broken, Ribbed, Solid }
+	public static WindowsState windowsState = WindowsState.Broken;
 	public static List<string> interactedObjectIDs = new List<string>();
 
 	private GameObject player;

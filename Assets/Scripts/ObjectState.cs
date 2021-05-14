@@ -9,23 +9,25 @@ public class ObjectState : MonoBehaviour
 	private class BoolStates
 	{
 		public enum activeStates { ON, OFF, NONE }
-        [Header("Porch")]
+		[Header("Porch")]
 		public activeStates OnPorchFixed = activeStates.NONE;
 		public activeStates OnPorchFlat = activeStates.NONE;
 		public activeStates OnPorchSlanted = activeStates.NONE;
 		public activeStates OnPorchBroken = activeStates.NONE;
-        [Header("Windows")]
+		[Header("Windows")]
 		public activeStates OnWindowsFixed = activeStates.NONE;
+		public activeStates OnWindowsRibbed = activeStates.NONE;
+		public activeStates OnWindowsSolid = activeStates.NONE;
 		public activeStates OnWindowsBroken = activeStates.NONE;
-        [Header("Fence")]
-        public activeStates OnFenceFixed = activeStates.NONE;
+		[Header("Fence")]
+		public activeStates OnFenceFixed = activeStates.NONE;
 		public activeStates OnFenceBroken = activeStates.NONE;
-        [Header("Leah")]
-        public activeStates OnLeahEntering = activeStates.NONE;
+		[Header("Leah")]
+		public activeStates OnLeahEntering = activeStates.NONE;
 		public activeStates OnLeahBuilding = activeStates.NONE;
 		public activeStates OnLeahDone = activeStates.NONE;
-        [Header("George")]
-        public activeStates OnGeorgeStatePorch = activeStates.NONE;
+		[Header("George")]
+		public activeStates OnGeorgeStatePorch = activeStates.NONE;
 		public activeStates OnGeorgeStateWindows = activeStates.NONE;
 		public activeStates OnGeorgeStateFence = activeStates.NONE;
 	}
@@ -101,6 +103,34 @@ public class ObjectState : MonoBehaviour
 					return;
 				default:
 					break;
+			}
+			if (GlobalSceneData.windowsState == GlobalSceneData.WindowsState.Ribbed)
+			{
+				switch (boolStates.OnWindowsRibbed)
+				{
+					case BoolStates.activeStates.ON:
+						this.gameObject.SetActive(true);
+						break;
+					case BoolStates.activeStates.OFF:
+						this.gameObject.SetActive(false);
+						return;
+					default:
+						break;
+				}
+			}
+			else if (GlobalSceneData.windowsState == GlobalSceneData.WindowsState.Solid)
+			{
+				switch (boolStates.OnWindowsSolid)
+				{
+					case BoolStates.activeStates.ON:
+						this.gameObject.SetActive(true);
+						break;
+					case BoolStates.activeStates.OFF:
+						this.gameObject.SetActive(false);
+						return;
+					default:
+						break;
+				}
 			}
 		}
 		else
