@@ -68,7 +68,6 @@ public class PlayerMovement : MonoBehaviour
         direction = Vector2.zero;
         savedWalkSpeed = autoWalkSpeed;
         playerFootstep = GetComponentInChildren<PlayerFootstepSound>();
-        Debug.Log(playerFootstep + ": ehh", playerFootstep);
     }
 
     void Update()

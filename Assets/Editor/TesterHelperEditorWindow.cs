@@ -9,7 +9,7 @@ public class TesterHelperEditorWindow : EditorWindow
 {
     private PlayerMovement player = null;
 
-    public bool speedToggle = false;
+    private bool speedToggle = false;
     private float speedrunSpeed = 20f;
     private float speedrunAutoSpeed = 14f;
 
@@ -18,7 +18,7 @@ public class TesterHelperEditorWindow : EditorWindow
 
     TesterHelperObject THObject = null;
 
-    public SerializedObject so;
+    public SerializedObject so = null;
     public SerializedProperty propGeorge = null;
     public SerializedProperty propLeah = null;
     public SerializedProperty propPorch = null;
@@ -30,12 +30,6 @@ public class TesterHelperEditorWindow : EditorWindow
         Debug.Log("Hello user! I am your personal Tester Helper, use me to reduce your precious time testing");
     }
 
-    //public static void Open(TesterHelperObject testerObject)
-    //{
-    //    TesterHelperEditorWindow window = GetWindow<TesterHelperEditorWindow>("Tester Helper Window :D");
-    //    // window.serializedObject = new SerializedObject(testerObject);
-    //}
-
     private void OnEnable()
     {
         EditorApplication.playModeStateChanged += OnExitPlaymode;
@@ -44,16 +38,11 @@ public class TesterHelperEditorWindow : EditorWindow
         minSize = new Vector2(100f, 100f);
 
         THObject = ScriptableObject.CreateInstance<TesterHelperObject>();
-        so = new SerializedObject(THObject);
+        if (so == null) { so = new SerializedObject(THObject); }
 
         propLeah = so.FindProperty("leahState");
         propGeorge = so.FindProperty("georgeState");
         propPorch = so.FindProperty("porchState");
-    }
-
-    private void OnDestroy()
-    {
-        // Return player to normal speed
     }
 
     private void OnExitPlaymode(PlayModeStateChange stateChange)
@@ -90,13 +79,15 @@ public class TesterHelperEditorWindow : EditorWindow
 
     private void OnGUI()
     {
-        so.Update();
+        if (so != null && EditorApplication.isPlaying)
+        {
+            so.Update();
+        }
 
         GUILayout.Space(10f);
         speedToggle = GUILayout.Toggle(speedToggle, "Increase Movement Speed");
         GUILayout.Space(10f);
 
-     
         EditorGUILayout.PropertyField(propLeah);
         GUILayout.Space(5f);
         EditorGUILayout.PropertyField(propGeorge);
@@ -143,7 +134,10 @@ public class TesterHelperEditorWindow : EditorWindow
             ClearInteracts();
         }
 
-        so.ApplyModifiedProperties();
+        if (so != null && EditorApplication.isPlaying)
+        {
+            so.ApplyModifiedProperties();
+        }
     }
 
     private void ClearInteracts()
