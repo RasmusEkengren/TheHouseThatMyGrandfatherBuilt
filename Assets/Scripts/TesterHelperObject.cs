@@ -15,5 +15,4 @@ public class TesterHelperObject : ScriptableObject
         georgeState = GlobalSceneData.georgeState;
         porchState = GlobalSceneData.porchState;
     }
-
 }

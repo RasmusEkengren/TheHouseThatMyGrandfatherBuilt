@@ -9,10 +9,7 @@ using FMODUnity;
 public class Sawing : MonoBehaviour
 {
 	[SerializeField] private RectTransform saw = null;
-	//[SerializeField] private RectTransform plank = null;
 	[SerializeField] private RectTransform cutLine = null;
-	//[SerializeField] private RectTransform piece1 = null;
-	//[SerializeField] private RectTransform piece2 = null;
 	private bool isCutting = false;
 	private Vector2 moveVal = Vector2.zero;
 	[SerializeField] private float sawMoveSpeed = 200f;

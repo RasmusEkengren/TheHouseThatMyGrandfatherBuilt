@@ -52,7 +52,6 @@ public class ScrewParent : MonoBehaviour
 		}
 		Destroy(child);
 		StartGame();
-		Debug.Log("AAAAh");
 		yield return null;
 	}
 }

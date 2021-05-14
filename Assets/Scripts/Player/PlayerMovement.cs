@@ -83,7 +83,6 @@ public class PlayerMovement : MonoBehaviour
 			if (isAutoWalking)
 			{
 				direction = Quaternion.Euler(0f, mainCamera.transform.eulerAngles.y - 90f, 0f) * (transform.position - points[currentPoint].position).normalized;
-				//Debug.Log(direction);
 			}
 			if (direction.magnitude >= 0.1f && !GameController.GamePaused())
 			{

@@ -140,7 +140,6 @@ public class PlankBalancing : MonoBehaviour
 			offBalance -= Time.deltaTime;
 		}
 		float parameterValue = greenZone.GetParameterValue();
-		//Debug.Log(parameterValue);
 		balancingSoundInstance.setParameterByName(plankShakeParameter, parameterValue);
 		balancingSoundInstance.getParameterByName(plankShakeParameter, out parameterValue);
 		if (offBalance > fallLimit)
