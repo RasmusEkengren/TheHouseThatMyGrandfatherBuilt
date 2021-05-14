@@ -11,7 +11,7 @@ public class SceneChanger : MonoBehaviour
     public SceneAsset nextScene = null; // Used to streamline scene assignment for designers in Unity
 #endif
 
-    public Color transitionColor = Color.white;
+    public Color transitionColor;
     [HideInInspector]
     public string sceneString = null;
 
@@ -40,7 +40,7 @@ public class SceneChanger : MonoBehaviour
         {
             SceneController.instance.StartCoroutine(SceneController.instance.LoadNextScene(sceneString, transitionColor));
 
-            Debug.Log("Changing Scene to: " + sceneString, gameObject);
+            Debug.Log("Changing Scene to: " + sceneString + " , fading to " + transitionColor, gameObject);
 
             // Pause game here
         }

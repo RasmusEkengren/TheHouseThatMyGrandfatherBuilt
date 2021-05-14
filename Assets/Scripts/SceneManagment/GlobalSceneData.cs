@@ -10,7 +10,6 @@ public class GlobalSceneData : MonoBehaviour
 	public static Quaternion lastLeahRotation;
 	public static Vector3 lastCameraPosition;
 	public static Quaternion lastCameraRotation;
-	public SceneType sceneType;
 
 	public static bool mg_porchFixed;
 	public static bool mg_windowsFixed;

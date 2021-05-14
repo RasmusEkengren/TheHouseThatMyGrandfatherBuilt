@@ -6,34 +6,17 @@ using UnityEngine.Animations;
 using UnityEngine.Events;
 using FMODUnity;
 
-
-public class SceneType
-{
-	public enum Scene { Leah, George };
-	public Scene sceneType;
-}
-
-public class GeorgeState
-{
-	public enum State { Porch, Windows };
-}
-
 // This class will be the core hub for managing scenes
 public class SceneController : MonoBehaviour
 {
 	#region Initializations
 	public static SceneController instance;
-	public SceneType.Scene sceneType;
 
 	[SerializeField] private Animator animator;
 	[SerializeField] private string fadeOutClip = null;
 	[SerializeField] private string fadeInClip = null;
 	[SerializeField] private GameObject transitionObject;
 	private GameController gameController;
-
-	[Space]
-	[SerializeField] private GameEvent onSceneChange;
-	[Space]
 
 	[FMODUnity.EventRef] [SerializeField] private string transitionSound = null;
 
@@ -65,7 +48,7 @@ public class SceneController : MonoBehaviour
 		if (!changingScene)
 		{
 			changingScene = true;
-			//BUG! changing scene from leah then to george and then back to leah, you can move as george while changing scene
+
 			if (gameController != null)
 			{
 				gameController = FindObjectOfType<GameController>();
@@ -86,8 +69,6 @@ public class SceneController : MonoBehaviour
 			{
 				if (operation.progress >= 0.9f)
 				{
-					onSceneChange.Invoke(); // Placing this here to hide it behind transition (in case something is disabled in player sight)
-
 					PlayVFX(1);
 					operation.allowSceneActivation = true;
 					if (gameController != null) gameController.PauseGame(false);
