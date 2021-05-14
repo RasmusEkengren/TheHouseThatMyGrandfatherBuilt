@@ -41,7 +41,27 @@ public class GlobalSceneData : MonoBehaviour
 
 	private GameObject player;
 
-	void Update()
+    private void Start()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        // Ugly solution for the Tester Helper tool
+        lastLeahPosition = new Vector3(18f, 1f, -38f);
+        lastCameraPosition = new Vector3(20f, 2f, -36f);
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (porchState == PorchState.Broken)
+        {
+            mg_porchFixed = false;
+        }
+        else
+        {
+            mg_porchFixed = true;
+        }
+    }
+
+    void Update()
 	{
 		//if (mg_windowsFixed) Debug.Log("Yay once again!");
 	}
@@ -50,6 +70,7 @@ public class GlobalSceneData : MonoBehaviour
 	{
 		lastLeahPosition = player.transform.position;
 		lastLeahRotation = player.transform.rotation;
+
 	}
 	public static void SaveCameraPosition(CameraController camera)
 	{

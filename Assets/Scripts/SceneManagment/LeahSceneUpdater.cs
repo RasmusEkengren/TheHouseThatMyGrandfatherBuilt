@@ -4,14 +4,6 @@ using UnityEngine;
 
 public class LeahSceneUpdater : MonoBehaviour
 {
-
-	/// <summary>
-	///  Check globals
-	///  Depending on globals, do events
-	///  Thats basically it
-	/// </summary>
-	/// 
-
 	void Start()
 	{
 		foreach (ObjectState objectState in FindObjectsOfType<ObjectState>(true))
