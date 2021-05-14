@@ -5,10 +5,8 @@ using UnityEngine.SceneManagement;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 
-[InitializeOnLoad]
-public class TestingHelper : EditorWindow
+public class TesterHelperEditorWindow : EditorWindow
 {
-    private Vector2 MaxSize;
     private PlayerMovement player = null;
 
     private bool speedToggle = false;
@@ -18,18 +16,33 @@ public class TestingHelper : EditorWindow
     private float playerOriginalSpeed = 3f;
     private float playerOriginalAutoSpeed = 3f;
 
-    [SerializeField] public GlobalSceneData.LeahState leahState;
-    public GlobalSceneData.GeorgeState georgeState;
-    public GlobalSceneData.PorchState porchState;
+    TesterHelperObject THObject = null;
+
+    public SerializedObject so = null;
+    public SerializedProperty propGeorge = null;
+    public SerializedProperty propLeah = null;
+    public SerializedProperty propPorch = null;
+
+    [MenuItem("Tools/Tester Helper")]
+    public static void OpenWindow()
+    {
+        GetWindow<TesterHelperEditorWindow>("Tester Helper");
+        Debug.Log("Hello user! I am your personal Tester Helper, use me to reduce your precious time testing");
+    }
 
     private void OnEnable()
     {
         EditorApplication.playModeStateChanged += OnExitPlaymode;
-    }
+        SceneManager.sceneLoaded += OnSceneLoaded;
 
-    private void OnDestroy()
-    {
-        // Return player to normal speed
+        minSize = new Vector2(100f, 100f);
+
+        THObject = ScriptableObject.CreateInstance<TesterHelperObject>();
+        if (so == null) { so = new SerializedObject(THObject); }
+
+        propLeah = so.FindProperty("leahState");
+        propGeorge = so.FindProperty("georgeState");
+        propPorch = so.FindProperty("porchState");
     }
 
     private void OnExitPlaymode(PlayModeStateChange stateChange)
@@ -37,11 +50,16 @@ public class TestingHelper : EditorWindow
         player.ChangeSpeed(playerOriginalSpeed, playerOriginalAutoSpeed);
     }
 
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        THObject.GetStates();
+    }
+
     private void UpdateStates()
     {
-        GlobalSceneData.leahState = leahState;
-        GlobalSceneData.georgeState = georgeState;
-        GlobalSceneData.porchState = porchState;
+        GlobalSceneData.georgeState = THObject.georgeState;
+        GlobalSceneData.leahState = THObject.leahState;
+        GlobalSceneData.porchState = THObject.porchState;
     }
 
     private void ToggleSpeed()
@@ -54,28 +72,34 @@ public class TestingHelper : EditorWindow
         else
         {
             speedToggle = false;
-            player = FindObjectOfType<PlayerMovement>();           
+            player = FindObjectOfType<PlayerMovement>();
             player.ChangeSpeed(playerOriginalSpeed, playerOriginalAutoSpeed);
         }
     }
 
-    [MenuItem("Window/Tester Helper")]
-    public static void ShowWindow()
-    {
-        GetWindow<TestingHelper>("Tester Helper");
-        Debug.Log("Hello user! I am your personal Tester Helper, use me to reduce your precious time testing");
-    }
-
     private void OnGUI()
     {
+        if (so != null && EditorApplication.isPlaying)
+        {
+            so.Update();
+        }
+
         GUILayout.Space(10f);
         speedToggle = GUILayout.Toggle(speedToggle, "Increase Movement Speed");
+        GUILayout.Space(10f);
+
+        EditorGUILayout.PropertyField(propLeah);
+        GUILayout.Space(5f);
+        EditorGUILayout.PropertyField(propGeorge);
+        GUILayout.Space(5f);
+        EditorGUILayout.PropertyField(propPorch);
 
         if (EditorApplication.isPlaying)
         {
             ToggleSpeed();
+            UpdateStates();
         }
-  
+
         GUILayout.Space(10f);
         if (GUILayout.Button("Load Leah Scene"))
         {
@@ -89,8 +113,6 @@ public class TestingHelper : EditorWindow
                 EditorSceneManager.OpenScene("Assets/Scenes/Leah.unity");
             }
         }
-
-
 
         GUILayout.Space(10f);
         if (GUILayout.Button("Load George Scene"))
@@ -112,6 +134,10 @@ public class TestingHelper : EditorWindow
             ClearInteracts();
         }
 
+        if (so != null && EditorApplication.isPlaying)
+        {
+            so.ApplyModifiedProperties();
+        }
     }
 
     private void ClearInteracts()
