@@ -1,2 +1,2 @@
 //Leah
-It's getting pretty late. Should I go to bed?
+Do I want to settle in for the night?
