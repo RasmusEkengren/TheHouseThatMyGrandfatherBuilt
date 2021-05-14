@@ -6,7 +6,7 @@ public class AutoWalkPath : MonoBehaviour
 {
 	public Transform[] points = null;
 	private float gizmoSize = 0.1f;
-	// Start is called before the first frame update
+
 	void OnDrawGizmosSelected()
 	{
 		for (int i = 0; i < points.Length; i++)

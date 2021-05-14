@@ -89,7 +89,6 @@ public class WoodCutting : MonoBehaviour
 				circleImage.color = missColor;
 				FMODUnity.RuntimeManager.PlayOneShot(missSound);
 			}
-			Debug.Log(strength + ", " + target);
 			ResetIndicator();
 		}
 	}
