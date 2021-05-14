@@ -54,7 +54,7 @@ public class InkManager : MonoBehaviour
 	}
 	public void SkipResetEvent()
 	{
-
+		isSkippingResetEvent = true;
 	}
 	public void DisplayNextLine()
 	{
@@ -83,8 +83,11 @@ public class InkManager : MonoBehaviour
 				endEvent.Invoke();
 				if (isSkippingResetEvent)
 				{
-					endEvent = null;
 					isSkippingResetEvent = false;
+				}
+				else
+				{
+					endEvent = null;
 				}
 			}
 			return;
