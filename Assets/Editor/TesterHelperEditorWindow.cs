@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEditor;
 using UnityEditor.SceneManagement;
+using UnityEditor.AssetImporters;
 
 public class TesterHelperEditorWindow : EditorWindow
 {
@@ -86,7 +87,6 @@ public class TesterHelperEditorWindow : EditorWindow
         }
 
         GUILayout.Space(10f);
-        GUILayout.Label("Speeeeeed");
         speedToggle = GUILayout.Toggle(speedToggle, "Increase Movement Speed");
         GUILayout.Space(10f);
 
@@ -105,6 +105,7 @@ public class TesterHelperEditorWindow : EditorWindow
 
         GUILayout.Space(10f);
         GUILayout.Label("Scene Changing");
+        GUILayout.Label("(Load after state changes to apply them)");
         GUILayout.BeginHorizontal();
         if (GUILayout.Button("Load Leah Scene", GUILayout.Height(40f)))
         {
@@ -133,12 +134,12 @@ public class TesterHelperEditorWindow : EditorWindow
             }
         }
         GUILayout.EndHorizontal();
-        GUILayout.Space(20f);
+        GUILayout.Space(10f);
 
-        if (GUILayout.Button("Clear Interacts", GUILayout.Height(30f)))
-        {
-            ClearInteracts();
-        }
+        //if (GUILayout.Button("Clear Interacts", GUILayout.Height(30f)))
+        //{
+        //    ClearInteracts();
+        //}
 
         if (so != null && EditorApplication.isPlaying)
         {
