@@ -19,6 +19,7 @@ public class TesterHelperEditorWindow : ExtendedEditorWindow
     private float playerOriginalSpeed = 3f;
     private float playerOriginalAutoSpeed = 3f;
 
+    private SerializedProperty serializedGeorge = null;
 
     public static void Open(TesterHelperObject testerObject)
     {
@@ -29,6 +30,7 @@ public class TesterHelperEditorWindow : ExtendedEditorWindow
     private void OnEnable()
     {
         EditorApplication.playModeStateChanged += OnExitPlaymode;
+        minSize = new Vector2(100f, 100f);
     }
 
     private void OnDestroy()
@@ -63,61 +65,59 @@ public class TesterHelperEditorWindow : ExtendedEditorWindow
         }
     }
 
-    //[MenuItem("Window/Tester Helper")]
-    //public static void ShowWindow()
-    //{
-    //    GetWindow<TesterHelperEditorWindow>("Tester Helper");
-    //    Debug.Log("Hello user! I am your personal Tester Helper, use me to reduce your precious time testing");
-    //}
+    [MenuItem("Window/Tester Helper")]
+    public static void ShowWindow()
+    {
+        GetWindow<TesterHelperEditorWindow>("Tester Helper");
+        Debug.Log("Hello user! I am your personal Tester Helper, use me to reduce your precious time testing");
+    }
 
     private void OnGUI()
     {
-        currentProperty = serializedObject.FindProperty("testInt");
-        DrawProperties(currentProperty, true);
+        currentProperty = serializedObject.FindProperty("georgeState");
+        DrawProperties(currentProperty, false);
 
-        //GUILayout.Space(10f);
-        //speedToggle = GUILayout.Toggle(speedToggle, "Increase Movement Speed");
+        GUILayout.Space(10f);
+        speedToggle = GUILayout.Toggle(speedToggle, "Increase Movement Speed");
 
-        //if (EditorApplication.isPlaying)
-        //{
-        //    ToggleSpeed();
-        //}
-         
-        //GUILayout.Space(10f);
-        //if (GUILayout.Button("Load Leah Scene"))
-        //{
-        //    if (EditorApplication.isPlaying)
-        //    {
-        //        SceneManager.LoadScene("Leah");
-        //        Debug.Log("Hoping over to Leah's scene!");
-        //    }
-        //    else if (!EditorApplication.isPlaying && !EditorApplication.isCompiling)
-        //    {
-        //        EditorSceneManager.OpenScene("Assets/Scenes/Leah.unity");
-        //    }
-        //}
+        if (EditorApplication.isPlaying)
+        {
+            ToggleSpeed();
+        }
 
+        GUILayout.Space(10f);
+        if (GUILayout.Button("Load Leah Scene"))
+        {
+            if (EditorApplication.isPlaying)
+            {
+                SceneManager.LoadScene("Leah");
+                Debug.Log("Hoping over to Leah's scene!");
+            }
+            else if (!EditorApplication.isPlaying && !EditorApplication.isCompiling)
+            {
+                EditorSceneManager.OpenScene("Assets/Scenes/Leah.unity");
+            }
+        }
 
+        GUILayout.Space(10f);
+        if (GUILayout.Button("Load George Scene"))
+        {
+            if (EditorApplication.isPlaying)
+            {
+                SceneManager.LoadScene("George");
+                Debug.Log("Hoping over to Georges's scene!");
+            }
+            else if (!EditorApplication.isPlaying && !EditorApplication.isCompiling)
+            {
+                EditorSceneManager.OpenScene("Assets/Scenes/George.unity");
+            }
+        }
+        GUILayout.Space(10f);
 
-        //GUILayout.Space(10f);
-        //if (GUILayout.Button("Load George Scene"))
-        //{
-        //    if (EditorApplication.isPlaying)
-        //    {
-        //        SceneManager.LoadScene("George");
-        //        Debug.Log("Hoping over to Georges's scene!");
-        //    }
-        //    else if (!EditorApplication.isPlaying && !EditorApplication.isCompiling)
-        //    {
-        //        EditorSceneManager.OpenScene("Assets/Scenes/George.unity");
-        //    }
-        //}
-        //GUILayout.Space(10f);
-
-        //if (GUILayout.Button("Clear Interacts"))
-        //{
-        //    ClearInteracts();
-        //}
+        if (GUILayout.Button("Clear Interacts"))
+        {
+            ClearInteracts();
+        }
 
     }
 
