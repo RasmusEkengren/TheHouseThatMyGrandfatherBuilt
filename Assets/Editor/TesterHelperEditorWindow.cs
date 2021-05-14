@@ -24,7 +24,7 @@ public class TesterHelperEditorWindow : EditorWindow
     public SerializedProperty propLeah = null;
     public SerializedProperty propPorch = null;
 
-    [MenuItem("Tools/Tester Helper")]
+    [MenuItem("Tools/Tester Helper™")]
     public static void OpenWindow()
     {
         GetWindow<TesterHelperEditorWindow>("Tester Helper");
@@ -36,7 +36,7 @@ public class TesterHelperEditorWindow : EditorWindow
         EditorApplication.playModeStateChanged += OnExitPlaymode;
         SceneManager.sceneLoaded += OnSceneLoaded;
 
-        minSize = new Vector2(248f, 275f);
+        minSize = new Vector2(248f, 230f);
         maxSize = new Vector2(550f, 500f); 
 
         THObject = ScriptableObject.CreateInstance<TesterHelperObject>();
