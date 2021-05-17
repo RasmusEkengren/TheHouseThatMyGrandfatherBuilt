@@ -15,8 +15,15 @@ public class GeorgeSceneUpdater : MonoBehaviour
 	{
 		GlobalSceneData.mg_windowsFixed = true;
 	}
-	public void ActivateLeahDone()
+	public void ActivateRailingFixed()
 	{
-		GlobalSceneData.leahState = GlobalSceneData.LeahState.Done;
+		GlobalSceneData.mg_railingFixed = true;
+	}
+	public void CheckIfLeahDone()
+	{
+		if (GlobalSceneData.mg_porchFixed && GlobalSceneData.mg_railingFixed && GlobalSceneData.mg_windowsFixed)
+		{
+			GlobalSceneData.leahState = GlobalSceneData.LeahState.Done;
+		}
 	}
 }

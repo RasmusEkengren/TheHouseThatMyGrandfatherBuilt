@@ -74,4 +74,14 @@ public class ChoiceButton : MonoBehaviour, IPointerEnterHandler, ISelectHandler,
 		GlobalSceneData.porchState = GlobalSceneData.PorchState.Slanted;
 		GlobalSceneData.mg_porchFixed = true;
 	}
+	public void FlatTopRailing()
+	{
+		GlobalSceneData.railingState = GlobalSceneData.RailingState.FlatTop;
+		GlobalSceneData.mg_railingFixed = true;
+	}
+	public void PillarsRailing()
+	{
+		GlobalSceneData.railingState = GlobalSceneData.RailingState.Pillars;
+		GlobalSceneData.mg_railingFixed = true;
+	}
 }
