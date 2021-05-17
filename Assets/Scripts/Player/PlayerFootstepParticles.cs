@@ -8,7 +8,6 @@ using UnityEditor;
 
 public class PlayerFootstepParticles : MonoBehaviour
 {
-
     public AnimationClip walkAnimation = null;
     public Animator playerAnmiatro = null;
     int index = 0;
