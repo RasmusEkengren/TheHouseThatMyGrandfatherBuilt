@@ -22012,6 +22012,79 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f3cf01974b19dbc48947cd7f6bef9ce4, type: 3}
   m_PrefabInstance: {fileID: 362171103}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1023117023
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1023117026}
+  - component: {fileID: 1023117025}
+  - component: {fileID: 1023117024}
+  m_Layer: 0
+  m_Name: MovePlayerOnWindows
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1023117024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023117023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7894a0cb63ba9684683b8d40ef8460c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boolStates:
+    OnPorchFixed: 2
+    OnPorchFlat: 2
+    OnPorchSlanted: 2
+    OnPorchBroken: 2
+    OnWindowsFixed: 2
+    OnWindowsRibbed: 2
+    OnWindowsSolid: 2
+    OnWindowsBroken: 2
+    OnFenceFixed: 2
+    OnFenceBroken: 2
+    OnLeahEntering: 2
+    OnLeahBuilding: 2
+    OnLeahDone: 2
+    OnGeorgeStatePorch: 1
+    OnGeorgeStateWindows: 0
+    OnGeorgeStateFence: 1
+--- !u!114 &1023117025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023117023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d068bab8887b9741a1e0aae75b8fec8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1023117026
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023117023}
+  m_LocalRotation: {x: -0, y: 0.694199, z: -0, w: 0.7197831}
+  m_LocalPosition: {x: 9.2, y: 0.95, z: -62.23}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 31
+  m_LocalEulerAnglesHint: {x: 0, y: 87.927, z: 0}
 --- !u!1 &1023591255
 GameObject:
   m_ObjectHideFlags: 0
