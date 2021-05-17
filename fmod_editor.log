@@ -7,18 +7,96 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-<<<<<<< HEAD
-[LOG] AsyncManager::init                       : manager 00000291C132FAA8 isAsync 0 updatePeriod 0.02
-=======
-[LOG] AsyncManager::init                       : manager 000001E25CA91A98 isAsync 0 updatePeriod 0.02
->>>>>>> Dev
+[LOG] AsyncManager::init                       : manager 000001C13659B4E8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] PlaybackSystem::init                     : done
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
-<<<<<<< HEAD
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] SoundI::release                          :  (000001C136667A68)
+[LOG] SoundI::release                          :     Sawing-001 (000001C1BA83D858)
+[LOG] SoundI::release                          :  (000001C136661008)
+[LOG] SoundI::release                          :     Sawing-002 (000001C1BA83D038)
+[LOG] SoundI::release                          :  (000001C136662148)
+[LOG] SoundI::release                          :     Sawing-003 (000001C1BA83BE58)
+[LOG] SoundI::release                          :  (000001C1366543E8)
+[LOG] SoundI::release                          :     Sawing-004 (000001C1BA83A938)
+[LOG] SoundI::release                          :  (000001C22412A948)
+[LOG] SoundI::release                          :     Sawing-005 (000001C128CDD8E8)
+[LOG] SoundI::release                          :  (000001C13666A9D8)
+[LOG] SoundI::release                          :     Sawing-006 (000001C1BA83DD38)
+[LOG] SoundI::release                          :  (000001C13665F798)
+[LOG] SoundI::release                          :     Sawing-007 (000001C1BA83CE98)
+[LOG] SoundI::release                          :  (000001C13666B9A8)
+[LOG] SoundI::release                          :     Sawing-008 (000001C1BA83BCB8)
+[LOG] SoundI::release                          :  (000001C136660BB8)
+[LOG] SoundI::release                          :     Footstep_Sketch_Grass_04 (000001C1BA83B7D8)
+[LOG] SoundI::release                          :  (000001C1366618A8)
+[LOG] SoundI::release                          :     Footstep_Sketch_Grass_05 (000001C1BA83D1D8)
+[LOG] SoundI::release                          :  (000001C1366581B8)
+[LOG] SoundI::release                          :     Footstep_Sketch_Grass_06 (000001C1BA83DB98)
+[LOG] SoundI::release                          :  (000001C0CF90B078)
+[LOG] SoundI::release                          :     Footstep_Sketch_Grass_07 (000001C1BA83B158)
+[LOG] SoundI::release                          :  (000001C136661178)
+[LOG] SoundI::release                          :     Footstep_Sketch_Grass_08 (000001C1BA83AC78)
+[LOG] SoundI::release                          :  (000001C13666A2A8)
+[LOG] SoundI::release                          :     Footstep_Sketch_Grass_09 (000001C1BA83C9B8)
+[LOG] SoundI::release                          :  (000001C136661FD8)
+[LOG] SoundI::release                          :     Footstep_Sketch_Grass_01 (000001C1BA83D378)
+[LOG] SoundI::release                          :  (000001C22412AD98)
+[LOG] SoundI::release                          :     Footstep_Sketch_Grass_02 (000001C1BA83B978)
+[LOG] SoundI::release                          :  (000001C13666A418)
+[LOG] SoundI::release                          :     Footstep_Sketch_Grass_03 (000001C1BA83D9F8)
+[LOG] SoundI::release                          :  (000001C136661A18)
+[LOG] SoundI::release                          :     Footsteps_Sketch_Wood_04 (000001C1BA83B2F8)
+[LOG] SoundI::release                          :  (000001C2241289A8)
+[LOG] SoundI::release                          :     Footsteps_Sketch_Wood_05 (000001C1BA83BFF8)
+[LOG] SoundI::release                          :  (000001C136661458)
+[LOG] SoundI::release                          :     Footsteps_Sketch_Wood_06 (000001C1BA83BB18)
+[LOG] SoundI::release                          :  (000001C12E0698F8)
+[LOG] SoundI::release                          :     Footsteps_Sketch_Wood_07 (000001C1BA83C678)
+[LOG] SoundI::release                          :  (000001C136660E98)
+[LOG] SoundI::release                          :     Footsteps_Sketch_Wood_08 (000001C1BA83E218)
+[LOG] SoundI::release                          :  (000001C1366605F8)
+[LOG] SoundI::release                          :     Footsteps_Sketch_Wood_01 (000001C1BA83DED8)
+[LOG] SoundI::release                          :  (000001C224128B18)
+[LOG] SoundI::release                          :     Footsteps_Sketch_Wood_02 (000001C128CDF628)
+[LOG] SoundI::release                          :  (000001C224127CB8)
+[LOG] SoundI::release                          :     Footsteps_Sketch_Wood_03 (000001C1BA83C198)
+[LOG] SoundI::release                          :  (000001C0CF90AD98)
+[LOG] SoundI::release                          :     Footsteps_Sketch_Gravel_02 (000001C1BA83B498)
+[LOG] SoundI::release                          :  (000001C224127E28)
+[LOG] SoundI::release                          :     Footsteps_Sketch_Gravel_03 (000001C1BA83C338)
+[LOG] SoundI::release                          :  (000001C22412D5D8)
+[LOG] SoundI::release                          :     Footsteps_Sketch_Gravel_04 (000001C128CDD268)
+[LOG] SoundI::release                          :  (000001C22412B1E8)
+[LOG] SoundI::release                          :     Footsteps_Sketch_Gravel_05 (000001C1BA83B638)
+[LOG] SoundI::release                          :  (000001C22412B4C8)
+[LOG] SoundI::release                          :     Footsteps_Sketch_Gravel_06 (000001C128CDEFA8)
+[LOG] SoundI::release                          :  (000001C13666BB18)
+[LOG] SoundI::release                          :     Footsteps_Sketch_Gravel_07 (000001C1BA83E078)
+[LOG] SoundI::release                          :  (000001C136662CC8)
+[LOG] SoundI::release                          :     Footsteps_Sketch_Gravel_08 (000001C1BA83AAD8)
+[LOG] SoundI::release                          :  (000001C136663118)
+[LOG] SoundI::release                          :     Footsteps_Sketch_Gravel_01 (000001C1BA83AE18)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 3
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
@@ -26,12 +104,3 @@
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
 [LOG] SystemI::close                           : Closed.
-=======
-[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 3
->>>>>>> Dev
