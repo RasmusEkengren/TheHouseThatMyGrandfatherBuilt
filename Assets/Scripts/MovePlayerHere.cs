@@ -7,7 +7,6 @@ public class MovePlayerHere : MonoBehaviour
     private PlayerMovement player = null;
     private Camera cam = null;
 
-
     void Start()
     {
         player = FindObjectOfType<PlayerMovement>();
