@@ -5,7 +5,7 @@ using UnityEditor;
 using System.Linq;
 
 // Video I got help from https://www.youtube.com/watch?v=c_3DXBrH-Is
-// Dont use this atm thuogh. Kept for reference later
+// Not used atm. Kept for reference later
 
 public class ExtendedEditorWindow : EditorWindow
 {

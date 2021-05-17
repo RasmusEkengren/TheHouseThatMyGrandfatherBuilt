@@ -19,6 +19,10 @@ public class LeahSceneUpdater : MonoBehaviour
 	{
 		GlobalSceneData.georgeState = GlobalSceneData.GeorgeState.Windows;
 	}
+	public void ActivateRailing()
+	{
+		GlobalSceneData.georgeState = GlobalSceneData.GeorgeState.Railing;
+	}
 	public void ActivateLeahEntering()
 	{
 		GlobalSceneData.leahState = GlobalSceneData.LeahState.Entering;

@@ -46,12 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c97d4dddcc778774da2302064411da4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneType: 0
   animator: {fileID: 1317287306713281989}
   fadeOutClip: Fade Out
   fadeInClip: Fade In
   transitionObject: {fileID: 1317287306713281995}
-  onSceneChange: {fileID: 11400000, guid: fd207b27983c486438bea41f9f1737a0, type: 2}
   transitionSound: event:/SFX/Interactions/2D/Switch
   sceneChangeDelay: 2
 --- !u!114 &9202722975304225548
@@ -211,8 +209,8 @@ RectTransform:
   m_Father: {fileID: 1317287305539999106}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: -0.01, y: -0.01}
+  m_AnchorMax: {x: 1.01, y: 1.01}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
