@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.EventSystems;
+using UnityEngine.Events;
 using FMOD.Studio;
 using FMODUnity;
 
@@ -19,6 +19,7 @@ public class Sawing : MonoBehaviour
 	private float moveDir = 1;
 	private int sawTimes = 0;
 	private float timer = 0;
+	private int gameCompletions = 0;
 	[SerializeField] private float sawMoveSpeed = 0.5f;
 	[SerializeField] private float sawSlowMoveSpeed = 0.25f;
 	[SerializeField] private float sawSlowTolerance = 0.05f;
@@ -32,17 +33,15 @@ public class Sawing : MonoBehaviour
 	[SerializeField] [EventRef] protected string startCutSound = null;
 	[SerializeField] [EventRef] protected string CuttingSound = null;
 	[SerializeField] [EventRef] protected string PlankFallSound = null;
+	[SerializeField] private UnityEvent gameCompleteEvent = null;
 	private EventInstance cuttingSoundInstance;
 	public void StartGame()
 	{
-		if (!cuttingSoundInstance.isValid())
-		{
-			cuttingSoundInstance = RuntimeManager.CreateInstance(CuttingSound);
-		}
 		leftPiece.gameObject.SetActive(false);
 		rightPiece.gameObject.SetActive(false);
 		wholePlank.gameObject.SetActive(true);
 		cutLine.gameObject.SetActive(true);
+		saw.gameObject.SetActive(true);
 		float cutlinePos = Random.Range(0.1f, 0.9f);
 		cutLine.anchorMin = new Vector2(cutlinePos - 0.0125f, cutLine.anchorMin.y);
 		cutLine.anchorMax = new Vector2(cutlinePos + 0.0125f, cutLine.anchorMax.y);
@@ -73,7 +72,7 @@ public class Sawing : MonoBehaviour
 	}
 	void OnEnable()
 	{
-		StartGame();
+		cuttingSoundInstance = RuntimeManager.CreateInstance(CuttingSound);
 	}
 	void OnDisable()
 	{
@@ -128,6 +127,12 @@ public class Sawing : MonoBehaviour
 			if (timer >= fallTime)
 			{
 				isFalling = false;
+				gameCompletions++;
+				if (gameCompletions >= numberOfPlanks)
+				{
+					gameCompleteEvent.Invoke();
+					return;
+				}
 				StartGame();
 			}
 		}
