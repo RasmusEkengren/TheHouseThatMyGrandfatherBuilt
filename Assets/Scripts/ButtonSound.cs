@@ -7,7 +7,8 @@ using UnityEngine.EventSystems;
 public class ButtonSound : MonoBehaviour
 {
     [FMODUnity.EventRef] public string hoverSound;
-    [FMODUnity.EventRef] public string clickSound;
+    [FMODUnity.EventRef] public string acceptSound;
+    [FMODUnity.EventRef] public string denySound;
 
     public void PlayHoverSound()
     {
@@ -16,11 +17,18 @@ public class ButtonSound : MonoBehaviour
             FMODUnity.RuntimeManager.PlayOneShot(hoverSound);
         }
     }
-    public void PlayClickSound()
+    public void PlayAcceptSound()
     {
-        if (clickSound.Length > 0)
+        if (acceptSound.Length > 0)
         {
-            FMODUnity.RuntimeManager.PlayOneShot(clickSound);
+            FMODUnity.RuntimeManager.PlayOneShot(acceptSound);
+        }
+    }
+    public void PlayDenySound()
+    {
+        if (denySound.Length > 0)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(denySound);
         }
     }
 }
