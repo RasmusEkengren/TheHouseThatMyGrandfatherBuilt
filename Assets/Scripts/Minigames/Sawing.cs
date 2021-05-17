@@ -37,14 +37,11 @@ public class Sawing : MonoBehaviour
 	private EventInstance cuttingSoundInstance;
 	public void StartGame()
 	{
-		if (!cuttingSoundInstance.isValid())
-		{
-			cuttingSoundInstance = RuntimeManager.CreateInstance(CuttingSound);
-		}
 		leftPiece.gameObject.SetActive(false);
 		rightPiece.gameObject.SetActive(false);
 		wholePlank.gameObject.SetActive(true);
 		cutLine.gameObject.SetActive(true);
+		saw.gameObject.SetActive(true);
 		float cutlinePos = Random.Range(0.1f, 0.9f);
 		cutLine.anchorMin = new Vector2(cutlinePos - 0.0125f, cutLine.anchorMin.y);
 		cutLine.anchorMax = new Vector2(cutlinePos + 0.0125f, cutLine.anchorMax.y);
@@ -75,7 +72,7 @@ public class Sawing : MonoBehaviour
 	}
 	void OnEnable()
 	{
-		StartGame();
+		cuttingSoundInstance = RuntimeManager.CreateInstance(CuttingSound);
 	}
 	void OnDisable()
 	{
