@@ -19,9 +19,11 @@ public class ObjectState : MonoBehaviour
 		public activeStates OnWindowsRibbed = activeStates.NONE;
 		public activeStates OnWindowsSolid = activeStates.NONE;
 		public activeStates OnWindowsBroken = activeStates.NONE;
-		[Header("Fence")]
-		public activeStates OnFenceFixed = activeStates.NONE;
-		public activeStates OnFenceBroken = activeStates.NONE;
+		[Header("Railing")]
+		public activeStates OnRailingFixed = activeStates.NONE;
+		public activeStates OnRailingFlatTop = activeStates.NONE;
+		public activeStates OnRailingPillars = activeStates.NONE;
+		public activeStates OnRailingBroken = activeStates.NONE;
 		[Header("Leah")]
 		public activeStates OnLeahEntering = activeStates.NONE;
 		public activeStates OnLeahBuilding = activeStates.NONE;
@@ -29,7 +31,7 @@ public class ObjectState : MonoBehaviour
 		[Header("George")]
 		public activeStates OnGeorgeStatePorch = activeStates.NONE;
 		public activeStates OnGeorgeStateWindows = activeStates.NONE;
-		public activeStates OnGeorgeStateFence = activeStates.NONE;
+		public activeStates OnGeorgeStateRailing = activeStates.NONE;
 	}
 	[SerializeField] private BoolStates boolStates;
 
@@ -147,9 +149,9 @@ public class ObjectState : MonoBehaviour
 					break;
 			}
 		}
-		if (GlobalSceneData.mg_fenceFixed)
+		if (GlobalSceneData.mg_railingFixed)
 		{
-			switch (boolStates.OnFenceFixed)
+			switch (boolStates.OnRailingFixed)
 			{
 				case BoolStates.activeStates.ON:
 					this.gameObject.SetActive(true);
@@ -160,10 +162,38 @@ public class ObjectState : MonoBehaviour
 				default:
 					break;
 			}
+			if (GlobalSceneData.railingState == GlobalSceneData.RailingState.FlatTop)
+			{
+				switch (boolStates.OnRailingFlatTop)
+				{
+					case BoolStates.activeStates.ON:
+						this.gameObject.SetActive(true);
+						break;
+					case BoolStates.activeStates.OFF:
+						this.gameObject.SetActive(false);
+						return;
+					default:
+						break;
+				}
+			}
+			else if (GlobalSceneData.railingState == GlobalSceneData.RailingState.Pillars)
+			{
+				switch (boolStates.OnRailingPillars)
+				{
+					case BoolStates.activeStates.ON:
+						this.gameObject.SetActive(true);
+						break;
+					case BoolStates.activeStates.OFF:
+						this.gameObject.SetActive(false);
+						return;
+					default:
+						break;
+				}
+			}
 		}
 		else
 		{
-			switch (boolStates.OnFenceBroken)
+			switch (boolStates.OnRailingBroken)
 			{
 				case BoolStates.activeStates.ON:
 					this.gameObject.SetActive(true);
@@ -245,9 +275,9 @@ public class ObjectState : MonoBehaviour
 					break;
 			}
 		}
-		else if (GlobalSceneData.georgeState == GlobalSceneData.GeorgeState.Fence)
+		else if (GlobalSceneData.georgeState == GlobalSceneData.GeorgeState.Railing)
 		{
-			switch (boolStates.OnGeorgeStateFence)
+			switch (boolStates.OnGeorgeStateRailing)
 			{
 				case BoolStates.activeStates.ON:
 					this.gameObject.SetActive(true);
