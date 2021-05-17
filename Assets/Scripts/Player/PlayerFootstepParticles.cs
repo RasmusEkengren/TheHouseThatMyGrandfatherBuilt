@@ -8,14 +8,15 @@ using UnityEditor;
 
 public class PlayerFootstepParticles : MonoBehaviour
 {
-
     public AnimationClip walkAnimation = null;
     public Animator playerAnmiatro = null;
     int index = 0;
 
     private EditorCurveBinding[] curveBindings;
 
-    // Start is called before the first frame update
+    public string property1;
+    public string property2;
+
     void Start()
     {
         curveBindings = AnimationUtility.GetCurveBindings(walkAnimation);
@@ -31,9 +32,15 @@ public class PlayerFootstepParticles : MonoBehaviour
             }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void GetProperties()
     {
-        
+        for (int i = 0; i < curveBindings.Length; i++)
+        {
+            if (curveBindings[i].propertyName == property1)
+            {
+            //return curveBindings[i].
+
+            }
+        }
     }
 }
