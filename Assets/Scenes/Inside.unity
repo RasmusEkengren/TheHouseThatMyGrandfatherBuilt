@@ -184,6 +184,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 22416d5e93c801548b0d2f4677b5e039, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fb94571b713bdb2409f19e02ecd93222, type: 2}
     - target: {fileID: 919132149155446097, guid: 22416d5e93c801548b0d2f4677b5e039, type: 3}
       propertyPath: m_Name
       value: Clothes_hanger (1)
@@ -1030,14 +1034,16 @@ MonoBehaviour:
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
-    OnFenceFixed: 0
-    OnFenceBroken: 1
+    OnRailingFixed: 2
+    OnRailingFlatTop: 2
+    OnRailingPillars: 2
+    OnRailingBroken: 2
     OnLeahEntering: 2
     OnLeahBuilding: 2
     OnLeahDone: 2
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
-    OnGeorgeStateFence: 2
+    OnGeorgeStateRailing: 2
 --- !u!23 &226698219 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 6453451466522866678, guid: 6f7da07422b0d714dbf9dc876cb2d202, type: 3}
@@ -1148,6 +1154,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 22416d5e93c801548b0d2f4677b5e039, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fb94571b713bdb2409f19e02ecd93222, type: 2}
     - target: {fileID: 919132149155446097, guid: 22416d5e93c801548b0d2f4677b5e039, type: 3}
       propertyPath: m_Name
       value: Clothes_hanger
@@ -6364,14 +6374,16 @@ MonoBehaviour:
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
-    OnFenceFixed: 0
-    OnFenceBroken: 1
+    OnRailingFixed: 2
+    OnRailingFlatTop: 2
+    OnRailingPillars: 2
+    OnRailingBroken: 2
     OnLeahEntering: 2
     OnLeahBuilding: 2
     OnLeahDone: 2
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
-    OnGeorgeStateFence: 2
+    OnGeorgeStateRailing: 2
 --- !u!23 &1184667071 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 1360930431354757570, guid: 6f7da07422b0d714dbf9dc876cb2d202, type: 3}
@@ -8002,14 +8014,16 @@ MonoBehaviour:
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
-    OnFenceFixed: 2
-    OnFenceBroken: 2
+    OnRailingFixed: 2
+    OnRailingFlatTop: 2
+    OnRailingPillars: 2
+    OnRailingBroken: 2
     OnLeahEntering: 2
     OnLeahBuilding: 2
     OnLeahDone: 2
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
-    OnGeorgeStateFence: 2
+    OnGeorgeStateRailing: 2
 --- !u!65 &1571087919
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9341,14 +9355,16 @@ MonoBehaviour:
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
-    OnFenceFixed: 0
-    OnFenceBroken: 1
+    OnRailingFixed: 2
+    OnRailingFlatTop: 2
+    OnRailingPillars: 2
+    OnRailingBroken: 2
     OnLeahEntering: 2
     OnLeahBuilding: 2
     OnLeahDone: 2
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
-    OnGeorgeStateFence: 2
+    OnGeorgeStateRailing: 2
 --- !u!4 &1925920331 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8639454191430358859, guid: 6f7da07422b0d714dbf9dc876cb2d202, type: 3}
@@ -9970,14 +9986,16 @@ MonoBehaviour:
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 1
-    OnFenceFixed: 2
-    OnFenceBroken: 2
+    OnRailingFixed: 2
+    OnRailingFlatTop: 2
+    OnRailingPillars: 2
+    OnRailingBroken: 2
     OnLeahEntering: 2
     OnLeahBuilding: 2
     OnLeahDone: 2
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
-    OnGeorgeStateFence: 2
+    OnGeorgeStateRailing: 2
 --- !u!1001 &1959016170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10147,14 +10165,16 @@ MonoBehaviour:
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
-    OnFenceFixed: 2
-    OnFenceBroken: 2
+    OnRailingFixed: 2
+    OnRailingFlatTop: 2
+    OnRailingPillars: 2
+    OnRailingBroken: 2
     OnLeahEntering: 2
     OnLeahBuilding: 2
     OnLeahDone: 2
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
-    OnGeorgeStateFence: 2
+    OnGeorgeStateRailing: 2
 --- !u!65 &1959016183
 BoxCollider:
   m_ObjectHideFlags: 0
