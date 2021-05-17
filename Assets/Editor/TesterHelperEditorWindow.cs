@@ -37,7 +37,7 @@ public class TesterHelperEditorWindow : EditorWindow
         SceneManager.sceneLoaded += OnSceneLoaded;
 
         minSize = new Vector2(248f, 230f);
-        maxSize = new Vector2(550f, 500f); 
+        maxSize = new Vector2(550f, 500f);
 
         THObject = ScriptableObject.CreateInstance<TesterHelperObject>();
         if (so == null) { so = new SerializedObject(THObject); }
@@ -49,7 +49,10 @@ public class TesterHelperEditorWindow : EditorWindow
 
     private void OnExitPlaymode(PlayModeStateChange stateChange)
     {
-        player.ChangeSpeed(playerOriginalSpeed, playerOriginalAutoSpeed);
+        if (player)
+        {
+            player.ChangeSpeed(playerOriginalSpeed, playerOriginalAutoSpeed);
+        }
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -66,16 +69,19 @@ public class TesterHelperEditorWindow : EditorWindow
 
     private void ToggleSpeed()
     {
-        if (speedToggle)
+        if (player)
         {
-            player = FindObjectOfType<PlayerMovement>();
-            player.ChangeSpeed(speedrunSpeed, speedrunAutoSpeed);
-        }
-        else
-        {
-            speedToggle = false;
-            player = FindObjectOfType<PlayerMovement>();
-            player.ChangeSpeed(playerOriginalSpeed, playerOriginalAutoSpeed);
+            if (speedToggle)
+            {
+                player = FindObjectOfType<PlayerMovement>();
+                player.ChangeSpeed(speedrunSpeed, speedrunAutoSpeed);
+            }
+            else
+            {
+                speedToggle = false;
+                player = FindObjectOfType<PlayerMovement>();
+                player.ChangeSpeed(playerOriginalSpeed, playerOriginalAutoSpeed);
+            }
         }
     }
 
