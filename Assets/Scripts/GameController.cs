@@ -5,12 +5,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
 	private static bool paused = false;
-
 	public static GameController instance;
-
-	private void Awake()
-	{
-	}
 
 	private void Start()
 	{
@@ -31,14 +26,10 @@ public class GameController : MonoBehaviour
 		if (pause)
 		{
 			paused = true;
-			// Time.timeScale = 0;
-			//Debug.Log("Game Paused", gameObject);
 		}
 		if (!pause)
 		{
 			paused = false;
-			// Time.timeScale = 1;
-			//Debug.Log("Game Unpaused", gameObject);
 		}
 	}
 }

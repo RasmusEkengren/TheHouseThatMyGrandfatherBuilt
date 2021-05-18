@@ -13,7 +13,6 @@ public class SceneChangeListener : MonoBehaviour
 
 	private void onLoad(Scene scene, LoadSceneMode mode)
 	{
-		Debug.Log("Scene loaded: " + scene.name + ", Leah state: " + GlobalSceneData.leahState);
 		if (scene.name == "Leah")
 		{
 			LoadLeahPosition();

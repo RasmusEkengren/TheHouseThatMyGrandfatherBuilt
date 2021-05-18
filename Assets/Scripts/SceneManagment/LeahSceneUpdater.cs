@@ -4,14 +4,6 @@ using UnityEngine;
 
 public class LeahSceneUpdater : MonoBehaviour
 {
-
-	/// <summary>
-	///  Check globals
-	///  Depending on globals, do events
-	///  Thats basically it
-	/// </summary>
-	/// 
-
 	void Start()
 	{
 		foreach (ObjectState objectState in FindObjectsOfType<ObjectState>(true))
@@ -26,6 +18,10 @@ public class LeahSceneUpdater : MonoBehaviour
 	public void ActivateWindows()
 	{
 		GlobalSceneData.georgeState = GlobalSceneData.GeorgeState.Windows;
+	}
+	public void ActivateRailing()
+	{
+		GlobalSceneData.georgeState = GlobalSceneData.GeorgeState.Railing;
 	}
 	public void ActivateLeahEntering()
 	{

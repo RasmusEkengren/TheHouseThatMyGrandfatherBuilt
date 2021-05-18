@@ -6,47 +6,58 @@ using UnityEngine.SceneManagement;
 
 public class GlobalSceneData : MonoBehaviour
 {
-	//[Serializable]
-	//public class DataContainer
-	//{
-	//	public string name = null;
-	//	public GeorgeState.State georgeState = GeorgeState.State.Porch;
-	//	public GameObject obj;
-	//}
-
 	public static Vector3 lastLeahPosition;
 	public static Quaternion lastLeahRotation;
 	public static Vector3 lastCameraPosition;
 	public static Quaternion lastCameraRotation;
-	public SceneType sceneType;
-	//public List<DataContainer> containerList = new List<DataContainer>();
 
-	public static bool mg_porchFixed; /*{ get { return mg_porchFixed; } private set { mg_porchFixed = value; } }*/
+	public static bool mg_porchFixed;
 	public static bool mg_windowsFixed;
-	public static bool mg_fenceFixed;
-	//private bool leahPositionUpdated = false;
+	public static bool mg_railingFixed;
 
 	public enum LeahState { Entering, Building, Done }
 	public static LeahState leahState = LeahState.Entering;
 
-	public enum GeorgeState { Porch, Windows, Fence }
+	public enum GeorgeState { Porch, Windows, Railing }
 	public static GeorgeState georgeState;
 
 	public enum PorchState { Broken, Flat, Slanted }
 	public static PorchState porchState = PorchState.Broken;
+
+	public enum WindowsState { Broken, Ribbed, Solid }
+	public static WindowsState windowsState = WindowsState.Broken;
+
+	public enum RailingState { Broken, FlatTop, Pillars }
+	public static RailingState railingState = RailingState.Broken;
 	public static List<string> interactedObjectIDs = new List<string>();
 
 	private GameObject player;
 
-	void Update()
+	private void Start()
 	{
-		//if (mg_windowsFixed) Debug.Log("Yay once again!");
+		SceneManager.sceneLoaded += OnSceneLoaded;
+		// Ugly solution for the Tester Helper tool
+		lastLeahPosition = new Vector3(18f, 1f, -38f);
+		lastCameraPosition = new Vector3(20f, 2f, -36f);
+	}
+
+	private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+	{
+		if (porchState == PorchState.Broken)
+		{
+			mg_porchFixed = false;
+		}
+		else
+		{
+			mg_porchFixed = true;
+		}
 	}
 
 	public static void SaveLeahPosition(PlayerMovement player)
 	{
 		lastLeahPosition = player.transform.position;
 		lastLeahRotation = player.transform.rotation;
+
 	}
 	public static void SaveCameraPosition(CameraController camera)
 	{
