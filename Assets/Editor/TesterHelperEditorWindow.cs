@@ -27,7 +27,7 @@ public class TesterHelperEditorWindow : EditorWindow
     [MenuItem("Tools/Tester Helper™")]
     public static void OpenWindow()
     {
-        GetWindow<TesterHelperEditorWindow>("Tester Helper");
+        GetWindow<TesterHelperEditorWindow>("Tester Helper™");
         Debug.Log("Hello user! I am your personal Tester Helper, use me to reduce your precious time testing");
     }
 
@@ -69,11 +69,12 @@ public class TesterHelperEditorWindow : EditorWindow
 
     private void ToggleSpeed()
     {
+        player = FindObjectOfType<PlayerMovement>();
         if (player)
         {
             if (speedToggle)
             {
-                player = FindObjectOfType<PlayerMovement>();
+     
                 player.ChangeSpeed(speedrunSpeed, speedrunAutoSpeed);
             }
             else
