@@ -30,6 +30,7 @@ public class Interactable : MonoBehaviour
 		if (collider.gameObject.tag == playerTag)
 		{
 			interactIcon.SetActive(true);
+            ControlsTutorial.ShowInteractionControls(true);
 			interactIcon.transform.forward = mainCamera.transform.forward;
 		}
 	}
@@ -38,10 +39,12 @@ public class Interactable : MonoBehaviour
 		if (collider.gameObject.tag == playerTag)
 		{
 			interactIcon.SetActive(false);
+            ControlsTutorial.ShowInteractionControls(false);
 		}
 	}
 	public virtual void Interact(GameObject player)
 	{
+        ControlsTutorial.ShowInteractionControls(false);
 		interactIcon.SetActive(false);
 		hasInteracted = true;
 		GlobalSceneData.interactedObjectIDs.Add(this.gameObject.GetComponent<UniqueID>().ID);
