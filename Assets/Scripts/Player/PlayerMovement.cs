@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
 	private int currentPoint = 0;
 	private Vector3 direction = Vector3.zero;
 	private bool isAutoWalking = false;
-    [HideInInspector] public bool isWalking = false;
+	[HideInInspector] public bool isWalking = false; // Used for animation
 	private bool hasFallen = false;
 	private float turnSmoothVelocity = 0f;
 	private float groundCastMaxDist = 1.08f;
@@ -23,11 +23,13 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] private float fallTime = 1f;
 	private float savedWalkSpeed = 0f;
 	[SerializeField] private LayerMask groundLayer;
+	private PlayerFootstepSound playerFootstep = null;
 
-	[SerializeField] [FMODUnity.EventRef] private string footstepSound = null;
-
-    [SerializeField] private float footstepInterval = 0.28f;
-    private float walkedDistance = 0f;
+	public void ChangeSpeed(float _moveSpeed, float _autoMoveSpeed)
+	{
+		moveSpeed = _moveSpeed;
+		autoWalkSpeed = _autoMoveSpeed;
+	}
 
 	public void Move(InputAction.CallbackContext value)
 	{
@@ -61,11 +63,9 @@ public class PlayerMovement : MonoBehaviour
 		mainCamera = Camera.main;
 		direction = Vector2.zero;
 		savedWalkSpeed = autoWalkSpeed;
+		playerFootstep = GetComponentInChildren<PlayerFootstepSound>();
 	}
-	private void PlayFootstep()
-	{
-		FMODUnity.RuntimeManager.PlayOneShot(footstepSound);
-	}
+
 	void Update()
 	{
 		if (hasFallen)
@@ -83,12 +83,10 @@ public class PlayerMovement : MonoBehaviour
 			if (isAutoWalking)
 			{
 				direction = Quaternion.Euler(0f, mainCamera.transform.eulerAngles.y - 90f, 0f) * (transform.position - points[currentPoint].position).normalized;
-				Debug.Log(direction);
 			}
 			if (direction.magnitude >= 0.1f && !GameController.GamePaused())
 			{
-                isWalking = true;
-				walkedDistance += 1f * Time.deltaTime;
+				isWalking = true;
 
 				float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + mainCamera.transform.eulerAngles.y;
 				float rotationAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
@@ -96,14 +94,8 @@ public class PlayerMovement : MonoBehaviour
 
 				Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
 				playerController.Move(moveDir.normalized * (isAutoWalking ? autoWalkSpeed : moveSpeed) * Time.deltaTime);
-
-				if (walkedDistance >= footstepInterval)
-				{
-					PlayFootstep();
-					walkedDistance = 0f;
-				}
 			}
-            else { isWalking = false; }
+			else { isWalking = false; }
 		}
 	}
 	void OnDrawGizmos()
@@ -120,5 +112,13 @@ public class PlayerMovement : MonoBehaviour
 	{
 		bool isGroundHit = Physics.Raycast(transform.position, Vector3.down, groundCastMaxDist, groundLayer);
 		if (!isGroundHit) playerController.Move(Vector3.down * fallSpeed * Time.deltaTime);
+	}
+
+	private void OnControllerColliderHit(ControllerColliderHit hit)
+	{
+		if (hit.gameObject.tag == "Grass" || hit.gameObject.tag == "Mud" || hit.gameObject.tag == "Wood")
+		{
+			playerFootstep.currentCollision = hit.gameObject;
+		}
 	}
 }

@@ -8,11 +8,6 @@ public class CutsceneManager : MonoBehaviour
 	[SerializeField] private float borderSpeed;
 	[SerializeField] private RectTransform topBorder;
 	[SerializeField] private RectTransform bottomBorder;
-	[SerializeField] private UnityEvent startEvents;
-	void Start()
-	{
-		startEvents.Invoke();
-	}
 	public void StartBorder()
 	{
 		StartCoroutine(MoveBorder(true));

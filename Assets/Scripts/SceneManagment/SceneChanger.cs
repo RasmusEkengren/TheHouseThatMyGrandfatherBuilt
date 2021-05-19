@@ -11,11 +11,13 @@ public class SceneChanger : MonoBehaviour
     public SceneAsset nextScene = null; // Used to streamline scene assignment for designers in Unity
 #endif
 
+    public Color transitionColor;
     [HideInInspector]
     public string sceneString = null;
 
     private void Start()
     {
+        transitionColor.a = 0;
         if (sceneString == null)
         {
             Debug.LogWarning(gameObject.name + ": SceneChanger - No scene given", gameObject);
@@ -36,9 +38,9 @@ public class SceneChanger : MonoBehaviour
         // If the Scene exists in build settings
         if (SceneManager.GetSceneByName(sceneString).buildIndex < SceneManager.sceneCountInBuildSettings)
         {
-            SceneController.instance.StartCoroutine(SceneController.instance.LoadNextScene(sceneString));
+            SceneController.instance.StartCoroutine(SceneController.instance.LoadNextScene(sceneString, transitionColor));
 
-            Debug.Log("Changing Scene to: " + sceneString, gameObject);
+            Debug.Log("Changing Scene to: " + sceneString + " , fading to " + transitionColor, gameObject);
 
             // Pause game here
         }

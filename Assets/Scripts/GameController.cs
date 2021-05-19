@@ -5,24 +5,9 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
 	private static bool paused = false;
-    public static bool introDone = false;
-
 	public static GameController instance;
 
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            DontDestroyOnLoad(gameObject);
-            instance = this;
-        }
-        else if (instance != this)
-        {
-            Destroy(gameObject);
-        }
-    }
-
-    private void Start()
+	private void Start()
 	{
 		Time.timeScale = 1;
 		PauseGame(false);
@@ -41,14 +26,10 @@ public class GameController : MonoBehaviour
 		if (pause)
 		{
 			paused = true;
-			// Time.timeScale = 0;
-			Debug.Log("Game Paused", gameObject);
 		}
 		if (!pause)
 		{
 			paused = false;
-			// Time.timeScale = 1;
-			Debug.Log("Game Unpaused", gameObject);
 		}
 	}
 }

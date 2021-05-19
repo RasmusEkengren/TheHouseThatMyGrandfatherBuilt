@@ -7,6 +7,10 @@ public class PlayerAnimation : MonoBehaviour
 {
     [SerializeField] private Animator animator = null;
     private PlayerMovement playerMovement = null;
+    private float currentLayerWeight = 0;
+
+    private int layerIndex = 0;
+    private int weightTarget = 0;
 
     private void Start()
     {
@@ -27,4 +31,44 @@ public class PlayerAnimation : MonoBehaviour
             animator.SetBool("walking", false);
         }
     }
+
+    public void StartCarryAnimation()
+    {
+        layerIndex = animator.GetLayerIndex("Carry");
+        animator.SetLayerWeight(layerIndex, 1);
+        // weightTarget = 1;
+        //StartCoroutine("ChangeLayerWeight");
+        Debug.Log("Starting carry animation");
+    }
+    public void StopCarryAnimation()
+    {
+        layerIndex = animator.GetLayerIndex("Carry");
+        animator.SetLayerWeight(layerIndex, 0);
+        // weightTarget = 0;
+        // StartCoroutine("ChangeLayerWeight");
+        Debug.Log("Stopping carry animation");
+    }
+
+    private IEnumerator ChangeLayerWeight()
+    {
+        if (weightTarget > 0)
+        {
+            currentLayerWeight = animator.GetLayerWeight(layerIndex);
+            currentLayerWeight += 0.5f * Time.deltaTime;
+            animator.SetLayerWeight(layerIndex, currentLayerWeight);
+            if (currentLayerWeight >= 1)
+            {
+                yield return null;
+            }
+            Debug.Log("Yes, we are carrying..." + weightTarget);
+            // Go to 1
+        }
+        if (weightTarget <= 0)
+        {
+            // Go to 0
+        }
+
+        yield return null;
+    }
+
 }

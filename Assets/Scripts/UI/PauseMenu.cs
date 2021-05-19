@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
 	[SerializeField] private GameObject pauseMenu = null;
 	[SerializeField] private GameController gameController = null;
+	private bool hasPaused = false;
 	public void ToggleMenu(InputAction.CallbackContext value)
 	{
 		if (!gameObject.scene.IsValid()) return;
@@ -15,10 +16,11 @@ public class PauseMenu : MonoBehaviour
 			if (pauseMenu.activeSelf)
 			{
 				pauseMenu.SetActive(false);
-				gameController.PauseGame(false);
+				if (!hasPaused) gameController.PauseGame(false);
 			}
 			else
 			{
+				hasPaused = GameController.GamePaused();
 				pauseMenu.SetActive(true);
 				gameController.PauseGame(true);
 			}
@@ -27,7 +29,7 @@ public class PauseMenu : MonoBehaviour
 	public void Resume()
 	{
 		pauseMenu.SetActive(false);
-		gameController.PauseGame(false);
+		if (!hasPaused) gameController.PauseGame(false);
 	}
 	public void QuitGame()
 	{

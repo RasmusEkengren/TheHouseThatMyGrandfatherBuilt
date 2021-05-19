@@ -13,7 +13,7 @@ public class WoodCutting : MonoBehaviour
 	[SerializeField] [FMODUnity.EventRef] protected string cutSound = null;
 	[SerializeField] [FMODUnity.EventRef] protected string missSound = null;
 	[SerializeField] private UnityEvent finishEvent = null;
-	[SerializeField] private Color normalColor = Color.white;
+	[SerializeField] private Color normalColor;
 	[SerializeField] private Color hitColor = Color.green;
 	[SerializeField] private Color missColor = Color.red;
 	private float health = 0;
@@ -24,6 +24,7 @@ public class WoodCutting : MonoBehaviour
 	{
 		circle.gameObject.SetActive(false);
 		HitIndicator.gameObject.SetActive(false);
+
 	}
 	void Update()
 	{
@@ -59,6 +60,7 @@ public class WoodCutting : MonoBehaviour
 		isGameActive = true;
 		circle.gameObject.SetActive(true);
 		circleImage = circle.GetComponent<Image>();
+		normalColor = circleImage.color;
 		HitIndicator.gameObject.SetActive(true);
 		health = startHealth;
 		ResetIndicator();
@@ -87,7 +89,6 @@ public class WoodCutting : MonoBehaviour
 				circleImage.color = missColor;
 				FMODUnity.RuntimeManager.PlayOneShot(missSound);
 			}
-			Debug.Log(strength + ", " + target);
 			ResetIndicator();
 		}
 	}
