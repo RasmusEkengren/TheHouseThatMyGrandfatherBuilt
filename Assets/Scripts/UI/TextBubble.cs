@@ -9,6 +9,7 @@ public class TextBubble : MonoBehaviour
 	private Camera mainCamera = null;
 	private Vector2 viewPortPos = Vector2.zero;
 	private RectTransform rectTransform = null;
+	private Vector3 followOffset = Vector3.zero;
 	void Start()
 	{
 		mainCamera = Camera.main;
@@ -17,7 +18,7 @@ public class TextBubble : MonoBehaviour
 
 	void LateUpdate()
 	{
-		viewPortPos = mainCamera.WorldToScreenPoint(followObject.transform.position);
+		viewPortPos = mainCamera.WorldToScreenPoint(followObject.transform.position + followOffset);
 		rectTransform.position = new Vector3(viewPortPos.x, viewPortPos.y, 0f);
 	}
 }
