@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-	public Vector3 cameraOffset;
+	public Vector3 standardCameraOffset;
 	public Vector3 standardRotation;
 	[SerializeField] private GameObject player;
 	[SerializeField] private float smoothTime;
@@ -12,6 +12,7 @@ public class CameraController : MonoBehaviour
 	private Vector3 rotationVelocity = Vector3.zero;
 	private Vector3 targetRotation;
 	private Vector3 targetPosition;
+	private Vector3 currentCameraOffset;
 	private float currentSmoothTime;
 	private float currentRotationSmoothTime;
 	private InkManager inkManager;
@@ -20,17 +21,22 @@ public class CameraController : MonoBehaviour
 	{
 		inkManager = player.GetComponent<InkManager>();
 		targetRotation = transform.rotation.eulerAngles;
-		if (GlobalSceneData.leahState != GlobalSceneData.LeahState.Entering) { ResetRotation(); }
+		if (GlobalSceneData.leahState != GlobalSceneData.LeahState.Entering)
+		{
+			ResetRotation();
+			currentCameraOffset = standardCameraOffset;
+			currentSmoothTime = smoothTime;
+		}
 		isFollowingPlayer = true;
 	}
 	void LateUpdate()
 	{
 		if (isFollowingPlayer && !inkManager.isCutsceneActive)
 		{
-			targetPosition = player.transform.position + cameraOffset;
+			targetPosition = player.transform.position + currentCameraOffset;
 			if (Vector3.Distance(transform.position, targetPosition) > smoothLength)
 			{
-				Vector3 smoothPosition = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
+				Vector3 smoothPosition = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, currentSmoothTime);
 				transform.position = smoothPosition;
 			}
 		}
@@ -79,5 +85,17 @@ public class CameraController : MonoBehaviour
 	public void SetRotationSmoothTime(float value)
 	{
 		rotationSmoothTime = value;
+	}
+	public void SetFollowOffset(Transform offset)
+	{
+		currentCameraOffset = offset.position;
+	}
+	public void ResetFollowOffset()
+	{
+		currentCameraOffset = standardCameraOffset;
+	}
+	public Vector3 GetStandardCameraOffset()
+	{
+		return standardCameraOffset;
 	}
 }
