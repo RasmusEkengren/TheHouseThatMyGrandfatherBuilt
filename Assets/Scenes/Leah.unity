@@ -14801,6 +14801,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 942131904}
+        m_TargetAssemblyTypeName: CameraController, Assembly-CSharp
+        m_MethodName: ResetFollowOffset
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   inkManager: {fileID: 1833915864}
 --- !u!114 &614649707
 MonoBehaviour:
@@ -21536,6 +21548,18 @@ PrefabInstance:
     - target: {fileID: 5325735516431247576, guid: 7a4514cbcc65a344898afe86b7dcec5e, type: 3}
       propertyPath: standardRotation.y
       value: 135
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325735516431247576, guid: 7a4514cbcc65a344898afe86b7dcec5e, type: 3}
+      propertyPath: standardCameraOffset.x
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325735516431247576, guid: 7a4514cbcc65a344898afe86b7dcec5e, type: 3}
+      propertyPath: standardCameraOffset.y
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325735516431247576, guid: 7a4514cbcc65a344898afe86b7dcec5e, type: 3}
+      propertyPath: standardCameraOffset.z
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5325735516431247577, guid: 7a4514cbcc65a344898afe86b7dcec5e, type: 3}
       propertyPath: m_RootOrder
