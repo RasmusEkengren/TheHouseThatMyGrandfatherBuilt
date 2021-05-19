@@ -58,16 +58,21 @@ public class IntroOutro : MonoBehaviour
 	{
 		textField.text = "";
 		isTyping = true;
-		foreach (char letter in sentence.ToCharArray())
+		float t = 0;
+		int currentLetter = 0;
+		float sentenceTime = sentence.Length * Settings.TextPrintLength;
+		while (t <= sentenceTime)
 		{
-			int timer = 0;
-			while (timer <= Settings.TextSpeed)
+			if (t > currentLetter * Settings.TextPrintLength)
 			{
-				timer++;
+				textField.text += sentence[currentLetter];
+				currentLetter++;
+			}
+			else
+			{
+				t += Time.deltaTime;
 				yield return null;
 			}
-			textField.text += letter;
-			yield return null;
 		}
 		isTyping = false;
 	}
