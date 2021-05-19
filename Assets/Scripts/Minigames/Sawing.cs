@@ -5,13 +5,16 @@ using UnityEngine.InputSystem;
 using UnityEngine.Events;
 using FMOD.Studio;
 using FMODUnity;
+using UnityEngine.UI;
 
 public class Sawing : MonoBehaviour
 {
 	[SerializeField] private RectTransform saw = null;
 	[SerializeField] private RectTransform cutLine = null;
 	[SerializeField] private RectTransform leftPiece = null;
+	[SerializeField] private Image leftPieceImage = null;
 	[SerializeField] private RectTransform rightPiece = null;
+	[SerializeField] private Image rightPieceImage = null;
 	[SerializeField] private RectTransform wholePlank = null;
 	private bool isCutting = false;
 	private bool isFalling = false;
@@ -46,10 +49,12 @@ public class Sawing : MonoBehaviour
 		cutLine.anchorMin = new Vector2(cutlinePos - 0.0125f, cutLine.anchorMin.y);
 		cutLine.anchorMax = new Vector2(cutlinePos + 0.0125f, cutLine.anchorMax.y);
 		leftPiece.anchorMin = new Vector2(0, 0);
-		leftPiece.anchorMax = new Vector2(cutlinePos, 1);
+		leftPiece.anchorMax = new Vector2(1, 1);
+		leftPieceImage.fillAmount = cutlinePos;
 		leftPiece.rotation = Quaternion.identity;
-		rightPiece.anchorMin = new Vector2(cutlinePos, 0);
+		rightPiece.anchorMin = new Vector2(0, 0);
 		rightPiece.anchorMax = new Vector2(1, 1);
+		rightPieceImage.fillAmount = 1.0f - cutlinePos;
 		rightPiece.rotation = Quaternion.identity;
 		saw.anchorMin = new Vector2(0.495f, -1f);
 		saw.anchorMax = new Vector2(0.505f, 2f);
