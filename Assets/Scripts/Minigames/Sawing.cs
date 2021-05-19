@@ -38,6 +38,9 @@ public class Sawing : MonoBehaviour
 	[SerializeField] [EventRef] protected string PlankFallSound = null;
 	[SerializeField] private UnityEvent gameCompleteEvent = null;
 	private EventInstance cuttingSoundInstance;
+
+    public int GetPlanksLeft() { return numberOfPlanks - gameCompletions; }
+
 	public void StartGame()
 	{
 		leftPiece.gameObject.SetActive(false);
