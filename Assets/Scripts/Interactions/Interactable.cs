@@ -27,11 +27,6 @@ public class Interactable : MonoBehaviour
 	}
 	void OnTriggerEnter(Collider collider)
 	{        
-        if (!GameController.firstInteraction)
-        {
-            GameController.firstInteraction = true;
-        }
-
 		if (collider.gameObject.tag == playerTag)
 		{
 			interactIcon.SetActive(true);

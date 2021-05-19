@@ -8,13 +8,24 @@ public class GameController : MonoBehaviour
     public static GameController instance;
 
     private static bool _tutorialDone = false;
-    public static bool tutorialDone { get { return _tutorialDone; } private set { _tutorialDone = value; ShowSpacebar(false); } }
+    public static bool tutorialDone
+    {
+        get { return _tutorialDone; }
+        private set { _tutorialDone = value; ControlsTutorial.ShowInteractionControls(false); }
+    }
 
     public static bool _firstMovement = false;
-    public static bool firstMovement { get { return _firstMovement; } set { _firstMovement = value; } }
+    public static bool firstMovement
+    {
+        get { return _firstMovement; }
+        set { _firstMovement = value; if (!tutorialDone && value == true) { ControlsTutorial.ShowMovementControls(true); } }
+    }
 
     private static bool _firstInteraction = false;
-    public static bool firstInteraction { get { return _firstInteraction; } set { _firstInteraction = value; ShowSpacebar(true); } }
+    public static bool firstInteraction {
+        get { return _firstInteraction; }
+        set { _firstInteraction = value; if (value == true) { ControlsTutorial.ShowInteractionControls(true); } }
+    }
 
     private static ControlsTutorial tutorial = null;
 
@@ -22,18 +33,10 @@ public class GameController : MonoBehaviour
     {
         Time.timeScale = 1;
         PauseGame(false);
-        if (FindObjectOfType<ControlsTutorial>()) { tutorial = FindObjectOfType<ControlsTutorial>(); Debug.Log("Got tutorial"); }
-    }
-
-    public static void ShowSpacebar(bool show)
-    {
-        if (show == true)
+        if (FindObjectOfType<ControlsTutorial>())
         {
-            tutorial.ShowInteractionControls();
-        }
-        else
-        {
-            tutorial.HideInteractionControls();
+            tutorial = FindObjectOfType<ControlsTutorial>();
+            // ControlsTutorial.ShowMovementControls(true);
         }
     }
 
