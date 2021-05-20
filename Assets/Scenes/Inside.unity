@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657892, g: 0.4964133, b: 0.57481736, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657832, g: 0.49641216, b: 0.5748164, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4095,6 +4095,18 @@ PrefabInstance:
       propertyPath: standardRotation.y
       value: 135
       objectReference: {fileID: 0}
+    - target: {fileID: 5325735516431247576, guid: 7a4514cbcc65a344898afe86b7dcec5e, type: 3}
+      propertyPath: standardCameraOffset.x
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325735516431247576, guid: 7a4514cbcc65a344898afe86b7dcec5e, type: 3}
+      propertyPath: standardCameraOffset.y
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325735516431247576, guid: 7a4514cbcc65a344898afe86b7dcec5e, type: 3}
+      propertyPath: standardCameraOffset.z
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5325735516431247577, guid: 7a4514cbcc65a344898afe86b7dcec5e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -6744,7 +6756,7 @@ MonoBehaviour:
   - Target: {fileID: 1306994123}
     Params:
     - Name: Track
-      Value: 0
+      Value: 3
   TriggerEvent: 11
 --- !u!114 &1306994123
 MonoBehaviour:
@@ -6769,7 +6781,7 @@ MonoBehaviour:
   - Name: Skip start
     Value: 1
   - Name: Track
-    Value: 0
+    Value: 3
   OverrideAttenuation: 0
   OverrideMinDistance: 0
   OverrideMaxDistance: 0

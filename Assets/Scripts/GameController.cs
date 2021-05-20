@@ -4,32 +4,52 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-	private static bool paused = false;
-	public static GameController instance;
+    private static bool paused = false;
+    public static GameController instance;
 
-	private void Start()
-	{
-		Time.timeScale = 1;
-		PauseGame(false);
-	}
+    private float delay = 0.5f;
 
-	public static bool GamePaused()
-	{
-		return paused;
-	}
+    private void Start()
+    {
+        Time.timeScale = 1;
+        if (GlobalSceneData.tutorialFinished)
+        {
+            PauseGame(false);
+        }
+    }
 
-	/// <summary>
-	/// Call with a bool state to pause the game
-	/// </summary>
-	public void PauseGame(bool pause)
-	{
-		if (pause)
-		{
-			paused = true;
-		}
-		if (!pause)
-		{
-			paused = false;
-		}
-	}
+    public void StartTutorial()
+    {
+        StartCoroutine("startDelay");
+    }
+    public void FinishTutorial()
+    {
+        ControlsTutorial.ShowMovementControls(false);
+        GlobalSceneData.tutorialFinished = true;
+    }
+
+    private IEnumerator startDelay()
+    {
+        yield return new WaitForSeconds(delay);
+        ControlsTutorial.ShowMovementControls(true);
+    }
+
+    public static bool GamePaused()
+    {
+        return paused;
+    }
+
+    /// <summary>
+    /// Call with a bool state to pause the game
+    /// </summary>
+    public void PauseGame(bool pause)
+    {
+        paused = pause;
+        Debug.Log("Game paused: " + pause);
+
+        if (pause == false && GlobalSceneData.tutorialFinished == false && GlobalSceneData.leahState == GlobalSceneData.LeahState.Entering)
+        {
+            StartTutorial();
+        }
+    }
 }
