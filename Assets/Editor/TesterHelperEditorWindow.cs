@@ -143,11 +143,6 @@ public class TesterHelperEditorWindow : EditorWindow
         GUILayout.EndHorizontal();
         GUILayout.Space(10f);
 
-        //if (GUILayout.Button("Clear Interacts", GUILayout.Height(30f)))
-        //{
-        //    ClearInteracts();
-        //}
-
         if (so != null && EditorApplication.isPlaying)
         {
             so.ApplyModifiedProperties();
