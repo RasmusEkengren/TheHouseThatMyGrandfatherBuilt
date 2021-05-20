@@ -7,10 +7,31 @@ public class GameController : MonoBehaviour
     private static bool paused = false;
     public static GameController instance;
 
+    private float delay = 0.5f;
+
     private void Start()
     {
         Time.timeScale = 1;
-        PauseGame(false);
+        if (GlobalSceneData.tutorialFinished)
+        {
+            PauseGame(false);
+        }
+    }
+
+    public void StartTutorial()
+    {
+        StartCoroutine("startDelay");
+    }
+    public void FinishTutorial()
+    {
+        ControlsTutorial.ShowMovementControls(false);
+        GlobalSceneData.tutorialFinished = true;
+    }
+
+    private IEnumerator startDelay()
+    {
+        yield return new WaitForSeconds(delay);
+        ControlsTutorial.ShowMovementControls(true);
     }
 
     public static bool GamePaused()
@@ -23,13 +44,12 @@ public class GameController : MonoBehaviour
     /// </summary>
     public void PauseGame(bool pause)
     {
-        if (pause)
+        paused = pause;
+        Debug.Log("Game paused: " + pause);
+
+        if (pause == false && GlobalSceneData.tutorialFinished == false && GlobalSceneData.leahState == GlobalSceneData.LeahState.Entering)
         {
-            paused = true;
-        }
-        if (!pause)
-        {
-            paused = false;
+            StartTutorial();
         }
     }
 }

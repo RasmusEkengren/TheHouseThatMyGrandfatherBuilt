@@ -1,0 +1,2 @@
+I have never really been a fan of thunder and lightning, I used to be so scared of it. 
+Grandma and Grandpa quickly learnt this and started shutting all of the window shutters when a thunderstorm happened. 
