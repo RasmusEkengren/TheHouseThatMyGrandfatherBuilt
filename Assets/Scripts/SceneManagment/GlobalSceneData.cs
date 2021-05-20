@@ -35,6 +35,8 @@ public class GlobalSceneData : MonoBehaviour
 
     public static bool tutorialFinished = false;
 
+    public static Interactable lastInteraction = null;
+
     private void Start()
 	{
         if (SceneManager.GetActiveScene().name == "George" || SceneManager.GetActiveScene().name == "Inside") { tutorialFinished = true; }
@@ -75,4 +77,9 @@ public class GlobalSceneData : MonoBehaviour
 		}
 		return false;
 	}
+
+    public void ResetLastInteraction()
+    {
+        lastInteraction.ResetInteraction();
+    }
 }
