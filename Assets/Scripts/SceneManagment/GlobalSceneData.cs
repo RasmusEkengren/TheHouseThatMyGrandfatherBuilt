@@ -10,10 +10,12 @@ public class GlobalSceneData : MonoBehaviour
 	public static Quaternion lastLeahRotation;
 	public static Vector3 lastCameraPosition;
 	public static Quaternion lastCameraRotation;
-
 	public static bool mg_porchFixed;
+	public static bool mg_porchFixing;
 	public static bool mg_windowsFixed;
+	public static bool mg_windowsFixing;
 	public static bool mg_railingFixed;
+	public static bool mg_railingFixing;
 
 	public enum LeahState { Entering, Building, Done }
 	public static LeahState leahState = LeahState.Entering;
@@ -33,13 +35,13 @@ public class GlobalSceneData : MonoBehaviour
 
 	private GameObject player;
 
-    public static bool tutorialFinished = false;
+	public static bool tutorialFinished = false;
 
     public static Interactable lastInteraction = null;
 
     private void Start()
 	{
-        if (SceneManager.GetActiveScene().name == "George" || SceneManager.GetActiveScene().name == "Inside") { tutorialFinished = true; }
+		if (SceneManager.GetActiveScene().name == "George" || SceneManager.GetActiveScene().name == "Inside") { tutorialFinished = true; }
 		SceneManager.sceneLoaded += OnSceneLoaded;
 		// Ugly solution for the Tester Helper tool
 		lastLeahPosition = new Vector3(18f, 1f, -38f);
