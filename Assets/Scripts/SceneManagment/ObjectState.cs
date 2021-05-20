@@ -40,21 +40,55 @@ public class ObjectState : MonoBehaviour
 
 	public void SetState()
 	{
-		if (GlobalSceneData.mg_porchFixed)
+		//PorchFixingState
+		switch (GlobalSceneData.porchFixingState)
 		{
-			switch (boolStates.OnPorchFixed)
-			{
-				case BoolStates.activeStates.ON:
-					this.gameObject.SetActive(true);
-					break;
-				case BoolStates.activeStates.OFF:
-					this.gameObject.SetActive(false);
-					return;
-				default:
-					break;
-			}
-			if (GlobalSceneData.porchState == GlobalSceneData.PorchState.Flat)
-			{
+			case GlobalSceneData.PorchFixingState.Broken:
+				switch (boolStates.OnPorchBroken)
+				{
+					case BoolStates.activeStates.ON:
+						this.gameObject.SetActive(true);
+						break;
+					case BoolStates.activeStates.OFF:
+						this.gameObject.SetActive(false);
+						return;
+					default:
+						break;
+				}
+				break;
+			case GlobalSceneData.PorchFixingState.Fixing:
+				switch (boolStates.OnPorchFixing)
+				{
+					case BoolStates.activeStates.ON:
+						this.gameObject.SetActive(true);
+						break;
+					case BoolStates.activeStates.OFF:
+						this.gameObject.SetActive(false);
+						return;
+					default:
+						break;
+				}
+				break;
+			case GlobalSceneData.PorchFixingState.Fixed:
+				switch (boolStates.OnPorchFixed)
+				{
+					case BoolStates.activeStates.ON:
+						this.gameObject.SetActive(true);
+						break;
+					case BoolStates.activeStates.OFF:
+						this.gameObject.SetActive(false);
+						return;
+					default:
+						break;
+				}
+				break;
+			default:
+				break;
+		}
+		//PorchStyle
+		switch (GlobalSceneData.porchStyle)
+		{
+			case GlobalSceneData.PorchStyle.Flat:
 				switch (boolStates.OnPorchFlat)
 				{
 					case BoolStates.activeStates.ON:
@@ -66,9 +100,8 @@ public class ObjectState : MonoBehaviour
 					default:
 						break;
 				}
-			}
-			else if (GlobalSceneData.porchState == GlobalSceneData.PorchState.Slanted)
-			{
+				break;
+			case GlobalSceneData.PorchStyle.Slanted:
 				switch (boolStates.OnPorchSlanted)
 				{
 					case BoolStates.activeStates.ON:
@@ -80,51 +113,59 @@ public class ObjectState : MonoBehaviour
 					default:
 						break;
 				}
-			}
+				break;
+			default:
+				break;
 		}
-		else if (GlobalSceneData.mg_porchFixing)
+		//WindowsFixingState
+		switch (GlobalSceneData.windowsFixingState)
 		{
-			switch (boolStates.OnPorchFixing)
-			{
-				case BoolStates.activeStates.ON:
-					this.gameObject.SetActive(true);
-					break;
-				case BoolStates.activeStates.OFF:
-					this.gameObject.SetActive(false);
-					return;
-				default:
-					break;
-			}
+			case GlobalSceneData.WindowsFixingState.Broken:
+				switch (boolStates.OnWindowsBroken)
+				{
+					case BoolStates.activeStates.ON:
+						this.gameObject.SetActive(true);
+						break;
+					case BoolStates.activeStates.OFF:
+						this.gameObject.SetActive(false);
+						return;
+					default:
+						break;
+				}
+				break;
+			case GlobalSceneData.WindowsFixingState.Fixing:
+				switch (boolStates.OnWindowsFixing)
+				{
+					case BoolStates.activeStates.ON:
+						this.gameObject.SetActive(true);
+						break;
+					case BoolStates.activeStates.OFF:
+						this.gameObject.SetActive(false);
+						return;
+					default:
+						break;
+				}
+				break;
+			case GlobalSceneData.WindowsFixingState.Fixed:
+				switch (boolStates.OnWindowsFixed)
+				{
+					case BoolStates.activeStates.ON:
+						this.gameObject.SetActive(true);
+						break;
+					case BoolStates.activeStates.OFF:
+						this.gameObject.SetActive(false);
+						return;
+					default:
+						break;
+				}
+				break;
+			default:
+				break;
 		}
-		else
+		//WindowsStyle
+		switch (GlobalSceneData.windowsStyle)
 		{
-			switch (boolStates.OnPorchBroken)
-			{
-				case BoolStates.activeStates.ON:
-					this.gameObject.SetActive(true);
-					break;
-				case BoolStates.activeStates.OFF:
-					this.gameObject.SetActive(false);
-					return;
-				default:
-					break;
-			}
-		}
-		if (GlobalSceneData.mg_windowsFixed)
-		{
-			switch (boolStates.OnWindowsFixed)
-			{
-				case BoolStates.activeStates.ON:
-					this.gameObject.SetActive(true);
-					break;
-				case BoolStates.activeStates.OFF:
-					this.gameObject.SetActive(false);
-					return;
-				default:
-					break;
-			}
-			if (GlobalSceneData.windowsState == GlobalSceneData.WindowsState.Ribbed)
-			{
+			case GlobalSceneData.WindowsStyle.Ribbed:
 				switch (boolStates.OnWindowsRibbed)
 				{
 					case BoolStates.activeStates.ON:
@@ -136,9 +177,8 @@ public class ObjectState : MonoBehaviour
 					default:
 						break;
 				}
-			}
-			else if (GlobalSceneData.windowsState == GlobalSceneData.WindowsState.Solid)
-			{
+				break;
+			case GlobalSceneData.WindowsStyle.Solid:
 				switch (boolStates.OnWindowsSolid)
 				{
 					case BoolStates.activeStates.ON:
@@ -150,51 +190,59 @@ public class ObjectState : MonoBehaviour
 					default:
 						break;
 				}
-			}
+				break;
+			default:
+				break;
 		}
-		else if (GlobalSceneData.mg_windowsFixing)
+		//RailingFixingState
+		switch (GlobalSceneData.railingFixingState)
 		{
-			switch (boolStates.OnWindowsFixing)
-			{
-				case BoolStates.activeStates.ON:
-					this.gameObject.SetActive(true);
-					break;
-				case BoolStates.activeStates.OFF:
-					this.gameObject.SetActive(false);
-					return;
-				default:
-					break;
-			}
+			case GlobalSceneData.RailingFixingState.Broken:
+				switch (boolStates.OnRailingBroken)
+				{
+					case BoolStates.activeStates.ON:
+						this.gameObject.SetActive(true);
+						break;
+					case BoolStates.activeStates.OFF:
+						this.gameObject.SetActive(false);
+						return;
+					default:
+						break;
+				}
+				break;
+			case GlobalSceneData.RailingFixingState.Fixing:
+				switch (boolStates.OnRailingFixing)
+				{
+					case BoolStates.activeStates.ON:
+						this.gameObject.SetActive(true);
+						break;
+					case BoolStates.activeStates.OFF:
+						this.gameObject.SetActive(false);
+						return;
+					default:
+						break;
+				}
+				break;
+			case GlobalSceneData.RailingFixingState.Fixed:
+				switch (boolStates.OnRailingFixed)
+				{
+					case BoolStates.activeStates.ON:
+						this.gameObject.SetActive(true);
+						break;
+					case BoolStates.activeStates.OFF:
+						this.gameObject.SetActive(false);
+						return;
+					default:
+						break;
+				}
+				break;
+			default:
+				break;
 		}
-		else
+
+		switch (GlobalSceneData.railingStyle)
 		{
-			switch (boolStates.OnWindowsBroken)
-			{
-				case BoolStates.activeStates.ON:
-					this.gameObject.SetActive(true);
-					break;
-				case BoolStates.activeStates.OFF:
-					this.gameObject.SetActive(false);
-					return;
-				default:
-					break;
-			}
-		}
-		if (GlobalSceneData.mg_railingFixed)
-		{
-			switch (boolStates.OnRailingFixed)
-			{
-				case BoolStates.activeStates.ON:
-					this.gameObject.SetActive(true);
-					break;
-				case BoolStates.activeStates.OFF:
-					this.gameObject.SetActive(false);
-					return;
-				default:
-					break;
-			}
-			if (GlobalSceneData.railingState == GlobalSceneData.RailingState.FlatTop)
-			{
+			case GlobalSceneData.RailingStyle.FlatTop:
 				switch (boolStates.OnRailingFlatTop)
 				{
 					case BoolStates.activeStates.ON:
@@ -206,9 +254,8 @@ public class ObjectState : MonoBehaviour
 					default:
 						break;
 				}
-			}
-			else if (GlobalSceneData.railingState == GlobalSceneData.RailingState.Pillars)
-			{
+				break;
+			case GlobalSceneData.RailingStyle.Pillars:
 				switch (boolStates.OnRailingPillars)
 				{
 					case BoolStates.activeStates.ON:
@@ -220,35 +267,9 @@ public class ObjectState : MonoBehaviour
 					default:
 						break;
 				}
-			}
-		}
-		else if (GlobalSceneData.mg_railingFixing)
-		{
-			switch (boolStates.OnRailingFixing)
-			{
-				case BoolStates.activeStates.ON:
-					this.gameObject.SetActive(true);
-					break;
-				case BoolStates.activeStates.OFF:
-					this.gameObject.SetActive(false);
-					return;
-				default:
-					break;
-			}
-		}
-		else
-		{
-			switch (boolStates.OnRailingBroken)
-			{
-				case BoolStates.activeStates.ON:
-					this.gameObject.SetActive(true);
-					break;
-				case BoolStates.activeStates.OFF:
-					this.gameObject.SetActive(false);
-					return;
-				default:
-					break;
-			}
+				break;
+			default:
+				break;
 		}
 		if (GlobalSceneData.leahState == GlobalSceneData.LeahState.Entering)
 		{
