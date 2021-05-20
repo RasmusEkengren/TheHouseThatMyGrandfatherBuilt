@@ -48,10 +48,13 @@ public class ControlsTutorial : MonoBehaviour
 
     public static void ShowMovementControls(bool show)
     {
-        W.gameObject.SetActive(show); // Dunno why error
-        A.gameObject.SetActive(show);
-        S.gameObject.SetActive(show);
-        D.gameObject.SetActive(show);
+        if (W && A && S && D)
+        {
+            W.gameObject.SetActive(show);
+            A.gameObject.SetActive(show);
+            S.gameObject.SetActive(show);
+            D.gameObject.SetActive(show);
+        }
     }
 
     public static void ShowInteractionControls(bool show)
