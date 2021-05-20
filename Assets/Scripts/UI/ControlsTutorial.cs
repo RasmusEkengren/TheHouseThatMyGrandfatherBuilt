@@ -18,8 +18,10 @@ public class ControlsTutorial : MonoBehaviour
     [SerializeField] private Image SpacebarImage = null;
     private static Image Spacebar = null;
 
-    private float alphaValue;
-    private Color imageColor = Color.white;
+    private static float alphaValue = 1f;
+    private static Color imageColor = Color.white;
+
+    private static IEnumerator coroutine = null;
 
     private void Start()
     {
@@ -57,7 +59,7 @@ public class ControlsTutorial : MonoBehaviour
         Spacebar.gameObject.SetActive(show);
     }
 
-    private IEnumerator FadeInMovement()
+    private static IEnumerator FadeMovementControls(bool show)
     {
         if (alphaValue <= 1)
         {
