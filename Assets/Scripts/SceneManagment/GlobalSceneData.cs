@@ -41,7 +41,6 @@ public class GlobalSceneData : MonoBehaviour
 
     private void Start()
 	{
-		if (SceneManager.GetActiveScene().name == "George" || SceneManager.GetActiveScene().name == "Inside") { tutorialFinished = true; }
 		SceneManager.sceneLoaded += OnSceneLoaded;
 		// Ugly solution for the Tester Helper tool
 		lastLeahPosition = new Vector3(18f, 1f, -38f);
@@ -50,7 +49,12 @@ public class GlobalSceneData : MonoBehaviour
 
 	private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
 	{
-		if (porchState == PorchState.Broken)
+        if (SceneManager.GetActiveScene().name == "George" || SceneManager.GetActiveScene().name == "Inside" || leahState != LeahState.Entering)
+        {
+            tutorialFinished = true;
+        }
+
+        if (porchState == PorchState.Broken)
 		{
 			mg_porchFixed = false;
 		}
