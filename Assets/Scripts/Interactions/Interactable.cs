@@ -29,6 +29,7 @@ public class Interactable : MonoBehaviour
 	{        
 		if (collider.gameObject.tag == playerTag)
 		{
+            GlobalSceneData.lastInteraction = this;
 			interactIcon.SetActive(true);
             ControlsTutorial.ShowInteractionControls(true);
 			interactIcon.transform.forward = mainCamera.transform.forward;
@@ -38,7 +39,8 @@ public class Interactable : MonoBehaviour
 	{
 		if (collider.gameObject.tag == playerTag)
 		{
-			interactIcon.SetActive(false);
+            if (GlobalSceneData.lastInteraction == this) { GlobalSceneData.lastInteraction = null; }
+            interactIcon.SetActive(false);
             ControlsTutorial.ShowInteractionControls(false);
 		}
 	}
