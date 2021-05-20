@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657832, g: 0.49641216, b: 0.5748164, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657892, g: 0.4964133, b: 0.57481736, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -169,20 +169,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 2
+    OnPorchFixing: 2
     OnPorchFlat: 2
     OnPorchSlanted: 2
     OnPorchBroken: 2
     OnWindowsFixed: 2
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
     OnRailingFixed: 0
+    OnRailingFixing: 2
     OnRailingFlatTop: 1
     OnRailingPillars: 0
     OnRailingBroken: 1
     OnLeahEntering: 1
-    OnLeahBuilding: 0
-    OnLeahDone: 0
+    OnLeahBuilding: 1
+    OnLeahDone: 1
     OnGeorgeStatePorch: 1
     OnGeorgeStateWindows: 1
     OnGeorgeStateRailing: 0
@@ -3136,7 +3139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
-      value: ActivatePorch
+      value: ActivatePorchFixing
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
@@ -3168,7 +3171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
-      value: LeahSceneUpdater, Assembly-CSharp
+      value: SceneUpdater, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
@@ -3337,14 +3340,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 1
+    OnPorchFixing: 1
     OnPorchFlat: 2
     OnPorchSlanted: 2
     OnPorchBroken: 0
     OnWindowsFixed: 2
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
     OnRailingFixed: 2
+    OnRailingFixing: 2
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 2
@@ -4337,14 +4343,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 2
+    OnPorchFixing: 2
     OnPorchFlat: 2
     OnPorchSlanted: 2
     OnPorchBroken: 2
     OnWindowsFixed: 0
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 1
     OnRailingFixed: 2
+    OnRailingFixing: 2
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 2
@@ -5074,14 +5083,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 2
+    OnPorchFixing: 2
     OnPorchFlat: 2
     OnPorchSlanted: 2
     OnPorchBroken: 2
     OnWindowsFixed: 2
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
     OnRailingFixed: 2
+    OnRailingFixing: 2
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 2
@@ -7481,14 +7493,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 2
+    OnPorchFixing: 2
     OnPorchFlat: 2
     OnPorchSlanted: 0
     OnPorchBroken: 1
     OnWindowsFixed: 2
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
     OnRailingFixed: 2
+    OnRailingFixing: 2
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 2
@@ -7790,14 +7805,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 2
+    OnPorchFixing: 2
     OnPorchFlat: 2
     OnPorchSlanted: 2
     OnPorchBroken: 2
     OnWindowsFixed: 2
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
     OnRailingFixed: 2
+    OnRailingFixing: 2
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 2
@@ -9537,14 +9555,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 2
+    OnPorchFixing: 2
     OnPorchFlat: 2
     OnPorchSlanted: 2
     OnPorchBroken: 2
     OnWindowsFixed: 2
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
     OnRailingFixed: 2
+    OnRailingFixing: 2
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 2
@@ -11603,14 +11624,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 0
+    OnPorchFixing: 2
     OnPorchFlat: 2
     OnPorchSlanted: 2
     OnPorchBroken: 1
     OnWindowsFixed: 2
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
     OnRailingFixed: 2
+    OnRailingFixing: 2
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 2
@@ -14099,14 +14123,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 2
+    OnPorchFixing: 2
     OnPorchFlat: 2
     OnPorchSlanted: 2
     OnPorchBroken: 2
     OnWindowsFixed: 2
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
     OnRailingFixed: 0
+    OnRailingFixing: 2
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 1
@@ -14936,14 +14963,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 2
+    OnPorchFixing: 2
     OnPorchFlat: 2
     OnPorchSlanted: 2
     OnPorchBroken: 2
     OnWindowsFixed: 2
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
     OnRailingFixed: 2
+    OnRailingFixing: 2
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 2
@@ -15038,14 +15068,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 2
+    OnPorchFixing: 2
     OnPorchFlat: 2
     OnPorchSlanted: 2
     OnPorchBroken: 2
     OnWindowsFixed: 2
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
     OnRailingFixed: 1
+    OnRailingFixing: 2
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 0
@@ -16557,14 +16590,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 1
+    OnPorchFixing: 2
     OnPorchFlat: 2
     OnPorchSlanted: 2
     OnPorchBroken: 0
     OnWindowsFixed: 2
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
     OnRailingFixed: 1
+    OnRailingFixing: 2
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 0
@@ -17136,14 +17172,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 1
+    OnPorchFixing: 1
     OnPorchFlat: 2
     OnPorchSlanted: 2
     OnPorchBroken: 0
     OnWindowsFixed: 2
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
     OnRailingFixed: 2
+    OnRailingFixing: 2
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 2
@@ -18144,8 +18183,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1819898482}
-        m_TargetAssemblyTypeName: LeahSceneUpdater, Assembly-CSharp
-        m_MethodName: ActivateLeahBuilding
+        m_TargetAssemblyTypeName: SceneUpdater, Assembly-CSharp
+        m_MethodName: ActivateLeahStateBuilding
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18593,14 +18632,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 2
+    OnPorchFixing: 2
     OnPorchFlat: 2
     OnPorchSlanted: 2
     OnPorchBroken: 2
     OnWindowsFixed: 2
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
     OnRailingFixed: 2
+    OnRailingFixing: 2
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 2
@@ -19668,14 +19710,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 2
+    OnPorchFixing: 2
     OnPorchFlat: 2
     OnPorchSlanted: 2
     OnPorchBroken: 2
     OnWindowsFixed: 2
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
     OnRailingFixed: 2
+    OnRailingFixing: 2
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 2
@@ -20008,7 +20053,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6924804316239426479, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6924804316239426479, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -20032,6 +20077,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6924804316239426479, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924804316239426479, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6924804316239426479, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
@@ -20059,6 +20108,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4289584446897277210}
     - target: {fileID: 6924804316239426479, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 1819898482}
+    - target: {fileID: 6924804316239426479, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -20080,6 +20133,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6924804316239426479, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924804316239426479, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6924804316239426479, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
@@ -20107,6 +20164,10 @@ PrefabInstance:
       value: PlayAcceptSound
       objectReference: {fileID: 0}
     - target: {fileID: 6924804316239426479, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
+      value: ActivateWindowsStateRibbed
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924804316239426479, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
@@ -20129,6 +20190,10 @@ PrefabInstance:
     - target: {fileID: 6924804316239426479, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
       value: ButtonSound, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924804316239426479, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_TargetAssemblyTypeName
+      value: SceneUpdater, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6924804316239426479, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
@@ -20166,13 +20231,17 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6924804316239426479, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6924804316511349379, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: eventSystem
       value: 
       objectReference: {fileID: 173520116}
     - target: {fileID: 6924804316511349380, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6924804316511349380, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -20196,6 +20265,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6924804316511349380, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924804316511349380, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6924804316511349380, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
@@ -20223,6 +20296,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4289584446897277210}
     - target: {fileID: 6924804316511349380, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 1819898482}
+    - target: {fileID: 6924804316511349380, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -20244,6 +20321,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6924804316511349380, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924804316511349380, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6924804316511349380, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
@@ -20271,6 +20352,10 @@ PrefabInstance:
       value: PlayAcceptSound
       objectReference: {fileID: 0}
     - target: {fileID: 6924804316511349380, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
+      value: ActivateWindowsStateSolid
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924804316511349380, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
@@ -20293,6 +20378,10 @@ PrefabInstance:
     - target: {fileID: 6924804316511349380, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
       value: ButtonSound, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924804316511349380, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_TargetAssemblyTypeName
+      value: SceneUpdater, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6924804316511349380, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
@@ -20328,6 +20417,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6924804316511349380, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924804316511349380, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6924804316511349385, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
@@ -21701,20 +21794,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 2
+    OnPorchFixing: 2
     OnPorchFlat: 2
     OnPorchSlanted: 2
     OnPorchBroken: 2
     OnWindowsFixed: 2
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
     OnRailingFixed: 0
+    OnRailingFixing: 2
     OnRailingFlatTop: 0
     OnRailingPillars: 1
     OnRailingBroken: 1
     OnLeahEntering: 1
-    OnLeahBuilding: 0
-    OnLeahDone: 0
+    OnLeahBuilding: 1
+    OnLeahDone: 1
     OnGeorgeStatePorch: 1
     OnGeorgeStateWindows: 1
     OnGeorgeStateRailing: 0
@@ -21938,14 +22034,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 2
+    OnPorchFixing: 2
     OnPorchFlat: 2
     OnPorchSlanted: 2
     OnPorchBroken: 2
     OnWindowsFixed: 2
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
     OnRailingFixed: 2
+    OnRailingFixing: 2
     OnRailingFlatTop: 2
     OnRailingPillars: 0
     OnRailingBroken: 1
@@ -22843,14 +22942,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 2
+    OnPorchFixing: 2
     OnPorchFlat: 2
     OnPorchSlanted: 2
     OnPorchBroken: 2
     OnWindowsFixed: 1
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 0
     OnRailingFixed: 2
+    OnRailingFixing: 2
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 2
@@ -24164,6 +24266,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Guesthouse_whole
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ae8ef956613006644b0293df4887c566, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae8ef956613006644b0293df4887c566, type: 3}
 --- !u!1 &1044391167
@@ -25238,20 +25344,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 2
+    OnPorchFixing: 2
     OnPorchFlat: 2
     OnPorchSlanted: 2
     OnPorchBroken: 2
     OnWindowsFixed: 0
+    OnWindowsFixing: 2
     OnWindowsRibbed: 1
     OnWindowsSolid: 0
     OnWindowsBroken: 1
     OnRailingFixed: 2
+    OnRailingFixing: 2
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 2
     OnLeahEntering: 1
-    OnLeahBuilding: 0
-    OnLeahDone: 0
+    OnLeahBuilding: 1
+    OnLeahDone: 1
     OnGeorgeStatePorch: 1
     OnGeorgeStateWindows: 0
     OnGeorgeStateRailing: 1
@@ -26341,7 +26450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3848708273438668145, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3848708274374888318, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26401,7 +26510,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -26481,7 +26590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
-      value: ActivateRailing
+      value: ActivateRailingFixing
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -26501,7 +26610,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
-      value: LeahSceneUpdater, Assembly-CSharp
+      value: SceneUpdater, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
@@ -26570,14 +26679,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 0
+    OnPorchFixing: 1
     OnPorchFlat: 2
     OnPorchSlanted: 2
     OnPorchBroken: 1
     OnWindowsFixed: 2
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
     OnRailingFixed: 1
+    OnRailingFixing: 1
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 0
@@ -26618,6 +26730,18 @@ MonoBehaviour:
       - m_Target: {fileID: 815730518}
         m_TargetAssemblyTypeName: AddInkManagerEvent, Assembly-CSharp
         m_MethodName: AddEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1819898482}
+        m_TargetAssemblyTypeName: SceneUpdater, Assembly-CSharp
+        m_MethodName: ActivateRailingFixing
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -26922,14 +27046,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 2
+    OnPorchFixing: 2
     OnPorchFlat: 2
     OnPorchSlanted: 2
     OnPorchBroken: 2
     OnWindowsFixed: 2
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
     OnRailingFixed: 1
+    OnRailingFixing: 2
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 0
@@ -27307,14 +27434,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 0
+    OnPorchFixing: 1
     OnPorchFlat: 2
     OnPorchSlanted: 2
     OnPorchBroken: 1
     OnWindowsFixed: 2
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
     OnRailingFixed: 2
+    OnRailingFixing: 2
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 2
@@ -31422,14 +31552,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 1
+    OnPorchFixing: 1
     OnPorchFlat: 2
     OnPorchSlanted: 2
     OnPorchBroken: 0
     OnWindowsFixed: 2
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
     OnRailingFixed: 2
+    OnRailingFixing: 2
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 2
@@ -31948,19 +32081,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 0
+    OnPorchFixing: 2
     OnPorchFlat: 1
     OnPorchSlanted: 0
     OnPorchBroken: 1
     OnWindowsFixed: 1
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 0
     OnRailingFixed: 2
+    OnRailingFixing: 2
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 2
     OnLeahEntering: 1
-    OnLeahBuilding: 0
+    OnLeahBuilding: 1
     OnLeahDone: 1
     OnGeorgeStatePorch: 0
     OnGeorgeStateWindows: 1
@@ -32552,14 +32688,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 2
+    OnPorchFixing: 2
     OnPorchFlat: 2
     OnPorchSlanted: 2
     OnPorchBroken: 2
     OnWindowsFixed: 2
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
     OnRailingFixed: 2
+    OnRailingFixing: 2
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 2
@@ -32912,14 +33051,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 2
+    OnPorchFixing: 2
     OnPorchFlat: 2
     OnPorchSlanted: 2
     OnPorchBroken: 2
     OnWindowsFixed: 2
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
     OnRailingFixed: 2
+    OnRailingFixing: 2
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 2
@@ -33176,7 +33318,7 @@ PrefabInstance:
     - target: {fileID: 6924804316239426479, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
       value: 
-      objectReference: {fileID: 1473350447}
+      objectReference: {fileID: 1819898482}
     - target: {fileID: 6924804316239426479, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -33231,7 +33373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6924804316239426479, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
-      value: FlatTopRailing
+      value: ActivateRailingStateFlatTop
       objectReference: {fileID: 0}
     - target: {fileID: 6924804316239426479, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -33259,7 +33401,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6924804316239426479, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_TargetAssemblyTypeName
-      value: ChoiceButton, Assembly-CSharp
+      value: SceneUpdater, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6924804316239426479, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
@@ -33364,7 +33506,7 @@ PrefabInstance:
     - target: {fileID: 6924804316511349380, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
       value: 
-      objectReference: {fileID: 1473350446}
+      objectReference: {fileID: 1819898482}
     - target: {fileID: 6924804316511349380, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -33419,7 +33561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6924804316511349380, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
-      value: PillarsRailing
+      value: ActivateRailingStatePillars
       objectReference: {fileID: 0}
     - target: {fileID: 6924804316511349380, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -33447,7 +33589,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6924804316511349380, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_TargetAssemblyTypeName
-      value: ChoiceButton, Assembly-CSharp
+      value: SceneUpdater, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6924804316511349380, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
@@ -33583,28 +33725,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6924804315802283223, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
   m_PrefabInstance: {fileID: 1473350441}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1473350446 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6924804316511349379, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
-  m_PrefabInstance: {fileID: 1473350441}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1473350443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fc0e91b497d8ff42893568b162ed85f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1473350447 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6924804316239426475, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
-  m_PrefabInstance: {fileID: 1473350441}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1473350444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fc0e91b497d8ff42893568b162ed85f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1475487472
 GameObject:
   m_ObjectHideFlags: 0
@@ -34861,7 +34981,7 @@ PrefabInstance:
     - target: {fileID: 6924804316239426479, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Target
       value: 
-      objectReference: {fileID: 2063825651}
+      objectReference: {fileID: 1819898482}
     - target: {fileID: 6924804316239426479, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
       value: 
@@ -34916,7 +35036,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6924804316239426479, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
-      value: SlantedPorch
+      value: ActivatePorchStateSlanted
       objectReference: {fileID: 0}
     - target: {fileID: 6924804316239426479, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
@@ -34944,7 +35064,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6924804316239426479, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
-      value: ChoiceButton, Assembly-CSharp
+      value: SceneUpdater, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6924804316239426479, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_TargetAssemblyTypeName
@@ -35061,7 +35181,7 @@ PrefabInstance:
     - target: {fileID: 6924804316511349380, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Target
       value: 
-      objectReference: {fileID: 1859444548}
+      objectReference: {fileID: 1819898482}
     - target: {fileID: 6924804316511349380, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
       value: 
@@ -35116,7 +35236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6924804316511349380, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
-      value: FlatPorch
+      value: ActivatePorchStateFlat
       objectReference: {fileID: 0}
     - target: {fileID: 6924804316511349380, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
@@ -35144,7 +35264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6924804316511349380, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
-      value: ChoiceButton, Assembly-CSharp
+      value: SceneUpdater, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6924804316511349380, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_TargetAssemblyTypeName
@@ -35395,14 +35515,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 2
+    OnPorchFixing: 2
     OnPorchFlat: 2
     OnPorchSlanted: 2
     OnPorchBroken: 2
     OnWindowsFixed: 2
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
     OnRailingFixed: 2
+    OnRailingFixing: 2
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 2
@@ -36384,14 +36507,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 2
+    OnPorchFixing: 2
     OnPorchFlat: 2
     OnPorchSlanted: 2
     OnPorchBroken: 2
     OnWindowsFixed: 2
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
     OnRailingFixed: 2
+    OnRailingFixing: 2
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 2
@@ -36777,14 +36903,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 2
+    OnPorchFixing: 2
     OnPorchFlat: 0
     OnPorchSlanted: 2
     OnPorchBroken: 1
     OnWindowsFixed: 2
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
     OnRailingFixed: 2
+    OnRailingFixing: 2
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 2
@@ -37921,14 +38050,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 2
+    OnPorchFixing: 2
     OnPorchFlat: 2
     OnPorchSlanted: 2
     OnPorchBroken: 2
     OnWindowsFixed: 2
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
     OnRailingFixed: 0
+    OnRailingFixing: 2
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 1
@@ -38399,14 +38531,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 2
+    OnPorchFixing: 2
     OnPorchFlat: 2
     OnPorchSlanted: 2
     OnPorchBroken: 2
     OnWindowsFixed: 2
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
     OnRailingFixed: 2
+    OnRailingFixing: 2
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 2
@@ -39014,19 +39149,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 0
+    OnPorchFixing: 2
     OnPorchFlat: 0
     OnPorchSlanted: 1
     OnPorchBroken: 1
     OnWindowsFixed: 1
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 0
     OnRailingFixed: 2
+    OnRailingFixing: 2
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 2
     OnLeahEntering: 1
-    OnLeahBuilding: 0
+    OnLeahBuilding: 1
     OnLeahDone: 1
     OnGeorgeStatePorch: 0
     OnGeorgeStateWindows: 1
@@ -41058,7 +41196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -41138,7 +41276,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
-      value: ActivateWindows
+      value: ActivateWindowsFixing
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -41158,7 +41296,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
-      value: LeahSceneUpdater, Assembly-CSharp
+      value: SceneUpdater, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
@@ -41296,6 +41434,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1819898482}
+        m_TargetAssemblyTypeName: SceneUpdater, Assembly-CSharp
+        m_MethodName: ActivateWindowsFixing
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1803292492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41310,14 +41460,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 0
+    OnPorchFixing: 1
     OnPorchFlat: 2
     OnPorchSlanted: 2
     OnPorchBroken: 1
     OnWindowsFixed: 1
+    OnWindowsFixing: 1
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 0
     OnRailingFixed: 2
+    OnRailingFixing: 2
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 2
@@ -41831,7 +41984,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1819898481}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dc4c15dcfa4d3c4b9a4e4f13ffeea32, type: 3}
+  m_Script: {fileID: 11500000, guid: ac593b62c6368bf48809080e560972ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1819898483
@@ -43348,17 +43501,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6924804316511349385, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
   m_PrefabInstance: {fileID: 1521525585}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1859444548 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6924804316511349379, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
-  m_PrefabInstance: {fileID: 1521525585}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1859444546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fc0e91b497d8ff42893568b162ed85f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1867345585
 GameObject:
   m_ObjectHideFlags: 0
@@ -44924,14 +45066,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 2
+    OnPorchFixing: 2
     OnPorchFlat: 2
     OnPorchSlanted: 2
     OnPorchBroken: 2
     OnWindowsFixed: 2
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
     OnRailingFixed: 2
+    OnRailingFixing: 2
     OnRailingFlatTop: 0
     OnRailingPillars: 2
     OnRailingBroken: 1
@@ -45259,20 +45404,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 2
+    OnPorchFixing: 2
     OnPorchFlat: 2
     OnPorchSlanted: 2
     OnPorchBroken: 2
     OnWindowsFixed: 0
+    OnWindowsFixing: 2
     OnWindowsRibbed: 0
     OnWindowsSolid: 1
     OnWindowsBroken: 1
     OnRailingFixed: 2
+    OnRailingFixing: 2
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 2
     OnLeahEntering: 1
-    OnLeahBuilding: 0
-    OnLeahDone: 0
+    OnLeahBuilding: 1
+    OnLeahDone: 1
     OnGeorgeStatePorch: 1
     OnGeorgeStateWindows: 0
     OnGeorgeStateRailing: 1
@@ -45973,14 +46121,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 2
+    OnPorchFixing: 2
     OnPorchFlat: 2
     OnPorchSlanted: 2
     OnPorchBroken: 2
     OnWindowsFixed: 2
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
     OnRailingFixed: 2
+    OnRailingFixing: 2
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 2
@@ -46009,14 +46160,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boolStates:
     OnPorchFixed: 2
+    OnPorchFixing: 2
     OnPorchFlat: 2
     OnPorchSlanted: 2
     OnPorchBroken: 2
     OnWindowsFixed: 2
+    OnWindowsFixing: 2
     OnWindowsRibbed: 2
     OnWindowsSolid: 2
     OnWindowsBroken: 2
     OnRailingFixed: 0
+    OnRailingFixing: 2
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 1
@@ -46716,17 +46870,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6924804316239426129, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
   m_PrefabInstance: {fileID: 1521525585}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2063825651 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6924804316239426475, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
-  m_PrefabInstance: {fileID: 1521525585}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2063825650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fc0e91b497d8ff42893568b162ed85f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2079996337
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -5,14 +5,18 @@ using UnityEngine;
 //[CreateAssetMenu(menuName = "ScriptableObjects/Tester Helper Object", fileName = "TesterHelperObject")]
 public class TesterHelperObject : ScriptableObject
 {
-    public GlobalSceneData.LeahState leahState = GlobalSceneData.LeahState.Entering;
-    public GlobalSceneData.GeorgeState georgeState = GlobalSceneData.GeorgeState.Porch;
-    public GlobalSceneData.PorchState porchState = GlobalSceneData.PorchState.Broken;
+	public GlobalSceneData.LeahState leahState = GlobalSceneData.LeahState.Entering;
+	public GlobalSceneData.GeorgeState georgeState = GlobalSceneData.GeorgeState.Porch;
+	public GlobalSceneData.PorchState porchState = GlobalSceneData.PorchState.Broken;
+	public GlobalSceneData.WindowsState windowState = GlobalSceneData.WindowsState.Broken;
+	public GlobalSceneData.RailingState railingState = GlobalSceneData.RailingState.Broken;
 
-    public void GetStates()
-    {
-        leahState = GlobalSceneData.leahState;
-        georgeState = GlobalSceneData.georgeState;
-        porchState = GlobalSceneData.porchState;
-    }
+	public void GetStates()
+	{
+		leahState = GlobalSceneData.leahState;
+		georgeState = GlobalSceneData.georgeState;
+		porchState = GlobalSceneData.porchState;
+		windowState = GlobalSceneData.windowsState;
+		railingState = GlobalSceneData.railingState;
+	}
 }
