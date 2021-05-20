@@ -11,30 +11,7 @@ public class SceneUpdater : MonoBehaviour
 			objectState.SetState();
 		}
 	}
-	public void ActivatePorchFixed()
-	{
-		GlobalSceneData.mg_porchFixed = true;
-	}
-	public void ActivatePorchFixing()
-	{
-		GlobalSceneData.mg_porchFixing = true;
-	}
-	public void ActivateWindowsFixed()
-	{
-		GlobalSceneData.mg_windowsFixed = true;
-	}
-	public void ActivateWindowsFixing()
-	{
-		GlobalSceneData.mg_windowsFixing = true;
-	}
-	public void ActivateRailingFixed()
-	{
-		GlobalSceneData.mg_railingFixed = true;
-	}
-	public void ActivateRailingFixing()
-	{
-		GlobalSceneData.mg_railingFixing = true;
-	}
+	//Leah
 	public void ActivateLeahStateEntering()
 	{
 		GlobalSceneData.leahState = GlobalSceneData.LeahState.Entering;
@@ -45,11 +22,14 @@ public class SceneUpdater : MonoBehaviour
 	}
 	public void ActivateLeahStateDone()
 	{
-		if (GlobalSceneData.mg_porchFixed && GlobalSceneData.mg_railingFixed && GlobalSceneData.mg_windowsFixed)
+		if (GlobalSceneData.porchFixingState == GlobalSceneData.PorchFixingState.Fixed &&
+			GlobalSceneData.windowsFixingState == GlobalSceneData.WindowsFixingState.Fixed &&
+			GlobalSceneData.railingFixingState == GlobalSceneData.RailingFixingState.Fixed)
 		{
 			GlobalSceneData.leahState = GlobalSceneData.LeahState.Done;
 		}
 	}
+	//George
 	public void ActivateGeorgeStatePorch()
 	{
 		GlobalSceneData.georgeState = GlobalSceneData.GeorgeState.Porch;
@@ -62,40 +42,79 @@ public class SceneUpdater : MonoBehaviour
 	{
 		GlobalSceneData.georgeState = GlobalSceneData.GeorgeState.Railing;
 	}
-	public void ActivatePorchStateBroken()
+	//Porch
+	public void ActivatePorchFixingStateBroken()
 	{
-		GlobalSceneData.porchState = GlobalSceneData.PorchState.Broken;
+		GlobalSceneData.porchFixingState = GlobalSceneData.PorchFixingState.Broken;
 	}
-	public void ActivatePorchStateFlat()
+	public void ActivatePorchFixingStateFixing()
 	{
-		GlobalSceneData.porchState = GlobalSceneData.PorchState.Flat;
+		GlobalSceneData.porchFixingState = GlobalSceneData.PorchFixingState.Fixing;
 	}
-	public void ActivatePorchStateSlanted()
+	public void ActivatePorchFixingStateFixed()
 	{
-		GlobalSceneData.porchState = GlobalSceneData.PorchState.Slanted;
+		GlobalSceneData.porchFixingState = GlobalSceneData.PorchFixingState.Fixed;
 	}
-	public void ActivateWindowsStateBroken()
+	public void ActivatePorchStyleNone()
 	{
-		GlobalSceneData.windowsState = GlobalSceneData.WindowsState.Broken;
+		GlobalSceneData.porchStyle = GlobalSceneData.PorchStyle.None;
 	}
-	public void ActivateWindowsStateRibbed()
+	public void ActivatePorchStyleFlat()
 	{
-		GlobalSceneData.windowsState = GlobalSceneData.WindowsState.Ribbed;
+		GlobalSceneData.porchStyle = GlobalSceneData.PorchStyle.Flat;
 	}
-	public void ActivateWindowsStateSolid()
+	public void ActivatePorchStyleSlanted()
 	{
-		GlobalSceneData.windowsState = GlobalSceneData.WindowsState.Solid;
+		GlobalSceneData.porchStyle = GlobalSceneData.PorchStyle.Slanted;
 	}
-	public void ActivateRailingStateBroken()
+	//Windows
+	public void ActivateWindowsFixingStateBroken()
 	{
-		GlobalSceneData.railingState = GlobalSceneData.RailingState.Broken;
+		GlobalSceneData.windowsFixingState = GlobalSceneData.WindowsFixingState.Broken;
 	}
-	public void ActivateRailingStateFlatTop()
+	public void ActivateWindowsFixingStateFixing()
 	{
-		GlobalSceneData.railingState = GlobalSceneData.RailingState.FlatTop;
+		GlobalSceneData.windowsFixingState = GlobalSceneData.WindowsFixingState.Fixing;
 	}
-	public void ActivateRailingStatePillars()
+	public void ActivateWindowsFixingStateFixed()
 	{
-		GlobalSceneData.railingState = GlobalSceneData.RailingState.Pillars;
+		GlobalSceneData.windowsFixingState = GlobalSceneData.WindowsFixingState.Fixed;
+	}
+	public void ActivateWindowsStyleNone()
+	{
+		GlobalSceneData.windowsStyle = GlobalSceneData.WindowsStyle.None;
+	}
+	public void ActivateWindowsStyleRibbed()
+	{
+		GlobalSceneData.windowsStyle = GlobalSceneData.WindowsStyle.Ribbed;
+	}
+	public void ActivateWindowsStyleSolid()
+	{
+		GlobalSceneData.windowsStyle = GlobalSceneData.WindowsStyle.Solid;
+	}
+	//Railing
+	public void ActivateRailingFixingStateBroken()
+	{
+		GlobalSceneData.railingFixingState = GlobalSceneData.RailingFixingState.Broken;
+	}
+	public void ActivateRailingFixingStateFixing()
+	{
+		GlobalSceneData.railingFixingState = GlobalSceneData.RailingFixingState.Fixing;
+	}
+	public void ActivateRailingFixingStateFixed()
+	{
+		GlobalSceneData.railingFixingState = GlobalSceneData.RailingFixingState.Fixed;
+	}
+	public void ActivateRailingStyleNone()
+	{
+		GlobalSceneData.railingStyle = GlobalSceneData.RailingStyle.None;
+	}
+	public void ActivateRailingStyleFlatTop()
+	{
+		GlobalSceneData.railingStyle = GlobalSceneData.RailingStyle.FlatTop;
+	}
+	public void ActivateRailingStylePillars()
+	{
+		GlobalSceneData.railingStyle = GlobalSceneData.RailingStyle.Pillars;
 	}
 }
