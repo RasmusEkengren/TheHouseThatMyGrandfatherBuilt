@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraController : MonoBehaviour
 {
-	public Vector3 standardCameraOffset;
+	public Vector3 standardCameraOffset = new Vector3(-4, 7, 4);
 	public Vector3 standardRotation;
 	[SerializeField] private GameObject player;
 	[SerializeField] private float smoothTime;
@@ -21,7 +22,7 @@ public class CameraController : MonoBehaviour
 	{
 		inkManager = player.GetComponent<InkManager>();
 		targetRotation = transform.rotation.eulerAngles;
-		if (GlobalSceneData.leahState != GlobalSceneData.LeahState.Entering)
+		if (GlobalSceneData.leahState != GlobalSceneData.LeahState.Entering || SceneManager.GetActiveScene().name == "George" /*|| SceneManager.GetActiveScene().name == "Inside"*/)
 		{
 			ResetRotation();
 			currentCameraOffset = standardCameraOffset;
