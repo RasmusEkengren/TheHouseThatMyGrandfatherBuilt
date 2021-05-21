@@ -1962,6 +1962,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: {fileID: 102900000, guid: 6d48b1a540928614c8b9bce55aa772c7, type: 3}
   sceneChangeDelay: 2
+  playVFX: 1
   transitionColor: {r: 1, g: 1, b: 1, a: 1}
   transitionSound: 
   sceneString: George
@@ -5852,7 +5853,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1224921962}
+      - m_Target: {fileID: 1751371836}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 1
@@ -7746,6 +7747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: {fileID: 102900000, guid: 6d48b1a540928614c8b9bce55aa772c7, type: 3}
   sceneChangeDelay: 2
+  playVFX: 1
   transitionColor: {r: 1, g: 1, b: 1, a: 1}
   transitionSound: event:/SFX/Interactions/2D/Switch
   sceneString: George
@@ -15742,6 +15744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: {fileID: 102900000, guid: 6d48b1a540928614c8b9bce55aa772c7, type: 3}
   sceneChangeDelay: 2
+  playVFX: 1
   transitionColor: {r: 1, g: 1, b: 1, a: 1}
   transitionSound: 
   sceneString: George
@@ -17055,6 +17058,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: {fileID: 102900000, guid: 372dd8ec3085f3d4f8dfb77214d5e08e, type: 3}
   sceneChangeDelay: 2
+  playVFX: 1
   transitionColor: {r: 1, g: 1, b: 1, a: 1}
   transitionSound: event:/SFX/Interactions/2D/Switch
   sceneString: Leah
@@ -22347,6 +22351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: {fileID: 102900000, guid: 372dd8ec3085f3d4f8dfb77214d5e08e, type: 3}
   sceneChangeDelay: 2.2
+  playVFX: 1
   transitionColor: {r: 0.18039216, g: 0.18039216, b: 0.18039216, a: 1}
   transitionSound: event:/SFX/Voice/Leah/Leah_Yawn
   sceneString: Leah
@@ -23576,6 +23581,85 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 907ba5330bc91dd40bfbb3120ce99004, type: 3}
+--- !u!1 &1751371833
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1751371834}
+  - component: {fileID: 1751371836}
+  - component: {fileID: 1751371835}
+  m_Layer: 0
+  m_Name: MinigameSceneChanger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1751371834
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751371833}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.7295, y: 5.6082172, z: 79.64778}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1793644895}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1751371835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751371833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33b2e4f1eda719d4796c52c560c8bea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1751371836}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  inkManager: {fileID: 1833915864}
+--- !u!114 &1751371836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751371833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8e3d7cd9df13d4f825b8a19a5775b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextScene: {fileID: 102900000, guid: 372dd8ec3085f3d4f8dfb77214d5e08e, type: 3}
+  sceneChangeDelay: 0
+  playVFX: 0
+  transitionColor: {r: 1, g: 1, b: 1, a: 0}
+  transitionSound: 
+  sceneString: Leah
+  PlayDoorSounds: 0
 --- !u!1 &1753362627
 GameObject:
   m_ObjectHideFlags: 0
@@ -24237,6 +24321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: {fileID: 102900000, guid: ef4fe9292e543f04786fc41f3762b66c, type: 3}
   sceneChangeDelay: 0
+  playVFX: 1
   transitionColor: {r: 0.18039216, g: 0.18039216, b: 0.18039216, a: 1}
   transitionSound: 
   sceneString: Inside
@@ -24399,6 +24484,7 @@ Transform:
   - {fileID: 1224921963}
   - {fileID: 1785949464}
   - {fileID: 1608856777}
+  - {fileID: 1751371834}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -24757,6 +24843,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: {fileID: 102900000, guid: 6d48b1a540928614c8b9bce55aa772c7, type: 3}
   sceneChangeDelay: 2
+  playVFX: 1
   transitionColor: {r: 1, g: 1, b: 1, a: 1}
   transitionSound: 
   sceneString: George
@@ -25200,7 +25287,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4563503609429547013, guid: 1e2b5bc12bf35fb4f9322fb17fb53ad5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.4
+      value: 24.47
       objectReference: {fileID: 0}
     - target: {fileID: 4563503609429547013, guid: 1e2b5bc12bf35fb4f9322fb17fb53ad5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -25208,7 +25295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4563503609429547013, guid: 1e2b5bc12bf35fb4f9322fb17fb53ad5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -55
+      value: -31.96
       objectReference: {fileID: 0}
     - target: {fileID: 4563503609429547013, guid: 1e2b5bc12bf35fb4f9322fb17fb53ad5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -27644,7 +27731,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1224921962}
+      - m_Target: {fileID: 1751371836}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 1
@@ -28430,7 +28517,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1224921962}
+      - m_Target: {fileID: 1751371836}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 1
