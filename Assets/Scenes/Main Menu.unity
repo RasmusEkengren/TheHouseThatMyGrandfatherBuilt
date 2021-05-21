@@ -692,6 +692,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 170f2e7c3b00fea4eb190be30235e8d2, type: 3}
+--- !u!114 &1134727963 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4887288195201087712, guid: 170f2e7c3b00fea4eb190be30235e8d2, type: 3}
+  m_PrefabInstance: {fileID: 1134727962}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52c5f662b2488f4b888008c54c949b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1151320010
 GameObject:
   m_ObjectHideFlags: 0
@@ -722,9 +733,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc8e3d7cd9df13d4f825b8a19a5775b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: {fileID: 102900000, guid: cfac9d532a81de846ae989125bbc4a2a, type: 3}
+  nextScene: {fileID: 102900000, guid: 372dd8ec3085f3d4f8dfb77214d5e08e, type: 3}
+  sceneChangeDelay: 2
+  playVFX: 1
   transitionColor: {r: 1, g: 1, b: 1, a: 0}
-  sceneString: Intro
+  transitionSound: 
+  sceneString: Leah
+  PlayDoorSounds: 0
 --- !u!4 &1151320012
 Transform:
   m_ObjectHideFlags: 0
@@ -1450,6 +1465,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1151320011}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
         m_MethodName: ChangeScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1134727963}
+        m_TargetAssemblyTypeName: GlobalSceneData, Assembly-CSharp
+        m_MethodName: ResetEverything
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

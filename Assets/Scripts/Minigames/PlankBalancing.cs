@@ -88,7 +88,9 @@ public class PlankBalancing : MonoBehaviour
 	[SerializeField] [EventRef] protected string plankBalancingSound = null;
 	private string plankShakeParameter = "ShakeLevel";
 	private EventInstance balancingSoundInstance;
-	public void OnInput(InputAction.CallbackContext value)
+    [SerializeField] private Animator animator = null;
+
+    public void OnInput(InputAction.CallbackContext value)
 	{
 		if (!gameObject.scene.IsValid() || gameObject.activeSelf == false) return;
 		moveVal = value.ReadValue<Vector2>();
@@ -117,6 +119,7 @@ public class PlankBalancing : MonoBehaviour
 	void Update()
 	{
 		float greenPos = (greenPip.anchorMax.x + greenPip.anchorMin.x) * 0.5f;
+        animator.SetFloat("Blend", 1-greenPos);
 		if (greenPos > 0.5f)
 		{
 			moveDir = 1;
@@ -144,7 +147,17 @@ public class PlankBalancing : MonoBehaviour
 		balancingSoundInstance.getParameterByName(plankShakeParameter, out parameterValue);
 		if (offBalance > fallLimit)
 		{
-			balancingSoundInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            if (greenPos < 0.5)
+            {
+                // Forwards
+                animator.Play("Drop Forward");
+            }
+            if (greenPos > 0.5)
+            {
+                // Backwards
+                animator.Play("Drop Backwards");
+            }
+            balancingSoundInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
 			fallEvents.Invoke();
 			ResetGame();
 		}
