@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657832, g: 0.49641216, b: 0.5748164, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657892, g: 0.4964133, b: 0.57481736, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4055,13 +4055,7 @@ MonoBehaviour:
     - {fileID: 1907967302}
     - {fileID: 1448894859}
     - {fileID: 2019814136}
-  - normalMaterial: {fileID: 2100000, guid: 94280fb9a08f8b24bbd6244fd21bc7d6, type: 2}
-    fadeOutMaterial: {fileID: 2100000, guid: cd7178da024f4c34280f5dab396cd271, type: 2}
-    objects:
-    - {fileID: 2003329562}
-    - {fileID: 2111712726}
-    - {fileID: 446734943}
-  alpha: 0.1
+  alpha: 0.4
 --- !u!1001 &285153664
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5646,11 +5640,6 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
---- !u!23 &446734943 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 2090947577015824003, guid: d5b77d15e164efb4c905f2db8dc1b2ae, type: 3}
-  m_PrefabInstance: {fileID: 195384766}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &447531902
 GameObject:
   m_ObjectHideFlags: 0
@@ -6738,7 +6727,7 @@ GameObject:
   - component: {fileID: 499570578}
   m_Layer: 0
   m_Name: FixedPorch
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7617,7 +7606,7 @@ GameObject:
   - component: {fileID: 599000758}
   m_Layer: 0
   m_Name: FixedRailing
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8627,7 +8616,7 @@ GameObject:
   - component: {fileID: 691752869}
   m_Layer: 0
   m_Name: BrokenRailing
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9106,12 +9095,6 @@ MonoBehaviour:
     fadeOutMaterial: {fileID: 2100000, guid: f2549080e54e1a242ba9493589c1e7ca, type: 2}
     objects:
     - {fileID: 1766400083}
-  - normalMaterial: {fileID: 2100000, guid: 94280fb9a08f8b24bbd6244fd21bc7d6, type: 2}
-    fadeOutMaterial: {fileID: 2100000, guid: cd7178da024f4c34280f5dab396cd271, type: 2}
-    objects:
-    - {fileID: 1766400082}
-    - {fileID: 1766400081}
-    - {fileID: 1766400080}
   alpha: 0.4
 --- !u!1 &747175209
 GameObject:
@@ -9374,11 +9357,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 907ba5330bc91dd40bfbb3120ce99004, type: 3}
---- !u!23 &771721167 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 2090947577015824003, guid: aec9b19ae7c659c478290abe25d3e755, type: 3}
-  m_PrefabInstance: {fileID: 1778343583}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &778478055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10073,11 +10051,6 @@ Transform:
   m_Father: {fileID: 1151638025}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &840412977 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 6915340583547518827, guid: aec9b19ae7c659c478290abe25d3e755, type: 3}
-  m_PrefabInstance: {fileID: 1778343583}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &842725402 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 907ba5330bc91dd40bfbb3120ce99004, type: 3}
@@ -12385,7 +12358,7 @@ GameObject:
   - component: {fileID: 1007876906}
   m_Layer: 0
   m_Name: House
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17100,7 +17073,7 @@ GameObject:
   - component: {fileID: 1402429691}
   m_Layer: 0
   m_Name: BrokenPorch
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19975,13 +19948,7 @@ MonoBehaviour:
     fadeOutMaterial: {fileID: 2100000, guid: f2549080e54e1a242ba9493589c1e7ca, type: 2}
     objects:
     - {fileID: 1842350392}
-  - normalMaterial: {fileID: 2100000, guid: 94280fb9a08f8b24bbd6244fd21bc7d6, type: 2}
-    fadeOutMaterial: {fileID: 2100000, guid: cd7178da024f4c34280f5dab396cd271, type: 2}
-    objects:
-    - {fileID: 840412977}
-    - {fileID: 2129380422}
-    - {fileID: 771721167}
-  alpha: 0.1
+  alpha: 0.4
 --- !u!1 &1629915582
 GameObject:
   m_ObjectHideFlags: 0
@@ -20258,7 +20225,7 @@ GameObject:
   - component: {fileID: 1691800701}
   m_Layer: 0
   m_Name: FrontStairs Fixed
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21393,21 +21360,6 @@ PrefabInstance:
 --- !u!4 &1766400079 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 47a34c80794da4e4c8cfce2fb344f021, type: 3}
-  m_PrefabInstance: {fileID: 1766400078}
-  m_PrefabAsset: {fileID: 0}
---- !u!23 &1766400080 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 7295876805480971568, guid: 47a34c80794da4e4c8cfce2fb344f021, type: 3}
-  m_PrefabInstance: {fileID: 1766400078}
-  m_PrefabAsset: {fileID: 0}
---- !u!23 &1766400081 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: -1137586070465261585, guid: 47a34c80794da4e4c8cfce2fb344f021, type: 3}
-  m_PrefabInstance: {fileID: 1766400078}
-  m_PrefabAsset: {fileID: 0}
---- !u!23 &1766400082 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 1711053651062168531, guid: 47a34c80794da4e4c8cfce2fb344f021, type: 3}
   m_PrefabInstance: {fileID: 1766400078}
   m_PrefabAsset: {fileID: 0}
 --- !u!23 &1766400083 stripped
@@ -24186,11 +24138,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!23 &2003329562 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 6915340583547518827, guid: d5b77d15e164efb4c905f2db8dc1b2ae, type: 3}
-  m_PrefabInstance: {fileID: 195384766}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2014544034
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25319,11 +25266,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 869fa678386a86d41af8fb67cfaa9660, type: 3}
---- !u!23 &2111712726 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 6366300417818222204, guid: d5b77d15e164efb4c905f2db8dc1b2ae, type: 3}
-  m_PrefabInstance: {fileID: 195384766}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2116331576
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25381,11 +25323,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cf906ff222123d4ea4eed7f722919b4, type: 3}
---- !u!23 &2129380422 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 6366300417818222204, guid: aec9b19ae7c659c478290abe25d3e755, type: 3}
-  m_PrefabInstance: {fileID: 1778343583}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2129910230
 PrefabInstance:
   m_ObjectHideFlags: 0
