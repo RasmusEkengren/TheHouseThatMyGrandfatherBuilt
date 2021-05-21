@@ -19,7 +19,7 @@ public class InkManager : MonoBehaviour
 
     [FMODUnity.EventRef] [SerializeField] private string thinkingSound = null;
     [SerializeField] private int thinkingInterval = 2; // Interval between chracter thinking sounds
-    private int _timeUntilThought = 2;
+    private int _timeUntilThought = 0;
 
     private Story story = null;
 	private Coroutine type = null;
@@ -31,14 +31,13 @@ public class InkManager : MonoBehaviour
 	private float timedStoryLength = 10;
 	private float timer = 0;
 
-    private void Start() { _timeUntilThought = thinkingInterval; }
+    private void Start() { _timeUntilThought = thinkingInterval - 1; }
     public void StartStory(TextAsset JsonAsset)
 	{
 		if (isStoryActive || isCutsceneActive || isTimedStoryActive) return;
 		story = new Story(JsonAsset.text);
 		isStoryActive = true;
 		textBubble.SetActive(true);
-        _timeUntilThought = thinkingInterval;
     }
 	public void StartTimedStory(TextAsset JsonAsset)
 	{

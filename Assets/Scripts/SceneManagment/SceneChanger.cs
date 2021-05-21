@@ -13,6 +13,7 @@ public class SceneChanger : MonoBehaviour
 
     [Tooltip("Delay of scene change after door sounds have been played (if checked)")]
     [SerializeField] private float sceneChangeDelay = 2;
+    [SerializeField] private bool playVFX = true;
     public Color transitionColor;
     [FMODUnity.EventRef] [SerializeField] private string transitionSound = null;
     [HideInInspector]
@@ -44,7 +45,7 @@ public class SceneChanger : MonoBehaviour
         // If the Scene exists in build settings
         if (SceneManager.GetSceneByName(sceneString).buildIndex < SceneManager.sceneCountInBuildSettings)
         {
-            SceneController.instance.StartCoroutine(SceneController.instance.LoadNextScene(sceneString, sceneChangeDelay, transitionColor, transitionSound, PlayDoorSounds));
+            SceneController.instance.StartCoroutine(SceneController.instance.LoadNextScene(sceneString, sceneChangeDelay, playVFX, transitionColor, transitionSound, PlayDoorSounds));
 
             Debug.Log("Changing Scene to: " + sceneString + " , fading to " + transitionColor, gameObject);
 

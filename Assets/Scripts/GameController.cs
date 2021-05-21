@@ -15,18 +15,11 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        SceneManager.sceneLoaded += OnSceneChange;
         Time.timeScale = 1;
-        if (GlobalSceneData.tutorialFinished)
-        {
+        //if (GlobalSceneData.tutorialFinished)
+        //{
             PauseGame(false);
-        }
-    }
-
-    private void OnSceneChange(Scene scene, LoadSceneMode mode)
-    {
-        // NO MUSIC https://www.youtube.com/watch?v=ttIJfII5SFc
-        musicObject.SetActive(false);
+        //}
     }
 
     public void StartTutorial()

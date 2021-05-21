@@ -45,7 +45,7 @@ public class SceneController : MonoBehaviour
     #endregion Initializations
 
     #region PublicFunctions
-    public IEnumerator LoadNextScene(string nextScene, float delay, Color transitionColor, string transitionSound, bool doorSound)
+    public IEnumerator LoadNextScene(string nextScene, float delay, bool VFX, Color transitionColor, string transitionSound, bool doorSound)
     {
         if (!changingScene)
         {
@@ -65,7 +65,7 @@ public class SceneController : MonoBehaviour
             transitionColor.a = 0;
             transitionObject.GetComponent<Image>().color = transitionColor;
             transitionObject.SetActive(true);
-            PlayVFX(0);
+            if (VFX) PlayVFX(0);
             if (doorSound)
             {
                 yield return new WaitForSeconds(0.2f);
