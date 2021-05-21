@@ -112,6 +112,8 @@ public class InkManager : MonoBehaviour
 		sentence = story.Continue();
 		if (type != null) StopCoroutine(type);
 		type = StartCoroutine(TypeSentence(sentence));
+
+        // Play Leah/George thinking sound here?
 	}
 	void Update()
 	{

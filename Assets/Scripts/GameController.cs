@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -10,14 +11,22 @@ public class GameController : MonoBehaviour
     private float delay = 0.5f;
 
     public static Interactable lastInteraction = null;
+    public GameObject musicObject = null;
 
     private void Start()
     {
+        SceneManager.sceneLoaded += OnSceneChange;
         Time.timeScale = 1;
         if (GlobalSceneData.tutorialFinished)
         {
             PauseGame(false);
         }
+    }
+
+    private void OnSceneChange(Scene scene, LoadSceneMode mode)
+    {
+        // NO MUSIC https://www.youtube.com/watch?v=ttIJfII5SFc
+        musicObject.SetActive(false);
     }
 
     public void StartTutorial()

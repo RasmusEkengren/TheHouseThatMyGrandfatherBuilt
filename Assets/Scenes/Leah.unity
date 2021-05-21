@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657892, g: 0.4964133, b: 0.57481736, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657832, g: 0.49641216, b: 0.5748164, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1893,8 +1893,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: {fileID: 102900000, guid: 6d48b1a540928614c8b9bce55aa772c7, type: 3}
+  sceneChangeDelay: 2
   transitionColor: {r: 1, g: 1, b: 1, a: 1}
+  transitionSound: 
   sceneString: George
+  PlayDoorSounds: 0
 --- !u!4 &101915900 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3848708273438668141, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
@@ -6647,8 +6650,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: {fileID: 102900000, guid: 6d48b1a540928614c8b9bce55aa772c7, type: 3}
+  sceneChangeDelay: 2
   transitionColor: {r: 1, g: 1, b: 1, a: 1}
+  transitionSound: event:/SFX/Interactions/2D/Switch
   sceneString: George
+  PlayDoorSounds: 0
 --- !u!4 &499218149
 Transform:
   m_ObjectHideFlags: 0
@@ -9700,7 +9706,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1224921962}
+      - m_Target: {fileID: 1618265795}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 1
@@ -9775,21 +9781,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1317287304921871953, guid: 170f2e7c3b00fea4eb190be30235e8d2, type: 3}
-      propertyPath: transitionSound
-      value: event:/SFX/Interactions/2D/Switch
-      objectReference: {fileID: 0}
     - target: {fileID: 1317287304921871958, guid: 170f2e7c3b00fea4eb190be30235e8d2, type: 3}
       propertyPath: m_Name
       value: SceneController
-      objectReference: {fileID: 0}
-    - target: {fileID: 1317287306713281988, guid: 170f2e7c3b00fea4eb190be30235e8d2, type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1317287306713281995, guid: 170f2e7c3b00fea4eb190be30235e8d2, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 170f2e7c3b00fea4eb190be30235e8d2, type: 3}
@@ -13969,8 +13963,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: {fileID: 102900000, guid: 6d48b1a540928614c8b9bce55aa772c7, type: 3}
+  sceneChangeDelay: 2
   transitionColor: {r: 1, g: 1, b: 1, a: 1}
+  transitionSound: 
   sceneString: George
+  PlayDoorSounds: 0
 --- !u!4 &1151638025 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3848708273438668141, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
@@ -14044,6 +14041,7 @@ GameObject:
   - component: {fileID: 1161651719}
   - component: {fileID: 1161651718}
   - component: {fileID: 1161651720}
+  - component: {fileID: 1161651721}
   m_Layer: 0
   m_Name: Music
   m_TagString: Untagged
@@ -14111,6 +14109,18 @@ MonoBehaviour:
     - Name: Track
       Value: 0
   TriggerEvent: 11
+--- !u!114 &1161651721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161651717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0508aadf9dfb0824d9179dc8663a58a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1161699488 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e8c30453501a06a4094de403689d7142, type: 3}
@@ -15005,8 +15015,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: {fileID: 102900000, guid: 372dd8ec3085f3d4f8dfb77214d5e08e, type: 3}
-  transitionColor: {r: 0.1792453, g: 0.1792453, b: 0.1792453, a: 1}
+  sceneChangeDelay: 2
+  transitionColor: {r: 1, g: 1, b: 1, a: 1}
+  transitionSound: event:/SFX/Interactions/2D/Switch
   sceneString: Leah
+  PlayDoorSounds: 0
 --- !u!4 &1224921963
 Transform:
   m_ObjectHideFlags: 0
@@ -19949,6 +19962,84 @@ MonoBehaviour:
     objects:
     - {fileID: 1842350392}
   alpha: 0.4
+--- !u!1 &1618265792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1618265793}
+  - component: {fileID: 1618265795}
+  - component: {fileID: 1618265794}
+  m_Layer: 0
+  m_Name: GuestCabinSceneChanger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1618265793
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618265792}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -23.1, y: 0, z: -13.5}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1793644895}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1618265794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618265792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33b2e4f1eda719d4796c52c560c8bea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1618265795}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  inkManager: {fileID: 1833915864}
+--- !u!114 &1618265795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618265792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8e3d7cd9df13d4f825b8a19a5775b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextScene: {fileID: 102900000, guid: 372dd8ec3085f3d4f8dfb77214d5e08e, type: 3}
+  sceneChangeDelay: 2.2
+  transitionColor: {r: 0.1792453, g: 0.1792453, b: 0.1792453, a: 1}
+  transitionSound: event:/SFX/Voice/Leah/Leah_Yawn
+  sceneString: Leah
+  PlayDoorSounds: 1
 --- !u!1 &1629915582
 GameObject:
   m_ObjectHideFlags: 0
@@ -21719,8 +21810,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: {fileID: 102900000, guid: ef4fe9292e543f04786fc41f3762b66c, type: 3}
-  transitionColor: {r: 1, g: 1, b: 1, a: 1}
+  sceneChangeDelay: 0
+  transitionColor: {r: 0.18039216, g: 0.18039216, b: 0.18039216, a: 1}
+  transitionSound: 
   sceneString: Inside
+  PlayDoorSounds: 1
 --- !u!4 &1785949464
 Transform:
   m_ObjectHideFlags: 0
@@ -21834,6 +21928,7 @@ Transform:
   - {fileID: 499218149}
   - {fileID: 1224921963}
   - {fileID: 1785949464}
+  - {fileID: 1618265793}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -22191,8 +22286,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: {fileID: 102900000, guid: 6d48b1a540928614c8b9bce55aa772c7, type: 3}
+  sceneChangeDelay: 2
   transitionColor: {r: 1, g: 1, b: 1, a: 1}
+  transitionSound: 
   sceneString: George
+  PlayDoorSounds: 0
 --- !u!114 &1803292490
 MonoBehaviour:
   m_ObjectHideFlags: 0

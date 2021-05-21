@@ -11,9 +11,15 @@ public class SceneChanger : MonoBehaviour
     public SceneAsset nextScene = null; // Used to streamline scene assignment for designers in Unity
 #endif
 
+    [Tooltip("Delay of scene change after door sounds have been played (if checked)")]
+    [SerializeField] private float sceneChangeDelay = 2;
     public Color transitionColor;
+    [FMODUnity.EventRef] [SerializeField] private string transitionSound = null;
     [HideInInspector]
     public string sceneString = null;
+
+    [Tooltip("Plays door sound sequence (3 seconds) before Transition Sound")]
+    public bool PlayDoorSounds = false;
 
     private void Start()
     {
@@ -38,7 +44,7 @@ public class SceneChanger : MonoBehaviour
         // If the Scene exists in build settings
         if (SceneManager.GetSceneByName(sceneString).buildIndex < SceneManager.sceneCountInBuildSettings)
         {
-            SceneController.instance.StartCoroutine(SceneController.instance.LoadNextScene(sceneString, transitionColor));
+            SceneController.instance.StartCoroutine(SceneController.instance.LoadNextScene(sceneString, sceneChangeDelay, transitionColor, transitionSound, PlayDoorSounds));
 
             Debug.Log("Changing Scene to: " + sceneString + " , fading to " + transitionColor, gameObject);
 

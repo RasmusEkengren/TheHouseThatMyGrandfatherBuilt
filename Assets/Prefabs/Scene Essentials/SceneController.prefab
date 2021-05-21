@@ -50,8 +50,8 @@ MonoBehaviour:
   fadeOutClip: Fade Out
   fadeInClip: Fade In
   transitionObject: {fileID: 1317287306713281995}
-  transitionSound: event:/SFX/Interactions/2D/Switch
-  sceneChangeDelay: 2
+  doorOpen: event:/SFX/Interactions/2D/Interaction_Door_Open
+  doorClose: event:/SFX/Interactions/2D/Interaction_Door_Close
 --- !u!114 &9202722975304225548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +194,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1317287306713281994
 RectTransform:
   m_ObjectHideFlags: 0

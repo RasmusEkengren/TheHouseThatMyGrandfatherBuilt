@@ -9,98 +9,115 @@ using FMODUnity;
 // This class will be the core hub for managing scenes
 public class SceneController : MonoBehaviour
 {
-	#region Initializations
-	public static SceneController instance;
+    #region Initializations
+    public static SceneController instance;
 
-	[SerializeField] private Animator animator;
-	[SerializeField] private string fadeOutClip = null;
-	[SerializeField] private string fadeInClip = null;
-	[SerializeField] private GameObject transitionObject;
-	private GameController gameController;
+    [SerializeField] private Animator animator;
+    [SerializeField] private string fadeOutClip = null;
+    [SerializeField] private string fadeInClip = null;
+    [SerializeField] private GameObject transitionObject;
+    private GameController gameController;
 
-	[FMODUnity.EventRef] [SerializeField] private string transitionSound = null;
+    private bool changingScene = false;
 
-	[SerializeField] private int sceneChangeDelay = 2;
-	private bool changingScene = false;
+    [FMODUnity.EventRef] [SerializeField] private string doorOpen = null;
+    [FMODUnity.EventRef] [SerializeField] private string doorClose = null;
 
-	private void Awake()
-	{
-		if (instance == null)
-		{
-			DontDestroyOnLoad(gameObject);
-			instance = this;
-		}
-		else if (instance != this)
-		{
-			Destroy(gameObject);
-		}
-	}
+    private GameObject musicObject = null;
 
-	private void Start()
-	{
-		DontDestroyOnLoad(gameObject);
-	}
-	#endregion Initializations
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
 
-	#region PublicFunctions
-	public IEnumerator LoadNextScene(string nextScene, Color transitionColor)
-	{
-		if (!changingScene)
-		{
-			changingScene = true;
+    private void Start()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+    #endregion Initializations
 
-			if (gameController != null)
-			{
-				gameController = FindObjectOfType<GameController>();
-				gameController.PauseGame(true);
-			}
+    #region PublicFunctions
+    public IEnumerator LoadNextScene(string nextScene, float delay, Color transitionColor, string transitionSound, bool doorSound)
+    {
+        if (!changingScene)
+        {
+            changingScene = true;
+
+            if (FindObjectOfType<MusicObject>())
+            {
+                musicObject = FindObjectOfType<MusicObject>().gameObject;
+                musicObject.SetActive(false);
+            }
+
+            if (gameController != null)
+            {
+                gameController = FindObjectOfType<GameController>();
+                gameController.PauseGame(true);
+            }
             transitionColor.a = 0;
             transitionObject.GetComponent<Image>().color = transitionColor;
-			transitionObject.SetActive(true);
-			PlayVFX(0);
-			PlaySFX();
+            transitionObject.SetActive(true);
+            PlayVFX(0);
+            if (doorSound)
+            {
+                yield return new WaitForSeconds(0.2f);
+                FMODUnity.RuntimeManager.PlayOneShot(doorOpen);
+                yield return new WaitForSeconds(1.3f);
 
-			AsyncOperation operation = SceneManager.LoadSceneAsync(nextScene);
-			operation.allowSceneActivation = false;
+                FMODUnity.RuntimeManager.PlayOneShot(doorClose);
+                yield return new WaitForSeconds(1.7f);
+            }
+            PlaySFX(transitionSound);
 
-			yield return new WaitForSeconds(sceneChangeDelay);
+            AsyncOperation operation = SceneManager.LoadSceneAsync(nextScene);
+            operation.allowSceneActivation = false;
 
-			while (!operation.isDone)
-			{
-				if (operation.progress >= 0.9f)
-				{
-					PlayVFX(1);
-					operation.allowSceneActivation = true;
-					if (gameController != null) gameController.PauseGame(false);
-					changingScene = false;
-				}
-				yield return null;
-			}
-		}
-	}
-	#endregion PublicFunctions
+            yield return new WaitForSeconds(delay);
 
-	#region PrivateFunctions
-	private void PlayVFX(int fadeIndex)
-	{
-		// Should we have VFX references here on this script or on a separate one?
-		if (fadeIndex <= 0)
-		{
-			Debug.Log("Playing fade in");
-			animator.Play(fadeInClip);
-		}
+            while (!operation.isDone)
+            {
+                if (operation.progress >= 0.9f)
+                {
+                    PlayVFX(1);
+                    operation.allowSceneActivation = true;
+                    if (gameController != null) gameController.PauseGame(false);
+                    changingScene = false;
+                }
+                yield return null;
+            }
+        }
+    }
+    #endregion PublicFunctions
 
-		if (fadeIndex >= 1)
-		{
-			Debug.Log("Playing fade out");
-			animator.Play(fadeOutClip);
-		}
-	}
+    #region PrivateFunctions
+    private void PlayVFX(int fadeIndex)
+    {
+        // Should we have VFX references here on this script or on a separate one?
+        if (fadeIndex <= 0)
+        {
+            Debug.Log("Playing fade in");
+            animator.Play(fadeInClip);
+        }
 
-	private void PlaySFX()
-	{
-		FMODUnity.RuntimeManager.PlayOneShot(transitionSound);
-	}
-	#endregion PrivateFunctions
+        if (fadeIndex >= 1)
+        {
+            Debug.Log("Playing fade out");
+            animator.Play(fadeOutClip);
+        }
+    }
+
+    private void PlaySFX(string transitionSound)
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(transitionSound);
+    }
+    #endregion PrivateFunctions
 }
 
