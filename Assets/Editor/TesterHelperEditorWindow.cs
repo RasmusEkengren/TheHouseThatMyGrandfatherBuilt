@@ -23,15 +23,12 @@ public class TesterHelperEditorWindow : EditorWindow
 	public SerializedObject so = null;
 	public SerializedProperty propGeorge = null;
 	public SerializedProperty propLeah = null;
-	public SerializedProperty propPorch = null;
-	public SerializedProperty propWindow = null;
-	public SerializedProperty propRailing = null;
-	private bool _PorchFixed = false;
-	private bool _PorchFixing = false;
-	private bool _WindowsFixed = false;
-	private bool _WindowsFixing = false;
-	private bool _RailingFixed = false;
-	private bool _RailingFixing = false;
+	public SerializedProperty propPorchFixing = null;
+	public SerializedProperty propPorchStyle = null;
+	public SerializedProperty propWindowsFixing = null;
+	public SerializedProperty propWindowsStyle = null;
+	public SerializedProperty propRailingsFixing = null;
+	public SerializedProperty propRailingStyle = null;
 
 	[MenuItem("Tools/Tester Helper�")]
 	public static void OpenWindow()
@@ -53,9 +50,12 @@ public class TesterHelperEditorWindow : EditorWindow
 
 		propLeah = so.FindProperty("leahState");
 		propGeorge = so.FindProperty("georgeState");
-		propPorch = so.FindProperty("porchState");
-		propWindow = so.FindProperty("windowState");
-		propRailing = so.FindProperty("railingState");
+		propPorchFixing = so.FindProperty("porchFixingState");
+		propPorchStyle = so.FindProperty("porchStyle");
+		propWindowsFixing = so.FindProperty("windowsFixingState");
+		propWindowsStyle = so.FindProperty("windowsStyle");
+		propRailingsFixing = so.FindProperty("railingFixingState");
+		propRailingStyle = so.FindProperty("railingStyle");
 	}
 
 	private void OnExitPlaymode(PlayModeStateChange stateChange)
@@ -69,27 +69,18 @@ public class TesterHelperEditorWindow : EditorWindow
 	private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
 	{
 		THObject.GetStates();
-		_PorchFixed = GlobalSceneData.mg_porchFixed;
-		_PorchFixing = GlobalSceneData.mg_porchFixing;
-		_WindowsFixed = GlobalSceneData.mg_windowsFixed;
-		_WindowsFixing = GlobalSceneData.mg_windowsFixing;
-		_RailingFixed = GlobalSceneData.mg_railingFixed;
-		_RailingFixing = GlobalSceneData.mg_railingFixing;
 	}
 
 	private void UpdateStates()
 	{
 		GlobalSceneData.georgeState = THObject.georgeState;
 		GlobalSceneData.leahState = THObject.leahState;
-		GlobalSceneData.porchState = THObject.porchState;
-		GlobalSceneData.windowsState = THObject.windowState;
-		GlobalSceneData.railingState = THObject.railingState;
-		GlobalSceneData.mg_porchFixed = _PorchFixed;
-		GlobalSceneData.mg_porchFixing = _PorchFixing;
-		GlobalSceneData.mg_windowsFixed = _WindowsFixed;
-		GlobalSceneData.mg_windowsFixing = _WindowsFixing;
-		GlobalSceneData.mg_railingFixed = _RailingFixed;
-		GlobalSceneData.mg_railingFixing = _RailingFixing;
+		GlobalSceneData.porchFixingState = THObject.porchFixingState;
+		GlobalSceneData.porchStyle = THObject.porchStyle;
+		GlobalSceneData.windowsFixingState = THObject.windowsFixingState;
+		GlobalSceneData.windowsStyle = THObject.windowsStyle;
+		GlobalSceneData.railingFixingState = THObject.railingFixingState;
+		GlobalSceneData.railingStyle = THObject.railingStyle;
 	}
 
 	private void ToggleSpeed()
@@ -128,23 +119,18 @@ public class TesterHelperEditorWindow : EditorWindow
 		GUILayout.Space(5f);
 		EditorGUILayout.PropertyField(propGeorge);
 		GUILayout.Space(5f);
-		EditorGUILayout.PropertyField(propPorch);
+		EditorGUILayout.PropertyField(propPorchFixing);
 		GUILayout.Space(5f);
-		EditorGUILayout.PropertyField(propWindow);
+		EditorGUILayout.PropertyField(propPorchStyle);
 		GUILayout.Space(5f);
-		EditorGUILayout.PropertyField(propRailing);
+		EditorGUILayout.PropertyField(propWindowsFixing);
 		GUILayout.Space(5f);
-		_PorchFixed = GUILayout.Toggle(_PorchFixed, "Porch has been Fixed");
+		EditorGUILayout.PropertyField(propWindowsStyle);
 		GUILayout.Space(5f);
-		_PorchFixing = GUILayout.Toggle(_PorchFixing, "Leah is currently fixing the Porch");
+		EditorGUILayout.PropertyField(propRailingsFixing);
 		GUILayout.Space(5f);
-		_WindowsFixed = GUILayout.Toggle(_WindowsFixed, "Windows have been Fixed");
+		EditorGUILayout.PropertyField(propRailingStyle);
 		GUILayout.Space(5f);
-		_WindowsFixing = GUILayout.Toggle(_WindowsFixing, "Leah is currently fixing the Windows");
-		GUILayout.Space(5f);
-		_RailingFixed = GUILayout.Toggle(_RailingFixed, "Railing has been Fixed");
-		GUILayout.Space(5f);
-		_RailingFixing = GUILayout.Toggle(_RailingFixing, "Leah is currently fixing the Railing");
 
 		GUILayout.EndScrollView();
 		if (EditorApplication.isPlaying)
