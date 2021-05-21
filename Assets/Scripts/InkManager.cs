@@ -47,6 +47,7 @@ public class InkManager : MonoBehaviour
 		isTimedStoryActive = true;
 		textBubble.SetActive(true);
 		sentence = story.Continue();
+		timer = 0;
 		if (type != null) StopCoroutine(type);
 		type = StartCoroutine(TypeSentence(sentence));
 	}
