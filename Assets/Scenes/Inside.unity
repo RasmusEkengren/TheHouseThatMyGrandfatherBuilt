@@ -3456,7 +3456,7 @@ Terrain:
   m_DrawInstanced: 0
   m_DrawTreesAndFoliage: 1
   m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 2100000, guid: 9da22acb529290f4399d5a0d258171b9, type: 2}
+  m_MaterialTemplate: {fileID: 2100000, guid: 23b0f8d18450971429af7ab3c6dd3592, type: 2}
   m_BakeLightProbesForTrees: 1
   m_PreserveTreePrototypeLayers: 0
   m_DeringLightProbesForTrees: 1
@@ -4104,7 +4104,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5325735516431247576, guid: 7a4514cbcc65a344898afe86b7dcec5e, type: 3}
       propertyPath: standardCameraOffset.y
-      value: 3
+      value: 3.7
       objectReference: {fileID: 0}
     - target: {fileID: 5325735516431247576, guid: 7a4514cbcc65a344898afe86b7dcec5e, type: 3}
       propertyPath: standardCameraOffset.z
@@ -6393,8 +6393,8 @@ MonoBehaviour:
     OnWindowsBroken: 2
     OnRailingFixed: 2
     OnRailingFixing: 2
-    OnRailingFlatTop: 2
-    OnRailingPillars: 2
+    OnRailingFlatTop: 1
+    OnRailingPillars: 0
     OnRailingBroken: 2
     OnLeahEntering: 2
     OnLeahBuilding: 2
@@ -9380,8 +9380,8 @@ MonoBehaviour:
     OnWindowsBroken: 2
     OnRailingFixed: 2
     OnRailingFixing: 2
-    OnRailingFlatTop: 2
-    OnRailingPillars: 2
+    OnRailingFlatTop: 0
+    OnRailingPillars: 1
     OnRailingBroken: 2
     OnLeahEntering: 2
     OnLeahBuilding: 2
@@ -10092,7 +10092,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d5b77d15e164efb4c905f2db8dc1b2ae, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5b77d15e164efb4c905f2db8dc1b2ae, type: 3}
