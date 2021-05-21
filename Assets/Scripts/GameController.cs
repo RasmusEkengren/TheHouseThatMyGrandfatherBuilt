@@ -11,15 +11,11 @@ public class GameController : MonoBehaviour
     private float delay = 0.5f;
 
     public static Interactable lastInteraction = null;
-    public GameObject musicObject = null;
 
     private void Start()
     {
         Time.timeScale = 1;
-        //if (GlobalSceneData.tutorialFinished)
-        //{
-            PauseGame(false);
-        //}
+        PauseGame(false);
     }
 
     public void StartTutorial()
