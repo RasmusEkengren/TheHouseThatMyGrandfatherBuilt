@@ -26,27 +26,30 @@ public class Interactable : MonoBehaviour
 		else colorModule.color = normalColor;
 	}
 	void OnTriggerEnter(Collider collider)
-	{        
+	{
 		if (collider.gameObject.tag == playerTag)
 		{
-            GlobalSceneData.lastInteraction = this;
+            GameController.lastInteraction = this;
 			interactIcon.SetActive(true);
-            ControlsTutorial.ShowInteractionControls(true);
-			interactIcon.transform.forward = mainCamera.transform.forward;
+			ControlsTutorial.ShowInteractionControls(true);
+			if (mainCamera != null && interactIcon != null)
+			{
+				interactIcon.transform.forward = mainCamera.transform.forward;
+			}
 		}
 	}
 	void OnTriggerExit(Collider collider)
 	{
 		if (collider.gameObject.tag == playerTag)
 		{
-            if (GlobalSceneData.lastInteraction == this) { GlobalSceneData.lastInteraction = null; }
-            interactIcon.SetActive(false);
-            ControlsTutorial.ShowInteractionControls(false);
+			if (GameController.lastInteraction == this) { GameController.lastInteraction = null; }
+			interactIcon.SetActive(false);
+			ControlsTutorial.ShowInteractionControls(false);
 		}
 	}
 	public virtual void Interact(GameObject player)
 	{
-        ControlsTutorial.ShowInteractionControls(false);
+		ControlsTutorial.ShowInteractionControls(false);
 		interactIcon.SetActive(false);
 		hasInteracted = true;
 		GlobalSceneData.interactedObjectIDs.Add(this.gameObject.GetComponent<UniqueID>().ID);

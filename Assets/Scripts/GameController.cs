@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -9,13 +10,16 @@ public class GameController : MonoBehaviour
 
     private float delay = 0.5f;
 
+    public static Interactable lastInteraction = null;
+    public GameObject musicObject = null;
+
     private void Start()
     {
         Time.timeScale = 1;
-        if (GlobalSceneData.tutorialFinished)
-        {
+        //if (GlobalSceneData.tutorialFinished)
+        //{
             PauseGame(false);
-        }
+        //}
     }
 
     public void StartTutorial()
@@ -51,5 +55,10 @@ public class GameController : MonoBehaviour
         {
             StartTutorial();
         }
+    }
+
+    public void ResetLastInteraction()
+    {
+        lastInteraction.ResetInteraction();
     }
 }

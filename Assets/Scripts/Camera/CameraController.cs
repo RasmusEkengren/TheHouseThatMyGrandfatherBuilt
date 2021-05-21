@@ -22,7 +22,7 @@ public class CameraController : MonoBehaviour
 	{
 		inkManager = player.GetComponent<InkManager>();
 		targetRotation = transform.rotation.eulerAngles;
-		if (GlobalSceneData.leahState != GlobalSceneData.LeahState.Entering || SceneManager.GetActiveScene().name == "George" /*|| SceneManager.GetActiveScene().name == "Inside"*/)
+		if (GlobalSceneData.leahState != GlobalSceneData.LeahState.Entering || SceneManager.GetActiveScene().name == "George" || SceneManager.GetActiveScene().name == "Inside")
 		{
 			ResetRotation();
 			currentCameraOffset = standardCameraOffset;

@@ -142,6 +142,8 @@ GameObject:
   - component: {fileID: 4563503609429547015}
   - component: {fileID: 4563503609429547018}
   - component: {fileID: 4563503609429547019}
+  - component: {fileID: 2548313228700484610}
+  - component: {fileID: 8618954309112546487}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -378,6 +380,14 @@ MonoBehaviour:
   textBubble: {fileID: 0}
   cutscenePanel: {fileID: 0}
   Settings: {fileID: 11400000, guid: c5379837ec5447a468fb964687060575, type: 2}
+  georgeThink: event:/SFX/Voice/George/George_Think
+  georgeProud: event:/SFX/Voice/George/George_Proud
+  georgeRandom: event:/SFX/Voice/George/George_Random
+  leahThink: event:/SFX/Voice/Leah/Leah_Think
+  leahHappy: event:/SFX/Voice/Leah/Leah_Happy
+  leahSad: event:/SFX/Voice/Leah/Leah_Sad
+  leahYawn: event:/SFX/Voice/Leah/Leah_Yawn
+  leahIdle: event:/SFX/Voice/Leah/Leah_Idle
 --- !u!114 &4563503609429547019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391,6 +401,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactRadius: 0.5
+--- !u!114 &2548313228700484610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4563503609429547009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90f04b69ec864ec438c6853c45dfc399, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  happy: event:/SFX/Voice/Leah/Leah_Happy
+  sad: event:/SFX/Voice/Leah/Leah_Sad
+  idle: event:/SFX/Voice/Leah/Leah_Idle
+--- !u!114 &8618954309112546487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4563503609429547009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 653361ea949af4d408c11f5d2483c795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  proud: event:/SFX/Voice/George/George_Proud
+  random: event:/SFX/Voice/George/George_Random
 --- !u!1001 &2984833410073676392
 PrefabInstance:
   m_ObjectHideFlags: 0
