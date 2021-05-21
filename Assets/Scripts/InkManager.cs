@@ -4,6 +4,7 @@ using UnityEngine.Events;
 using TMPro;
 using Ink.Runtime;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class InkManager : MonoBehaviour
 {
@@ -15,7 +16,12 @@ public class InkManager : MonoBehaviour
 	[SerializeField] private GameObject textBubble = null;
 	[SerializeField] private GameObject cutscenePanel = null;
 	[SerializeField] private GameSettings Settings = null;
-	private Story story = null;
+
+    [FMODUnity.EventRef] [SerializeField] private string thinkingSound = null;
+    [SerializeField] private int thinkingInterval = 2; // Interval between chracter thinking sounds
+    private int _timeUntilThought = 0;
+
+    private Story story = null;
 	private Coroutine type = null;
 	private UnityEvent endEvent;
 	private bool isTyping = false;
@@ -24,13 +30,15 @@ public class InkManager : MonoBehaviour
 	private string functionToCall = null;
 	private float timedStoryLength = 10;
 	private float timer = 0;
-	public void StartStory(TextAsset JsonAsset)
+
+    private void Start() { _timeUntilThought = thinkingInterval - 1; }
+    public void StartStory(TextAsset JsonAsset)
 	{
 		if (isStoryActive || isCutsceneActive || isTimedStoryActive) return;
 		story = new Story(JsonAsset.text);
 		isStoryActive = true;
 		textBubble.SetActive(true);
-	}
+    }
 	public void StartTimedStory(TextAsset JsonAsset)
 	{
 		if (isTimedStoryActive) return;
@@ -110,9 +118,18 @@ public class InkManager : MonoBehaviour
 			}
 			return;
 		}
+        if (_timeUntilThought == 2)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(thinkingSound);
+            _timeUntilThought = 0;
+        }
+        else { _timeUntilThought += 1; }
+
 		sentence = story.Continue();
 		if (type != null) StopCoroutine(type);
 		type = StartCoroutine(TypeSentence(sentence));
+
+        // Play Leah/George thinking sound here?
 	}
 	void Update()
 	{
