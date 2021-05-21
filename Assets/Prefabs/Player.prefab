@@ -29,20 +29,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.3, y: 0.31, z: 0.75}
   m_Center: {x: 0, y: 0.15, z: 0}
---- !u!114 &4914978684461252083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2469223514193473312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 653361ea949af4d408c11f5d2483c795, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  proud: event:/SFX/Voice/George/George_Proud
-  random: event:/SFX/Voice/George/George_Random
 --- !u!114 &7194416932170765947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,21 +127,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 8648837104583342073}
---- !u!114 &4102233109879288750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2714874520113903417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90f04b69ec864ec438c6853c45dfc399, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  happy: event:/SFX/Voice/Leah/Leah_Happy
-  sad: event:/SFX/Voice/Leah/Leah_Sad
-  idle: event:/SFX/Voice/Leah/Leah_Idle
 --- !u!1 &4563503609429547009
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,6 +142,8 @@ GameObject:
   - component: {fileID: 4563503609429547015}
   - component: {fileID: 4563503609429547018}
   - component: {fileID: 4563503609429547019}
+  - component: {fileID: 2548313228700484610}
+  - component: {fileID: 8618954309112546487}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -422,6 +395,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactRadius: 0.5
+--- !u!114 &2548313228700484610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4563503609429547009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90f04b69ec864ec438c6853c45dfc399, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  happy: event:/SFX/Voice/Leah/Leah_Happy
+  sad: event:/SFX/Voice/Leah/Leah_Sad
+  idle: event:/SFX/Voice/Leah/Leah_Idle
+--- !u!114 &8618954309112546487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4563503609429547009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 653361ea949af4d408c11f5d2483c795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  proud: event:/SFX/Voice/George/George_Proud
+  random: event:/SFX/Voice/George/George_Random
 --- !u!1001 &2984833410073676392
 PrefabInstance:
   m_ObjectHideFlags: 0
