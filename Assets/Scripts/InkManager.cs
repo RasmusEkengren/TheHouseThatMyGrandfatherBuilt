@@ -18,14 +18,18 @@ public class InkManager : MonoBehaviour
     [SerializeField] private GameObject cutscenePanel = null;
     [SerializeField] private GameSettings Settings = null;
 
+    [FMODUnity.EventRef] [SerializeField] private string georgeThink = null;
     [FMODUnity.EventRef] [SerializeField] private string georgeProud = null;
     [FMODUnity.EventRef] [SerializeField] private string georgeRandom = null;
+    [FMODUnity.EventRef] [SerializeField] private string leahThink = null;
     [FMODUnity.EventRef] [SerializeField] private string leahHappy = null;
     [FMODUnity.EventRef] [SerializeField] private string leahSad = null;
+    [FMODUnity.EventRef] [SerializeField] private string leahYawn = null;
+    [FMODUnity.EventRef] [SerializeField] private string leahIdle = null;
 
-    [FMODUnity.EventRef] [SerializeField] private string thinkingSound = null;
-    [SerializeField] private int thinkingInterval = 2; // Interval between chracter thinking sounds
-    private int _timeUntilThought = 0;
+    //[FMODUnity.EventRef] [SerializeField] private string thinkingSound = null;
+    //[SerializeField] private int thinkingInterval = 2; // Interval between chracter thinking sounds
+    //private int _timeUntilThought = 0;
 
     private Story story = null;
     private Coroutine type = null;
@@ -39,7 +43,7 @@ public class InkManager : MonoBehaviour
 
     private void Start()
     {
-        _timeUntilThought = thinkingInterval - 1;
+        //_timeUntilThought = thinkingInterval - 1;
     }
     public void StartStory(TextAsset JsonAsset)
     {
@@ -47,13 +51,9 @@ public class InkManager : MonoBehaviour
         story = new Story(JsonAsset.text);
         story.BindExternalFunction("playSound", (string sound) =>
         {
-            if (sound == "leahHappy")
+            if (sound == "georgeThink")
             {
-                FMODUnity.RuntimeManager.PlayOneShot(leahHappy);
-            }
-            if (sound == "leahSad")
-            {
-                FMODUnity.RuntimeManager.PlayOneShot(leahSad);
+                FMODUnity.RuntimeManager.PlayOneShot(georgeThink);
             }
             if (sound == "georgeProud")
             {
@@ -62,8 +62,29 @@ public class InkManager : MonoBehaviour
             if (sound == "georgeRandom")
             {
                 FMODUnity.RuntimeManager.PlayOneShot(georgeRandom);
-
             }
+            if (sound == "leahThink")
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(leahThink);
+            }
+            if (sound == "leahHappy")
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(leahHappy);
+            }
+            if (sound == "leahSad")
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(leahSad);
+            }
+            if (sound == "leahYawn")
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(leahYawn);
+            }
+            if (sound == "leahIdle")
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(leahIdle);
+            }
+
+
         });
         isStoryActive = true;
         textBubble.SetActive(true);
@@ -168,12 +189,12 @@ public class InkManager : MonoBehaviour
             }
             return;
         }
-        if (_timeUntilThought == 2)
-        {
-            FMODUnity.RuntimeManager.PlayOneShot(thinkingSound);
-            _timeUntilThought = 0;
-        }
-        else { _timeUntilThought += 1; }
+        //if (_timeUntilThought == 2)
+        //{
+        //    FMODUnity.RuntimeManager.PlayOneShot(thinkingSound);
+        //    _timeUntilThought = 0;
+        //}
+        //else { _timeUntilThought += 1; }
 
         sentence = story.Continue();
         if (type != null) StopCoroutine(type);

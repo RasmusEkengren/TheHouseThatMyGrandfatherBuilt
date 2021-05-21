@@ -31883,17 +31883,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   proud: event:/SFX/Voice/George/George_Proud
   random: event:/SFX/Voice/George/George_Random
---- !u!114 &1537750269 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4914978684461252083, guid: 1e2b5bc12bf35fb4f9322fb17fb53ad5, type: 3}
-  m_PrefabInstance: {fileID: 1537750261}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1537750265}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 653361ea949af4d408c11f5d2483c795, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1540031124
 GameObject:
   m_ObjectHideFlags: 0
@@ -41387,6 +41376,23 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f78f33c236fdee54f8bee271b2b2c22c, type: 3}
   m_PrefabInstance: {fileID: 428738602}
   m_PrefabAsset: {fileID: 0}
+--- !u!1818360608 &2009580942
+PositionConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009580941}
+  m_Enabled: 1
+  m_Weight: 1
+  m_TranslationAtRest: {x: -0.20199873, y: 1.7210001, z: -0.07399911}
+  m_TranslationOffset: {x: 0, y: 0, z: 0}
+  m_AffectTranslationX: 1
+  m_AffectTranslationY: 1
+  m_AffectTranslationZ: 1
+  m_IsContraintActive: 1
+  m_IsLocked: 1
+  m_Sources: []
 --- !u!1 &2015371259
 GameObject:
   m_ObjectHideFlags: 0
@@ -43349,7 +43355,7 @@ PrefabInstance:
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
-      objectReference: {fileID: 1537750269}
+      objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
