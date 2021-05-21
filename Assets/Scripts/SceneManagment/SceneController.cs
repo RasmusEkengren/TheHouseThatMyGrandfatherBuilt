@@ -86,7 +86,7 @@ public class SceneController : MonoBehaviour
             {
                 if (operation.progress >= 0.9f)
                 {
-                    PlayVFX(1);
+                    if (VFX) PlayVFX(1);
                     operation.allowSceneActivation = true;
                     if (gameController != null) gameController.PauseGame(false);
                     changingScene = false;
