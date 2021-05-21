@@ -29,7 +29,7 @@ public class Interactable : MonoBehaviour
 	{
 		if (collider.gameObject.tag == playerTag)
 		{
-			GlobalSceneData.lastInteraction = this;
+            GameController.lastInteraction = this;
 			interactIcon.SetActive(true);
 			ControlsTutorial.ShowInteractionControls(true);
 			if (mainCamera != null && interactIcon != null)
@@ -42,7 +42,7 @@ public class Interactable : MonoBehaviour
 	{
 		if (collider.gameObject.tag == playerTag)
 		{
-			if (GlobalSceneData.lastInteraction == this) { GlobalSceneData.lastInteraction = null; }
+			if (GameController.lastInteraction == this) { GameController.lastInteraction = null; }
 			interactIcon.SetActive(false);
 			ControlsTutorial.ShowInteractionControls(false);
 		}

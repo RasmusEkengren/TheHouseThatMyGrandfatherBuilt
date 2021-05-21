@@ -9,6 +9,8 @@ public class GameController : MonoBehaviour
 
     private float delay = 0.5f;
 
+    public static Interactable lastInteraction = null;
+
     private void Start()
     {
         Time.timeScale = 1;
@@ -51,5 +53,10 @@ public class GameController : MonoBehaviour
         {
             StartTutorial();
         }
+    }
+
+    public void ResetLastInteraction()
+    {
+        lastInteraction.ResetInteraction();
     }
 }
