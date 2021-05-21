@@ -7,111 +7,13 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-<<<<<<< HEAD
-[LOG] AsyncManager::init                       : manager 000002F53B5D3828 isAsync 0 updatePeriod 0.02
-=======
-[LOG] AsyncManager::init                       : manager 000001FBFF88B0D8 isAsync 0 updatePeriod 0.02
->>>>>>> Dev
+[LOG] AsyncManager::init                       : manager 000001BADF4F54E8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] PlaybackSystem::init                     : done
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
-[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] SoundI::release                          :  (000001FBFBD90958)
-[LOG] SoundI::release                          :     Footstep_Sketch_Grass_04 (000001FBFEB5E348)
-[LOG] SoundI::release                          :  (000001FB483E1348)
-[LOG] SoundI::release                          :     Footstep_Sketch_Grass_05 (000001FBFEB5E4E8)
-[LOG] SoundI::release                          :  (000001FBFF830B98)
-[LOG] SoundI::release                          :     Footstep_Sketch_Grass_06 (000001FBFEB5A3E8)
-[LOG] SoundI::release                          :  (000001FB483E1068)
-[LOG] SoundI::release                          :     Footstep_Sketch_Grass_07 (000001FBFEB5FA08)
-[LOG] SoundI::release                          :  (000001FBFBD90508)
-[LOG] SoundI::release                          :     Footstep_Sketch_Grass_08 (000001FBFEB59D68)
-[LOG] SoundI::release                          :  (000001FBFF830FE8)
-[LOG] SoundI::release                          :     Footstep_Sketch_Grass_09 (000001FBFEB5CFC8)
-[LOG] SoundI::release                          :  (000001FB4831E018)
-[LOG] SoundI::release                          :     Footstep_Sketch_Grass_01 (000001FBFEB5B5C8)
-[LOG] SoundI::release                          :  (000001FB48437648)
-[LOG] SoundI::release                          :     Footstep_Sketch_Grass_02 (000001FBFEB5F388)
-[LOG] SoundI::release                          :  (000001FBFF8315A8)
-[LOG] SoundI::release                          :     Footstep_Sketch_Grass_03 (000001FBFEB5E008)
-[LOG] SoundI::release                          :  (000001FB483E0D88)
-[LOG] SoundI::release                          :     Footsteps_Sketch_Wood_04 (000001FBFEB5C7A8)
-[LOG] SoundI::release                          :  (000001FB48437A98)
-[LOG] SoundI::release                          :     Footsteps_Sketch_Wood_05 (000001FBFEB5E9C8)
-[LOG] SoundI::release                          :  (000001FB4831D8E8)
-[LOG] SoundI::release                          :     Footsteps_Sketch_Wood_06 (000001FBFEB5D988)
-[LOG] SoundI::release                          :  (000001FB484377B8)
-[LOG] SoundI::release                          :     Footsteps_Sketch_Wood_07 (000001FBFEB5E688)
-[LOG] SoundI::release                          :  (000001FBFBD900B8)
-[LOG] SoundI::release                          :     Footsteps_Sketch_Wood_08 (000001FBFEB5BAA8)
-[LOG] SoundI::release                          :  (000001FBFBD8FDD8)
-[LOG] SoundI::release                          :     Footsteps_Sketch_Wood_01 (000001FBFEB5C608)
-[LOG] SoundI::release                          :  (000001FB39BFFC08)
-[LOG] SoundI::release                          :     Footsteps_Sketch_Wood_02 (000001FBFEB5CC88)
-[LOG] SoundI::release                          :  (000001FBFEA89358)
-[LOG] SoundI::release                          :     Footsteps_Sketch_Wood_03 (000001FBFEB5F048)
-[LOG] SoundI::release                          :  (000001FB483E11D8)
-[LOG] SoundI::release                          :     Footsteps_Sketch_Gravel_02 (000001FBFEB593A8)
-[LOG] SoundI::release                          :  (000001FBFEA89078)
-[LOG] SoundI::release                          :     Footsteps_Sketch_Gravel_03 (000001FBFEB59548)
-[LOG] SoundI::release                          :  (000001FBFEA891E8)
-[LOG] SoundI::release                          :     Footsteps_Sketch_Gravel_04 (000001FBFEB5F868)
-[LOG] SoundI::release                          :  (000001FB48437928)
-[LOG] SoundI::release                          :     Footsteps_Sketch_Gravel_05 (000001FBFEB59888)
-[LOG] SoundI::release                          :  (000001FB39BFF928)
-[LOG] SoundI::release                          :     Footsteps_Sketch_Gravel_06 (000001FBFEB59F08)
-[LOG] SoundI::release                          :  (000001FBFF831718)
-[LOG] SoundI::release                          :     Footsteps_Sketch_Gravel_07 (000001FBFEB59A28)
-[LOG] SoundI::release                          :  (000001FBFBD907E8)
-[LOG] SoundI::release                          :     Footsteps_Sketch_Gravel_08 (000001FBFEB5A588)
-[LOG] SoundI::release                          :  (000001FADF093688)
-[LOG] SoundI::release                          :     Footsteps_Sketch_Gravel_01 (000001FBFEB5E828)
-[LOG] SoundI::release                          :  (000001FBFBD90AC8)
-[LOG] SoundI::release                          :     SP2 koncept 4 Leah stem intro (000001FBFEB5B908)
-[LOG] SoundI::release                          : Ambiance_Dead_02 (000001FB3EBC9178)
-[LOG] SoundI::release                          :     Ambiance_Dead_02 (000001FBFEB5DB28)
-[LOG] SoundI::release                          :     Ambiance_Dead_02 (000001FB3EBC9D48)
-[LOG] SoundI::release                          : Ambiance_Temp_Windchime_02 (000001FB3EBC8FC8)
-[LOG] SoundI::release                          :     Ambiance_Temp_Windchime_02 (000001FBFEB5DE68)
-[LOG] SoundI::release                          :     Ambiance_Temp_Windchime_02 (000001FB3EBCA408)
-[LOG] SoundI::release                          : SP2 koncept 4 Leah stem piano 115 (000001FB3EBC83F8)
-[LOG] SoundI::release                          :     SP2 koncept 4 Leah stem piano 115 (000001FBFEB5BC48)
-[LOG] SoundI::release                          :     SP2 koncept 4 Leah stem piano 115 (000001FB3EBC59C8)
-[LOG] SoundI::release                          : SP2 koncept 4 Leah stem flute 115 (000001FB3EBC7D38)
-[LOG] SoundI::release                          :     SP2 koncept 4 Leah stem flute 115 (000001FBFEB5F528)
-[LOG] SoundI::release                          :     SP2 koncept 4 Leah stem flute 115 (000001FB3EBCA258)
-[LOG] SoundI::release                          : SP2 koncept 4 Leah stem gurapad 115 (000001FB3EBC8248)
-[LOG] SoundI::release                          :     SP2 koncept 4 Leah stem gurapad 115 (000001FBFEB59BC8)
-[LOG] SoundI::release                          :     SP2 koncept 4 Leah stem gurapad 115 (000001FB3EBC9B98)
-[LOG] SoundI::release                          :  (000001FB483E0EF8)
-[LOG] SoundI::release                          :     Creaks_01 (000001FBFEB5A8C8)
-[LOG] SoundI::release                          :  (000001FBFF831158)
-[LOG] SoundI::release                          :     Creaks_06 (000001FBFEB5E1A8)
-[LOG] SoundI::release                          :  (000001FBFF831438)
-[LOG] SoundI::release                          :     Creaks_07 (000001FBFEB596E8)
-[LOG] SoundI::release                          :  (000001FBFEA894C8)
-[LOG] SoundI::release                          :     Creaks_08 (000001FBFEB5D648)
-[LOG] SoundI::release                          :  (000001FB39BFFD78)
-[LOG] SoundI::release                          :     Creaks_02 (000001FBFEB5A728)
-[LOG] SoundI::release                          :  (000001FBFEA89638)
-[LOG] SoundI::release                          :     Creaks_03 (000001FBFEB5B0E8)
-[LOG] SoundI::release                          :  (000001FB48437C08)
-[LOG] SoundI::release                          :     Creaks_04 (000001FBFEB5EEA8)
-[LOG] SoundI::release                          :  (000001FB39BFFA98)
-[LOG] SoundI::release                          :     Creaks_05 (000001FBFEB5F1E8)
-[LOG] Thread::callback                         : FMOD Studio update thread finished.
-[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
-[LOG] LiveUpdate::release                      : 
-[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
-[LOG] Thread::callback                         : FMOD stream thread finished.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] SystemI::close                           : Closed.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
@@ -126,5 +28,3 @@
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
 [LOG] SystemI::close                           : Closed.
-[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
-[LOG] Thread::callback                         : FMOD file thread finished.
