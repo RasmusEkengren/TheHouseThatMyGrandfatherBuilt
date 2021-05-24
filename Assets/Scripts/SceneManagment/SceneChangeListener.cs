@@ -23,7 +23,7 @@ public class SceneChangeListener : MonoBehaviour
         {
 
             GlobalSceneData.SaveLeahPosition(FindObjectOfType<PlayerMovement>());
-            GlobalSceneData.SaveCameraPosition(FindObjectOfType<CameraController>());
+            GlobalSceneData.SaveLeahCameraPosition(FindObjectOfType<CameraController>());
         }
     }
 
