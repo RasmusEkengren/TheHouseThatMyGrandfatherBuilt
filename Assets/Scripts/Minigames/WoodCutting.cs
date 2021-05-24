@@ -53,7 +53,8 @@ public class WoodCutting : MonoBehaviour
                     finishEvent.Invoke();
                     circle.gameObject.SetActive(false);
                     HitIndicator.gameObject.SetActive(false);
-                    if (!IsLeahScene) animator.Play("Idle");
+                    if (!IsLeahScene) animator.SetBool("cutting", false);
+                    // if (!IsLeahScene) animator.Play("Idle");
                 }
                 if (circle.transform.localScale.x > 0)
                 {
@@ -69,7 +70,8 @@ public class WoodCutting : MonoBehaviour
     public void StartGame()
     {
 
-        if (!IsLeahScene) animator.Play("Axe Idle");
+        if (!IsLeahScene) animator.SetBool("cutting", true);
+        // if (!IsLeahScene) animator.Play("Axe Idle");
         isGameActive = true;
         circle.gameObject.SetActive(true);
         circleImage = circle.GetComponent<Image>();
