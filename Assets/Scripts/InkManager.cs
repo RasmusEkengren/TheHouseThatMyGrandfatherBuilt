@@ -83,8 +83,6 @@ public class InkManager : MonoBehaviour
             {
                 FMODUnity.RuntimeManager.PlayOneShot(leahIdle);
             }
-
-
         });
         isStoryActive = true;
         textBubble.SetActive(true);
@@ -96,13 +94,9 @@ public class InkManager : MonoBehaviour
         story = new Story(JsonAsset.text);
         story.BindExternalFunction("playSound", (string sound) =>
         {
-            if (sound == "leahHappy")
+            if (sound == "georgeThink")
             {
-                FMODUnity.RuntimeManager.PlayOneShot(leahHappy);
-            }
-            if (sound == "leahSad")
-            {
-                FMODUnity.RuntimeManager.PlayOneShot(leahSad);
+                FMODUnity.RuntimeManager.PlayOneShot(georgeThink);
             }
             if (sound == "georgeProud")
             {
@@ -111,7 +105,26 @@ public class InkManager : MonoBehaviour
             if (sound == "georgeRandom")
             {
                 FMODUnity.RuntimeManager.PlayOneShot(georgeRandom);
-
+            }
+            if (sound == "leahThink")
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(leahThink);
+            }
+            if (sound == "leahHappy")
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(leahHappy);
+            }
+            if (sound == "leahSad")
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(leahSad);
+            }
+            if (sound == "leahYawn")
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(leahYawn);
+            }
+            if (sound == "leahIdle")
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(leahIdle);
             }
         });
         isTimedStoryActive = true;
@@ -126,6 +139,41 @@ public class InkManager : MonoBehaviour
         if (isCutsceneActive) return;
 
         story = new Story(JsonAsset.text);
+        story.BindExternalFunction("playSound", (string sound) =>
+        {
+            if (sound == "georgeThink")
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(georgeThink);
+            }
+            if (sound == "georgeProud")
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(georgeProud);
+            }
+            if (sound == "georgeRandom")
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(georgeRandom);
+            }
+            if (sound == "leahThink")
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(leahThink);
+            }
+            if (sound == "leahHappy")
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(leahHappy);
+            }
+            if (sound == "leahSad")
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(leahSad);
+            }
+            if (sound == "leahYawn")
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(leahYawn);
+            }
+            if (sound == "leahIdle")
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(leahIdle);
+            }
+        });
         if (functionToCall != null) story.EvaluateFunction(functionToCall);
         isCutsceneActive = true;
         cutscenePanel.SetActive(true);

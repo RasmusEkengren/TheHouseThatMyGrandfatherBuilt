@@ -78,4 +78,22 @@ public class GlobalSceneData : MonoBehaviour
 		}
 		return false;
 	}
+
+    public void ResetEverything()
+    {
+        Debug.Log("RESET EVERYTHING!!!!!!!");
+        Debug.Log("RESET EVERYTHING!!!!!!!");
+        Debug.Log("RESET EVERYTHING!!!!!!!");
+        Debug.Log("RESET EVERYTHING!!!!!!!");
+        Debug.Log("RESET EVERYTHING!!!!!!!");
+        Debug.Log("RESET EVERYTHING!!!!!!!");
+        leahState = LeahState.Entering;
+        georgeState = GeorgeState.Porch;
+        porchFixingState = PorchFixingState.Broken;
+        porchStyle = PorchStyle.None;
+        windowsFixingState = WindowsFixingState.Broken;
+        windowsStyle = WindowsStyle.None;
+        railingFixingState = RailingFixingState.Broken;
+        railingStyle = RailingStyle.None;
+    }
 }
