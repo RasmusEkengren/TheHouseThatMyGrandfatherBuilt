@@ -10,6 +10,7 @@ public class Interactable : MonoBehaviour
 	[SerializeField] private Gradient interactedColor = null;
 	[SerializeField] [FMODUnity.EventRef] protected string interactSound = null;
 	[SerializeField] private float interactResetTime = 4f;
+	[SerializeField] private bool isInteractReset = true;
 	private bool hasInteracted = false;
 	private float timer = 0;
 	void Start()
@@ -53,7 +54,7 @@ public class Interactable : MonoBehaviour
 	}
 	void OnTriggerStay(Collider collider)
 	{
-		if (collider.gameObject.tag == playerTag && !interactIcon.activeSelf)
+		if (collider.gameObject.tag == playerTag && !interactIcon.activeSelf && isInteractReset)
 		{
 			if (collider.gameObject.GetComponent<InkManager>().isStoryActive || collider.gameObject.GetComponent<InkManager>().isCutsceneActive) return;
 			timer += Time.deltaTime;
