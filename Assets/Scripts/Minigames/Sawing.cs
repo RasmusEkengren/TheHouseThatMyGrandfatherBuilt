@@ -72,7 +72,7 @@ public class Sawing : MonoBehaviour
 	public void StartCut(InputAction.CallbackContext value)
 	{
 		if (!gameObject.scene.IsValid()) return;
-		if (value.performed && !isCutting)
+		if (value.performed && !isCutting && !isFalling)
 		{
 			if (saw.anchorMax.x < cutLine.anchorMax.x + lineTolerance && saw.anchorMin.x > cutLine.anchorMin.x - lineTolerance)
 			{

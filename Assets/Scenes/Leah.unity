@@ -3206,6 +3206,7 @@ GameObject:
   - component: {fileID: 144481308}
   - component: {fileID: 144481310}
   - component: {fileID: 144481309}
+  - component: {fileID: 144481311}
   m_Layer: 0
   m_Name: Porch Slanted Story FIxed
   m_TagString: Untagged
@@ -3300,6 +3301,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  isTriggeredOnce: 1
+--- !u!114 &144481311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144481307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90b3cb7073e3176438af77f496589336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 
 --- !u!1 &145314848
 GameObject:
   m_ObjectHideFlags: 0
@@ -6371,6 +6386,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5699417051786955672, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: ID
+      value: Leah_Door_386.4218
+      objectReference: {fileID: 0}
     - target: {fileID: 6309852347379112966, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
       propertyPath: m_Name
       value: Door
@@ -9310,6 +9329,7 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   interactSound: event:/Player/Player_Interaction
+  interactResetTime: 2
   StoryJson: {fileID: 4900000, guid: 44d40de264cd133469f3c47df80a56f8, type: 3}
 --- !u!1 &549840971
 GameObject:
@@ -10086,6 +10106,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  isTriggeredOnce: 0
 --- !u!114 &614649708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10295,6 +10316,10 @@ PrefabInstance:
     - target: {fileID: 3051339546014685702, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
       propertyPath: ShapeModule.radius.value
       value: 1.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699417051786955672, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: ID
+      value: Leah_InkInteractable_134.2281
       objectReference: {fileID: 0}
     - target: {fileID: 6309852347379112966, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
       propertyPath: m_Name
@@ -10960,6 +10985,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  isTriggeredOnce: 0
 --- !u!1 &721846761
 GameObject:
   m_ObjectHideFlags: 0
@@ -12428,6 +12454,7 @@ GameObject:
   - component: {fileID: 825948862}
   - component: {fileID: 825948864}
   - component: {fileID: 825948863}
+  - component: {fileID: 825948865}
   m_Layer: 0
   m_Name: Porch Flat Story FIxed
   m_TagString: Untagged
@@ -12522,6 +12549,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  isTriggeredOnce: 1
+--- !u!114 &825948865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825948861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90b3cb7073e3176438af77f496589336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 
 --- !u!4 &842725402 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 907ba5330bc91dd40bfbb3120ce99004, type: 3}
@@ -14409,15 +14450,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5325735516431247577, guid: 7a4514cbcc65a344898afe86b7dcec5e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.83
+      value: -9.40624
       objectReference: {fileID: 0}
     - target: {fileID: 5325735516431247577, guid: 7a4514cbcc65a344898afe86b7dcec5e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.335
+      value: 4.998524
       objectReference: {fileID: 0}
     - target: {fileID: 5325735516431247577, guid: 7a4514cbcc65a344898afe86b7dcec5e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 62.77
+      value: 61.31741
       objectReference: {fileID: 0}
     - target: {fileID: 5325735516431247577, guid: 7a4514cbcc65a344898afe86b7dcec5e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17711,6 +17752,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  isTriggeredOnce: 0
 --- !u!1001 &1175071599
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18824,6 +18866,126 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5692272, y: 0.9999998, z: 0.050129436}
   m_Center: {x: -0.19984263, y: 0, z: 0.00000004651841}
+--- !u!1 &1258175154
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1258175155}
+  - component: {fileID: 1258175156}
+  - component: {fileID: 1258175158}
+  - component: {fileID: 1258175157}
+  m_Layer: 0
+  m_Name: DoneStory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1258175155
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258175154}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1325830859}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1258175156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258175154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90b3cb7073e3176438af77f496589336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: Leah_DoneStory_337.7406
+--- !u!114 &1258175157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258175154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7894a0cb63ba9684683b8d40ef8460c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boolStates:
+    OnPorchFixed: 0
+    OnPorchFixing: 1
+    OnPorchFlat: 2
+    OnPorchSlanted: 2
+    OnPorchBroken: 1
+    OnWindowsFixed: 0
+    OnWindowsFixing: 1
+    OnWindowsRibbed: 2
+    OnWindowsSolid: 2
+    OnWindowsBroken: 1
+    OnRailingFixed: 0
+    OnRailingFixing: 1
+    OnRailingFlatTop: 2
+    OnRailingPillars: 2
+    OnRailingBroken: 1
+    OnLeahEntering: 1
+    OnLeahBuilding: 1
+    OnLeahDone: 0
+    OnGeorgeStatePorch: 2
+    OnGeorgeStateWindows: 2
+    OnGeorgeStateRailing: 2
+--- !u!114 &1258175158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258175154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e10cb9cf3250bd04898d13dddea5e4d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startEvents:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1833915864}
+        m_TargetAssemblyTypeName: InkManager, Assembly-CSharp
+        m_MethodName: StartStory
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4900000, guid: 601f049ef5e5d5242a3f7a339016f426, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1833915864}
+        m_TargetAssemblyTypeName: InkManager, Assembly-CSharp
+        m_MethodName: DisplayNextLine
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  isTriggeredOnce: 1
 --- !u!198 &1259130440 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 3051339546014685702, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
@@ -19643,6 +19805,7 @@ Transform:
   - {fileID: 1156716604}
   - {fileID: 51681256}
   - {fileID: 215182989}
+  - {fileID: 1258175155}
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20323,6 +20486,10 @@ PrefabInstance:
     - target: {fileID: 3051339546014685702, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
       value: 0.9529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699417051786955672, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: ID
+      value: Leah_InkInteractable_-540.1219
       objectReference: {fileID: 0}
     - target: {fileID: 6309852347379112966, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
       propertyPath: m_Name
@@ -21465,7 +21632,7 @@ PrefabInstance:
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 4900000, guid: 12af3613816e4e94aac70142bb51ece2, type: 3}
+      objectReference: {fileID: 4900000, guid: d2a6fcb8a75e632409f43e34b133e5b7, type: 3}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.TextAsset, UnityEngine
@@ -23798,9 +23965,9 @@ MonoBehaviour:
     OnRailingFlatTop: 2
     OnRailingPillars: 2
     OnRailingBroken: 2
-    OnLeahEntering: 0
-    OnLeahBuilding: 0
-    OnLeahDone: 0
+    OnLeahEntering: 1
+    OnLeahBuilding: 1
+    OnLeahDone: 1
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
@@ -24025,6 +24192,10 @@ PrefabInstance:
     - target: {fileID: 6309852347379112966, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
       propertyPath: m_Name
       value: Grass
+      objectReference: {fileID: 0}
+    - target: {fileID: 6309852347379112966, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
       propertyPath: m_RootOrder
@@ -24867,6 +25038,10 @@ PrefabInstance:
     - target: {fileID: 3051339546014685702, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
       propertyPath: ShapeModule.radius.value
       value: 1.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699417051786955672, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: ID
+      value: Leah_WindowShuttersEntering_-119.2065
       objectReference: {fileID: 0}
     - target: {fileID: 6309852347379112966, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
       propertyPath: m_Name
@@ -29672,6 +29847,10 @@ PrefabInstance:
       propertyPath: ShapeModule.radius.value
       value: 0.58
       objectReference: {fileID: 0}
+    - target: {fileID: 5699417051786955672, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: ID
+      value: Leah_Scythe_914.1325
+      objectReference: {fileID: 0}
     - target: {fileID: 6309852347379112966, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
       propertyPath: m_Name
       value: Scythe
@@ -30662,6 +30841,10 @@ PrefabInstance:
     - target: {fileID: 3051339546014685702, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
       propertyPath: ShapeModule.radius.value
       value: 2.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699417051786955672, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: ID
+      value: Leah_PorchEntering_61.75797
       objectReference: {fileID: 0}
     - target: {fileID: 6309852347379112966, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
       propertyPath: m_Name
