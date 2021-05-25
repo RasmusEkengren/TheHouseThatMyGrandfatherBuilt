@@ -16,6 +16,7 @@ public class PlayerAnimation : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         playerMovement = GetComponentInParent<PlayerMovement>();
+        currentLayerWeight = animator.GetLayerWeight(layerIndex);
     }
 
     private void Update()
@@ -67,7 +68,6 @@ public class PlayerAnimation : MonoBehaviour
     {
         if (weightTarget > 0)
         {
-            currentLayerWeight = animator.GetLayerWeight(layerIndex);
             currentLayerWeight += 0.5f * Time.deltaTime;
             animator.SetLayerWeight(layerIndex, currentLayerWeight);
             if (currentLayerWeight >= 1)
