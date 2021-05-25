@@ -41,7 +41,7 @@ public class GlobalSceneData : MonoBehaviour
 
     private void Start()
     {
-        if (SceneManager.GetActiveScene().name == "George" || SceneManager.GetActiveScene().name == "Inside") { tutorialFinished = true; }
+        if (SceneManager.GetActiveScene().name == "George" || SceneManager.GetActiveScene().name == "Inside") { tutorialFinished = true; ControlsTutorial.ShowMovementControls(false); }
         SceneManager.sceneLoaded += OnSceneLoaded;
         // Ugly solution for the Tester Helper tool
         lastLeahPosition = new Vector3(18f, 1f, -38f);

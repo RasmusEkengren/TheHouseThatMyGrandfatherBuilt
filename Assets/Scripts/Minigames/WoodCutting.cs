@@ -99,13 +99,13 @@ public class WoodCutting : MonoBehaviour
                 if (!IsLeahScene) animator.Play("Axe Hit");
                 circleImage.color = hitColor;
                 health -= 1;
-                FMODUnity.RuntimeManager.PlayOneShot(cutSound);
+                //FMODUnity.RuntimeManager.PlayOneShot(cutSound);
             }
             else
             {
                 if (!IsLeahScene) animator.Play("Axe Miss");
                 circleImage.color = missColor;
-                FMODUnity.RuntimeManager.PlayOneShot(missSound);
+                //FMODUnity.RuntimeManager.PlayOneShot(missSound);
             }
             ResetIndicator();
         }
