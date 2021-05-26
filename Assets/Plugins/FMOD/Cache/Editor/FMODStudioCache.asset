@@ -43,6 +43,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &-8884980655988101964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Player_Move_George/Surface
+  m_EditorClassIdentifier: 
+  Name: Surface
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-7509651166001856032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,7 +82,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-7361480065521191332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,7 +188,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-6174214372018593695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,6 +205,26 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &-5829668249013494850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Interaction_Plank_Shake/ShakeLevel
+  m_EditorClassIdentifier: 
+  Name: ShakeLevel
+  Min: 0
+  Max: 2
+  Default: 0
   ID:
     data1: 0
     data2: 0
@@ -252,6 +292,46 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1679
+--- !u!114 &-5030123828238070352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Event_Manager/Guitar Stem
+  m_EditorClassIdentifier: 
+  Name: Guitar Stem
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &-4944855570684181497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Event_Manager/Intro Stem
+  m_EditorClassIdentifier: 
+  Name: Intro Stem
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-4802267743498554745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,7 +461,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 8951873736419056980}
+  - {fileID: -8884980655988101964}
   MinDistance: 0
   MaxDistance: 0
   Length: 501
@@ -400,9 +480,29 @@ MonoBehaviour:
   Path: Assets/THTMGB Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637576208265738103
+  lastModified: 637576264265927233
   LoadResult: 0
   FileSizes: []
+  Exists: 1
+--- !u!114 &-4013446091066876076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Event_Manager/Skip start
+  m_EditorClassIdentifier: 
+  Name: Skip start
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
   Exists: 1
 --- !u!114 &-3893795040939837476
 MonoBehaviour:
@@ -464,7 +564,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -7509651166001856032}
+  - {fileID: -5829668249013494850}
   MinDistance: 0
   MaxDistance: 0
   Length: 7918
@@ -530,7 +630,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-2377413083270323412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,6 +644,26 @@ MonoBehaviour:
   m_Name: parameter:/Music_Event_Manager/Piano Stem George
   m_EditorClassIdentifier: 
   Name: Piano Stem George
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &-2322056225401387180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Event_Manager/Flute Stem
+  m_EditorClassIdentifier: 
+  Name: Flute Stem
   Min: 0
   Max: 1
   Default: 1
@@ -613,7 +733,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-1766029536691158494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,6 +780,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 667
+--- !u!114 &-338189899070200059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Event_Manager/Track
+  m_EditorClassIdentifier: 
+  Name: Track
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -712,7 +852,7 @@ MonoBehaviour:
   - {fileID: -4329365776882238007}
   StringsBanks:
   - {fileID: 5481462191578700129}
-  stringsBankWriteTime: 637576208265328326
+  stringsBankWriteTime: 637576264265947166
   cacheVersion: 6
 --- !u!114 &186376504831676239
 MonoBehaviour:
@@ -912,6 +1052,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &3161161239520309967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Event_Manager/Vinyl SFX
+  m_EditorClassIdentifier: 
+  Name: Vinyl SFX
+  Min: 0
+  Max: 1
+  Default: 0.3
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &3359870528640584381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -931,7 +1091,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &3397576658631257006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -951,7 +1111,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &3727232660546047026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1179,7 +1339,7 @@ MonoBehaviour:
   Path: Assets/THTMGB Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637576208265328326
+  lastModified: 637576264265947166
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -1205,10 +1365,30 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 8442235001118774866}
+  - {fileID: 6734457650228407773}
   MinDistance: 0
   MaxDistance: 0
   Length: 501
+--- !u!114 &6200611654645734718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Event_Manager/Piano Stem George
+  m_EditorClassIdentifier: 
+  Name: Piano Stem George
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &6409507240525435337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1275,6 +1455,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 6000
+--- !u!114 &6734457650228407773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Player_Move/Surface
+  m_EditorClassIdentifier: 
+  Name: Surface
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &6774541719939830150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1318,14 +1518,14 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 7751405832627070517}
-  - {fileID: -2377413083270323412}
-  - {fileID: -1806203763565160487}
-  - {fileID: 3359870528640584381}
-  - {fileID: 3397576658631257006}
-  - {fileID: -6201847501522682257}
-  - {fileID: 8855094371518945237}
-  - {fileID: -2593345416616691335}
+  - {fileID: -4944855570684181497}
+  - {fileID: 6200611654645734718}
+  - {fileID: -2322056225401387180}
+  - {fileID: -4013446091066876076}
+  - {fileID: -338189899070200059}
+  - {fileID: 3161161239520309967}
+  - {fileID: 9210087457634847499}
+  - {fileID: -5030123828238070352}
   MinDistance: 0
   MaxDistance: 0
   Length: 2875
@@ -1348,7 +1548,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &8421150523223506647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1391,7 +1591,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &8741143536764229227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1454,7 +1654,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &8951873736419056980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1471,6 +1671,26 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &9210087457634847499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Event_Manager/Piano Stem
+  m_EditorClassIdentifier: 
+  Name: Piano Stem
+  Min: 0
+  Max: 1
+  Default: 1
   ID:
     data1: 0
     data2: 0
