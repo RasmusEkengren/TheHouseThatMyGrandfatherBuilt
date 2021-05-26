@@ -50,6 +50,7 @@ public class SceneController : MonoBehaviour
         if (!changingScene)
         {
             changingScene = true;
+            SendMessage("OnChangingScene", nextScene);
 
             if (FindObjectOfType<MusicObject>())
             {
@@ -90,6 +91,7 @@ public class SceneController : MonoBehaviour
                     operation.allowSceneActivation = true;
                     if (gameController != null) gameController.PauseGame(false);
                     changingScene = false;
+                    // SendMessage("OnSceneLoaded");
                 }
                 yield return null;
             }
