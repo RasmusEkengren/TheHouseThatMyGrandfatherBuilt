@@ -41,11 +41,11 @@ public class ControlsTutorial : MonoBehaviour
 		Spacebar.gameObject.SetActive(false);
 	}
 
-	private void OnEnable()
-	{
-		//"Fix" for no error :#
-		if (W != null && A != null && S != null && D != null) ShowMovementControls(true);
-	}
+	//private void OnEnable()
+	//{
+	//	//"Fix" for no error :#
+	//	if (W != null && A != null && S != null && D != null) ShowMovementControls(true);
+	//}
 
     public static void ShowMovementControls(bool show)
     {
@@ -65,7 +65,7 @@ public class ControlsTutorial : MonoBehaviour
 
 	private static IEnumerator FadeMovementControls(bool show)
 	{
-		if (alphaValue <= 1)
+        while (alphaValue < 1)
 		{
 			alphaValue += 0.2f * Time.deltaTime;
 			imageColor.a = alphaValue;
@@ -73,10 +73,6 @@ public class ControlsTutorial : MonoBehaviour
 			A.color = imageColor;
 			S.color = imageColor;
 			D.color = imageColor;
-		}
-		else
-		{
-			yield return null;
 		}
 		yield return null;
 	}
