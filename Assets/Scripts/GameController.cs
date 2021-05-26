@@ -14,6 +14,10 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
+        if (SceneManager.GetActiveScene().name != "Leah")
+        {
+            FinishTutorial();
+        }
         Time.timeScale = 1;
         PauseGame(false);
     }
