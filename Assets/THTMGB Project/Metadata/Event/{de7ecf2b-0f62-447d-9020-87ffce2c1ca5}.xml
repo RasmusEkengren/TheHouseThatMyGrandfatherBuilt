@@ -59,6 +59,9 @@ Includes a snapshot for cavern like reverb for when the player enter the zone</v
 		</relationship>
 	</object>
 	<object class="MixerInput" id="{7f5a6017-853e-4099-b14b-fb997ada037f}">
+		<relationship name="masters">
+			<destination>{5ae0a77f-2ccb-4595-95fe-f4e1f058d7e5}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{f42936e5-7ccc-452a-b801-bc7f20ab897b}</destination>
 		</relationship>
