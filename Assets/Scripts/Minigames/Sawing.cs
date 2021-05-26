@@ -16,6 +16,7 @@ public class Sawing : MonoBehaviour
 	[SerializeField] private RectTransform rightPiece = null;
 	[SerializeField] private Image rightPieceImage = null;
 	[SerializeField] private RectTransform wholePlank = null;
+    [SerializeField] private GameObject plankCounter = null;
 	private bool isCutting = false;
 	private bool isFalling = false;
 	private Vector2 moveVal = Vector2.zero;
@@ -55,6 +56,7 @@ public class Sawing : MonoBehaviour
 		wholePlank.gameObject.SetActive(true);
 		cutLine.gameObject.SetActive(true);
 		saw.gameObject.SetActive(true);
+        plankCounter.SetActive(true);
 		float cutlinePos = Random.Range(0.1f, 0.9f);
 		cutLine.anchorMin = new Vector2(cutlinePos - 0.0125f, cutLine.anchorMin.y);
 		cutLine.anchorMax = new Vector2(cutlinePos + 0.0125f, cutLine.anchorMax.y);

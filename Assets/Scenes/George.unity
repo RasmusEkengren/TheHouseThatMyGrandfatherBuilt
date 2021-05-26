@@ -6683,7 +6683,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3882982580547346480, guid: 475b40bf698452a4ab11721e03899ed7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5807140249966411348, guid: 475b40bf698452a4ab11721e03899ed7, type: 3}
       propertyPath: m_IsActive
@@ -6789,6 +6789,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5807140251217955405, guid: 475b40bf698452a4ab11721e03899ed7, type: 3}
+      propertyPath: plankCounter
+      value: 
+      objectReference: {fileID: 1225208970}
     - target: {fileID: 5807140251217955405, guid: 475b40bf698452a4ab11721e03899ed7, type: 3}
       propertyPath: leftPieceImage
       value: 
@@ -27591,6 +27595,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Asset: {fileID: -944628639613478452, guid: bdb378bb931fb224aaf0a5947f092d2c, type: 3}
   m_ActionId: 52b018f5-f2af-4a31-927e-1f78e2c56d16
+--- !u!1 &1225208970 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3882982580547346480, guid: 475b40bf698452a4ab11721e03899ed7, type: 3}
+  m_PrefabInstance: {fileID: 269665861}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1225329015
 PrefabInstance:
   m_ObjectHideFlags: 0
