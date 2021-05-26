@@ -12,6 +12,8 @@ public class PlayerAnimation : MonoBehaviour
     private int layerIndex = 0; // Keep eye on this, might cause issues when used by multiple methods
     private int weightTarget = 0;
 
+    private PlankBalancing plank = null;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -67,6 +69,11 @@ public class PlayerAnimation : MonoBehaviour
     public void ResumeWalking()
     {
         playerMovement.ResumeWalking();
+        if (FindObjectOfType<PlankBalancing>())
+        {
+            plank = FindObjectOfType<PlankBalancing>();
+            plank.ResetGame();
+        }
     }
 
     private IEnumerator ChangeLayerWeight()
