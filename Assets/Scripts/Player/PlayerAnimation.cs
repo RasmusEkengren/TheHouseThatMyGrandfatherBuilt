@@ -64,6 +64,11 @@ public class PlayerAnimation : MonoBehaviour
         Debug.Log("Stopping carry animation");
     }
 
+    public void ResumeWalking()
+    {
+        playerMovement.ResumeWalking();
+    }
+
     private IEnumerator ChangeLayerWeight()
     {
         if (weightTarget > 0)
