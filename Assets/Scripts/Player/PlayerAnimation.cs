@@ -9,13 +9,14 @@ public class PlayerAnimation : MonoBehaviour
     private PlayerMovement playerMovement = null;
     private float currentLayerWeight = 0;
 
-    private int layerIndex = 0;
+    private int layerIndex = 0; // Keep eye on this, might cause issues when used by multiple methods
     private int weightTarget = 0;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
         playerMovement = GetComponentInParent<PlayerMovement>();
+        currentLayerWeight = animator.GetLayerWeight(layerIndex);
     }
 
     private void Update()
@@ -30,6 +31,20 @@ public class PlayerAnimation : MonoBehaviour
         {
             animator.SetBool("walking", false);
         }
+    }
+
+    public void StartAxeHoldingAnimation()
+    {
+        layerIndex = animator.GetLayerIndex("Carrying Axe");
+        animator.SetLayerWeight(layerIndex, 1);
+        Debug.Log("Starting axe holding animation");
+    }
+
+    public void StopAxeHoldingAnimation()
+    {
+        layerIndex = animator.GetLayerIndex("Carrying Axe");
+        animator.SetLayerWeight(layerIndex, 0);
+        Debug.Log("Stopping axe holding animation");
     }
 
     public void StartCarryAnimation()
@@ -53,7 +68,6 @@ public class PlayerAnimation : MonoBehaviour
     {
         if (weightTarget > 0)
         {
-            currentLayerWeight = animator.GetLayerWeight(layerIndex);
             currentLayerWeight += 0.5f * Time.deltaTime;
             animator.SetLayerWeight(layerIndex, currentLayerWeight);
             if (currentLayerWeight >= 1)
