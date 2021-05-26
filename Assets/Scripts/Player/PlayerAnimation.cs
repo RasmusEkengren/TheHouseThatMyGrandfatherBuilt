@@ -53,6 +53,8 @@ public class PlayerAnimation : MonoBehaviour
     {
         layerIndex = animator.GetLayerIndex("Carry");
         animator.SetLayerWeight(layerIndex, 1);
+        layerIndex = animator.GetLayerIndex("Falling");
+        animator.SetLayerWeight(layerIndex, 1);
         // weightTarget = 1;
         //StartCoroutine("ChangeLayerWeight");
         Debug.Log("Starting carry animation");
@@ -60,6 +62,8 @@ public class PlayerAnimation : MonoBehaviour
     public void StopCarryAnimation()
     {
         layerIndex = animator.GetLayerIndex("Carry");
+        animator.SetLayerWeight(layerIndex, 0);
+        layerIndex = animator.GetLayerIndex("Falling");
         animator.SetLayerWeight(layerIndex, 0);
         // weightTarget = 0;
         // StartCoroutine("ChangeLayerWeight");
