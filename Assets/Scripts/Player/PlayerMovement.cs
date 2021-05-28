@@ -25,6 +25,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     private PlayerFootstepSound playerFootstep = null;
 
+    private Vector3 treePosition = Vector3.zero;
+    private bool rotationDone = false;
+    private float treeDistance = 4f;
+    private float scootDistance = 0.5f;
+
     public void ChangeSpeed(float _moveSpeed, float _autoMoveSpeed)
     {
         moveSpeed = _moveSpeed;
@@ -72,24 +77,23 @@ public class PlayerMovement : MonoBehaviour
         playerFootstep = GetComponentInChildren<PlayerFootstepSound>();
     }
 
+    IEnumerator RotateTowardsTree()
+    {
+        /// Rotate towards tree
+        while (!rotationDone)
+        {
+
+        }
+        /// Set distance
+        /// Scoot player to the left
+        /// Start chopping animation
+
+
+        yield return null;
+    }
+
     void Update()
     {
-        if (hasFallen)
-        {
-            /// Pause animation after a set amount time depending on which fall animation it is
-            /// Forward animation: 4.5 sec length
-            /// Backward animation: 3.08 sec length
-            /// 
-            /// 
-            ///
-
-            //timer += Time.deltaTime;
-            //if (timer >= fallTime)
-            //{
-            //    ResumeWalking();
-            //}
-        }
-        else
         {
             if (isAutoWalking)
             {

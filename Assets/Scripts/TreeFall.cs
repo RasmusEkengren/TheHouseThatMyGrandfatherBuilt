@@ -22,7 +22,7 @@ public class TreeFall : MonoBehaviour
 	{
 		StartCoroutine("TreeFallSequence");
         treeAnimator.SetTrigger("fell tree");
-		this.GetComponentInParent<EventInteractable>().setIsTrigger(true);
+		GetComponentInParent<EventInteractable>().setIsTrigger(true);
 	}
 
 	IEnumerator TreeFallSequence()
