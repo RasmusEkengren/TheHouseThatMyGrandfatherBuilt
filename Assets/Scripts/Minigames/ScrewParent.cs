@@ -24,12 +24,6 @@ public class ScrewParent : MonoBehaviour
 	public void NextGame()
 	{
 		gameCompletions++;
-		if (gameCompletions >= numberOfGamesToComplete)
-		{
-			Destroy(child);
-			endEvent.Invoke();
-			return;
-		}
 		StartCoroutine(SlideStart());
 	}
 	public void OnMove(InputAction.CallbackContext value)
@@ -44,13 +38,17 @@ public class ScrewParent : MonoBehaviour
 		RectTransform childTransform = child.GetComponent<RectTransform>();
 		while (t <= slideTime)
 		{
-			Debug.Log(t);
 			childTransform.anchorMax = new Vector2(childTransform.anchorMax.x - slideSpeed * Time.deltaTime, childTransform.anchorMax.y);
 			childTransform.anchorMin = new Vector2(childTransform.anchorMin.x - slideSpeed * Time.deltaTime, childTransform.anchorMin.y);
 			t += Time.deltaTime;
 			yield return null;
 		}
 		Destroy(child);
+		if (gameCompletions >= numberOfGamesToComplete)
+		{
+			endEvent.Invoke();
+			yield break;
+		}
 		StartGame();
 		yield return null;
 	}

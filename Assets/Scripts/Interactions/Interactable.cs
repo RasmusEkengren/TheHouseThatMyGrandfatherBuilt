@@ -9,7 +9,10 @@ public class Interactable : MonoBehaviour
 	[SerializeField] private Gradient normalColor = null;
 	[SerializeField] private Gradient interactedColor = null;
 	[SerializeField] [FMODUnity.EventRef] protected string interactSound = null;
+	[SerializeField] private float interactResetTime = 4f;
+	[SerializeField] private bool isInteractReset = true;
 	private bool hasInteracted = false;
+	private float timer = 0;
 	void Start()
 	{
 		this.gameObject.GetComponent<UniqueID>().CheckID();
@@ -29,19 +32,42 @@ public class Interactable : MonoBehaviour
 	{
 		if (collider.gameObject.tag == playerTag)
 		{
+			GameController.lastInteraction = this;
 			interactIcon.SetActive(true);
-			interactIcon.transform.forward = mainCamera.transform.forward;
+			ControlsTutorial.ShowInteractionControls(true);
+			if (mainCamera != null && interactIcon != null)
+			{
+				interactIcon.transform.forward = mainCamera.transform.forward;
+			}
+			timer = 0;
 		}
 	}
 	void OnTriggerExit(Collider collider)
 	{
 		if (collider.gameObject.tag == playerTag)
 		{
+			if (GameController.lastInteraction == this) { GameController.lastInteraction = null; }
 			interactIcon.SetActive(false);
+			ControlsTutorial.ShowInteractionControls(false);
+		}
+		timer = 0;
+	}
+	void OnTriggerStay(Collider collider)
+	{
+		if (collider.gameObject.tag == playerTag && !interactIcon.activeSelf && isInteractReset)
+		{
+			if (collider.gameObject.GetComponent<InkManager>().isStoryActive || collider.gameObject.GetComponent<InkManager>().isCutsceneActive) return;
+			timer += Time.deltaTime;
+			if (timer >= interactResetTime)
+			{
+				interactIcon.SetActive(true);
+				timer = 0;
+			}
 		}
 	}
 	public virtual void Interact(GameObject player)
 	{
+		ControlsTutorial.ShowInteractionControls(false);
 		interactIcon.SetActive(false);
 		hasInteracted = true;
 		GlobalSceneData.interactedObjectIDs.Add(this.gameObject.GetComponent<UniqueID>().ID);

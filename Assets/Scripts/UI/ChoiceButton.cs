@@ -16,9 +16,12 @@ public class ChoiceButton : MonoBehaviour, IPointerEnterHandler, ISelectHandler,
 	private float timer = 0;
 	private string isSelected = "IsSelected";
 
+    private ButtonSound buttonSound = null;
+
 	void OnEnable()
 	{
 		button = GetComponent<Button>();
+        buttonSound = FindObjectOfType<ButtonSound>();
 		timer = 0;
 		isSelectable = false;
 	}
@@ -53,7 +56,11 @@ public class ChoiceButton : MonoBehaviour, IPointerEnterHandler, ISelectHandler,
 	}
 	public void OnSelect(BaseEventData selectData)
 	{
-		if (selectData.selectedObject == this.gameObject && isSelectable && animator != null) animator.SetBool(isSelected, true);
+        if (buttonSound)
+        {
+            buttonSound.PlayHoverSound();
+        }
+        if (selectData.selectedObject == this.gameObject && isSelectable && animator != null) animator.SetBool(isSelected, true);
 	}
 	public void OnDeselect(BaseEventData deselectData)
 	{
@@ -62,26 +69,5 @@ public class ChoiceButton : MonoBehaviour, IPointerEnterHandler, ISelectHandler,
 	public void DeselectButton()
 	{
 		eventSystem.SetSelectedGameObject(null);
-	}
-	public void FlatPorch()
-	{
-		GlobalSceneData.porchState = GlobalSceneData.PorchState.Flat;
-		GlobalSceneData.mg_porchFixed = true;
-	}
-
-	public void SlantedPorch()
-	{
-		GlobalSceneData.porchState = GlobalSceneData.PorchState.Slanted;
-		GlobalSceneData.mg_porchFixed = true;
-	}
-	public void FlatTopRailing()
-	{
-		GlobalSceneData.railingState = GlobalSceneData.RailingState.FlatTop;
-		GlobalSceneData.mg_railingFixed = true;
-	}
-	public void PillarsRailing()
-	{
-		GlobalSceneData.railingState = GlobalSceneData.RailingState.Pillars;
-		GlobalSceneData.mg_railingFixed = true;
 	}
 }

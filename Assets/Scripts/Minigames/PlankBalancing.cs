@@ -88,16 +88,26 @@ public class PlankBalancing : MonoBehaviour
 	[SerializeField] [EventRef] protected string plankBalancingSound = null;
 	private string plankShakeParameter = "ShakeLevel";
 	private EventInstance balancingSoundInstance;
-	public void OnInput(InputAction.CallbackContext value)
+    [SerializeField] private Animator animator = null;
+    private bool fallen = false;
+
+    private bool allowInput = true;
+
+    public void OnInput(InputAction.CallbackContext value)
 	{
-		if (!gameObject.scene.IsValid() || gameObject.activeSelf == false) return;
-		moveVal = value.ReadValue<Vector2>();
-		if (moveVal.x > 0 && moveDir > 0) moveVal.x = 0;
-		if (moveVal.x < 0 && moveDir < 0) moveVal.x = 0;
-		greenZone.Nudge(moveVal.x, nudgeSpeed, Time.deltaTime);
+        if (allowInput)
+        {
+            if (!gameObject.scene.IsValid() || gameObject.activeSelf == false) return;
+            moveVal = value.ReadValue<Vector2>();
+            if (moveVal.x > 0 && moveDir > 0) moveVal.x = 0;
+            if (moveVal.x < 0 && moveDir < 0) moveVal.x = 0;
+            greenZone.Nudge(moveVal.x, nudgeSpeed, Time.deltaTime);
+        }
 	}
 	public void ResetGame()
 	{
+        fallen = false;
+        allowInput = true;
 		balancingSoundInstance.start();
 		offBalance = 0f;
 		if (greenZone == null) greenZone = new GreenZone(ref greenPip);
@@ -117,6 +127,7 @@ public class PlankBalancing : MonoBehaviour
 	void Update()
 	{
 		float greenPos = (greenPip.anchorMax.x + greenPip.anchorMin.x) * 0.5f;
+        animator.SetFloat("Blend", 1-greenPos);
 		if (greenPos > 0.5f)
 		{
 			moveDir = 1;
@@ -142,11 +153,23 @@ public class PlankBalancing : MonoBehaviour
 		float parameterValue = greenZone.GetParameterValue();
 		balancingSoundInstance.setParameterByName(plankShakeParameter, parameterValue);
 		balancingSoundInstance.getParameterByName(plankShakeParameter, out parameterValue);
-		if (offBalance > fallLimit)
+		if (offBalance > fallLimit && fallen == false)
 		{
-			balancingSoundInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            fallen = true;
+            allowInput = false;
+            if (greenPos < 0.5)
+            {
+                // Forwards
+                animator.Play("Drop Forward");
+            }
+            if (greenPos > 0.5)
+            {
+                // Backwards
+                animator.Play("Drop Backwards");
+            }
+            balancingSoundInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
 			fallEvents.Invoke();
-			ResetGame();
+			//ResetGame(); Resetting the game in PlayerAnimation
 		}
 	}
 }
