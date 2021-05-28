@@ -27,8 +27,8 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 treePosition = Vector3.zero;
     private bool rotationDone = false;
-    private float treeDistance = 4f;
-    private float scootDistance = 0.5f;
+    private float choppingDistance = 1.75f; // What distance George should be from Tree
+    private float scootDistance = 0.275f;
 
     public void ChangeSpeed(float _moveSpeed, float _autoMoveSpeed)
     {
@@ -77,19 +77,17 @@ public class PlayerMovement : MonoBehaviour
         playerFootstep = GetComponentInChildren<PlayerFootstepSound>();
     }
 
-    IEnumerator RotateTowardsTree()
+    [ContextMenu("Look At Tree")]
+    public void LookAtTree()
     {
-        /// Rotate towards tree
-        while (!rotationDone)
-        {
+        treePosition = FindObjectOfType<TreeInteraction>().gameObject.transform.position;
+        transform.LookAt(treePosition, Vector3.up); // Look at the tree
+        transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0); // Reset rotation so George doesnt look at the ground
 
-        }
-        /// Set distance
-        /// Scoot player to the left
-        /// Start chopping animation
+        float distance = Vector3.Distance(transform.position, treePosition);
+        transform.Translate(Vector3.forward * (distance - choppingDistance)); // Set the distance between em' to choppingDistance
 
-
-        yield return null;
+        transform.Translate(Vector3.left * scootDistance, Space.Self); // Scoot George to the left, so the axe hits the tree better
     }
 
     void Update()
