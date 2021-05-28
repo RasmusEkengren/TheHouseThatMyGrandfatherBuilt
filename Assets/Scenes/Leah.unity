@@ -3974,7 +3974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -3990,7 +3990,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
-      value: 1
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
+      propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -4007,7 +4011,11 @@ PrefabInstance:
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1833915868}
+    - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
+      propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 49710412}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -4025,6 +4033,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
+      propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ChangeScene
       objectReference: {fileID: 0}
@@ -4034,7 +4046,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: SaveCameraPosition
+      value: SaveLeahCameraPosition
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
+      propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: SetCanInteract
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
+      propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: PauseGame
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -4050,7 +4070,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: GlobalSceneData, Assembly-CSharp
+      value: Interact, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
+      propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
+      value: GameController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
+      propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_BoolArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
@@ -4060,6 +4088,10 @@ PrefabInstance:
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 942131904}
+    - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
+      propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
@@ -4071,6 +4103,14 @@ PrefabInstance:
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: CameraController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
+      propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
+      propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -5095,6 +5135,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1976310806}
     m_Modifications:
+    - target: {fileID: 6751007342277929264, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 6751007342277929264, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
       propertyPath: m_Name
       value: Falling Leaves (7)
@@ -7745,6 +7789,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1976310806}
     m_Modifications:
     - target: {fileID: 6751007342277929264, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 6751007342277929264, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
       propertyPath: m_Name
       value: Falling Leaves (6)
       objectReference: {fileID: 0}
@@ -8469,6 +8517,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1976310806}
     m_Modifications:
     - target: {fileID: 6751007342277929264, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 6751007342277929264, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
       propertyPath: m_Name
       value: Falling Leaves (10)
       objectReference: {fileID: 0}
@@ -8481,12 +8533,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6751007342277929270, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
+      propertyPath: RotationModule.y.scalar
+      value: 0.7853981
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751007342277929270, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
+      propertyPath: RotationBySpeedModule.x.scalar
+      value: 0.38397244
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751007342277929270, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 1.12
       objectReference: {fileID: 0}
     - target: {fileID: 6751007342277929270, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 7.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751007342277929270, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
+      propertyPath: RotationBySpeedModule.separateAxes
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6751007342277929270, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
       propertyPath: InitialModule.gravityModifier.scalar
@@ -9389,6 +9453,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1976310806}
     m_Modifications:
+    - target: {fileID: 6751007342277929264, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 6751007342277929264, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
       propertyPath: m_Name
       value: Falling Leaves (2)
@@ -11375,6 +11443,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1976310806}
     m_Modifications:
     - target: {fileID: 6751007342277929264, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 6751007342277929264, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
       propertyPath: m_Name
       value: Falling Leaves (9)
       objectReference: {fileID: 0}
@@ -11522,6 +11594,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1976310806}
     m_Modifications:
     - target: {fileID: 6751007342277929264, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 6751007342277929264, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
       propertyPath: m_Name
       value: Falling Leaves (8)
       objectReference: {fileID: 0}
@@ -11540,6 +11616,22 @@ PrefabInstance:
     - target: {fileID: 6751007342277929270, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 7.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751007342277929270, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.87058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751007342277929270, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.5800107
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751007342277929270, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.9067084
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751007342277929270, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.9245283
       objectReference: {fileID: 0}
     - target: {fileID: 6751007342277929270, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
       propertyPath: InitialModule.gravityModifier.scalar
@@ -12080,6 +12172,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1976310806}
     m_Modifications:
+    - target: {fileID: 6751007342277929264, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 6751007342277929264, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
       propertyPath: m_Name
       value: Falling Leaves (5)
@@ -13361,6 +13457,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1976310806}
     m_Modifications:
+    - target: {fileID: 6751007342277929264, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 6751007342277929264, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
       propertyPath: m_Name
       value: Falling Leaves (3)
@@ -16900,6 +17000,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4523545783698559381, guid: 475b40bf698452a4ab11721e03899ed7, type: 3}
+      propertyPath: m_Name
+      value: NumberToCut
+      objectReference: {fileID: 0}
     - target: {fileID: 5807140249966411348, guid: 475b40bf698452a4ab11721e03899ed7, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -17123,6 +17227,10 @@ PrefabInstance:
     - target: {fileID: 6080245586088106100, guid: 475b40bf698452a4ab11721e03899ed7, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4282765055
+      objectReference: {fileID: 0}
+    - target: {fileID: 6882765082520301078, guid: 475b40bf698452a4ab11721e03899ed7, type: 3}
+      propertyPath: m_Name
+      value: NumberHaveCut
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 475b40bf698452a4ab11721e03899ed7, type: 3}
@@ -27015,6 +27123,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1976310806}
     m_Modifications:
     - target: {fileID: 6751007342277929264, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 6751007342277929264, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
       propertyPath: m_Name
       value: Falling Leaves (4)
       objectReference: {fileID: 0}
@@ -33529,16 +33641,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 1976310806}
     m_Modifications:
     - target: {fileID: 6751007342277929264, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 6751007342277929264, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
       propertyPath: m_Name
       value: Falling Leaves (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6751007342277929270, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
       propertyPath: prewarm
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6751007342277929270, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 0.61
       objectReference: {fileID: 0}
     - target: {fileID: 6751007342277929271, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
       propertyPath: m_RootOrder
@@ -36650,12 +36762,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 1976310806}
     m_Modifications:
     - target: {fileID: 6751007342277929264, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 6751007342277929264, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
       propertyPath: m_Name
       value: Falling Leaves
       objectReference: {fileID: 0}
     - target: {fileID: 6751007342277929270, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
       propertyPath: prewarm
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751007342277929270, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
+      propertyPath: RotationModule.x.scalar
+      value: 0.5934119
       objectReference: {fileID: 0}
     - target: {fileID: 6751007342277929270, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar

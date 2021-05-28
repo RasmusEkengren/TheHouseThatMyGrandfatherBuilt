@@ -40,7 +40,7 @@ public class Sawing : MonoBehaviour
 	[SerializeField] private UnityEvent gameCompleteEvent = null;
 	private EventInstance cuttingSoundInstance;
 
-	public int GetPlanksLeft() { return numberOfPlanks - gameCompletions; }
+	public int GetPlankCompletions() { return gameCompletions; }
 	public int GetPlanksNumberToCut() { return numberOfPlanks; }
 	public void ResetGame()
 	{
