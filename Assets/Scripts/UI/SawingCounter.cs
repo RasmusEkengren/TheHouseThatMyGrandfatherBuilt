@@ -50,7 +50,7 @@ public class SawingCounter : MonoBehaviour
 				numberToCut.sprite = icon6;
 				break;
 		}
-		switch (sawingMinigame.GetPlanksLeft())
+		switch (sawingMinigame.GetPlankCompletions())
 		{
 			case 0:
 				cutsLeft.sprite = icon0;
