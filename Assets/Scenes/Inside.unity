@@ -4505,6 +4505,7 @@ GameObject:
   m_Component:
   - component: {fileID: 667335616}
   - component: {fileID: 667335617}
+  - component: {fileID: 667335618}
   m_Layer: 0
   m_Name: Ambiance Sound
   m_TagString: Untagged
@@ -4549,6 +4550,19 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 0
   OverrideMaxDistance: 0
+--- !u!114 &667335618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667335615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5854643d8f0488a408d0b5bb108ad656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isIndoors: 1
 --- !u!1 &669776073
 GameObject:
   m_ObjectHideFlags: 0
