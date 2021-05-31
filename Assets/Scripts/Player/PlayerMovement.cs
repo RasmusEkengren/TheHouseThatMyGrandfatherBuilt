@@ -25,6 +25,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     private PlayerFootstepSound playerFootstep = null;
 
+    private Vector3 treePosition = Vector3.zero;
+    private bool rotationDone = false;
+    private float choppingDistance = 1.75f; // What distance George should be from Tree
+    private float scootDistance = 0.275f;
+
     public void ChangeSpeed(float _moveSpeed, float _autoMoveSpeed)
     {
         moveSpeed = _moveSpeed;
@@ -72,24 +77,21 @@ public class PlayerMovement : MonoBehaviour
         playerFootstep = GetComponentInChildren<PlayerFootstepSound>();
     }
 
+    [ContextMenu("Look At Tree")]
+    public void LookAtTree()
+    {
+        treePosition = FindObjectOfType<TreeInteraction>().gameObject.transform.position;
+        transform.LookAt(treePosition, Vector3.up); // Look at the tree
+        transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0); // Reset rotation so George doesnt look at the ground
+
+        float distance = Vector3.Distance(transform.position, treePosition);
+        transform.Translate(Vector3.forward * (distance - choppingDistance)); // Set the distance between em' to choppingDistance
+
+        transform.Translate(Vector3.left * scootDistance, Space.Self); // Scoot George to the left, so the axe hits the tree better
+    }
+
     void Update()
     {
-        if (hasFallen)
-        {
-            /// Pause animation after a set amount time depending on which fall animation it is
-            /// Forward animation: 4.5 sec length
-            /// Backward animation: 3.08 sec length
-            /// 
-            /// 
-            ///
-
-            //timer += Time.deltaTime;
-            //if (timer >= fallTime)
-            //{
-            //    ResumeWalking();
-            //}
-        }
-        else
         {
             if (isAutoWalking)
             {

@@ -10,16 +10,19 @@ public class TreeFall : MonoBehaviour
     [SerializeField] public GameObject planksToSpawn = null;
     [SerializeField] public GameObject treeToDisable = null;
     public Vector3 forcePower = new Vector3(0f,0f,0f);
+    private Animator treeAnimator = null;
 
 	private void Start()
 	{
+        treeAnimator = GetComponent<Animator>();
 		treeRigidbody = GetComponent<Rigidbody>();
 	}
 
 	public void FellTree()
 	{
 		StartCoroutine("TreeFallSequence");
-		this.GetComponentInParent<EventInteractable>().setIsTrigger(true);
+        treeAnimator.SetTrigger("fell tree");
+		GetComponentInParent<EventInteractable>().setIsTrigger(true);
 	}
 
 	IEnumerator TreeFallSequence()
