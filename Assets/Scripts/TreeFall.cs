@@ -29,9 +29,6 @@ public class TreeFall : MonoBehaviour
 	{
 		FMODUnity.RuntimeManager.PlayOneShot(treeFall);
         treeCollider.enabled = false;
-		//treeRigidbody.isKinematic = false;
-
-		//treeRigidbody.AddForce(forcePower);
 
         yield return new WaitForSeconds(timeUntilPlanks);
         treeToDisable.SetActive(false);
