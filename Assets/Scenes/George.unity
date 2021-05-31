@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657892, g: 0.4964133, b: 0.57481736, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657832, g: 0.49641216, b: 0.5748164, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -23873,12 +23873,24 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5325735516431247580, guid: 7a4514cbcc65a344898afe86b7dcec5e, type: 3}
   m_PrefabInstance: {fileID: 617865124}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1055279717 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5325735516431247577, guid: 7a4514cbcc65a344898afe86b7dcec5e, type: 3}
-  m_PrefabInstance: {fileID: 617865124}
+--- !u!114 &1055279715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1055279718
+  m_GameObject: {fileID: 1055279714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: 1208048b27cb7c943addf8b6a533b107, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
+--- !u!114 &1055279716
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -23938,23 +23950,11 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!114 &1055279719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+--- !u!4 &1055279717 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5325735516431247577, guid: 7a4514cbcc65a344898afe86b7dcec5e, type: 3}
+  m_PrefabInstance: {fileID: 617865124}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1055279714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 1208048b27cb7c943addf8b6a533b107, type: 2}
-  isGlobal: 1
-  blendDistance: 0
-  weight: 1
-  priority: 0
 --- !u!114 &1057887124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48533,10 +48533,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 6508049882417739763, guid: f9e091a570bc9b44282ef7642ebc0536, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7317524730125409005, guid: f9e091a570bc9b44282ef7642ebc0536, type: 3}
       propertyPath: eventSystem
       value: 
       objectReference: {fileID: 1051911506}
+    - target: {fileID: 7535247641188672649, guid: f9e091a570bc9b44282ef7642ebc0536, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7909085967857716191, guid: f9e091a570bc9b44282ef7642ebc0536, type: 3}
       propertyPath: m_RootOrder
       value: 5
