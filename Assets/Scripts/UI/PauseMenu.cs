@@ -41,4 +41,12 @@ public class PauseMenu : MonoBehaviour
 		Application.Quit();	
 #endif
 	}
+	public void StartNewGame()
+	{
+		GlobalSceneData.ResetEverything();
+	}
+	public void SaveGame()
+	{
+		GlobalSceneData.SaveGame();
+	}
 }
