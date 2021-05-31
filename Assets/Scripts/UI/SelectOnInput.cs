@@ -6,14 +6,17 @@ using UnityEngine.UI;
 
 public class SelectOnInput : MonoBehaviour
 {
-    [SerializeField] private Button buttonToSelect = null;
-    private bool anthingSelected = false;
+	[SerializeField] private Button buttonToSelect = null;
+	private bool anthingSelected = false;
 
-    public void SelectButton()
-    {
-        if (!EventSystem.current.alreadySelecting)
-        {
-            buttonToSelect.Select();
-        }
-    }
+	public void SelectButton()
+	{
+		if (EventSystem.current != null)
+		{
+			if (EventSystem.current.currentSelectedGameObject == null)
+			{
+				buttonToSelect.Select();
+			}
+		}
+	}
 }
