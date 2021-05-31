@@ -17,11 +17,10 @@ public class Sawing : MonoBehaviour
 	[SerializeField] private Image rightPieceImage = null;
 	[SerializeField] private RectTransform wholePlank = null;
 	[SerializeField] private GameObject plankCounter = null;
+	private Animator sawAnimator = null;
 	private bool isCutting = false;
 	private bool isFalling = false;
 	private Vector2 moveVal = Vector2.zero;
-	private float moveDir = 1;
-	private int sawTimes = 0;
 	private float timer = 0;
 	private int gameCompletions = 0;
 	[SerializeField] private float sawMoveSpeed = 0.5f;
@@ -69,8 +68,6 @@ public class Sawing : MonoBehaviour
 		rightPiece.anchorMax = new Vector2(1, 1);
 		rightPieceImage.fillAmount = 1.0f - cutlinePos;
 		rightPiece.rotation = Quaternion.identity;
-		saw.anchorMin = new Vector2(0.485f, -0.8f);
-		saw.anchorMax = new Vector2(0.515f, 1.8f);
 	}
 	public void StartCut(InputAction.CallbackContext value)
 	{
@@ -80,6 +77,8 @@ public class Sawing : MonoBehaviour
 			if (saw.anchorMax.x < cutLine.anchorMax.x + lineTolerance && saw.anchorMin.x > cutLine.anchorMin.x - lineTolerance)
 			{
 				isCutting = true;
+				sawAnimator.SetTrigger("Saw");
+				timer = 0;
 			}
 		}
 	}
@@ -91,40 +90,30 @@ public class Sawing : MonoBehaviour
 	void OnEnable()
 	{
 		cuttingSoundInstance = RuntimeManager.CreateInstance(CuttingSound);
+		sawAnimator = saw.GetComponent<Animator>();
 	}
 	void OnDisable()
 	{
 		cuttingSoundInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
 		cuttingSoundInstance.release();
 	}
+	public void PlaySawCutSound()
+	{
+		cuttingSoundInstance.start();
+	}
+	public void PlayPlankFallSound()
+	{
+		cuttingSoundInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+		FMODUnity.RuntimeManager.PlayOneShot(PlankFallSound);
+	}
 	void Update()
 	{
 		if (isCutting)
 		{
 			timer += Time.deltaTime;
-			if (timer >= 0.5f)
+			if (timer >= sawAnimator.runtimeAnimatorController.animationClips[0].length)
 			{
-				cuttingSoundInstance.start();
-				timer = 0f;
-			}
-			saw.anchorMin = new Vector2(saw.anchorMin.x, saw.anchorMin.y + (moveDir * sawCuttingSpeed * Time.deltaTime));
-			saw.anchorMax = new Vector2(saw.anchorMax.x, saw.anchorMax.y + (moveDir * sawCuttingSpeed * Time.deltaTime));
-			if (saw.anchorMin.y >= -0.65)
-			{
-				moveDir = -1;
-				sawTimes += 1;
-			}
-			else if (saw.anchorMax.y <= 1)
-			{
-				moveDir = 1;
-				sawTimes += 1;
-			}
-			if (sawTimes >= sawCutNumber)
-			{
-				sawTimes = 0;
 				isCutting = false;
-				cuttingSoundInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-				FMODUnity.RuntimeManager.PlayOneShot(PlankFallSound);
 				isFalling = true;
 				leftPiece.gameObject.SetActive(true);
 				rightPiece.gameObject.SetActive(true);
