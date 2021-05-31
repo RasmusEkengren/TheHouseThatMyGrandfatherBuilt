@@ -56,7 +56,7 @@ public class Interactable : MonoBehaviour
 	{
 		if (collider.gameObject.tag == playerTag && !interactIcon.activeSelf && isInteractReset)
 		{
-			if (collider.gameObject.GetComponent<InkManager>().isStoryActive || collider.gameObject.GetComponent<InkManager>().isCutsceneActive) return;
+			if (collider.gameObject.GetComponent<InkManager>().isStoryActive || collider.gameObject.GetComponent<InkManager>().isCutsceneActive || GameController.GamePaused()) return;
 			timer += Time.deltaTime;
 			if (timer >= interactResetTime)
 			{
