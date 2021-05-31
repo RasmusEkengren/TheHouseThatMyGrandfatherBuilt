@@ -1,5 +1,25 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8422662450679531817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Event_Manager/Skip start
+  m_EditorClassIdentifier: 
+  Name: Skip start
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-7818829182845173479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,6 +86,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1679
+--- !u!114 &-7403895097815505322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Event_Manager/Piano Stem George
+  m_EditorClassIdentifier: 
+  Name: Piano Stem George
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-6790618539268657938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,13 +227,21 @@ MonoBehaviour:
   Path: Assets/THTMGB Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
+<<<<<<< Updated upstream
   lastModified: 637578799802248865
+=======
+  lastModified: 637578451785372597
+>>>>>>> Stashed changes
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 3152
   Exists: 1
+<<<<<<< Updated upstream
 --- !u!114 &-5526885913591989273
+=======
+--- !u!114 &-5511057045488130029
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -203,9 +251,35 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+<<<<<<< Updated upstream
   m_Name: parameter:/Music_Event_Manager/Flute Stem
   m_EditorClassIdentifier: 
   Name: Flute Stem
+=======
+  m_Name: parameter:/Music_Event_Manager/Intro Stem
+  m_EditorClassIdentifier: 
+  Name: Intro Stem
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &-5016541318432438496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Event_Manager/Guitar Stem
+  m_EditorClassIdentifier: 
+  Name: Guitar Stem
+>>>>>>> Stashed changes
   Min: 0
   Max: 1
   Default: 1
@@ -359,6 +433,26 @@ MonoBehaviour:
     data1: 3790197359
     data2: 564719953
   Exists: 1
+--- !u!114 &-3034906602334870951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Event_Manager/Flute Stem
+  m_EditorClassIdentifier: 
+  Name: Flute Stem
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-2500028005604493243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -442,10 +536,37 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
+<<<<<<< Updated upstream
   - {fileID: -5820354161562380485}
+=======
+  - {fileID: 2921650729992996377}
+>>>>>>> Stashed changes
   MinDistance: 0
   MaxDistance: 0
   Length: 501
+--- !u!114 &-1655276268138508095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Interactions/2D/Interaction_Hammering
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Interactions/2D/Interaction_Hammering
+  guid: 24ac23252c76604cb2740e60d1ea59ff
+  Banks:
+  - {fileID: 1280474150827762780}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 387
 --- !u!114 &-1285397117648896138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -687,14 +808,22 @@ MonoBehaviour:
   - {fileID: 7063298589382473982}
   - {fileID: -2325332523570886030}
   - {fileID: 2189183093259120363}
+<<<<<<< Updated upstream
   - {fileID: -5440182141043812764}
+=======
+  - {fileID: -1655276268138508095}
+>>>>>>> Stashed changes
   EditorParameters:
   - {fileID: -3465645395907487008}
   MasterBanks:
   - {fileID: 1280474150827762780}
   StringsBanks:
   - {fileID: -5740569466950476704}
+<<<<<<< Updated upstream
   stringsBankWriteTime: 637578799802248865
+=======
+  stringsBankWriteTime: 637578451785372597
+>>>>>>> Stashed changes
   cacheVersion: 6
 --- !u!114 &21595881862361568
 MonoBehaviour:
@@ -712,6 +841,26 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &140247572472659477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Event_Manager/Track
+  m_EditorClassIdentifier: 
+  Name: Track
+  Min: 0
+  Max: 3
+  Default: 0
   ID:
     data1: 0
     data2: 0
@@ -756,7 +905,11 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
+<<<<<<< Updated upstream
   - {fileID: -1816477093633235225}
+=======
+  - {fileID: 7056398030751014155}
+>>>>>>> Stashed changes
   MinDistance: 0
   MaxDistance: 0
   Length: 7918
@@ -838,9 +991,33 @@ MonoBehaviour:
   Path: Assets/THTMGB Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
+<<<<<<< Updated upstream
   lastModified: 637578799802229286
+=======
+  lastModified: 637578451785846407
+>>>>>>> Stashed changes
   LoadResult: 0
   FileSizes: []
+  Exists: 1
+--- !u!114 &1371633363967346208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Event_Manager/Vinyl SFX
+  m_EditorClassIdentifier: 
+  Name: Vinyl SFX
+  Min: 0
+  Max: 1
+  Default: 0.3
+  ID:
+    data1: 0
+    data2: 0
   Exists: 1
 --- !u!114 &1749044919632219475
 MonoBehaviour:
@@ -931,7 +1108,11 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 6000
+<<<<<<< Updated upstream
 --- !u!114 &2923987186267394673
+=======
+--- !u!114 &2921650729992996377
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -941,11 +1122,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+<<<<<<< Updated upstream
   m_Name: parameter:/Music_Event_Manager/Skip start
   m_EditorClassIdentifier: 
   Name: Skip start
   Min: 0
   Max: 1
+=======
+  m_Name: parameter:/Player_Move/Surface
+  m_EditorClassIdentifier: 
+  Name: Surface
+  Min: 0
+  Max: 2
+>>>>>>> Stashed changes
   Default: 0
   ID:
     data1: 0
@@ -1040,10 +1229,34 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
+<<<<<<< Updated upstream
   - {fileID: 6598580622434091425}
+=======
+  - {fileID: 7380311016145794455}
+>>>>>>> Stashed changes
   MinDistance: 0
   MaxDistance: 0
   Length: 501
+--- !u!114 &4334969676982665388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Event_Manager/Piano Stem
+  m_EditorClassIdentifier: 
+  Name: Piano Stem
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &4398439359598432485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1107,6 +1320,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
+<<<<<<< Updated upstream
   - {fileID: 6856802840335071685}
   - {fileID: -6305727905756025487}
   - {fileID: -5526885913591989273}
@@ -1115,6 +1329,16 @@ MonoBehaviour:
   - {fileID: 902556834531724968}
   - {fileID: 6257702003708104261}
   - {fileID: 7022002230210182763}
+=======
+  - {fileID: -5511057045488130029}
+  - {fileID: -7403895097815505322}
+  - {fileID: -3034906602334870951}
+  - {fileID: -8422662450679531817}
+  - {fileID: 140247572472659477}
+  - {fileID: 1371633363967346208}
+  - {fileID: 4334969676982665388}
+  - {fileID: -5016541318432438496}
+>>>>>>> Stashed changes
   MinDistance: 0
   MaxDistance: 0
   Length: 2875
@@ -1267,7 +1491,11 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 5898
+<<<<<<< Updated upstream
 --- !u!114 &6856802840335071685
+=======
+--- !u!114 &7056398030751014155
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1277,6 +1505,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+<<<<<<< Updated upstream
   m_Name: parameter:/Music_Event_Manager/Intro Stem
   m_EditorClassIdentifier: 
   Name: Intro Stem
@@ -1303,6 +1532,14 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 1
+=======
+  m_Name: parameter:/Interaction_Plank_Shake/ShakeLevel
+  m_EditorClassIdentifier: 
+  Name: ShakeLevel
+  Min: 0
+  Max: 2
+  Default: 0
+>>>>>>> Stashed changes
   ID:
     data1: 0
     data2: 0
@@ -1330,6 +1567,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 184
+--- !u!114 &7380311016145794455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Player_Move_George/Surface
+  m_EditorClassIdentifier: 
+  Name: Surface
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &7424806251767172980
 MonoBehaviour:
   m_ObjectHideFlags: 0
