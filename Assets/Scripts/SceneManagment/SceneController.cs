@@ -68,9 +68,6 @@ public class SceneController : MonoBehaviour
             transitionObject.SetActive(true);
             if (VFX) PlayVFX(0);
 
-            AsyncOperation operation = SceneManager.LoadSceneAsync(nextScene);
-            operation.allowSceneActivation = false;
-
             if (doorSound)
             {
                 yield return new WaitForSeconds(0.2f);
@@ -85,6 +82,9 @@ public class SceneController : MonoBehaviour
 
             yield return new WaitForSeconds(delay);
 
+            AsyncOperation operation = SceneManager.LoadSceneAsync(nextScene);
+            operation.allowSceneActivation = false;
+
             while (!operation.isDone)
             {
                 if (operation.progress >= 0.9f)
@@ -93,7 +93,6 @@ public class SceneController : MonoBehaviour
                     operation.allowSceneActivation = true;
                     if (gameController != null) gameController.PauseGame(false);
                     changingScene = false;
-                    // SendMessage("OnSceneLoaded");
                 }
                 yield return null;
             }
