@@ -9,19 +9,19 @@ public class ButtonSound : MonoBehaviour
     [FMODUnity.EventRef] public string hoverSound;
     [FMODUnity.EventRef] public string pressedSound;
 
-    public void PlayPressedSound()
-    {
-        if (pressedSound.Length > 0)
-        {
-            FMODUnity.RuntimeManager.PlayOneShot(pressedSound);
-        }
-    }
-
     public void PlaySelectedSound()
     {
         if (hoverSound.Length > 0)
         {
             FMODUnity.RuntimeManager.PlayOneShot(hoverSound);
+        }
+    }
+
+    public void PlayPressedSound()
+    {
+        if (pressedSound.Length > 0)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(pressedSound);
         }
     }
 }

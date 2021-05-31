@@ -68,6 +68,9 @@ public class SceneController : MonoBehaviour
             transitionObject.SetActive(true);
             if (VFX) PlayVFX(0);
 
+            AsyncOperation operation = SceneManager.LoadSceneAsync(nextScene);
+            operation.allowSceneActivation = false;
+
             if (doorSound)
             {
                 yield return new WaitForSeconds(0.2f);
@@ -81,9 +84,6 @@ public class SceneController : MonoBehaviour
             PlaySFX(transitionSound);
 
             yield return new WaitForSeconds(delay);
-
-            AsyncOperation operation = SceneManager.LoadSceneAsync(nextScene);
-            operation.allowSceneActivation = false;
 
             while (!operation.isDone)
             {

@@ -11,7 +11,7 @@ public class SelectOnInput : MonoBehaviour
 
     public void SelectButton()
     {
-        if (!EventSystem.current.currentSelectedGameObject)
+        if (!EventSystem.current.alreadySelecting)
         {
             buttonToSelect.Select();
         }
