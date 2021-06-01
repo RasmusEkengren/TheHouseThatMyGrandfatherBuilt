@@ -15381,31 +15381,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7af598200f350594aacf5ca53bafad99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &863134409 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5999163001154894352, guid: 2a15e5f3424476941bf955b3edd515f2, type: 3}
-  m_PrefabInstance: {fileID: 863134391}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 863134394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7af598200f350594aacf5ca53bafad99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &863986253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 863134393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7af598200f350594aacf5ca53bafad99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hoverSound: event:/SFX/UI/UI_Hover
-  pressedSound: event:/SFX/UI/UI_Accept
 --- !u!114 &863134409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15413,6 +15388,20 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863134394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7af598200f350594aacf5ca53bafad99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSound: event:/SFX/UI/UI_Hover
+  pressedSound: event:/SFX/UI/UI_Accept
+--- !u!114 &863986253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863134393}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7af598200f350594aacf5ca53bafad99, type: 3}
@@ -17756,6 +17745,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6642210926672167199, guid: ae8ef956613006644b0293df4887c566, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bfdab131d48b29947a43e1692696b800, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae8ef956613006644b0293df4887c566, type: 3}
 --- !u!1 &1043868161 stripped
@@ -29005,7 +28998,7 @@ PrefabInstance:
     - target: {fileID: -2788567210818106031, guid: 47a34c80794da4e4c8cfce2fb344f021, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9aee54035381f4344bb245c529201ea4, type: 2}
+      objectReference: {fileID: 2100000, guid: 4fbd2a3ed59a7684b82308ec59433c89, type: 2}
     - target: {fileID: -1137586070465261585, guid: 47a34c80794da4e4c8cfce2fb344f021, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
