@@ -1,4 +1,9 @@
+EXTERNAL playSound(soundName)
+~playSound("leahIdle")
 But she soon realized that all she had to do was bribe me with some of her raspberry pie and I’d come down.
+~playSound("leahSad")
 I miss those simple days of being allowed to just be a kid. 
+~playSound("leahSad")
 They didn’t last long… //shake head 
-What’s next on the list?
+~playSound("leahThink")
+What’s the next task?
