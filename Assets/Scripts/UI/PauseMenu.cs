@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
 using System.Collections;
 
 public class PauseMenu : MonoBehaviour
@@ -9,8 +8,7 @@ public class PauseMenu : MonoBehaviour
 	[SerializeField] private GameObject pauseMenu = null;
 	[SerializeField] private GameController gameController = null;
 	private bool hasPaused = false;
-
-    public void ToggleMenu(InputAction.CallbackContext value)
+	public void ToggleMenu(InputAction.CallbackContext value)
 	{
 		if (!gameObject.scene.IsValid()) return;
 		if (value.performed)
@@ -40,13 +38,5 @@ public class PauseMenu : MonoBehaviour
 #else
 		Application.Quit();	
 #endif
-	}
-	public void StartNewGame()
-	{
-		GlobalSceneData.ResetEverything();
-	}
-	public void SaveGame()
-	{
-		GlobalSceneData.SaveGame();
 	}
 }

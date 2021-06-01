@@ -67,10 +67,6 @@ public class SceneController : MonoBehaviour
             transitionObject.GetComponent<Image>().color = transitionColor;
             transitionObject.SetActive(true);
             if (VFX) PlayVFX(0);
-
-            AsyncOperation operation = SceneManager.LoadSceneAsync(nextScene);
-            operation.allowSceneActivation = false;
-
             if (doorSound)
             {
                 yield return new WaitForSeconds(0.2f);
@@ -78,10 +74,12 @@ public class SceneController : MonoBehaviour
                 yield return new WaitForSeconds(1.3f);
 
                 FMODUnity.RuntimeManager.PlayOneShot(doorClose);
-                doorSound = false;
                 yield return new WaitForSeconds(1.7f);
             }
             PlaySFX(transitionSound);
+
+            AsyncOperation operation = SceneManager.LoadSceneAsync(nextScene);
+            operation.allowSceneActivation = false;
 
             yield return new WaitForSeconds(delay);
 
@@ -93,6 +91,7 @@ public class SceneController : MonoBehaviour
                     operation.allowSceneActivation = true;
                     if (gameController != null) gameController.PauseGame(false);
                     changingScene = false;
+                    // SendMessage("OnSceneLoaded");
                 }
                 yield return null;
             }

@@ -45,7 +45,6 @@ public class PlayerMovement : MonoBehaviour
     }
     public void AutoWalk(Transform[] movePoints)
     {
-        isWalking = true;
         currentPoint = 0;
         points = movePoints;
         isAutoWalking = true;
@@ -61,13 +60,11 @@ public class PlayerMovement : MonoBehaviour
     }
     public void FallDown()
     {
-        isWalking = false;
         hasFallen = true;
         autoWalkSpeed = 0f;
     }
     public void ResumeWalking()
     {
-        isWalking = true;
         autoWalkSpeed = savedWalkSpeed;
         timer = 0f;
         hasFallen = false;
@@ -102,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
             }
             if (direction.magnitude >= 0.1f && !GameController.GamePaused())
             {
-                if (!isAutoWalking) { isWalking = true; }
+                isWalking = true;
 
                 float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + mainCamera.transform.eulerAngles.y;
                 float rotationAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
