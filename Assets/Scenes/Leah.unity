@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657892, g: 0.4964133, b: 0.57481736, a: 1}
+  m_IndirectSpecularColor: {r: 0.44823313, g: 0.494249, b: 0.55403274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -641,7 +641,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d8d5656befae2974a8c9a68809411fd7, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d8d5656befae2974a8c9a68809411fd7, type: 3}
       propertyPath: m_LocalScale.x
@@ -2279,6 +2279,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!1 &103078296 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 869fa678386a86d41af8fb67cfaa9660, type: 3}
@@ -2764,6 +2766,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!1001 &129019550
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3061,6 +3065,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!1001 &131425436
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3166,6 +3172,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!114 &131425440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3371,6 +3379,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Workshop_broken
       objectReference: {fileID: 0}
+    - target: {fileID: 3692636488706645775, guid: 5715558b58e42c2478b0e005fabd4ce6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.499
+      objectReference: {fileID: 0}
+    - target: {fileID: 3692636488706645775, guid: 5715558b58e42c2478b0e005fabd4ce6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.9207134
+      objectReference: {fileID: 0}
+    - target: {fileID: 3692636488706645775, guid: 5715558b58e42c2478b0e005fabd4ce6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.365
+      objectReference: {fileID: 0}
+    - target: {fileID: 3692636488706645775, guid: 5715558b58e42c2478b0e005fabd4ce6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.999302
+      objectReference: {fileID: 0}
+    - target: {fileID: 3692636488706645775, guid: 5715558b58e42c2478b0e005fabd4ce6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.0013582205
+      objectReference: {fileID: 0}
+    - target: {fileID: 3692636488706645775, guid: 5715558b58e42c2478b0e005fabd4ce6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0000002384186
+      objectReference: {fileID: 0}
+    - target: {fileID: 3692636488706645775, guid: 5715558b58e42c2478b0e005fabd4ce6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.037331272
+      objectReference: {fileID: 0}
+    - target: {fileID: 3692636488706645775, guid: 5715558b58e42c2478b0e005fabd4ce6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -0.156
+      objectReference: {fileID: 0}
+    - target: {fileID: 3692636488706645775, guid: 5715558b58e42c2478b0e005fabd4ce6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0.006
+      objectReference: {fileID: 0}
+    - target: {fileID: 3692636488706645775, guid: 5715558b58e42c2478b0e005fabd4ce6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -4.279
+      objectReference: {fileID: 0}
     - target: {fileID: 4453270475525824243, guid: 5715558b58e42c2478b0e005fabd4ce6, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3454,6 +3502,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 0
     OnGeorgeStateWindows: 1
     OnGeorgeStateRailing: 1
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!114 &144481310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4193,6 +4243,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!4 &174194146 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3848708273438668141, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
@@ -4479,13 +4531,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 215182988}
-  m_LocalRotation: {x: -0, y: 0.30951545, z: -0, w: 0.9508944}
-  m_LocalPosition: {x: 25.61, y: -7.4203997, z: 48.03}
+  m_LocalRotation: {x: -0, y: 0.38444465, z: -0, w: 0.92314804}
+  m_LocalPosition: {x: 16.3, y: -7.4203997, z: 37.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1325830859}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 36.06, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 45.219, z: 0}
 --- !u!114 &215182990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5515,6 +5567,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!65 &284762594
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5629,7 +5683,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &285266315
 Light:
   m_ObjectHideFlags: 0
@@ -5740,6 +5794,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!4 &288531393 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 907ba5330bc91dd40bfbb3120ce99004, type: 3}
@@ -7126,6 +7182,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!4 &390079729 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 907ba5330bc91dd40bfbb3120ce99004, type: 3}
@@ -7846,6 +7904,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!4 &439985930 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6751007342277929271, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
@@ -8365,6 +8425,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!1 &457614191
 GameObject:
   m_ObjectHideFlags: 0
@@ -9605,6 +9667,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!1001 &507557852
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10024,7 +10088,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 80e19211269c9d14b95f1ec105d40b29, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 80e19211269c9d14b95f1ec105d40b29, type: 3}
       propertyPath: m_LocalScale.x
@@ -10686,6 +10750,7 @@ Transform:
   - {fileID: 1212580831}
   - {fileID: 780535874}
   - {fileID: 858901636}
+  - {fileID: 597789880}
   - {fileID: 1459878489}
   - {fileID: 1799940119}
   - {fileID: 540470236}
@@ -10882,6 +10947,184 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1429534, y: 0.9999998, z: 0.049999993}
   m_Center: {x: 0.32015333, y: 0, z: 0.0000023688945}
+--- !u!1001 &597789879
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 561997250}
+    m_Modifications:
+    - target: {fileID: 113254625372204641, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 113254625372204641, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 113254625372204641, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869679660580814361, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.438
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869679660580814361, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.438
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869679660580814361, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.438
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869679660580814361, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869679660580814361, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869679660580814361, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869679660580814361, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.73757625
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869679660580814361, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.38395783
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869679660580814361, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.49271658
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869679660580814361, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.25649196
+      objectReference: {fileID: 0}
+    - target: {fileID: 2703846949597251014, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051339546014685702, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 1.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051339546014685702, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 0.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 6309852347379112966, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: m_Name
+      value: NoSleepInteractableDone
+      objectReference: {fileID: 0}
+    - target: {fileID: 6309852347379112966, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8314091
+      objectReference: {fileID: 0}
+    - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5556608
+      objectReference: {fileID: 0}
+    - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8371650247011871837, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: StoryJson
+      value: 
+      objectReference: {fileID: 4900000, guid: 1cb27a0347676f54b9a03e28b03cab25, type: 3}
+    m_RemovedComponents:
+    - {fileID: 8685133255283960788, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+    - {fileID: 8711042180413333493, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+    - {fileID: 355625757547125692, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+--- !u!4 &597789880 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+  m_PrefabInstance: {fileID: 597789879}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &597789881 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6309852347379112966, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+  m_PrefabInstance: {fileID: 597789879}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &597789882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597789881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7894a0cb63ba9684683b8d40ef8460c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boolStates:
+    OnPorchFixed: 2
+    OnPorchFixing: 2
+    OnPorchFlat: 2
+    OnPorchSlanted: 2
+    OnPorchBroken: 2
+    OnWindowsFixed: 2
+    OnWindowsFixing: 2
+    OnWindowsRibbed: 2
+    OnWindowsSolid: 2
+    OnWindowsBroken: 2
+    OnRailingFixed: 2
+    OnRailingFixing: 2
+    OnRailingFlatTop: 2
+    OnRailingPillars: 2
+    OnRailingBroken: 2
+    OnLeahEntering: 1
+    OnLeahBuilding: 1
+    OnLeahDone: 0
+    OnGeorgeStatePorch: 2
+    OnGeorgeStateWindows: 2
+    OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 1
+    OnFramePickUpFalse: 0
 --- !u!1 &599000756
 GameObject:
   m_ObjectHideFlags: 0
@@ -10950,6 +11193,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!1001 &612602704
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11292,6 +11537,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!1001 &619242162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11397,6 +11644,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!1 &628867085 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 393a8b1387de537448367bdd6315334b, type: 3}
@@ -12189,6 +12438,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!4 &692658415 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 907ba5330bc91dd40bfbb3120ce99004, type: 3}
@@ -12305,6 +12556,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!4 &713053589 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6751007342277929271, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
@@ -12504,6 +12757,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!114 &720397829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12799,6 +13054,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!65 &737450448
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13795,6 +14052,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!1 &814273420
 GameObject:
   m_ObjectHideFlags: 0
@@ -14195,6 +14454,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 0
     OnGeorgeStateWindows: 1
     OnGeorgeStateRailing: 1
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!114 &825948864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14544,6 +14805,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!1001 &861722979
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15755,6 +16018,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!4 &904879816 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 907ba5330bc91dd40bfbb3120ce99004, type: 3}
@@ -16174,6 +16439,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!1 &938709793 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3409889415146311716, guid: f17f1d9ae1e5cc746877c1fd62e77566, type: 3}
@@ -16424,6 +16691,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!4 &955068036 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6751007342277929271, guid: 6d06a173b6414cc4d880be61c007fb8c, type: 3}
@@ -16826,6 +17095,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!1 &990789593
 GameObject:
   m_ObjectHideFlags: 0
@@ -17683,7 +17954,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: ae8ef956613006644b0293df4887c566, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae8ef956613006644b0293df4887c566, type: 3}
       propertyPath: m_LocalScale.x
@@ -19288,6 +19559,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!114 &1151638022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19785,6 +20058,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!1 &1172271730
 GameObject:
   m_ObjectHideFlags: 0
@@ -19858,6 +20133,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!114 &1172271733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20043,6 +20320,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!1 &1175970407
 GameObject:
   m_ObjectHideFlags: 0
@@ -21091,6 +21370,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!114 &1258175158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21876,8 +22157,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1313305873}
   m_LocalRotation: {x: -0, y: -0.043773558, z: -0, w: 0.9990415}
-  m_LocalPosition: {x: -8.9112, y: -10.16, z: 5.1734}
-  m_LocalScale: {x: 0.89104486, y: 0.8012902, z: 0.8012902}
+  m_LocalPosition: {x: -9.0687, y: -10.39, z: 5.1644}
+  m_LocalScale: {x: 0.88474685, y: 0.8012902, z: 0.8012902}
   m_Children: []
   m_Father: {fileID: 514583833}
   m_RootOrder: 4
@@ -23544,6 +23825,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!1 &1403460428
 GameObject:
   m_ObjectHideFlags: 0
@@ -23758,7 +24041,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3848708273438668141, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3848708273438668141, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24045,6 +24328,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 0
+    OnFramePickUpFalse: 1
 --- !u!1 &1464344244
 GameObject:
   m_ObjectHideFlags: 0
@@ -24128,6 +24413,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!4 &1470459535 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
@@ -26249,7 +26536,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1528793801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26284,6 +26571,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!108 &1528793802
 Light:
   m_ObjectHideFlags: 0
@@ -26549,6 +26838,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!4 &1574668314 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
@@ -26868,6 +27159,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!65 &1598158536
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27494,6 +27787,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!1001 &1692611227
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27688,6 +27983,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!114 &1708266709 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4887288195201087712, guid: 170f2e7c3b00fea4eb190be30235e8d2, type: 3}
@@ -27872,6 +28169,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!1 &1716859355
 GameObject:
   m_ObjectHideFlags: 0
@@ -28890,7 +29189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 907ba5330bc91dd40bfbb3120ce99004, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27.340237
+      value: -28.056
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 907ba5330bc91dd40bfbb3120ce99004, type: 3}
       propertyPath: m_LocalPosition.y
@@ -28898,7 +29197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 907ba5330bc91dd40bfbb3120ce99004, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.8719482
+      value: 8.922
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 907ba5330bc91dd40bfbb3120ce99004, type: 3}
       propertyPath: m_LocalRotation.w
@@ -30069,6 +30368,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!4 &1803292493 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3848708273438668141, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
@@ -30981,6 +31282,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!1 &1869187966
 GameObject:
   m_ObjectHideFlags: 0
@@ -32116,6 +32419,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!1 &1975260774
 GameObject:
   m_ObjectHideFlags: 0
@@ -32182,6 +32487,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!114 &1975260777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32835,6 +33142,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!1 &2022725097 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 18c71a39cc29a8b459fc2b5783f989ab, type: 3}
@@ -32874,6 +33183,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!1 &2030217685
 GameObject:
   m_ObjectHideFlags: 0
@@ -34531,6 +34842,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!114 &2144651183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36707,6 +37020,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!23 &5035550195126105375
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -38034,6 +38349,8 @@ MonoBehaviour:
     OnGeorgeStatePorch: 2
     OnGeorgeStateWindows: 2
     OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!4 &8937076610394076366
 Transform:
   m_ObjectHideFlags: 0
