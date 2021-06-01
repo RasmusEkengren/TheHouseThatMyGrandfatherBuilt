@@ -6,16 +6,16 @@ public class TreeFall : MonoBehaviour
 {
     [SerializeField] [FMODUnity.EventRef] string treeFall = null;
     public float timeUntilPlanks = 3f;
-    private Rigidbody treeRigidbody = null;
     [SerializeField] public GameObject planksToSpawn = null;
     [SerializeField] public GameObject treeToDisable = null;
     public Vector3 forcePower = new Vector3(0f,0f,0f);
     private Animator treeAnimator = null;
+    private Collider treeCollider = null;
 
 	private void Start()
 	{
         treeAnimator = GetComponent<Animator>();
-		treeRigidbody = GetComponent<Rigidbody>();
+        treeCollider = GetComponent<Collider>();
 	}
 
 	public void FellTree()
@@ -28,9 +28,7 @@ public class TreeFall : MonoBehaviour
 	IEnumerator TreeFallSequence()
 	{
 		FMODUnity.RuntimeManager.PlayOneShot(treeFall);
-		treeRigidbody.isKinematic = false;
-
-		treeRigidbody.AddForce(forcePower);
+        treeCollider.enabled = false;
 
         yield return new WaitForSeconds(timeUntilPlanks);
         treeToDisable.SetActive(false);
