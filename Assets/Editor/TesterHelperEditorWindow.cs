@@ -170,8 +170,25 @@ public class TesterHelperEditorWindow : EditorWindow
 			}
 		}
 		GUILayout.EndHorizontal();
-		GUILayout.Space(10f);
+		GUILayout.Space(5f);
 
+		GUILayout.Label("Interacted Objects Debug");
+		GUILayout.BeginHorizontal();
+		if (GUILayout.Button("Print IDs", GUILayout.Height(20f)))
+		{
+			foreach (string ID in GlobalSceneData.interactedObjectIDs)
+			{
+				Debug.Log(ID);
+			}
+		}
+
+		GUILayout.Space(5f);
+		if (GUILayout.Button("Delete all IDs", GUILayout.Height(20f)))
+		{
+			GlobalSceneData.interactedObjectIDs.Clear();
+		}
+		GUILayout.EndHorizontal();
+		GUILayout.Space(10f);
 		//if (GUILayout.Button("Clear Interacts", GUILayout.Height(30f)))
 		//{
 		//    ClearInteracts();

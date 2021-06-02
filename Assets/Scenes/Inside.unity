@@ -5153,7 +5153,7 @@ GameObject:
   - component: {fileID: 66263873}
   - component: {fileID: 66263872}
   m_Layer: 0
-  m_Name: InkInteractable
+  m_Name: WardrobeInteractable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5187,7 +5187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90b3cb7073e3176438af77f496589336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: InkInteractable_InkInteractable_-374,8565
+  ID: Inside_WardrobeInteractable_-557.7383
 --- !u!114 &66263873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7172,9 +7172,13 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.55
       objectReference: {fileID: 0}
+    - target: {fileID: 5699417051786955672, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: ID
+      value: Inside_FireplaceInteractable_-621.7036
+      objectReference: {fileID: 0}
     - target: {fileID: 6309852347379112966, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
       propertyPath: m_Name
-      value: InkInteractable
+      value: FireplaceInteractable
       objectReference: {fileID: 0}
     - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
       propertyPath: m_RootOrder
@@ -9163,9 +9167,13 @@ PrefabInstance:
       propertyPath: InitialModule.startSize.scalar
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 5699417051786955672, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: ID
+      value: Inside_BookshelfInteractable_-1075.135
+      objectReference: {fileID: 0}
     - target: {fileID: 6309852347379112966, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
       propertyPath: m_Name
-      value: InkInteractable
+      value: BookshelfInteractable
       objectReference: {fileID: 0}
     - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
       propertyPath: m_RootOrder
@@ -9340,9 +9348,13 @@ PrefabInstance:
       propertyPath: ShapeModule.radius.value
       value: 1.74
       objectReference: {fileID: 0}
+    - target: {fileID: 5699417051786955672, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: ID
+      value: Inside_PantryRoomInteractable_-1359.043
+      objectReference: {fileID: 0}
     - target: {fileID: 6309852347379112966, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
       propertyPath: m_Name
-      value: Pantry Room
+      value: PantryRoomInteractable
       objectReference: {fileID: 0}
     - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
       propertyPath: m_RootOrder
@@ -16097,9 +16109,13 @@ PrefabInstance:
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5699417051786955672, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: ID
+      value: Inside_PaintingInteractable_-1509.918
+      objectReference: {fileID: 0}
     - target: {fileID: 6309852347379112966, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
       propertyPath: m_Name
-      value: InkInteractable
+      value: PaintingInteractable
       objectReference: {fileID: 0}
     - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
       propertyPath: m_RootOrder
@@ -16576,7 +16592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3848708273438668145, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: m_Name
-      value: Exit house
+      value: ExitHouseInteractable
       objectReference: {fileID: 0}
     - target: {fileID: 3848708274374888318, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16601,6 +16617,10 @@ PrefabInstance:
     - target: {fileID: 3848708274374888318, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.42660007
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022658956640580793, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
+      propertyPath: ID
+      value: Inside_ExitHouseInteractable_414.7581
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.size
@@ -16692,95 +16712,6 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 1248192049756060533, guid: 6f7da07422b0d714dbf9dc876cb2d202, type: 3}
   m_PrefabInstance: {fileID: 563172595}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &956843622
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 785594379}
-    m_Modifications:
-    - target: {fileID: 113254625372204641, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 113254625372204641, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.43
-      objectReference: {fileID: 0}
-    - target: {fileID: 6309852347379112966, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
-      propertyPath: m_Name
-      value: InkInteractable
-      objectReference: {fileID: 0}
-    - target: {fileID: 6309852347379112966, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.22387576
-      objectReference: {fileID: 0}
-    - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.22387576
-      objectReference: {fileID: 0}
-    - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.22387576
-      objectReference: {fileID: 0}
-    - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.046
-      objectReference: {fileID: 0}
-    - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.088
-      objectReference: {fileID: 0}
-    - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.0867563
-      objectReference: {fileID: 0}
-    - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.99960285
-      objectReference: {fileID: 0}
-    - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.02818008
-      objectReference: {fileID: 0}
-    - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7035594060026727667, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
-      propertyPath: m_Radius
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8371650247011871837, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
-      propertyPath: StoryJson
-      value: 
-      objectReference: {fileID: 4900000, guid: 6790b07f3396b05439e6da7869b4032a, type: 3}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
 --- !u!4 &965616976 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 91ff3eb11fe058b49becf39f8372769d, type: 3}
@@ -17587,9 +17518,13 @@ PrefabInstance:
       propertyPath: InitialModule.startSize.scalar
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 5699417051786955672, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: ID
+      value: Inside_BeureuInteractable_-144.3455
+      objectReference: {fileID: 0}
     - target: {fileID: 6309852347379112966, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
       propertyPath: m_Name
-      value: InkInteractable
+      value: BeureuInteractable
       objectReference: {fileID: 0}
     - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
       propertyPath: m_RootOrder
@@ -21968,9 +21903,13 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 5699417051786955672, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: ID
+      value: Inside_TableInteractable_-2636.691
+      objectReference: {fileID: 0}
     - target: {fileID: 6309852347379112966, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
       propertyPath: m_Name
-      value: InkInteractable
+      value: TableInteractable
       objectReference: {fileID: 0}
     - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
       propertyPath: m_RootOrder
@@ -22167,7 +22106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90b3cb7073e3176438af77f496589336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: Inside_PictureFrame_-793.8157
+  ID: Inside_PictureFrame_40.16431
 --- !u!114 &1800437371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22344,9 +22283,13 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.42660007
       objectReference: {fileID: 0}
+    - target: {fileID: 5699417051786955672, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: ID
+      value: Inside_CabinetInteractable_-768.3274
+      objectReference: {fileID: 0}
     - target: {fileID: 6309852347379112966, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
       propertyPath: m_Name
-      value: InkInteractable
+      value: CabinetInteractable
       objectReference: {fileID: 0}
     - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
       propertyPath: m_RootOrder
@@ -24453,9 +24396,13 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.71
       objectReference: {fileID: 0}
+    - target: {fileID: 5699417051786955672, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
+      propertyPath: ID
+      value: Inside_StoveInteractable_-1810.563
+      objectReference: {fileID: 0}
     - target: {fileID: 6309852347379112966, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
       propertyPath: m_Name
-      value: InkInteractable
+      value: StoveInteractable
       objectReference: {fileID: 0}
     - target: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
       propertyPath: m_RootOrder
