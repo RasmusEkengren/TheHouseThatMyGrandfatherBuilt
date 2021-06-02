@@ -81,7 +81,7 @@ public class Sawing : MonoBehaviour
 				sawAnimator.SetTrigger("Saw");
 				timer = 0;
 			}
-			else
+			else if (saw.gameObject.activeSelf)
 			{
 				FMODUnity.RuntimeManager.PlayOneShot(FailCutSound);
 			}
