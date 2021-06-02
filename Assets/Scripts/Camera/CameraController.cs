@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class CameraController : MonoBehaviour
 {
@@ -91,12 +92,35 @@ public class CameraController : MonoBehaviour
 	{
 		currentCameraOffset = offset.position;
 	}
+	public void SetRotation(Transform transform)
+	{
+		targetRotation = transform.rotation.eulerAngles;
+	}
 	public void ResetFollowOffset()
 	{
 		currentCameraOffset = standardCameraOffset;
 	}
+	public void TimedResetTransform(float t)
+	{
+		StartCoroutine(TimedReset(t));
+	}
 	public Vector3 GetStandardCameraOffset()
 	{
 		return standardCameraOffset;
+	}
+	private IEnumerator TimedReset(float time)
+	{
+		Vector3 startOffset = currentCameraOffset;
+		Vector3 finishOffset = standardCameraOffset;
+		Vector3 startRotation = targetRotation;
+		Vector3 finishRotation = standardRotation;
+		float t = 0;
+		while (t <= time)
+		{
+			currentCameraOffset = Vector3.Lerp(startOffset, finishOffset, t / time);
+			targetRotation = Vector3.Lerp(startRotation, finishRotation, t / time);
+			t += Time.deltaTime;
+			yield return null;
+		}
 	}
 }
