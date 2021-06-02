@@ -11824,6 +11824,70 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
   m_PrefabInstance: {fileID: 629499562}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &629645456
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 629645457}
+  - component: {fileID: 629645459}
+  - component: {fileID: 629645458}
+  m_Layer: 0
+  m_Name: Music triggervolume (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &629645457
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629645456}
+  m_LocalRotation: {x: -0, y: -0.42880028, z: -0, w: 0.9033993}
+  m_LocalPosition: {x: -4.91, y: 0, z: 60.74}
+  m_LocalScale: {x: 16.70375, y: 11.627998, z: 20.262}
+  m_Children: []
+  m_Father: {fileID: 1161651719}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: -50.783, z: 0}
+--- !u!114 &629645458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629645456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Emitters:
+  - Target: {fileID: 1161651718}
+    Params:
+    - Name: Intro
+      Value: 1
+  TriggerEvent: 3
+--- !u!65 &629645459
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629645456}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &647094335 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 907ba5330bc91dd40bfbb3120ce99004, type: 3}
@@ -19985,6 +20049,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2078957828}
+  - {fileID: 629645457}
   m_Father: {fileID: 307790210}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
