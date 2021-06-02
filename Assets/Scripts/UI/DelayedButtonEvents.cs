@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class DelayedButtonEvents : MonoBehaviour
 {
     [SerializeField] private float delay = 1f;
-    [SerializeField] private UnityEvent OnClick = null;
+    [SerializeField] public Button.ButtonClickedEvent OnClick = null;
 
     private Button button = null;
     private void Start()
