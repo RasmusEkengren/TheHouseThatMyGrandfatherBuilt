@@ -23907,7 +23907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 1208048b27cb7c943addf8b6a533b107, type: 2}
+  sharedProfile: {fileID: 0}
   isGlobal: 1
   blendDistance: 0
   weight: 1
@@ -23965,7 +23965,7 @@ MonoBehaviour:
       motionGridSize: 64
       colorBlindnessType: 0
       colorBlindnessStrength: 1
-  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_Resources: {fileID: 0}
   m_ShowToolkit: 0
   m_ShowCustomSorter: 0
   breakBeforeColorGrading: 0
@@ -34551,6 +34551,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f78f33c236fdee54f8bee271b2b2c22c, type: 3}
   m_PrefabInstance: {fileID: 1532369232}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1532369234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532369233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e18a377e0ce20f488f18d36ae373a83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  awakeSound: event:/SFX/Interactions/2D/Interaction_Pickup_Planks
 --- !u!1 &1534627533
 GameObject:
   m_ObjectHideFlags: 0

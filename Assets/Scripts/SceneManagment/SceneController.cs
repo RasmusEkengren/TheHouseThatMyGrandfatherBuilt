@@ -62,6 +62,7 @@ public class SceneController : MonoBehaviour
             {
                 gameController = FindObjectOfType<GameController>();
                 gameController.PauseGame(true);
+                
             }
             transitionColor.a = 0;
             transitionObject.GetComponent<Image>().color = transitionColor;
