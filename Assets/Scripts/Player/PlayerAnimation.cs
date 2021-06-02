@@ -38,8 +38,17 @@ public class PlayerAnimation : MonoBehaviour
     public void PickUpAnimation()
     {
         layerIndex = animator.GetLayerIndex("Pick Up");
+        animator.SetTrigger("pick up");
         animator.SetLayerWeight(layerIndex, 1);
         Debug.Log("Pick up animation");
+    }
+
+    public void ResetPickupWeight() // Called in Pick Up animation event
+    {
+        layerIndex = animator.GetLayerIndex("Pick Up");
+        animator.ResetTrigger("pick up");
+        animator.SetLayerWeight(layerIndex, 0);
+        Debug.Log("Pick-up weight reset");
     }
 
     public void StartAxeHoldingAnimation()
