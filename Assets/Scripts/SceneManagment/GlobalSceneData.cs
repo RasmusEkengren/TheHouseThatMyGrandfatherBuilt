@@ -196,5 +196,6 @@ public class GlobalSceneData : MonoBehaviour
 		railingStyle = RailingStyle.None;
 		interactedObjectIDs.Clear();
 		PlayerPrefs.DeleteAll();
+		if (interactedObjectIDs.Count > 0) Debug.LogError("interactedObjectIDs not reset correctly");
 	}
 }
