@@ -1,4 +1,4 @@
 EXTERNAL playSound(soundName)
 //13 sekunder
 ~playSound("leahIdle")
-I hoped that going to my grandpa’s old house would give me a moment of respite, it held a lot of fond memories;
+ I’m hoping that going to my grandpa’s old house will give me a moment of respite since it holds a lot of fond memories;

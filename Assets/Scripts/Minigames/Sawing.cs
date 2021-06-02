@@ -36,6 +36,7 @@ public class Sawing : MonoBehaviour
 	[SerializeField] [EventRef] protected string startCutSound = null;
 	[SerializeField] [EventRef] protected string CuttingSound = null;
 	[SerializeField] [EventRef] protected string PlankFallSound = null;
+	[SerializeField] [EventRef] protected string FailCutSound = null;
 	[SerializeField] private UnityEvent gameCompleteEvent = null;
 	private EventInstance cuttingSoundInstance;
 
@@ -79,6 +80,10 @@ public class Sawing : MonoBehaviour
 				isCutting = true;
 				sawAnimator.SetTrigger("Saw");
 				timer = 0;
+			}
+			else
+			{
+				FMODUnity.RuntimeManager.PlayOneShot(FailCutSound);
 			}
 		}
 	}

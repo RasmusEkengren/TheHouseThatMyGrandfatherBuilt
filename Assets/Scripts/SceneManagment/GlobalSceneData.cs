@@ -36,6 +36,7 @@ public class GlobalSceneData : MonoBehaviour
 	private PlayerMovement player;
 
 	public static bool tutorialFinished = false;
+	public static bool pickedUpPictureFrame = false;
 
 	private bool loadPositions = false;
 
@@ -121,6 +122,7 @@ public class GlobalSceneData : MonoBehaviour
 		PlayerPrefs.SetFloat("CamRotZ", lastLeahRotation.z);
 		PlayerPrefs.SetFloat("CamRotW", lastLeahRotation.w);
 		PlayerPrefs.SetInt("TutorialFinished", tutorialFinished ? 1 : 0);
+		PlayerPrefs.SetInt("pickedUpPictureFrame", pickedUpPictureFrame ? 1 : 0);
 		PlayerPrefs.SetInt("leahState", ((int)leahState));
 		PlayerPrefs.SetInt("georgeState", ((int)georgeState));
 		PlayerPrefs.SetInt("porchFixingState", ((int)porchFixingState));
@@ -152,6 +154,8 @@ public class GlobalSceneData : MonoBehaviour
 			lastCameraRotation = new Quaternion(PlayerPrefs.GetFloat("CamRotX"), PlayerPrefs.GetFloat("CamRotY"), PlayerPrefs.GetFloat("CamRotZ"), PlayerPrefs.GetFloat("CamRotW"));
 			if (PlayerPrefs.GetInt("TutorialFinished") == 0) tutorialFinished = false;
 			else if (PlayerPrefs.GetInt("TutorialFinished") == 1) tutorialFinished = true;
+			if (PlayerPrefs.GetInt("pickedUpPictureFrame") == 0) pickedUpPictureFrame = false;
+			else if (PlayerPrefs.GetInt("pickedUpPictureFrame") == 1) pickedUpPictureFrame = true;
 			leahState = (LeahState)PlayerPrefs.GetInt("leahState");
 			georgeState = (GeorgeState)PlayerPrefs.GetInt("georgeState");
 			porchFixingState = (PorchFixingState)PlayerPrefs.GetInt("porchFixingState");
@@ -181,6 +185,7 @@ public class GlobalSceneData : MonoBehaviour
 		lastCameraPosition = new Vector3(-9.40624046f, 4.99852419f, 61.3174095f);
 		lastCameraRotation = new Quaternion(0.176703542f, 0.819491208f, -0.426600128f, 0.339444369f);
 		tutorialFinished = false;
+		pickedUpPictureFrame = false;
 		leahState = LeahState.Entering;
 		georgeState = GeorgeState.Porch;
 		porchFixingState = PorchFixingState.Broken;
