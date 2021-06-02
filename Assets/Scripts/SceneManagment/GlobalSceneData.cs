@@ -36,6 +36,7 @@ public class GlobalSceneData : MonoBehaviour
 	private PlayerMovement player;
 
 	public static bool tutorialFinished = false;
+	public static bool pickedUpPictureFrame = false;
 
 	private bool loadPositions = false;
 
@@ -104,13 +105,87 @@ public class GlobalSceneData : MonoBehaviour
 		}
 		return false;
 	}
-
-	public void ResetEverything()
+	public static void SaveGame()
 	{
-		lastCameraPosition = new Vector3(-9.40624046f, 4.99852419f, 61.3174095f);
-		lastCameraRotation = new Quaternion(0.176703542f, 0.819491208f, -0.426600128f, 0.339444369f);
+		PlayerPrefs.SetFloat("LeahPosX", lastLeahPosition.x);
+		PlayerPrefs.SetFloat("LeahPosY", lastLeahPosition.y);
+		PlayerPrefs.SetFloat("LeahPosZ", lastLeahPosition.z);
+		PlayerPrefs.SetFloat("LeahRotX", lastLeahRotation.x);
+		PlayerPrefs.SetFloat("LeahRotY", lastLeahRotation.y);
+		PlayerPrefs.SetFloat("LeahRotZ", lastLeahRotation.z);
+		PlayerPrefs.SetFloat("LeahRotW", lastLeahRotation.w);
+		PlayerPrefs.SetFloat("CamPosX", lastLeahPosition.x);
+		PlayerPrefs.SetFloat("CamPosY", lastLeahPosition.y);
+		PlayerPrefs.SetFloat("CamPosZ", lastLeahPosition.z);
+		PlayerPrefs.SetFloat("CamRotX", lastLeahRotation.x);
+		PlayerPrefs.SetFloat("CamRotY", lastLeahRotation.y);
+		PlayerPrefs.SetFloat("CamRotZ", lastLeahRotation.z);
+		PlayerPrefs.SetFloat("CamRotW", lastLeahRotation.w);
+		PlayerPrefs.SetInt("TutorialFinished", tutorialFinished ? 1 : 0);
+		PlayerPrefs.SetInt("pickedUpPictureFrame", pickedUpPictureFrame ? 1 : 0);
+		PlayerPrefs.SetInt("leahState", ((int)leahState));
+		PlayerPrefs.SetInt("georgeState", ((int)georgeState));
+		PlayerPrefs.SetInt("porchFixingState", ((int)porchFixingState));
+		PlayerPrefs.SetInt("porchStyle", ((int)porchStyle));
+		PlayerPrefs.SetInt("windowsFixingState", ((int)windowsFixingState));
+		PlayerPrefs.SetInt("windowsStyle", ((int)windowsStyle));
+		PlayerPrefs.SetInt("railingFixingState", ((int)railingFixingState));
+		PlayerPrefs.SetInt("railingStyle", ((int)railingStyle));
+		int i = 0;
+		foreach (string id in interactedObjectIDs)
+		{
+			PlayerPrefs.SetString("ID" + i.ToString(), id);
+			i++;
+		}
+		PlayerPrefs.Save();
+	}
+	public static void LoadGame()
+	{
+		if (!PlayerPrefs.HasKey("leahState"))
+		{
+			Debug.LogWarning("No Saved Game Found");
+			return;
+		}
+		else
+		{
+			lastLeahPosition = new Vector3(PlayerPrefs.GetFloat("LeahPosX"), PlayerPrefs.GetFloat("LeahPosY"), PlayerPrefs.GetFloat("LeahPosZ"));
+			lastLeahRotation = new Quaternion(PlayerPrefs.GetFloat("LeahRotX"), PlayerPrefs.GetFloat("LeahRotY"), PlayerPrefs.GetFloat("LeahRotZ"), PlayerPrefs.GetFloat("LeahRotW"));
+			lastCameraPosition = new Vector3(PlayerPrefs.GetFloat("CamPosX"), PlayerPrefs.GetFloat("CamPosY"), PlayerPrefs.GetFloat("CamPosZ"));
+			lastCameraRotation = new Quaternion(PlayerPrefs.GetFloat("CamRotX"), PlayerPrefs.GetFloat("CamRotY"), PlayerPrefs.GetFloat("CamRotZ"), PlayerPrefs.GetFloat("CamRotW"));
+			if (PlayerPrefs.GetInt("TutorialFinished") == 0) tutorialFinished = false;
+			else if (PlayerPrefs.GetInt("TutorialFinished") == 1) tutorialFinished = true;
+			if (PlayerPrefs.GetInt("pickedUpPictureFrame") == 0) pickedUpPictureFrame = false;
+			else if (PlayerPrefs.GetInt("pickedUpPictureFrame") == 1) pickedUpPictureFrame = true;
+			leahState = (LeahState)PlayerPrefs.GetInt("leahState");
+			georgeState = (GeorgeState)PlayerPrefs.GetInt("georgeState");
+			porchFixingState = (PorchFixingState)PlayerPrefs.GetInt("porchFixingState");
+			porchStyle = (PorchStyle)PlayerPrefs.GetInt("porchStyle");
+			windowsFixingState = (WindowsFixingState)PlayerPrefs.GetInt("windowsFixingState");
+			windowsStyle = (WindowsStyle)PlayerPrefs.GetInt("windowsStyle");
+			railingFixingState = (RailingFixingState)PlayerPrefs.GetInt("railingFixingState");
+			railingStyle = (RailingStyle)PlayerPrefs.GetInt("railingStyle");
+			int i = 0;
+			bool hasData = true;
+			while (hasData)
+			{
+				if (!PlayerPrefs.HasKey("ID" + i.ToString()))
+				{
+					hasData = false;
+					break;
+				}
+				interactedObjectIDs.Add(PlayerPrefs.GetString("ID" + i.ToString()));
+				i++;
+			}
+		}
+	}
+	public static void ResetEverything()
+	{
 		lastLeahPosition = new Vector3(-7.43100023f, 1.06999969f, 59.2550011f);
 		lastLeahRotation = new Quaternion(0f, -0.952481925f, 0f, 0.304595262f);
+		lastCameraPosition = new Vector3(-9.40624046f, 4.99852419f, 61.3174095f);
+		lastCameraRotation = new Quaternion(0.176703542f, 0.819491208f, -0.426600128f, 0.339444369f);
+		tutorialFinished = false;
+		pickedUpPictureFrame = false;
 		leahState = LeahState.Entering;
 		georgeState = GeorgeState.Porch;
 		porchFixingState = PorchFixingState.Broken;
@@ -120,5 +195,6 @@ public class GlobalSceneData : MonoBehaviour
 		railingFixingState = RailingFixingState.Broken;
 		railingStyle = RailingStyle.None;
 		interactedObjectIDs.Clear();
+		PlayerPrefs.DeleteAll();
 	}
 }

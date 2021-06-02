@@ -35,6 +35,9 @@ public class ObjectState : MonoBehaviour
 		public activeStates OnGeorgeStatePorch = activeStates.NONE;
 		public activeStates OnGeorgeStateWindows = activeStates.NONE;
 		public activeStates OnGeorgeStateRailing = activeStates.NONE;
+		[Header("Pickups")]
+		public activeStates OnFramePickUpTrue = activeStates.NONE;
+		public activeStates OnFramePickUpFalse = activeStates.NONE;
 	}
 	[SerializeField] private BoolStates boolStates;
 
@@ -344,6 +347,34 @@ public class ObjectState : MonoBehaviour
 		else if (GlobalSceneData.georgeState == GlobalSceneData.GeorgeState.Railing)
 		{
 			switch (boolStates.OnGeorgeStateRailing)
+			{
+				case BoolStates.activeStates.ON:
+					this.gameObject.SetActive(true);
+					break;
+				case BoolStates.activeStates.OFF:
+					this.gameObject.SetActive(false);
+					return;
+				default:
+					break;
+			}
+		}
+		if (GlobalSceneData.pickedUpPictureFrame)
+		{
+			switch (boolStates.OnFramePickUpTrue)
+			{
+				case BoolStates.activeStates.ON:
+					this.gameObject.SetActive(true);
+					break;
+				case BoolStates.activeStates.OFF:
+					this.gameObject.SetActive(false);
+					return;
+				default:
+					break;
+			}
+		}
+		else
+		{
+			switch (boolStates.OnFramePickUpFalse)
 			{
 				case BoolStates.activeStates.ON:
 					this.gameObject.SetActive(true);

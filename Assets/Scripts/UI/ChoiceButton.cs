@@ -16,12 +16,9 @@ public class ChoiceButton : MonoBehaviour, IPointerEnterHandler, ISelectHandler,
 	private float timer = 0;
 	private string isSelected = "IsSelected";
 
-    private ButtonSound buttonSound = null;
-
 	void OnEnable()
 	{
 		button = GetComponent<Button>();
-        buttonSound = FindObjectOfType<ButtonSound>();
 		timer = 0;
 		isSelectable = false;
 	}
@@ -56,10 +53,6 @@ public class ChoiceButton : MonoBehaviour, IPointerEnterHandler, ISelectHandler,
 	}
 	public void OnSelect(BaseEventData selectData)
 	{
-        if (buttonSound)
-        {
-            buttonSound.PlayHoverSound();
-        }
         if (selectData.selectedObject == this.gameObject && isSelectable && animator != null) animator.SetBool(isSelected, true);
 	}
 	public void OnDeselect(BaseEventData deselectData)

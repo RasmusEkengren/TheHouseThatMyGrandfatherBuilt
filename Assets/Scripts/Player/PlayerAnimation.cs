@@ -35,6 +35,13 @@ public class PlayerAnimation : MonoBehaviour
         }
     }
 
+    public void PickUpAnimation()
+    {
+        layerIndex = animator.GetLayerIndex("Pick Up");
+        animator.SetLayerWeight(layerIndex, 1);
+        Debug.Log("Pick up animation");
+    }
+
     public void StartAxeHoldingAnimation()
     {
         layerIndex = animator.GetLayerIndex("Carrying Axe");
