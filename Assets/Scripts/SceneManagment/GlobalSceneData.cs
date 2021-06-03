@@ -46,10 +46,13 @@ public class GlobalSceneData : MonoBehaviour
 		SceneManager.sceneLoaded += OnSceneLoaded;
         // Ugly solution for the Tester Helper tool
 
-        //Vector3(-2.74f, 1.1f, -57f);
+        //leah Vector3(-2.94f,1.1f,-57.15f)
+        // Cam Vector3(-6.89f,8.09f,-53f)
 
-        lastLeahPosition = new Vector3(18f, 1f, -38f);
-		lastCameraPosition = new Vector3(20f, 2f, -36f);
+        //lastLeahPosition = new Vector3(18f, 1f, -38f);
+        //lastCameraPosition = new Vector3(20f, 2f, -36f);
+        lastLeahPosition = new Vector3(-2.94f, 1.1f, -57.15f);
+        lastCameraPosition = new Vector3(-6.89f, 8.09f, -53f);
 	}
 
 	// When message from SceneController has been recieved
