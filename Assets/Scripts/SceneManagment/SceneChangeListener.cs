@@ -18,13 +18,6 @@ public class SceneChangeListener : MonoBehaviour
             LoadLeahPosition();
             LoadCameraPosition();
         }
-
-        if (scene.name == "George")
-        {
-
-            GlobalSceneData.SaveLeahPosition(FindObjectOfType<PlayerMovement>());
-            GlobalSceneData.SaveLeahCameraPosition(FindObjectOfType<CameraController>());
-        }
     }
 
     public void LoadLeahPosition()

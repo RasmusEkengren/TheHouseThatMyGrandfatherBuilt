@@ -44,8 +44,11 @@ public class GlobalSceneData : MonoBehaviour
 	{
 		if (SceneManager.GetActiveScene().name == "George" || SceneManager.GetActiveScene().name == "Inside") { tutorialFinished = true; ControlsTutorial.ShowMovementControls(false); }
 		SceneManager.sceneLoaded += OnSceneLoaded;
-		// Ugly solution for the Tester Helper tool
-		lastLeahPosition = new Vector3(18f, 1f, -38f);
+        // Ugly solution for the Tester Helper tool
+
+        //Vector3(-2.74f, 1.1f, -57f);
+
+        lastLeahPosition = new Vector3(18f, 1f, -38f);
 		lastCameraPosition = new Vector3(20f, 2f, -36f);
 	}
 
@@ -68,7 +71,7 @@ public class GlobalSceneData : MonoBehaviour
 		if (currentScene == "George" && nextScene == "Leah" || currentScene == "Leah" && nextScene == "Leah")
 		{
 			loadPositions = true;
-		}
+        }
 	}
 
 	private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -83,15 +86,16 @@ public class GlobalSceneData : MonoBehaviour
 
 			camera.gameObject.transform.position = lastCameraPosition;
 			camera.gameObject.transform.rotation = lastCameraRotation;
-		}
+            Debug.Log("Leah position loaded");
+        }
 	}
 
 	public static void SaveLeahPosition(PlayerMovement player)
 	{
 		lastLeahPosition = player.transform.position;
 		lastLeahRotation = player.transform.rotation;
-
-	}
+        Debug.Log("Leah position saved");
+    }
 	public static void SaveLeahCameraPosition(CameraController camera)
 	{
 		lastCameraPosition = camera.transform.position;
