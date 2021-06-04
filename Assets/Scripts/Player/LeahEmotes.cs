@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class LeahEmotes : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Animator leahAnimator = null;
+
+    private void Start()
     {
-        
+        leahAnimator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public void EmoteThink() { leahAnimator.Play("Think"); }
+    public void EmoteProud() { leahAnimator.Play("Proud"); }
+    public void EmoteDream() { leahAnimator.Play("Dream"); }
+    public void EmoteSigh() { leahAnimator.Play("Sigh"); }
 }

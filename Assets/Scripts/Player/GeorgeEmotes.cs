@@ -12,8 +12,8 @@ public class GeorgeEmotes : MonoBehaviour
         georgeAnimator = GetComponent<Animator>();
     }
 
-    public void EmoteThink() { }
-    public void EmoteProud() { }
-    public void EmoteDream() { }
-    public void EmoteSigh() { }
+    public void EmoteThink() { georgeAnimator.Play("Think"); }
+    public void EmoteProud() { georgeAnimator.Play("Proud"); }
+    public void EmoteDream() { georgeAnimator.Play("Dream"); }
+    public void EmoteSigh() { georgeAnimator.Play("Sigh"); }
 }
