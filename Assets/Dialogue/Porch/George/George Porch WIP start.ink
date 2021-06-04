@@ -1,5 +1,6 @@
 EXTERNAL playSound(soundName)
-//Proud pose
+EXTERNAL playEmote(emoteName)
+~playEmote("georgeProud")
 ~playSound("georgeProud")
 Alright, George, break time’s over. 
 ~playSound("georgeThink")

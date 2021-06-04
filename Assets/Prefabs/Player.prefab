@@ -70,6 +70,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAxe: 0
+--- !u!114 &5454809047206827780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2469223514193473312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2c286744903f7645990f03be0cb9373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &850309594
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -127,6 +139,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 8648837104583342073}
+--- !u!114 &4186102106650680263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2714874520113903417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54980f207e8b0964986cb827dec642bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4563503609429547009
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,6 +412,8 @@ MonoBehaviour:
   leahSad: event:/SFX/Voice/Leah/Leah_Sad
   leahYawn: event:/SFX/Voice/Leah/Leah_Yawn
   leahIdle: event:/SFX/Voice/Leah/Leah_Idle
+  georgeEmotes: {fileID: 5454809047206827780}
+  leahEmotes: {fileID: 4186102106650680263}
 --- !u!114 &4563503609429547019
 MonoBehaviour:
   m_ObjectHideFlags: 0
