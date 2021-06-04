@@ -89,8 +89,41 @@ public class InkManager : MonoBehaviour
         });
         story.BindExternalFunction("playEmote", (string emote) => 
         {
+            if (emote.Length > 0)
+            {
+
+            }
             if (emote == "georgeThink")
             {
+                georgeEmotes.EmoteThink();
+            }
+            if (emote == "georgeProud")
+            {
+                georgeEmotes.EmoteProud();
+            }
+            if (emote == "georgeDream")
+            {
+                georgeEmotes.EmoteDream();
+            }
+            if (emote == "georgeSigh")
+            {
+                georgeEmotes.EmoteSigh();
+            }
+            if (emote == "leahThink")
+            {
+                leahEmotes.EmoteThink();
+            }
+            if (emote == "leahProud")
+            {
+                leahEmotes.EmoteProud();
+            }
+            if (emote == "leahDream")
+            {
+                leahEmotes.EmoteDream();
+            }
+            if (emote == "leahSigh")
+            {
+                leahEmotes.EmoteSigh();
             }
         });
         isStoryActive = true;
@@ -134,6 +167,45 @@ public class InkManager : MonoBehaviour
             if (sound == "leahIdle")
             {
                 FMODUnity.RuntimeManager.PlayOneShot(leahIdle);
+            }
+        });
+        story.BindExternalFunction("playEmote", (string emote) =>
+        {
+            if (emote.Length > 0)
+            {
+
+            }
+            if (emote == "georgeThink")
+            {
+                georgeEmotes.EmoteThink();
+            }
+            if (emote == "georgeProud")
+            {
+                georgeEmotes.EmoteProud();
+            }
+            if (emote == "georgeDream")
+            {
+                georgeEmotes.EmoteDream();
+            }
+            if (emote == "georgeSigh")
+            {
+                georgeEmotes.EmoteSigh();
+            }
+            if (emote == "leahThink")
+            {
+                leahEmotes.EmoteThink();
+            }
+            if (emote == "leahProud")
+            {
+                leahEmotes.EmoteProud();
+            }
+            if (emote == "leahDream")
+            {
+                leahEmotes.EmoteDream();
+            }
+            if (emote == "leahSigh")
+            {
+                leahEmotes.EmoteSigh();
             }
         });
         isTimedStoryActive = true;
@@ -181,6 +253,45 @@ public class InkManager : MonoBehaviour
             if (sound == "leahIdle")
             {
                 FMODUnity.RuntimeManager.PlayOneShot(leahIdle);
+            }
+        });
+        story.BindExternalFunction("playEmote", (string emote) =>
+        {
+            if (emote.Length > 0)
+            {
+
+            }
+            if (emote == "georgeThink")
+            {
+                georgeEmotes.EmoteThink();
+            }
+            if (emote == "georgeProud")
+            {
+                georgeEmotes.EmoteProud();
+            }
+            if (emote == "georgeDream")
+            {
+                georgeEmotes.EmoteDream();
+            }
+            if (emote == "georgeSigh")
+            {
+                georgeEmotes.EmoteSigh();
+            }
+            if (emote == "leahThink")
+            {
+                leahEmotes.EmoteThink();
+            }
+            if (emote == "leahProud")
+            {
+                leahEmotes.EmoteProud();
+            }
+            if (emote == "leahDream")
+            {
+                leahEmotes.EmoteDream();
+            }
+            if (emote == "leahSigh")
+            {
+                leahEmotes.EmoteSigh();
             }
         });
         if (functionToCall != null) story.EvaluateFunction(functionToCall);
