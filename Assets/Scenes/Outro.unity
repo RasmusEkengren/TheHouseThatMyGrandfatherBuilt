@@ -228,11 +228,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3104877250062971611, guid: 45b5db789e01f8d4d93f80b139a6672f, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.15865079
+      value: 0.155
       objectReference: {fileID: 0}
     - target: {fileID: 3104877250062971611, guid: 45b5db789e01f8d4d93f80b139a6672f, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.0468797
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 3104877250062971611, guid: 45b5db789e01f8d4d93f80b139a6672f, type: 3}
       propertyPath: m_AnchorMin.x
@@ -311,16 +311,20 @@ PrefabInstance:
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6659974571893816810, guid: 45b5db789e01f8d4d93f80b139a6672f, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6706596438524687856, guid: dce1e53b4c5530444baeb65f1b81e243, type: 2}
+    - target: {fileID: 6659974571893816810, guid: 45b5db789e01f8d4d93f80b139a6672f, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4286085240
       objectReference: {fileID: 0}
     - target: {fileID: 6659974571893816810, guid: 45b5db789e01f8d4d93f80b139a6672f, type: 3}
       propertyPath: m_VerticalAlignment
-      value: 1024
+      value: 512
       objectReference: {fileID: 0}
     - target: {fileID: 6659974571893816810, guid: 45b5db789e01f8d4d93f80b139a6672f, type: 3}
       propertyPath: m_HorizontalAlignment
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45b5db789e01f8d4d93f80b139a6672f, type: 3}
@@ -1853,13 +1857,13 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
+  m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 0.78431374, b: 0.015686275, a: 1}
+    bottomLeft: {r: 1, g: 0.78431374, b: 0.015686275, a: 1}
+    bottomRight: {r: 0.3679245, g: 0.2873036, b: 0, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
