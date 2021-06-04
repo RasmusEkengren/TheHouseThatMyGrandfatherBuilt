@@ -11,4 +11,9 @@ public class GeorgeEmotes : MonoBehaviour
     {
         georgeAnimator = GetComponent<Animator>();
     }
+
+    public void EmoteThink() { }
+    public void EmoteProud() { }
+    public void EmoteDream() { }
+    public void EmoteSigh() { }
 }
