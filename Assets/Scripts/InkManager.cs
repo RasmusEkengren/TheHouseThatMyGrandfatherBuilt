@@ -26,6 +26,9 @@ public class InkManager : MonoBehaviour
     [FMODUnity.EventRef] [SerializeField] private string leahSad = null;
     [FMODUnity.EventRef] [SerializeField] private string leahYawn = null;
     [FMODUnity.EventRef] [SerializeField] private string leahIdle = null;
+    [Space]
+    [SerializeField] private GeorgeEmotes georgeEmotes = null;
+    [SerializeField] private LeahEmotes leahEmotes = null;
 
     //[FMODUnity.EventRef] [SerializeField] private string thinkingSound = null;
     //[SerializeField] private int thinkingInterval = 2; // Interval between chracter thinking sounds
@@ -82,6 +85,12 @@ public class InkManager : MonoBehaviour
             if (sound == "leahIdle")
             {
                 FMODUnity.RuntimeManager.PlayOneShot(leahIdle);
+            }
+        });
+        story.BindExternalFunction("playEmote", (string emote) => 
+        {
+            if (emote == "georgeThink")
+            {
             }
         });
         isStoryActive = true;
