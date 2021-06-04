@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657892, g: 0.4964133, b: 0.57481736, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657832, g: 0.49641216, b: 0.5748164, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -49440,15 +49440,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactSound
-      value: event:/SFX/Interactions/2D/Interaction_Pickup_Axe
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.size
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -49464,7 +49464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[5].m_Mode
@@ -49477,23 +49477,23 @@ PrefabInstance:
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1537750263}
+      objectReference: {fileID: 120583564}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 2131193554}
+      objectReference: {fileID: 188234685}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1131347031}
+      objectReference: {fileID: 2131193557}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 1112237447}
+      objectReference: {fileID: 120583564}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
-      objectReference: {fileID: 1337131235}
+      objectReference: {fileID: 120583564}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[5].m_Target
       value: 
@@ -49532,27 +49532,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartStory
+      value: PickUpAnimation
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetActive
+      value: PauseGame
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: PickUpAxe
+      value: InvokeEvents
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: ResetInteraction
+      value: PickUpAnimation
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
-      value: SetActive
+      value: PickUpAnimation
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
-      value: StartAxeHoldingAnimation
+      value: PickUpAnimation
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
@@ -49560,23 +49560,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: InkManager, Assembly-CSharp
+      value: PlayerAnimation, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: GameController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: AxeTracker, Assembly-CSharp
+      value: DelayedEvents, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: Interactable, Assembly-CSharp
+      value: PlayerAnimation, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: PlayerAnimation, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
@@ -49585,6 +49585,22 @@ PrefabInstance:
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[6].m_TargetAssemblyTypeName
       value: PlayerAnimation, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
+      propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
+      propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
+      propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
+      propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_BoolArgument
@@ -49601,14 +49617,14 @@ PrefabInstance:
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 4900000, guid: e7a69389d80a1b145b5dd37c30e07403, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.TextAsset, UnityEngine
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7944555796675199712, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
       propertyPath: interactions.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -49685,6 +49701,141 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3848708273438668141, guid: 6ee4d7e5172b6994c84791cf9ffa2e28, type: 3}
   m_PrefabInstance: {fileID: 2131193553}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2131193557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131193554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dd680679b9389d40bf39bca798ae910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0.55
+  events:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1537750263}
+        m_TargetAssemblyTypeName: InkManager, Assembly-CSharp
+        m_MethodName: StartStory
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4900000, guid: e7a69389d80a1b145b5dd37c30e07403, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2131193554}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1131347031}
+        m_TargetAssemblyTypeName: AxeTracker, Assembly-CSharp
+        m_MethodName: PickUpAxe
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1112237447}
+        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
+        m_MethodName: ResetInteraction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1337131235}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 120583564}
+        m_TargetAssemblyTypeName: PlayerAnimation, Assembly-CSharp
+        m_MethodName: StartAxeHoldingAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 188234685}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: PauseGame
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2131193558}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2131193558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131193554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/Interactions/2D/Interaction_Pickup_Axe
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1001 &2136285093
 PrefabInstance:
   m_ObjectHideFlags: 0
