@@ -39,6 +39,7 @@ public class Sawing : MonoBehaviour
 	[SerializeField] [EventRef] protected string FailCutSound = null;
 	[SerializeField] private UnityEvent gameCompleteEvent = null;
 	private EventInstance cuttingSoundInstance;
+	private bool hasMoved = false;
 
 	public int GetPlankCompletions() { return gameCompletions; }
 	public int GetPlanksNumberToCut() { return numberOfPlanks; }
@@ -69,6 +70,7 @@ public class Sawing : MonoBehaviour
 		rightPiece.anchorMax = new Vector2(1, 1);
 		rightPieceImage.fillAmount = 1.0f - cutlinePos;
 		rightPiece.rotation = Quaternion.identity;
+		hasMoved = false;
 	}
 	public void StartCut(InputAction.CallbackContext value)
 	{
@@ -81,7 +83,7 @@ public class Sawing : MonoBehaviour
 				sawAnimator.SetTrigger("Saw");
 				timer = 0;
 			}
-			else if (saw.gameObject.activeSelf)
+			else if (saw.gameObject.activeSelf && hasMoved)
 			{
 				FMODUnity.RuntimeManager.PlayOneShot(FailCutSound);
 			}
@@ -91,6 +93,10 @@ public class Sawing : MonoBehaviour
 	{
 		if (!gameObject.scene.IsValid()) return;
 		moveVal = value.ReadValue<Vector2>();
+		if (saw.gameObject.activeSelf)
+		{
+			hasMoved = true;
+		}
 	}
 	void OnEnable()
 	{
