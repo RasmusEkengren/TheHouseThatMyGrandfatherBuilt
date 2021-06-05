@@ -32248,7 +32248,7 @@ PrefabInstance:
     - target: {fileID: -9191014035168473890, guid: aec9b19ae7c659c478290abe25d3e755, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9aee54035381f4344bb245c529201ea4, type: 2}
+      objectReference: {fileID: 2100000, guid: 8666934ec288b5441a0c2f17eb820205, type: 2}
     - target: {fileID: -8679921383154817045, guid: aec9b19ae7c659c478290abe25d3e755, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -32295,7 +32295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: aec9b19ae7c659c478290abe25d3e755, type: 3}
       propertyPath: m_Name
-      value: House_front_whole_alt2
+      value: House_front_Flat
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: aec9b19ae7c659c478290abe25d3e755, type: 3}
       propertyPath: m_IsActive
@@ -32329,7 +32329,7 @@ MonoBehaviour:
     OnPorchFixed: 2
     OnPorchFixing: 1
     OnPorchFlat: 0
-    OnPorchSlanted: 2
+    OnPorchSlanted: 1
     OnPorchBroken: 1
     OnWindowsFixed: 2
     OnWindowsFixing: 2
@@ -34092,7 +34092,7 @@ PrefabInstance:
     - target: {fileID: -9191014035168473890, guid: d5b77d15e164efb4c905f2db8dc1b2ae, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9aee54035381f4344bb245c529201ea4, type: 2}
+      objectReference: {fileID: 2100000, guid: 4fbd2a3ed59a7684b82308ec59433c89, type: 2}
     - target: {fileID: -8679921383154817045, guid: d5b77d15e164efb4c905f2db8dc1b2ae, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -34139,7 +34139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d5b77d15e164efb4c905f2db8dc1b2ae, type: 3}
       propertyPath: m_Name
-      value: 'House_front_whole '
+      value: House_front_Slanted
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d5b77d15e164efb4c905f2db8dc1b2ae, type: 3}
       propertyPath: m_IsActive
@@ -34172,7 +34172,7 @@ MonoBehaviour:
   boolStates:
     OnPorchFixed: 2
     OnPorchFixing: 1
-    OnPorchFlat: 2
+    OnPorchFlat: 1
     OnPorchSlanted: 0
     OnPorchBroken: 1
     OnWindowsFixed: 2
@@ -49749,6 +49749,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1537750263}
+        m_TargetAssemblyTypeName: InkManager, Assembly-CSharp
+        m_MethodName: DisplayNextLine
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2131193558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50047,6 +50059,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2788567210818106031, guid: 47a34c80794da4e4c8cfce2fb344f021, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8666934ec288b5441a0c2f17eb820205, type: 2}
     - target: {fileID: 919132149155446097, guid: 47a34c80794da4e4c8cfce2fb344f021, type: 3}
       propertyPath: m_Name
       value: House_front_broken
@@ -50071,7 +50087,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1834184914139035787, guid: f9e091a570bc9b44282ef7642ebc0536, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4527539689915813236, guid: f9e091a570bc9b44282ef7642ebc0536, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -50149,6 +50165,10 @@ PrefabInstance:
       propertyPath: eventSystem
       value: 
       objectReference: {fileID: 1051911506}
+    - target: {fileID: 7396143685380736758, guid: f9e091a570bc9b44282ef7642ebc0536, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7535247641188672649, guid: f9e091a570bc9b44282ef7642ebc0536, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -50158,25 +50178,13 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8148847194127897383, guid: f9e091a570bc9b44282ef7642ebc0536, type: 3}
+      propertyPath: fixList
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148847194127897383, guid: f9e091a570bc9b44282ef7642ebc0536, type: 3}
       propertyPath: gameController
       value: 
       objectReference: {fileID: 188234685}
-    - target: {fileID: 8762485009973250182, guid: f9e091a570bc9b44282ef7642ebc0536, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 8166963838460383664}
-    - target: {fileID: 8762485009973250182, guid: f9e091a570bc9b44282ef7642ebc0536, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: QuitGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 8762485009973250182, guid: f9e091a570bc9b44282ef7642ebc0536, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PauseMenu, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8762485009973250182, guid: f9e091a570bc9b44282ef7642ebc0536, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9e091a570bc9b44282ef7642ebc0536, type: 3}
 --- !u!224 &8166963838460383663 stripped
