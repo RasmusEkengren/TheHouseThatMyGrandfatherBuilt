@@ -12164,6 +12164,70 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6567922192955450424, guid: a6df39fa016ce59479b720eee80f2030, type: 3}
   m_PrefabInstance: {fileID: 629499562}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &629645456
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 629645457}
+  - component: {fileID: 629645459}
+  - component: {fileID: 629645458}
+  m_Layer: 0
+  m_Name: Music triggervolume (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &629645457
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629645456}
+  m_LocalRotation: {x: -0, y: -0.42880028, z: -0, w: 0.9033993}
+  m_LocalPosition: {x: -4.91, y: 0, z: 60.74}
+  m_LocalScale: {x: 16.70375, y: 11.627998, z: 20.262}
+  m_Children: []
+  m_Father: {fileID: 1161651719}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: -50.783, z: 0}
+--- !u!114 &629645458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629645456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Emitters:
+  - Target: {fileID: 1161651718}
+    Params:
+    - Name: Intro
+      Value: 1
+  TriggerEvent: 3
+--- !u!65 &629645459
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629645456}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &647094335 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 907ba5330bc91dd40bfbb3120ce99004, type: 3}
@@ -17099,6 +17163,30 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -2725745426857256012, guid: f17f1d9ae1e5cc746877c1fd62e77566, type: 3}
   m_PrefabInstance: {fileID: 938709789}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &938709795 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5017847571828968146, guid: f17f1d9ae1e5cc746877c1fd62e77566, type: 3}
+  m_PrefabInstance: {fileID: 938709789}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &938709796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938709795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Emitters:
+  - Target: {fileID: 1161651718}
+    Params:
+    - Name: Progression
+      Value: 2
+  TriggerEvent: 11
 --- !u!1 &941562030
 GameObject:
   m_ObjectHideFlags: 0
@@ -20839,6 +20927,30 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3409889415146311716, guid: f17f1d9ae1e5cc746877c1fd62e77566, type: 3}
   m_PrefabInstance: {fileID: 1152937203}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1152937209 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5017847571828968146, guid: f17f1d9ae1e5cc746877c1fd62e77566, type: 3}
+  m_PrefabInstance: {fileID: 1152937203}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1152937210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152937209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Emitters:
+  - Target: {fileID: 1161651718}
+    Params:
+    - Name: Progression
+      Value: 2
+  TriggerEvent: 11
 --- !u!1 &1153240466
 GameObject:
   m_ObjectHideFlags: 0
@@ -21135,6 +21247,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2078957828}
+  - {fileID: 629645457}
+  - {fileID: 1620706945}
   m_Father: {fileID: 307790210}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -29193,6 +29307,70 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.4058971, y: 0.9999998, z: 0.050000012}
   m_Center: {x: -0.2719828, y: 0, z: -0.0000013431041}
+--- !u!1 &1620706944
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1620706945}
+  - component: {fileID: 1620706947}
+  - component: {fileID: 1620706946}
+  m_Layer: 0
+  m_Name: Music triggervolume (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1620706945
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620706944}
+  m_LocalRotation: {x: -0, y: -0.63781375, z: -0, w: 0.7701907}
+  m_LocalPosition: {x: -17.65, y: 0, z: -81.44}
+  m_LocalScale: {x: 3.6916, y: 7.1893587, z: 3.7484698}
+  m_Children: []
+  m_Father: {fileID: 1161651719}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: -79.258, z: 0}
+--- !u!114 &1620706946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620706944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Emitters:
+  - Target: {fileID: 1161651718}
+    Params:
+    - Name: Progression
+      Value: 1
+  TriggerEvent: 3
+--- !u!65 &1620706947
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620706944}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1629915582
 GameObject:
   m_ObjectHideFlags: 0
