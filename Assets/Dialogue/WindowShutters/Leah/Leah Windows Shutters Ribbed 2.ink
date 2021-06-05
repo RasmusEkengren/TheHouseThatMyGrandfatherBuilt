@@ -1,4 +1,5 @@
 EXTERNAL playSound(soundName)
+EXTERNAL playEmote(emoteName)
 ~playSound("leahHappy")
 Doll plays, showing my drawings, dancing, 
 ~playSound("leahIdle")
@@ -8,6 +9,7 @@ They always gave me attention and care in those moments.
 ~playSound("leahSad")
 My emotions mattered… Not like-... 
 ~playSound("leahSad")
+~playEmote("leahSigh")
 … 
 ~playSound("leahThink")
 What’s the next task?
