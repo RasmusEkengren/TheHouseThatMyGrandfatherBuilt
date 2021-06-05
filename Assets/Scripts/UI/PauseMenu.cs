@@ -7,10 +7,11 @@ using System.Collections;
 public class PauseMenu : MonoBehaviour
 {
 	[SerializeField] private GameObject pauseMenu = null;
+	[SerializeField] private GameObject fixList = null;
 	[SerializeField] private GameController gameController = null;
 	private bool hasPaused = false;
 
-    public void ToggleMenu(InputAction.CallbackContext value)
+	public void ToggleMenu(InputAction.CallbackContext value)
 	{
 		if (!gameObject.scene.IsValid()) return;
 		if (value.performed)
@@ -22,6 +23,13 @@ public class PauseMenu : MonoBehaviour
 			}
 			else
 			{
+				if (fixList != null)
+				{
+					if (fixList.activeSelf)
+					{
+						fixList.SetActive(false);
+					}
+				}
 				hasPaused = GameController.GamePaused();
 				pauseMenu.SetActive(true);
 				gameController.PauseGame(true);
