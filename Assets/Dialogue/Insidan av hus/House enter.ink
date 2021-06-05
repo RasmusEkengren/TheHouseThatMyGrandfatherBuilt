@@ -1,9 +1,11 @@
 EXTERNAL playSound(soundName)
+EXTERNAL playEmote(emoteName)
 
 //Leah går in i huset och tittar omkring
 ~playSound("leahIdle")
 The inside is just as much of a mess as the outside. 
 ~playSound("leahSad")
+~playEmote("leahDream")
 Doesn’t seem like he kept a lot of furniture in here… When did he even move out?
 //thinking pose
 ~playSound("leahThink")

@@ -1,5 +1,7 @@
 EXTERNAL playSound(soundName)
+EXTERNAL playEmote(emoteName)
 ~playSound("leahThink")
+~playEmote("leahDream")
 Maybe Rebecca would like to stargaze together...
 ~playSound("leahSad")
 C’mon Leah, focus. 
