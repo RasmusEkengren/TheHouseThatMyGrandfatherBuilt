@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.448233, g: 0.49424827, b: 0.55403197, a: 1}
+  m_IndirectSpecularColor: {r: 0.44823313, g: 0.494249, b: 0.55403274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -417,7 +417,7 @@ GameObject:
   - component: {fileID: 38157038}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -766,6 +766,7 @@ GameObject:
   - component: {fileID: 51681256}
   - component: {fileID: 51681258}
   - component: {fileID: 51681257}
+  - component: {fileID: 51681259}
   m_Layer: 0
   m_Name: TimedStory5
   m_TagString: Untagged
@@ -840,6 +841,42 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7.97, y: 6.7, z: 4.92}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &51681259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51681255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7894a0cb63ba9684683b8d40ef8460c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boolStates:
+    OnPorchFixed: 2
+    OnPorchFixing: 2
+    OnPorchFlat: 2
+    OnPorchSlanted: 2
+    OnPorchBroken: 2
+    OnWindowsFixed: 2
+    OnWindowsFixing: 2
+    OnWindowsRibbed: 2
+    OnWindowsSolid: 2
+    OnWindowsBroken: 2
+    OnRailingFixed: 2
+    OnRailingFixing: 2
+    OnRailingFlatTop: 2
+    OnRailingPillars: 2
+    OnRailingBroken: 2
+    OnLeahEntering: 0
+    OnLeahBuilding: 1
+    OnLeahDone: 1
+    OnGeorgeStatePorch: 2
+    OnGeorgeStateWindows: 2
+    OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!1001 &63033095
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -926,7 +963,7 @@ GameObject:
   - component: {fileID: 64509320}
   m_Layer: 0
   m_Name: GameObject (5)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -970,7 +1007,7 @@ GameObject:
   - component: {fileID: 66836868}
   m_Layer: 0
   m_Name: GameObject (12)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1804,7 +1841,7 @@ GameObject:
   - component: {fileID: 94658610}
   m_Layer: 0
   m_Name: GameObject (2)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3507,7 +3544,7 @@ GameObject:
   - component: {fileID: 135477030}
   m_Layer: 0
   m_Name: GameObject (9)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4916,6 +4953,7 @@ GameObject:
   - component: {fileID: 215182991}
   - component: {fileID: 215182990}
   - component: {fileID: 215182992}
+  - component: {fileID: 215182993}
   m_Layer: 0
   m_Name: TimedStory6
   m_TagString: Untagged
@@ -5138,6 +5176,42 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   inkManager: {fileID: 1833915864}
+--- !u!114 &215182993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215182988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7894a0cb63ba9684683b8d40ef8460c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boolStates:
+    OnPorchFixed: 2
+    OnPorchFixing: 2
+    OnPorchFlat: 2
+    OnPorchSlanted: 2
+    OnPorchBroken: 2
+    OnWindowsFixed: 2
+    OnWindowsFixing: 2
+    OnWindowsRibbed: 2
+    OnWindowsSolid: 2
+    OnWindowsBroken: 2
+    OnRailingFixed: 2
+    OnRailingFixing: 2
+    OnRailingFlatTop: 2
+    OnRailingPillars: 2
+    OnRailingBroken: 2
+    OnLeahEntering: 0
+    OnLeahBuilding: 1
+    OnLeahDone: 1
+    OnGeorgeStatePorch: 2
+    OnGeorgeStateWindows: 2
+    OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!1001 &215339970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5540,7 +5614,7 @@ GameObject:
   - component: {fileID: 262197262}
   m_Layer: 0
   m_Name: GameObject (9)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6298,6 +6372,7 @@ GameObject:
   - component: {fileID: 295299877}
   - component: {fileID: 295299879}
   - component: {fileID: 295299878}
+  - component: {fileID: 295299880}
   m_Layer: 0
   m_Name: TimedStory2
   m_TagString: Untagged
@@ -6372,6 +6447,42 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7.97, y: 6.7, z: 4.92}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &295299880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295299876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7894a0cb63ba9684683b8d40ef8460c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boolStates:
+    OnPorchFixed: 2
+    OnPorchFixing: 2
+    OnPorchFlat: 2
+    OnPorchSlanted: 2
+    OnPorchBroken: 2
+    OnWindowsFixed: 2
+    OnWindowsFixing: 2
+    OnWindowsRibbed: 2
+    OnWindowsSolid: 2
+    OnWindowsBroken: 2
+    OnRailingFixed: 2
+    OnRailingFixing: 2
+    OnRailingFlatTop: 2
+    OnRailingPillars: 2
+    OnRailingBroken: 2
+    OnLeahEntering: 0
+    OnLeahBuilding: 1
+    OnLeahDone: 1
+    OnGeorgeStatePorch: 2
+    OnGeorgeStateWindows: 2
+    OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!1001 &296035335
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7772,7 +7883,7 @@ GameObject:
   - component: {fileID: 395216579}
   m_Layer: 0
   m_Name: GameObject (11)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10544,7 +10655,7 @@ GameObject:
   - component: {fileID: 509742001}
   m_Layer: 0
   m_Name: GameObject (1)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13140,7 +13251,7 @@ GameObject:
   - component: {fileID: 666933218}
   m_Layer: 0
   m_Name: HouseColliders
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18174,7 +18285,7 @@ GameObject:
   - component: {fileID: 962651376}
   m_Layer: 0
   m_Name: GameObject (10)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18604,7 +18715,7 @@ GameObject:
   - component: {fileID: 990789595}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18917,6 +19028,7 @@ Transform:
   - {fileID: 1674852524}
   - {fileID: 704774239}
   - {fileID: 327123511}
+  - {fileID: 1427380965}
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19400,7 +19512,7 @@ GameObject:
   - component: {fileID: 1037680982}
   m_Layer: 0
   m_Name: GameObject (8)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22024,6 +22136,7 @@ GameObject:
   - component: {fileID: 1156716604}
   - component: {fileID: 1156716606}
   - component: {fileID: 1156716605}
+  - component: {fileID: 1156716607}
   m_Layer: 0
   m_Name: TimedStory4
   m_TagString: Untagged
@@ -22098,6 +22211,42 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7.97, y: 6.7, z: 4.92}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1156716607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156716603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7894a0cb63ba9684683b8d40ef8460c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boolStates:
+    OnPorchFixed: 2
+    OnPorchFixing: 2
+    OnPorchFlat: 2
+    OnPorchSlanted: 2
+    OnPorchBroken: 2
+    OnWindowsFixed: 2
+    OnWindowsFixing: 2
+    OnWindowsRibbed: 2
+    OnWindowsSolid: 2
+    OnWindowsBroken: 2
+    OnRailingFixed: 2
+    OnRailingFixing: 2
+    OnRailingFlatTop: 2
+    OnRailingPillars: 2
+    OnRailingBroken: 2
+    OnLeahEntering: 0
+    OnLeahBuilding: 1
+    OnLeahDone: 1
+    OnGeorgeStatePorch: 2
+    OnGeorgeStateWindows: 2
+    OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!1001 &1157427989
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22650,7 +22799,7 @@ GameObject:
   - component: {fileID: 1180923004}
   m_Layer: 0
   m_Name: GameObject (10)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23813,7 +23962,7 @@ GameObject:
   - component: {fileID: 1263234135}
   m_Layer: 0
   m_Name: GameObject (7)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24841,7 +24990,7 @@ GameObject:
   - component: {fileID: 1327274156}
   m_Layer: 0
   m_Name: GameObject (6)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25046,7 +25195,7 @@ GameObject:
   - component: {fileID: 1362338384}
   m_Layer: 0
   m_Name: GameObject (1)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25770,7 +25919,7 @@ GameObject:
   - component: {fileID: 1392233032}
   m_Layer: 0
   m_Name: GameObject (2)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26148,6 +26297,7 @@ GameObject:
   - component: {fileID: 1395716945}
   - component: {fileID: 1395716944}
   - component: {fileID: 1395716943}
+  - component: {fileID: 1395716946}
   m_Layer: 0
   m_Name: TimedStory1DisableTutorial
   m_TagString: Untagged
@@ -26234,6 +26384,42 @@ Transform:
   m_Father: {fileID: 1325830859}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 27.26, z: 0}
+--- !u!114 &1395716946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395716942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7894a0cb63ba9684683b8d40ef8460c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boolStates:
+    OnPorchFixed: 2
+    OnPorchFixing: 2
+    OnPorchFlat: 2
+    OnPorchSlanted: 2
+    OnPorchBroken: 2
+    OnWindowsFixed: 2
+    OnWindowsFixing: 2
+    OnWindowsRibbed: 2
+    OnWindowsSolid: 2
+    OnWindowsBroken: 2
+    OnRailingFixed: 2
+    OnRailingFixing: 2
+    OnRailingFlatTop: 2
+    OnRailingPillars: 2
+    OnRailingBroken: 2
+    OnLeahEntering: 0
+    OnLeahBuilding: 1
+    OnLeahDone: 1
+    OnGeorgeStatePorch: 2
+    OnGeorgeStateWindows: 2
+    OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!1 &1401749250 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c1f3c14c8dc0ad34997a57920d734406, type: 3}
@@ -26428,6 +26614,87 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1427380964
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1427380965}
+  - component: {fileID: 1427380967}
+  - component: {fileID: 1427380966}
+  m_Layer: 0
+  m_Name: GameObject (51)
+  m_TagString: Untagged
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1427380965
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427380964}
+  m_LocalRotation: {x: -0, y: 0.9332746, z: -0, w: -0.3591638}
+  m_LocalPosition: {x: 21.46, y: 1.54, z: 15.3}
+  m_LocalScale: {x: 3.2417, y: 3.2417, z: 3.2417}
+  m_Children: []
+  m_Father: {fileID: 1014175643}
+  m_RootOrder: 91
+  m_LocalEulerAnglesHint: {x: 0, y: 222.098, z: 0}
+--- !u!114 &1427380966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427380964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7894a0cb63ba9684683b8d40ef8460c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boolStates:
+    OnPorchFixed: 2
+    OnPorchFixing: 2
+    OnPorchFlat: 2
+    OnPorchSlanted: 2
+    OnPorchBroken: 2
+    OnWindowsFixed: 2
+    OnWindowsFixing: 2
+    OnWindowsRibbed: 2
+    OnWindowsSolid: 2
+    OnWindowsBroken: 2
+    OnRailingFixed: 2
+    OnRailingFixing: 2
+    OnRailingFlatTop: 2
+    OnRailingPillars: 2
+    OnRailingBroken: 2
+    OnLeahEntering: 1
+    OnLeahBuilding: 0
+    OnLeahDone: 0
+    OnGeorgeStatePorch: 2
+    OnGeorgeStateWindows: 2
+    OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
+--- !u!65 &1427380967
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427380964}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.2900488, y: 0.9999998, z: 0.05012944}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1441312237 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 869fa678386a86d41af8fb67cfaa9660, type: 3}
@@ -35467,7 +35734,7 @@ GameObject:
   - component: {fileID: 1890180200}
   m_Layer: 0
   m_Name: GameObject (1)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36524,6 +36791,7 @@ GameObject:
   - component: {fileID: 1984538883}
   - component: {fileID: 1984538885}
   - component: {fileID: 1984538884}
+  - component: {fileID: 1984538886}
   m_Layer: 0
   m_Name: TimedStory3
   m_TagString: Untagged
@@ -36598,6 +36866,42 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7.97, y: 6.7, z: 4.92}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1984538886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984538882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7894a0cb63ba9684683b8d40ef8460c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boolStates:
+    OnPorchFixed: 2
+    OnPorchFixing: 2
+    OnPorchFlat: 2
+    OnPorchSlanted: 2
+    OnPorchBroken: 2
+    OnWindowsFixed: 2
+    OnWindowsFixing: 2
+    OnWindowsRibbed: 2
+    OnWindowsSolid: 2
+    OnWindowsBroken: 2
+    OnRailingFixed: 2
+    OnRailingFixing: 2
+    OnRailingFlatTop: 2
+    OnRailingPillars: 2
+    OnRailingBroken: 2
+    OnLeahEntering: 0
+    OnLeahBuilding: 1
+    OnLeahDone: 1
+    OnGeorgeStatePorch: 2
+    OnGeorgeStateWindows: 2
+    OnGeorgeStateRailing: 2
+    OnFramePickUpTrue: 2
+    OnFramePickUpFalse: 2
 --- !u!1 &1984586592
 GameObject:
   m_ObjectHideFlags: 0
@@ -36807,7 +37111,7 @@ GameObject:
   - component: {fileID: 2017012478}
   m_Layer: 0
   m_Name: GameObject (13)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36851,7 +37155,7 @@ GameObject:
   - component: {fileID: 2019039473}
   m_Layer: 0
   m_Name: GameObject (4)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
