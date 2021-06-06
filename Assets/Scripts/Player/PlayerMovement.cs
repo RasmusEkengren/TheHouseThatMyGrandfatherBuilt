@@ -137,9 +137,4 @@ public class PlayerMovement : MonoBehaviour
             playerFootstep.currentCollision = hit.gameObject;
         }
     }
-
-    private void OnCollisionEnter(ControllerColliderHit collision)
-    {
-        
-    }
 }
