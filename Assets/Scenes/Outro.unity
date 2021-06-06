@@ -1174,7 +1174,6 @@ GameObject:
   - component: {fileID: 841691553}
   - component: {fileID: 841691552}
   - component: {fileID: 841691555}
-  - component: {fileID: 841691556}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1309,18 +1308,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 841691556}
-        m_TargetAssemblyTypeName: debugEscape, Assembly-CSharp
-        m_MethodName: PressButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_ActionId: 18c16ac2-a27d-4a40-bb38-91e306dcfaaf
     m_ActionName: UI/Cancel[/Keyboard/escape,/XInputControllerWindows/buttonEast,/XInputControllerWindows/buttonEast,/Keyboard/escape]
   - m_PersistentCalls:
@@ -1380,18 +1367,6 @@ MonoBehaviour:
   m_DefaultActionMap: UI
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &841691556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 841691551}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1520c57197f8c4a468a1eb409b213d33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &856461044
 GameObject:
   m_ObjectHideFlags: 0
