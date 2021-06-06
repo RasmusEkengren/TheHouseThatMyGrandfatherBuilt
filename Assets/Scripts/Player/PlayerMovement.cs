@@ -78,6 +78,7 @@ public class PlayerMovement : MonoBehaviour
         direction = Vector2.zero;
         savedWalkSpeed = autoWalkSpeed;
         playerFootstep = GetComponentInChildren<PlayerFootstepSound>();
+        transform.Translate(Vector3.up*2, Space.Self);
     }
 
     [ContextMenu("Look At Tree")]
