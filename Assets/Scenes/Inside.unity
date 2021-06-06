@@ -5806,7 +5806,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1834184914139035787, guid: f9e091a570bc9b44282ef7642ebc0536, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6115462165080249280, guid: f9e091a570bc9b44282ef7642ebc0536, type: 3}
       propertyPath: m_RootOrder
@@ -5860,6 +5860,10 @@ PrefabInstance:
       propertyPath: eventSystem
       value: 
       objectReference: {fileID: 654327036}
+    - target: {fileID: 7396143685380736758, guid: f9e091a570bc9b44282ef7642ebc0536, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7535247641188672649, guid: f9e091a570bc9b44282ef7642ebc0536, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -5875,6 +5879,10 @@ PrefabInstance:
     - target: {fileID: 7909085967857716191, guid: f9e091a570bc9b44282ef7642ebc0536, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148847194127897383, guid: f9e091a570bc9b44282ef7642ebc0536, type: 3}
+      propertyPath: fixList
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8148847194127897383, guid: f9e091a570bc9b44282ef7642ebc0536, type: 3}
       propertyPath: FirstSelected
@@ -21057,7 +21065,7 @@ MonoBehaviour:
     OnPorchFixed: 2
     OnPorchFixing: 2
     OnPorchFlat: 0
-    OnPorchSlanted: 2
+    OnPorchSlanted: 1
     OnPorchBroken: 1
     OnWindowsFixed: 2
     OnWindowsFixing: 2
@@ -24225,7 +24233,7 @@ MonoBehaviour:
   boolStates:
     OnPorchFixed: 2
     OnPorchFixing: 2
-    OnPorchFlat: 2
+    OnPorchFlat: 1
     OnPorchSlanted: 0
     OnPorchBroken: 1
     OnWindowsFixed: 2
